@@ -16,6 +16,7 @@ gem 'rake'
 gem 'inploy'
 
 group :development, :test do
+  gem 'autotest'
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'capybara'

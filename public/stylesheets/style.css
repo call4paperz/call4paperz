@@ -479,3 +479,19 @@ a.prop_link:hover, a.prop_link:active{
 	font-size: 12px;
 	color: #da3546;
 }
+
+#comment_new form .field textarea{
+	border:2px solid #111111;
+	height:50px;
+	padding:3px;
+	width:427px;
+}
+
+#comment_new{
+	background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+	padding: 20px;
+	margin-bottom: 10px;
+	width: 512px;
+	position: relative;
+	left: 80px;
+}

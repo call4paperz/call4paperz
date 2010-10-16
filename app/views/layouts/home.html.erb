@@ -22,59 +22,8 @@
 		</div>
 	</div>	
 	<div style="clear:both"></div>
-	<div id="footer">
-		<div class="container">
-			<div id="footer_cols">
-				<div id="footer_a">
-					<%= image_tag '/images/f_call.png' %>
-					<br/><br/>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Maecenas gravida.
-						<br/><br/>
-						Uspendisse vel lacus sed purus tincidunt 
-						bibendum. Quisque quam. Ut interdum. 
-					</p>
-				</div>
-				<div id="footer_a">
-					<%= image_tag '/images/f_map.png' %>
-					<br/><br/>
-					<p>
-						Home<br/>
-						<%= image_tag '/images/f_linha.png' %>
-						Events<br/>
-						<%= image_tag '/images/f_linha.png' %>
-						Proposals<br/>
-						<%= image_tag '/images/f_linha.png' %>
-						Users<br/>
-						<%= image_tag '/images/f_linha.png' %>
-						
-					</p>
-				</div>
-				<div id="footer_a">
-					<%= image_tag '/images/f_about.png' %>
-					<br/><br/>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Maecenas gravida. Suspendisse vel lacus sed purus tincidunt 
-						bibendum. Quisque quam. Ut interdum. 
-						<br/><br/>
-						Proin euismod facilisis est. Nunc nec metus. Morbi ornare, 
-						justo quis varius eleifend, est felis tincidunt leo, pharetra 
-						condimentum dolor ipsum in dolor. Aenean diam. 
-						<br/><br/>
-						Phasellus risus purus, feugiat in, dignissim id, rutrum eget, 
-						quam. Mauris hendrerit mattis arcu. 
-						Praesent ac ligula.
-					</p>
-				</div>
-			</div>
-			<div style="clear:both"></div>
-			<div id="copyright">
-				<p>Copyright © 2010. Powered by <strong>acts_as_monkeys_on_steroids</strong>, Developed in <strong>Rails Rumble 2010</strong>.</p>
-			</div>
-		</div>	
-	</div>
+	<%= render :partial => 'layouts/footer' %>
+
 </body>
 </html>
 

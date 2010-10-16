@@ -60,9 +60,8 @@ body{
 }
 
 #main_inner{
-	background: url('/images/bg2.png') repeat;
+	background: url('/images/bg2.png') repeat-x;
 	width: 100%;
-	height: 185px;
 }
 
 .container{
@@ -293,4 +292,44 @@ ul#menu_top li a:hover{
 
 #copyright strong{
 	font-weight: bold;
+}
+
+#proposal{
+	background: url('/images/proposal_black.png');
+	width: 281px;
+	height: 540px;
+	margin-top: 80px;
+	padding: 10px;
+	float: left;
+}
+
+#proposal_list{
+	margin-top: 80px;
+	padding: 10px;	
+}
+
+.logo{
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;	
+	border: 10px solid #b24450;	
+	position: relative;
+	top: 18px;
+	left: 34px;
+}
+
+.linha{
+	margin-top: 30px;
+	margin-left: 25px;
+}
+
+#proposal p{
+	font-size: 12px;
+	color: #ffffff;
+	margin-left: 35px;
+}
+
+#proposal p strong{
+	font-weight: bold;
+	color: #da3546;
+	font-size: 14px;
 }

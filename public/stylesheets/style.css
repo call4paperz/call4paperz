@@ -311,7 +311,7 @@ ul#menu_top li a:hover{
 
 #proposal_list{
 	left:20px;
-	margin-top:80px;
+	margin-top:67px;
 	padding:19px;
 	position:relative;
 	float: left;
@@ -352,7 +352,7 @@ ul#menu_top li a:hover{
 	position: relative;
 }
 
-.prop p strong{
+.prop p strong, .sub_vote{
 	font-weight: bold;
 	color: #da3546;
 	font-size: 15px;
@@ -365,7 +365,7 @@ ul#menu_top li a:hover{
 
 .prop_sub{
 	position:absolute;
-	top:150px;
+	top:140px;
 }
 
 .prop_sub img{
@@ -378,7 +378,7 @@ ul#menu_top li a:hover{
 	color: #da3546;
 	font-size: 12px;
 	font-weight: bold;
-	position: inline;
+	margin-right:200px;
 }
 
 .prop_sub a:link, .prop_sub a:visited{
@@ -396,4 +396,6 @@ ul#menu_top li a:hover{
 .thumb{
 	border: 0 !important;
 }
+
+
 

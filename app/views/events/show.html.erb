@@ -23,7 +23,8 @@
 
 
 <div id="proposal_list">
-	Propostas
+	<%= image_tag '/images/prop_vote.png' %>	
+	<p class="sub_vote">Decide how goes to the conference!</p>
 	<br/>
 	<% @event.proposals.each do |proposal| %>
 		<%= render proposal %>

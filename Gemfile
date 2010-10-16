@@ -14,6 +14,7 @@ gem 'omniauth'
 gem 'mini_magick'
 gem 'rake'
 gem 'inploy'
+gem 'twitter'
 
 group :development, :test do
   gem 'autotest'

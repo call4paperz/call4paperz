@@ -161,6 +161,19 @@ ul#menu_top li a:hover{
 	width:377px;
 }
 
+#twitter a, #twitter a:hover {
+  margin-left: 15px;
+  font-size: 12px;
+  color: #DA3546;
+  background-color: white;
+}
+
+#twitter_status {
+  margin: 25px 15px 0;
+  font-size: 12px;
+  width: 55%;
+}
+
 #most_recent_events{
 	float: left;
 	margin-right:40px;

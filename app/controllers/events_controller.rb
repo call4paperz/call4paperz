@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
+    @proposal = @event.proposals.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +42,7 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save

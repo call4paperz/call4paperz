@@ -2,7 +2,6 @@ Rr10Team71::Application.routes.draw do
   devise_for :users
 
   resources :proposals
-
   resources :events
 
   root :to => "events#index"

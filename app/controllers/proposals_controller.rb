@@ -41,6 +41,8 @@ class ProposalsController < ApplicationController
   # POST /proposals.xml
   def create
     @proposal = Proposal.new(params[:proposal])
+    @proposal.user = current_user
+    @proposal.event = current_user.events.find(params[:proposal][:event_id])
 
     respond_to do |format|
       if @proposal.save

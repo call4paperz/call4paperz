@@ -7,4 +7,6 @@ class Proposal < ActiveRecord::Base
 
   validates_presence_of :name, :description
   validates_associated :user
+
+  attr_protected :event_id
 end

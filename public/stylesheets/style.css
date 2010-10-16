@@ -434,7 +434,36 @@ ul#menu_top li a:hover{
   margin-bottom: 20px;
 }
 
-#comments_list{
-	width: 200px;
-	
+.comments_list{
+	background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+	left:80px;
+	margin-bottom:10px;
+	min-height:110px;
+	position:relative;
+	width:512px;
+	padding: 20px;
+}
+
+.comments_list p{
+	font-size: 14px;
+	color: #111111;
+}
+
+.comments_list img{
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border: 5px solid #b24450;
+	float: left;
+	margin-right: 10px;
+}
+
+.comments_list p small{
+	font-size: 12px;
+	color: #da3546;
+	font-weight: bold;
+}
+
+.comments_list p spam{
+	font-size: 12px;
+	color: #da3546;
 }

@@ -19,7 +19,6 @@ gem 'will_paginate'
 
 group :development, :test do
   gem 'autotest'
-  gem 'autotest-fsevent'
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'

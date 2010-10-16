@@ -259,3 +259,16 @@ ul#menu_top li a:hover{
 .all:hover, .all:active{
 	text-decoration: underline;
 }
+
+.prop_link{
+	font-size: 12px;
+	color: #da3546;
+}
+.prop_link span{
+	color: #111111;
+}
+
+#footer{
+	background: url('/images/bg_footer.png');
+	height: 273px;
+}

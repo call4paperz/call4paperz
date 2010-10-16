@@ -29,7 +29,6 @@ feature "Events", %q{
       click_button "Create Event"
 
       page.should have_content "GURU-SP"
-      page.should have_content 'Event was successfully created.'
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
@@ -53,7 +52,6 @@ feature "Events", %q{
 
       click_button "Create Event"
 
-      page.should have_no_content 'Event was successfully created.'
       page.should have_content "Name can't be blank"
     end
 
@@ -67,7 +65,6 @@ feature "Events", %q{
 
       click_button "Create Event"
 
-      page.should have_no_content 'Event was successfully created.'
       page.should have_content "Description can't be blank"
     end
 

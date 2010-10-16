@@ -44,7 +44,6 @@ feature "Registration", %q{
       fill_in "Password confirmation", :with => '123123'
       click_button "Sign up"
 
-      page.should have_content "You have signed up successfully."
       page.should have_content "Logout"
 
       current_path.should == homepage

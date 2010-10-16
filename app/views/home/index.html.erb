@@ -22,12 +22,12 @@
 			<div class="event">
 				<p><strong><%= event.name %></strong></p>
 
-				<p><%= truncate (event.description, :length => 170) %></p><br/>
+				<p><%= truncate(event.description, :length => 170) %></p><br/>
 
 				<div class="buttons">
 					<%= image_tag '/images/more.png', :class => 'more' %>
-					<%= link_to pluralize (event.proposals.size, 'proposal'), root_path %>
-					<%= link_to pluralize (event.comments.size, 'comment'), root_path %>
+					<%= link_to pluralize(event.proposals.size, 'proposal'), root_path %>
+					<%= link_to pluralize(event.comments.size, 'comment'), root_path %>
           <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(event) %>
           <%= render 'shared/facebook_like', :url => event_url(event) %>
 				</div>

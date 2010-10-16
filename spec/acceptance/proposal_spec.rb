@@ -17,8 +17,8 @@ feature "Proposal", %q{
       page.should have_no_content 'Sign in'
       page.should have_content 'Refactoring Ruby'
       page.should have_content "0 comments"
-      page.should have_link('+')
-      page.should have_link('-')
+      page.should have_css("img[src*='positive.png']")
+      page.should have_css("img[src*='negative.png']")
     end
 
     scenario "While not logged in, I should be able to view proposals' details " do
@@ -44,7 +44,6 @@ feature "Proposal", %q{
       click_button "Create Proposal"
 
       page.should have_content "Refactoring Ruby"
-      page.should have_content 'Proposal was successfully created.'
     end
 
     scenario "While registering, I can't register a proposal without a name" do
@@ -57,7 +56,6 @@ feature "Proposal", %q{
 
       click_button "Create Proposal"
 
-      page.should have_no_content 'Proposal was successfully created.'
       page.should have_content "Name can't be blank"
     end
 
@@ -71,7 +69,6 @@ feature "Proposal", %q{
 
       click_button "Create Proposal"
 
-      page.should have_no_content 'Proposal was successfully created.'
       page.should have_content "Description can't be blank"
     end
   end

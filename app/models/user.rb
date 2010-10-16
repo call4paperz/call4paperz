@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   private
 
   def password_required?
-    !@skip_credentials
+    !@skip_credentials && (!persisted? || !password.nil? || !password_confirmation.nil?)
   end
 
   def email_required?

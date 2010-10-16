@@ -21,6 +21,13 @@ feature "Comment", %q{
     page.should have_no_content "2 comments"
   end
 
+  scenario "I should be able to see people's comments" do
+    Factory(:comment, :proposal => proposal)
+    visit proposal_page(proposal)
+
+    page.should have_content("Lorem Ipsum Dolor")
+  end
+
   scenario "I shouldn't be able to make comments while not logged in" do
     visit proposal_page(proposal)
 

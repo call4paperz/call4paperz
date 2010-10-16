@@ -433,3 +433,8 @@ ul#menu_top li a:hover{
 	float: left;
   margin-bottom: 20px;
 }
+
+#comments_list{
+	width: 200px;
+	
+}

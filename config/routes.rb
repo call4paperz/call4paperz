@@ -1,4 +1,6 @@
 Rr10Team71::Application.routes.draw do
+  resources :comments
+
   devise_for :users
 
   resources :proposals

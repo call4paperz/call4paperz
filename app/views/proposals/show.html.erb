@@ -20,6 +20,13 @@
   <%= @proposal.event %>
 </p>
 
+<%= render 'comments/form' %>
+
+
+<h1>Comments</h1>
+<% @proposal.comments.each do |comment| -%>
+  <%= render comment %>
+<% end -%>
 
 <%= link_to 'Edit', edit_proposal_path(@proposal) %> |
 <%= link_to 'Back', proposals_path %>

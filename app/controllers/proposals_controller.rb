@@ -14,6 +14,8 @@ class ProposalsController < ApplicationController
   # GET /proposals/1.xml
   def show
     @proposal = Proposal.find(params[:id])
+    @comment = Comment.new
+    @comment.proposal = @proposal
 
     respond_to do |format|
       format.html # show.html.erb

@@ -309,7 +309,7 @@ ul#menu_top li a:hover{
 	text-align: center;
 	font-size: 10px;
 	color: #ffffff;
-	margin-top: 27px;
+  background-color: #111;
 }
 
 #copyright strong{

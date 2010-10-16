@@ -61,6 +61,7 @@ body{
 #main_inner{
 	background: url('/images/bg2.png') repeat-x;
 	width: 100%;
+	height:190px;
 }
 
 .container{
@@ -322,7 +323,7 @@ ul#menu_top li a:hover{
 	height: 540px;
 	margin-top: 80px;
 	padding: 10px;
-	float: left;
+	margin-bottom: 20px;
 }
 
 #proposal_list{
@@ -421,3 +422,6 @@ ul#menu_top li a:hover{
 	position:relative;
 }
 
+#left_bar{
+	float: left;
+}

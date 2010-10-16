@@ -48,8 +48,6 @@ class EventsController < ApplicationController
     @event.user = current_user
     current_user.valid?
 
-    Rails.logger.info current_user.inspect
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }

@@ -11,7 +11,7 @@ gem 'carrierwave'
 gem 'will_paginate'
 gem 'mail_form'
 gem 'omniauth'
-
+gem 'mini_magick'
 gem 'inploy'
 
 group :development, :test do

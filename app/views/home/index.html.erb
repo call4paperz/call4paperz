@@ -30,7 +30,9 @@
 </div>
 
 <div id="most_recent_comments">
-	comments<br/>
+	<%= image_tag '/images/most_recent_comments.png' %><br />
+	<p><strong>What people think about last proposals.</strong></p>
+	
 	<% @comments.each do |comment| %>
 		<%= comment.body %><br/>
 		<%= comment.user.name %><br/>

@@ -152,7 +152,8 @@ ul#menu_top li a:hover{
 	float: left;
 }	
 
-#most_recent_events p strong{
+#most_recent_events p strong,
+#most_recent_comments p strong{
 	font-size: 12px;
 	color: #da3546;
 	font-weight: bold;

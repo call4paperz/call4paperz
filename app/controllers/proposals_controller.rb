@@ -47,7 +47,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(params[:proposal])
     @proposal.user = current_user
-    @proposal.event = current_user.events.find(params[:event_id])
+    @proposal.event = event
 
     respond_to do |format|
       if @proposal.save

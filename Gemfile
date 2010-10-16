@@ -8,12 +8,18 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'mysql2'
 gem 'devise'
-gem 'rspec'
-gem 'steak'
 gem 'carrierwave'
 gem 'will_paginate'
 gem 'mail_form'
 gem 'omniauth'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'steak', '>= 1.0.0.rc.1'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

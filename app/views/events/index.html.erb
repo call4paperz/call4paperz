@@ -1,39 +1,7 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Occurs at</th>
-    <th>Picture</th>
-    <th>Url</th>
-    <th>Twitter</th>
-    <th>User</th>
-    <th>Starts votes at</th>
-    <th>End votes at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.description %></td>
-    <td><%= event.occurs_at %></td>
-    <td><%= event.picture %></td>
-    <td><%= event.url %></td>
-    <td><%= event.twitter %></td>
-    <td><%= event.user %></td>
-    <td><%= event.starts_votes_at %></td>
-    <td><%= event.end_votes_at %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div>
+	<% @events.each do |event| %>
+	    <p><%= event.name %><%= link_to 'Show', event %></p>
+	<% end %>
+</div>
 
 <%= link_to 'New Event', new_event_path %>

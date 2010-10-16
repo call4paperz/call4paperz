@@ -49,15 +49,17 @@
 			<% @comments.each do |comment| %>
 				<div class="comment">
 					<div class="comment_pic">
-						<%= image_tag comment.user.picture if comment.user.picture.present? %>
+						<%= image_tag comment.user.picture, :class => 'borda_vinho' if comment.user.picture.present? %>
 					</div>
 					<div class="comment_detail">
 						<p><%= truncate(comment.body, :length => 60) %></p>
 						<p><small><%= comment.user.name %></small></p>
 					</div>
 					<div style="clear:both"></div>
+					<%= image_tag '/images/linha.png' %>
 				</div>	
 			<% end %>	
+			<%= link_to "all comments", root_path, :class => 'all' %>
 		</div>
 		
 	</div>

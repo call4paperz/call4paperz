@@ -12,7 +12,10 @@
 		</div>
 		
 		<div id="howto"></div>
-		<div id="twitter"></div>
+    <div id="twitter">
+      <p id="twitter_status"><%= truncate(@latest_tweet, :length => 80) %></p>
+      <%= link_to "#call4paperz", "http://twitter.com/#search/%23call4paperz" %>
+    </div>
 	</div>
 </div>
 

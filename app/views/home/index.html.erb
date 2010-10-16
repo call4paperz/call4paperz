@@ -29,8 +29,7 @@
 					<%= link_to pluralize (event.proposals.size, 'proposal'), root_path %>
 					<%= link_to pluralize (event.comments.size, 'comment'), root_path %>
           <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(event) %>
-					<%= image_tag '/images/facebook_icon.png' %>
-					<%= image_tag '/images/twitter_icon.png' %>
+          <%= render 'shared/facebook_like', :url => event_url(event) %>
 				</div>
 
 			</div>

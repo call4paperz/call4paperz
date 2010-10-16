@@ -92,7 +92,7 @@ ul#menu_top li a{
 
 ul#menu_top li a:hover{
 	color: #eff7fc;
-}	
+}
 
 #pic{
 	background: url('/images/pic.jpg') no-repeat;
@@ -110,7 +110,7 @@ ul#menu_top li a:hover{
 #intro p{
 	color: #ffffff;
 	font-size: 12px;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 #intro p strong{
@@ -150,7 +150,7 @@ ul#menu_top li a:hover{
 #most_recent_events{
 	float: left;
 	margin-right:40px;
-}	
+}
 
 #most_recent_events p strong,
 #most_recent_comments p strong{
@@ -222,14 +222,14 @@ ul#menu_top li a:hover{
 
 .borda_vinho{
 	-moz-border-radius:8px;
-	-webkit-border-radius:8px;	
+	-webkit-border-radius:8px;
 	border: 5px solid #b24450;
 }
 
 .comment p{
 	color: #ffffff;
 	font-size: 12px;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 .comment p small{
@@ -313,8 +313,8 @@ ul#menu_top li a:hover{
 
 .logo{
 	-moz-border-radius:15px;
-	-webkit-border-radius:15px;	
-	border: 10px solid #b24450;	
+	-webkit-border-radius:15px;
+	border: 10px solid #b24450;
 	position: relative;
 	top: 18px;
 	left: 34px;

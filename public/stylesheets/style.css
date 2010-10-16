@@ -216,6 +216,12 @@ ul#menu_top li a:hover{
 	top:95px;
 }
 
+.buttons iframe {
+  position: relative;
+  top: 5px;
+  padding-right: 5px;
+}
+
 #content{
 	margin-top:80px;
 }

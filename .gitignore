@@ -2,7 +2,6 @@
 db/*.sqlite3
 log/*.log
 tmp/**/*
-config/database.yml
 public/uploads
 Gemfile.lock
 .rvmrc

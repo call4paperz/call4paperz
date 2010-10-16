@@ -1,5 +1,8 @@
 <%= proposal.description %>
-<%= link_to proposal.comments.size, [@event, proposal] %>
+<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
+
+<br />
+<%= image_tag proposal.user.picture if current_user.picture %>
 <%= proposal.user.name %>
 
 

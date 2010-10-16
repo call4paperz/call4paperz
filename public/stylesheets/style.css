@@ -105,6 +105,7 @@ ul#menu_top li a:hover{
 	left:90px;
 	position:relative;
 	top:-30px;
+	float: left;
 }
 
 #intro p{
@@ -122,8 +123,17 @@ ul#menu_top li a:hover{
 }
 
 #breadcrumb{
-	background:url("/images/breadcrumb.png") repeat scroll 0 0 transparent;
+	background:url('/images/breadcrumb.png') repeat scroll 0 0 transparent;
 	height:70px;
 	position:relative;
 	top:33px;
+}
+
+#howto{
+	background: url('/images/howto.png') repeat;
+	float:right;
+	height: 197px;
+	position:relative;
+	top:20px;
+	width:388px;
 }

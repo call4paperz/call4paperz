@@ -272,3 +272,25 @@ ul#menu_top li a:hover{
 	background: url('/images/bg_footer.png');
 	height: 273px;
 }
+
+#footer_cols{
+	padding-top:28px;
+	font-size: 11px;
+	color: #ffffff;
+}
+
+#footer_a{
+	float: left;
+	width: 320px;
+}
+
+#copyright{
+	text-align: center;
+	font-size: 10px;
+	color: #ffffff;
+	margin-top: 27px;
+}
+
+#copyright strong{
+	font-weight: bold;
+}

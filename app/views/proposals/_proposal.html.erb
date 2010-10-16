@@ -1,4 +1,7 @@
-<%= link_to proposal.description, [@event, proposal] %>
+<%= proposal.description %>
+<%= link_to proposal.comments.size, [@event, proposal] %>
+<%= proposal.user.name %>
+
 
 <%= vote_box(proposal, current_user) %>
 

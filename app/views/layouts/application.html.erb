@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<%= image_tag current_user.picture if current_user.picture.present? %>
+<% if user_signed_in? -%>
+  <%= image_tag current_user.picture if current_user.picture %>
+<% end -%>
 
 <% flash.each do |key, content| -%>
   <div><%= content %></div>

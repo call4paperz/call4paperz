@@ -54,9 +54,8 @@ body{
 }
 
 #main{
-	background: url('/images/bg.png') repeat;
+	background: url('/images/bg.png') repeat-x;
 	width: 100%;
-	height: 601px;
 }
 
 #main_inner{
@@ -387,7 +386,7 @@ ul#menu_top li a:hover{
 
 .prop_sub img{
 	-moz-border-radius:8px;
-	-webkit-border-radius:8px;	
+	-webkit-border-radius:8px;
 	border: 5px solid #b24450;
 }
 

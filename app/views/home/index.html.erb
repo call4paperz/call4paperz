@@ -4,10 +4,10 @@
 			<p>
 				<strong>Organize your call for papers.</strong>
 				...and let audience decide who speaks in the conference!
-			</p>	
+			</p>
 		</div>
 		<div id="howto"></div>
-		<div id="twitter"></div>		
+		<div id="twitter"></div>
 	</div>
 </div>
 
@@ -16,36 +16,37 @@
 		<div class="head">
 			<%= image_tag '/images/most_recent_events.png' %><br />
 			<p><strong>Decide who goes to the conference!</strong></p>
-		</div>	
-		
+		</div>
+
 		<% @events.each do |event| %>
 			<div class="event">
 				<p><strong><%= event.name %></strong></p>
-			
+
 				<p><%= truncate (event.description, :length => 170) %></p><br/>
 
 				<div class="buttons">
 					<%= image_tag '/images/more.png', :class => 'more' %>
 					<%= link_to pluralize (event.proposals.size, 'proposal'), root_path %>
 					<%= link_to pluralize (event.comments.size, 'comment'), root_path %>
+          <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(event) %>
 					<%= image_tag '/images/facebook_icon.png' %>
-					<%= image_tag '/images/twitter_icon.png' %>				
+					<%= image_tag '/images/twitter_icon.png' %>
 				</div>
 
 			</div>
-		<% end %>	
+		<% end %>
 		<p class="prop_link">We have <span>12</span> opened call for papers available to vote. Click to see all.</p>
 		<br/>
-	
+
 	</div>
 
 	<div id="most_recent_comments">
-		
+
 		<div class="head">
 			<%= image_tag '/images/most_recent_comments.png' %><br />
 			<p><strong>What people think about last proposals.</strong></p>
 		</div>
-	
+
 		<div id="comments">
 			<% @comments.each do |comment| %>
 				<div class="comment">
@@ -58,10 +59,10 @@
 					</div>
 					<div style="clear:both"></div>
 					<%= image_tag '/images/linha.png' %>
-				</div>	
-			<% end %>	
+				</div>
+			<% end %>
 			<%= link_to "all comments", root_path, :class => 'all' %>
 		</div>
-		
+
 	</div>
 </div>

@@ -9,10 +9,10 @@
 <body>
 	<div id="main">
 		<div class="container">
-			<div id="menu">			
+			<div id="menu">
 				<%= menu %>
 			</div>
-			
+
 			<% flash.each do |key, content| -%>
 			  <div><%= content %></div>
 			<% end -%>
@@ -20,10 +20,9 @@
 			<%= yield %>
 
 		</div>
-	</div>	
+	</div>
 	<div style="clear:both"></div>
 	<%= render :partial => 'layouts/footer' %>
-
 </body>
 </html>
 

@@ -48,6 +48,11 @@
 
 <%= render :partial => 'proposals/form' %>
 
+<hr />
+<% @event.proposals.each do |proposal| %>
+	<%= render proposal %>
+<%end  %>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

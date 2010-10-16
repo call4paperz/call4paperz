@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
   before_filter :event
-  
+
   # GET /proposals
   # GET /proposals.xml
   def index
@@ -51,11 +51,9 @@ class ProposalsController < ApplicationController
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to([@event, @proposal], :notice => 'Proposal was successfully created.') }
-        format.xml  { render :xml => @proposal, :status => :created, :location => @proposal }
+        format.html { redirect_to(@event, :notice => 'Proposal was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @proposal.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -84,32 +82,34 @@ class ProposalsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def like
-    Vote.like! proposal, current_user
 
     respond_to do |format|
-      format.html { redirect_to(event_url(event)) }
-      format.xml  { head :ok }
+      if Vote.like!(proposal, current_user)
+        format.html { redirect_to(event_url(event), :notice => 'Fuck yeah') }
+      else
+        format.html { redirect_to(event_url(event), :alert => 'Fuck no!!') }
+      end
     end
-    
+
   end
-  
+
   def dislike
-    Vote.dislike! proposal, current_user
-    
     respond_to do |format|
-      format.html { redirect_to(event_url(event)) }
-      format.xml  { head :ok }
+      if Vote.dislike!(proposal, current_user)
+        format.html { redirect_to(event_url(event), :notice => 'Fuck yeah') }
+      else
+        format.html { redirect_to(event_url(event), :alert => 'Fuck no!!') }
+      end
     end
-    
   end
-  
+
   private
   def event
     @event ||= Event.find params[:event_id]
   end
-  
+
   def proposal
     @proposal ||= Proposal.find(params[:id])
   end

@@ -1,7 +1,5 @@
-<%= proposal.description %> 
+<%= proposal.description %>
 
-<%= link_to '+', like_event_proposal_path(@event, proposal) %> 
-<%= link_to '-', dislike_event_proposal_path(@event, proposal) %>
-
+<%= vote_box(proposal, current_user) %>
 
 <br/>

@@ -47,7 +47,7 @@ feature "Registration", %q{
       page.should have_content "You have signed up successfully."
       page.should have_content "Logout"
 
-      current_path.should == "/"
+      current_path.should == homepage
     end
   end
 end

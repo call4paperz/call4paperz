@@ -1,6 +1,6 @@
 module ProposalsHelper
   def vote_box(proposal, user)
-    if user.has_vote_for?(proposal)
+    if user && user.has_vote_for?(proposal)
       "Já votou campeao"
     else
       content = ''

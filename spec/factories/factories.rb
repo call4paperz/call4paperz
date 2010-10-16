@@ -10,3 +10,10 @@ Factory.define(:event) do |f|
   f.occurs_at      { 1.month.from_now }
 end
 
+Factory.define(:proposal) do |f|
+  f.name           'Refactoring'
+  f.description    'Refactoring Ruby'
+  f.association    :event
+  f.association    :user
+end
+

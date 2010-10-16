@@ -4,6 +4,19 @@ module NavigationHelpers
   def homepage
     "/"
   end
+
+  def event_page(event)
+    "/events/#{event.id}"
+
+  end
+
+  def event_proposals_page(event)
+    "/events/#{event.id}/proposals"
+  end
+
+  def proposal_page(proposal)
+    "/events/#{proposal.event.id}/proposals/#{proposal.id}"
+  end
 end
 
 RSpec.configuration.include NavigationHelpers, :type => :acceptance

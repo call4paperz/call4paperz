@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit]
   before_filter :event
 
   # GET /proposals

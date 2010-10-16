@@ -14,22 +14,6 @@ feature "Events", %q{
       page.should have_no_content 'Sign in'
     end
 
-    scenario "While not logged in, I should be able to view specific details about an event" do
-      Factory(:event)
-
-      visit '/events'
-
-      click_link "Show"
-
-      page.should have_content 'GURU-SP'
-      page.should have_no_content 'Sign in'
-    end
-
-    scenario "While not logged in, I should not be able to create events" do
-      visit '/events'
-      click_link 'New Event'
-      page.should have_content 'Sign in'
-    end
   end
 
   context "Creating events" do
@@ -47,6 +31,17 @@ feature "Events", %q{
       page.should have_content "GURU-SP"
       page.should have_content 'Event was successfully created.'
       page.should have_no_content "Error(s)"
+    end
+
+    scenario "While not logged in, I should be able to view specific details about an event" do
+      Factory(:event)
+
+      visit '/events'
+
+      click_link "Show"
+
+      page.should have_content 'GURU-SP'
+      page.should have_no_content 'Sign in'
     end
 
     scenario "While registering, I can't register an event without a name" do

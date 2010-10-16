@@ -2,8 +2,6 @@ class AuthenticationsController < ApplicationController
 
   def create
     auth = request.env["rack.auth"]
-    Rails.logger.info auth.to_yaml
-    
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])
     redirect_to root_path, :notice => "Authentication with #{auth['provider']} successful."
   end

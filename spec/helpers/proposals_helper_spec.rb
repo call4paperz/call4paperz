@@ -1,15 +1,24 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ProposalsHelper. For example:
-#
-# describe ProposalsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe ProposalsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { Factory(:user) }
+  let(:proposal) { Factory(:proposal) }
+  let(:event) { Factory(:event) }
+
+  describe "#vote_box" do
+    context "user is set and has voted" do
+      before(:each) do
+        Vote.like!(proposal, user)
+      end
+
+      subject { helper.vote_box(event, proposal,user) }
+      it { should match(/You've already voted/) }
+    end
+
+    context "no user" do
+      subject { helper.vote_box(event, proposal, nil) }
+      it { should match(like_event_proposal_path(event, proposal)) }
+      it { should match(dislike_event_proposal_path(event, proposal)) }
+    end
+  end
 end

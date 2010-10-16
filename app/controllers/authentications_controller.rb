@@ -10,18 +10,16 @@ class AuthenticationsController < ApplicationController
   def authenticate!(provider, uid, user_info)
     authentication = Authentication.find_by_provider_and_uid(provider, uid)
 
-    if authentication.blank?
-      theuser = create_user(user_info)
-      Rails.logger.info theuser.inspect
-      sign_in(theuser) unless user_signed_in?
-      Authentication.create(:provider => provider, :uid => uid, :user => current_user)
-    else
+    if authentication
       sign_in authentication.user unless user_signed_in?
+    elsif current_user
+      current_user.authentications.create(:provider => provider, :uid => uid)
+    else
+      user = User.new(:name => user_info['name'], :picture => user_info['image'])
+      user.authentications.build(:provider => provider, :uid => uid)
+      user.save!
+      sign_in(user)
     end
   end
 
-
-  def create_user(user_info)
-    User.create_from_oauth(:name => user_info['name'], :picture => user_info['image'])
-  end
 end

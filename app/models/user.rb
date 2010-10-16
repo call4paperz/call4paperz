@@ -22,31 +22,18 @@ class User < ActiveRecord::Base
     v.validates_length_of       :password, :within => 6..20, :allow_blank => true
   end
 
-
-  def self.create_from_oauth(params)
-    new(params).tap do |user|
-      user.skip_credentials
-      user.save
-    end
-  end
-
-
   def has_vote_for?(proposal)
     votes.exists?(:proposal_id => proposal.id)
-  end
-
-  def skip_credentials
-    @skip_credentials = true
   end
 
   private
 
   def password_required?
-    !@skip_credentials && (!persisted? || !password.nil? || !password_confirmation.nil?)
+    (authentications.empty? || !password.blank?) && (!persisted? || !password.nil? || !password_confirmation.nil?)
   end
 
   def email_required?
-    !@skip_credentials
+    authentications.empty?
   end
 
 

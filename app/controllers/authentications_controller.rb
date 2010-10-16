@@ -1,12 +1,8 @@
 class AuthenticationsController < ApplicationController
-  skip_before_filter :authenticate_user!
 
   def create
     auth = request.env["rack.auth"]
-
-    Rails.logger.debug auth['user_info']['image'].to_yaml
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])
-
     redirect_to root_path, :notice => "Authentication with #{auth['provider']} successful."
   end
 
@@ -24,8 +20,6 @@ class AuthenticationsController < ApplicationController
 
 
   def create_user(user_info)
-    Rails.logger.debug '=-=-=-=-=-=-==--=-=-=-=-=-=-='
-    Rails.logger.debug user_info.inspect
     User.create(:name => user_info['name'], :picture => user_info['image'])
   end
 end

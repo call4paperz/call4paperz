@@ -1,4 +1,5 @@
 class ProposalsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :event
 
   # GET /proposals

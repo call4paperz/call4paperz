@@ -14,7 +14,7 @@ Rr10Team71::Application.routes.draw do
     end
   end
 
-  root :to => "events#index"
+  root :to => "home#index"
 
 
 

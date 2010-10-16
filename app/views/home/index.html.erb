@@ -1,0 +1,20 @@
+call4paperz
+<br/>
+
+<hr/>
+events<br/>
+<% @events.each do |event| %>
+	<%= event.name %><br/>
+	<%= event.description %><br/>
+	<%= pluralize event.proposals.size, 'proposal' %><br/>
+	<%= pluralize event.comments.size, 'comment' %><br/>	
+	
+<% end %>	
+<br/>
+<hr/>
+comments<br/>
+<% @comments.each do |comment| %>
+	<%= comment.body %><br/>
+	<%= comment.user.name %><br/>
+	<%= image_tag comment.user.picture %>
+<% end %>	

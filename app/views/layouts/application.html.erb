@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rr10Team71</title>
+  <title>Call4Paperz</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<div id="main">
+		<div class="container">
+			<div id="menu">			
+				<%= menu %>
+			</div>
+			
+			<% flash.each do |key, content| -%>
+			  <div><%= content %></div>
+			<% end -%>
 
+			<%= yield %>
 
-<%= menu %>
-
-
-<a href="http://blog.railsrumble.com"><div id="rr10sash" style="position: absolute; top: 0pt; right: 0pt; z-index: 1000; background: url(&quot;http://blog.railsrumble.com/images/rumble-r10-sash.png&quot;) repeat scroll 0% 0% transparent; width: 226px; height: 225px;"></div></a>
-
-<% flash.each do |key, content| -%>
-  <div><%= content %></div>
-<% end -%>
-
-<hr/>
-
-<%= yield %>
-
+		</div>
+	</div>	
 </body>
 </html>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19140800-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div id="rr10sash" style="position: absolute; top: 0pt; right: 0pt; z-index: 1000; background: url(&quot;http://blog.railsrumble.com/images/rumble-r10-sash.png&quot;) repeat scroll 0% 0% transparent; width: 226px; height: 225px;"></div>

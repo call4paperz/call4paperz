@@ -16,5 +16,5 @@ comments<br/>
 <% @comments.each do |comment| %>
 	<%= comment.body %><br/>
 	<%= comment.user.name %><br/>
-	<%= image_tag comment.user.picture %>
+	<%= image_tag comment.user.picture if comment.user.picture.present? %>
 <% end %>	

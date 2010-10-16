@@ -16,6 +16,4 @@ Rr10Team71::Application.routes.draw do
 
   root :to => "home#index"
 
-
-
 end

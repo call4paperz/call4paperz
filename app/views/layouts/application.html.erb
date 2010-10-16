@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<%= link_to "Home", root_url %> |
+<%= link_to "Events", events_path %> |
+<%= link_to "Login Twitter", '/auth/twitter' %> |
+<%= link_to "Login Facebook", '/auth/facebook' %> 
+
 <% flash.each do |key, content| -%>
   <div><%= content %></div>
 <% end -%>

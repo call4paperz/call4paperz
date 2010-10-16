@@ -137,3 +137,12 @@ ul#menu_top li a:hover{
 	top:20px;
 	width:388px;
 }
+
+#twitter{
+	background:url("/images/twitter.png") repeat scroll 0 0 transparent;
+	float:right;
+	height:180px;
+	left:392px;
+	position:relative;
+	top:238px;
+	width:377px;

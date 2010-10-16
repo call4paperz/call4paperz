@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= image_tag current_user.picture if current_user.picture.present? %>
+
 <% flash.each do |key, content| -%>
   <div><%= content %></div>
 <% end -%>

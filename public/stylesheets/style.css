@@ -134,12 +134,20 @@ ul#menu_top li a:hover{
 	top:33px;
 }
 
-#howto{
-	background: url('/images/howto.png') repeat;
+#create{
+	bottom:16px;
 	float:right;
-	height: 197px;
 	position:relative;
-	top:20px;
+	right:83px;
+}
+
+#howto{
+	background:url("/images/howto.png") repeat scroll 0 0 transparent;
+	float:right;
+	left:230px;
+	min-height:197px;
+	position:relative;
+	top:67px;
 	width:388px;
 }
 
@@ -147,9 +155,9 @@ ul#menu_top li a:hover{
 	background:url("/images/twitter.png") repeat scroll 0 0 transparent;
 	float:right;
 	height:180px;
-	left:392px;
+	left:5px;
 	position:relative;
-	top:238px;
+	top:81px;
 	width:377px;
 }
 
@@ -494,4 +502,8 @@ a.prop_link:hover, a.prop_link:active{
 	width: 512px;
 	position: relative;
 	left: 80px;
+}
+
+.create_button{
+	
 }

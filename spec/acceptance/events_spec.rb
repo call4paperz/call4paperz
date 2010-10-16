@@ -30,7 +30,6 @@ feature "Events", %q{
 
       page.should have_content "GURU-SP"
       page.should have_content 'Event was successfully created.'
-      page.should have_no_content "Error(s)"
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
@@ -70,6 +69,22 @@ feature "Events", %q{
 
       page.should have_no_content 'Event was successfully created.'
       page.should have_content "Description can't be blank"
+    end
+
+    scenario "I should be able to create an event with an user registered thru omni auth" do
+      user = User.create_from_oauth(:uid => '123', :provider => 'twitter')
+      sign_in_with(user)
+
+      visit '/events'
+      click_link 'New Event'
+      save_and_open_page
+      fill_in "Name", :with => 'GURU-SP'
+      fill_in 'Description', :with => '50th meeting'
+
+      click_button "Create Event"
+
+      page.should have_content "GURU-SP"
+      page.should have_content 'Event was successfully created.'
     end
   end
 end

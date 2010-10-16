@@ -1,7 +1,7 @@
 module ProposalsHelper
   def vote_box(proposal, user)
     if user && user.has_vote_for?(proposal)
-      "Já votou campeao"
+      "You've already voted"
     else
       content = ''
       content << link_to('+', like_event_proposal_path(@event, proposal))

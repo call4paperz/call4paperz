@@ -45,4 +45,13 @@ feature "Vote", %q{
     page.should have_no_content("Sign in")
     page.should have_content('You disliked the proposal.')
   end
+
+  scenario "While I've already voted, I should be notified that I can't vote again" do
+    sign_in
+
+    visit event_page(event)
+
+    click_link "+"
+    page.should have_content("You've already voted")
+  end
 end

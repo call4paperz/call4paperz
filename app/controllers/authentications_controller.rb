@@ -11,7 +11,9 @@ class AuthenticationsController < ApplicationController
     authentication = Authentication.find_by_provider_and_uid(provider, uid)
 
     if authentication.blank?
-      sign_in(create_user(user_info)) unless user_signed_in?
+      theuser = create_user(user_info)
+      Rails.logger.info theuser.inspect
+      sign_in(theuser) unless user_signed_in?
       Authentication.create(:provider => provider, :uid => uid, :user => current_user)
     else
       sign_in authentication.user unless user_signed_in?
@@ -20,6 +22,6 @@ class AuthenticationsController < ApplicationController
 
 
   def create_user(user_info)
-    User.create(:name => user_info['name'], :picture => user_info['image'])
+    User.create_from_oauth(:name => user_info['name'], :picture => user_info['image'])
   end
 end

@@ -86,7 +86,7 @@ ul#menu_top li a{
 	float: right;
 	color:#da3546;
 	font-weight: bold;
-	margin-left: 25px;
+	margin-right: 25px;
 	text-decoration: none;
 }
 
@@ -276,6 +276,23 @@ ul#menu_top li a:hover{
 #footer{
 	background: url('/images/bg_footer.png');
 	height: 273px;
+}
+
+.auth_icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  bottom: 10px;
+  position: relative;
+}
+
+.facebook_auth {
+  background: url('/images/auth/facebook_32.png');
+}
+
+.twitter_auth {
+  background: url('/images/auth/twitter_32.png');
 }
 
 #footer_cols{

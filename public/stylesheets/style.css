@@ -413,5 +413,11 @@ ul#menu_top li a:hover{
 	border: 0 !important;
 }
 
-
+.organizer{
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border: 3px solid #b24450;
+	left:200px;
+	position:relative;
+}
 

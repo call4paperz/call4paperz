@@ -12,15 +12,13 @@
 
   <p><strong>Start: </strong><%= @event.starts_votes_at %></p>	
   <p><strong>End: </strong><%= @event.end_votes_at %></p>
-  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 <% if @event.picture.present? -%>
   <p>
     <b>Picture:</b>
-    <%= image_tag @event.picture.big.url %>
+    <%= image_tag @event.user.picture, :class => 'organizer' %>	
   </p>
 <% end -%>
-
 
 <div id="proposal_list">
 	<%= image_tag '/images/prop_vote.png' %>	
@@ -33,14 +31,5 @@
 
 <div style="clear:both"></div>
 
-<p id="notice"><%= notice %></p>
 
-
-<%= link_to "New proposal", new_event_proposal_path(@event) %>
-
-
-
-
-
-<!-- <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> -->
+<%= link_to  image_tag ('/images/your_proposal.png'), new_event_proposal_path(@event) %>

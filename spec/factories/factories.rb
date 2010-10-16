@@ -17,3 +17,9 @@ Factory.define(:proposal) do |f|
   f.association    :user
 end
 
+Factory.define(:comment) do |f|
+  f.body          'Lorem Ipsum Dolor'
+  f.association   :proposal
+  f.association   :user
+end
+

@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  before_filter :event
+  
   # GET /proposals
   # GET /proposals.xml
   def index
@@ -46,11 +48,11 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(params[:proposal])
     @proposal.user = current_user
-    @proposal.event = current_user.events.find(params[:proposal][:event_id])
+    @proposal.event = current_user.events.find(params[:event_id])
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to(@proposal, :notice => 'Proposal was successfully created.') }
+        format.html { redirect_to([@event, @proposal], :notice => 'Proposal was successfully created.') }
         format.xml  { render :xml => @proposal, :status => :created, :location => @proposal }
       else
         format.html { render :action => "new" }
@@ -85,5 +87,18 @@ class ProposalsController < ApplicationController
       format.html { redirect_to(proposals_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def like
+    
+  end
+  
+  def dislike
+    
+  end
+  
+  private
+  def event
+    @event ||= Event.find params[:event_id]
   end
 end

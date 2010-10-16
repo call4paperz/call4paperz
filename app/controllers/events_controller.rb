@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:new, :create, :update, :edit]
 
   # GET /events
   # GET /events.xml
   def index
     @events = Event.all
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
@@ -46,6 +46,9 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user = current_user
+    current_user.valid?
+
+    Rails.logger.info current_user.inspect
 
     respond_to do |format|
       if @event.save

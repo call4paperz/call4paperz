@@ -13,6 +13,8 @@ gem 'will_paginate'
 gem 'mail_form'
 gem 'omniauth'
 
+gem 'inploy'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'

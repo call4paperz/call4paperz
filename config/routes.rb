@@ -1,4 +1,10 @@
 Rr10Team71::Application.routes.draw do
+  devise_for :users
+
+  resources :proposals
+
+  resources :events
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

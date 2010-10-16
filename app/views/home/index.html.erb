@@ -14,8 +14,10 @@
 <br/><br/><br/><br/><br/>
 
 <div id="most_recent_events">
-	<%= image_tag '/images/most_recent_events.png' %><br />
-	<p><strong>Decide how go to the conference!</strong></p>
+	<div class="head">
+		<%= image_tag '/images/most_recent_events.png' %><br />
+		<p><strong>Decide how go to the conference!</strong></p>
+	</div>	
 		
 	<% @events.each do |event| %>
 		<div class="event">
@@ -30,13 +32,19 @@
 </div>
 
 <div id="most_recent_comments">
-	<%= image_tag '/images/most_recent_comments.png' %><br />
-	<p><strong>What people think about last proposals.</strong></p>
+	<div class="head">
+		<%= image_tag '/images/most_recent_comments.png' %><br />
+		<p><strong>What people think about last proposals.</strong></p>
+	</div>
 	
-	<% @comments.each do |comment| %>
-		<%= comment.body %><br/>
-		<%= comment.user.name %><br/>
-		<%= image_tag comment.user.picture if comment.user.picture.present? %>
-	<% end %>	
+	<div id="comments">
+		<% @comments.each do |comment| %>
+			<div class="comment">
+				<%= comment.body %><br/>
+				<%= comment.user.name %><br/>
+				<%= image_tag comment.user.picture if comment.user.picture.present? %>
+			</div>	
+		<% end %>	
+	</div>
 </div>
 

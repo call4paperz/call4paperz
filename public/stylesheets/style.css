@@ -150,6 +150,7 @@ ul#menu_top li a:hover{
 
 #most_recent_events{
 	float: left;
+	margin-right:40px;
 }	
 
 #most_recent_events p strong,
@@ -160,5 +161,18 @@ ul#menu_top li a:hover{
 }
 
 .event{
-	background-color: #f2f2f2;
+	background: url('/images/event_bg.png');
+	width: 617px;
+	height: 133px;
+}
+
+.head{
+	margin-bottom: 40px;
+}
+
+#comments{
+	background:url("/images/black.png") repeat scroll 0 0 transparent;
+	float:right;
+	height:443px;
+	width:302px;
 }

@@ -23,11 +23,14 @@
 
 
 <div id="proposal_list">
-	asdasdsa
+	Propostas
+	<br/>
 	<% @event.proposals.each do |proposal| %>
 		<%= render proposal %>
 	<%end  %>
 </div>
+
+<div style="clear:both"></div>
 
 <p id="notice"><%= notice %></p>
 

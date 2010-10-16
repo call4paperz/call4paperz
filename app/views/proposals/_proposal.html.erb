@@ -1,11 +1,13 @@
-<%= proposal.description %>
-<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
+<div class="prop">
+	
+	<p><strong><%= proposal.name %></strong></p>
+	<p><%= proposal.description %></p>
 
-<br />
-<%= image_tag proposal.user.picture if proposal.user.picture.present? %>
-<%= proposal.user.name %>
-
-
+	<div class="prop_sub">
+		<%= image_tag proposal.user.picture if proposal.user.picture.present? %>	
+		<small><%= proposal.user.name %></small>
+		<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
 <%= vote_box(@event, proposal, current_user) %>
-
-<br/>
+	</div>	
+	
+</div>

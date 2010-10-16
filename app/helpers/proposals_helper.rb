@@ -4,8 +4,8 @@ module ProposalsHelper
       "You've already voted"
     else
       content = ''
-      content << link_to('+', like_event_proposal_path(event, proposal))
-      content << link_to('-', dislike_event_proposal_path(event, proposal))
+      content << link_to(image_tag('positive.png', :class => 'thumb'), like_event_proposal_path(@event, proposal))
+      content << link_to(image_tag('negative.png', :class => 'thumb'), dislike_event_proposal_path(@event, proposal))
       content.html_safe
     end
   end

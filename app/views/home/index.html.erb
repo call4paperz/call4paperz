@@ -11,40 +11,48 @@
 	</div>
 </div>
 
-<br/><br/><br/><br/><br/>
-
-<div id="most_recent_events">
-	<div class="head">
-		<%= image_tag '/images/most_recent_events.png' %><br />
-		<p><strong>Decide how go to the conference!</strong></p>
-	</div>	
+<div id="content">
+	<div id="most_recent_events">
+		<div class="head">
+			<%= image_tag '/images/most_recent_events.png' %><br />
+			<p><strong>Decide how go to the conference!</strong></p>
+		</div>	
 		
-	<% @events.each do |event| %>
-		<div class="event">
-			<p><strong><%= event.name %></strong></p><br/>
-			<%= event.description %><br/>
-			<%= pluralize event.proposals.size, 'proposal' %><br/>
-			<%= pluralize event.comments.size, 'comment' %><br/><br />	
-		</div>
-	<% end %>	
-	<br/>
-	
-</div>
+		<% @events.each do |event| %>
+			<div class="event">
+				<p><strong><%= event.name %></strong></p>
+			
+				<p><%= truncate (event.description, :length => 170) %></p><br/>
 
-<div id="most_recent_comments">
-	<div class="head">
-		<%= image_tag '/images/most_recent_comments.png' %><br />
-		<p><strong>What people think about last proposals.</strong></p>
-	</div>
-	
-	<div id="comments">
-		<% @comments.each do |comment| %>
-			<div class="comment">
-				<%= comment.body %><br/>
-				<%= comment.user.name %><br/>
-				<%= image_tag comment.user.picture if comment.user.picture.present? %>
-			</div>	
+				<div class="buttons">
+					<%= image_tag '/images/more.png', :class => 'more' %>
+					<%= link_to pluralize (event.proposals.size, 'proposal'), root_path %>
+					<%= link_to pluralize (event.comments.size, 'comment'), root_path %>
+					<%= image_tag '/images/facebook_icon.png' %>
+					<%= image_tag '/images/twitter_icon.png' %>				
+				</div>
+
+			</div>
 		<% end %>	
+		<br/>
+	
 	</div>
-</div>
 
+	<div id="most_recent_comments">
+		<div class="head">
+			<%= image_tag '/images/most_recent_comments.png' %><br />
+			<p><strong>What people think about last proposals.</strong></p>
+		</div>
+	
+		<div id="comments">
+			<% @comments.each do |comment| %>
+				<div class="comment">
+					<%= comment.body %><br/>
+					<%= comment.user.name %><br/>
+					<%= image_tag comment.user.picture if comment.user.picture.present? %>
+				</div>	
+			<% end %>	
+		</div>
+	</div>
+
+</div>

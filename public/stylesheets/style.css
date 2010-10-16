@@ -165,6 +165,7 @@ ul#menu_top li a:hover{
 	width: 578px;
 	height: 115px;
 	padding: 20px;
+	position: relative;
 }
 
 .head{
@@ -181,5 +182,40 @@ ul#menu_top li a:hover{
 .event p strong{
 	font-weight: bold;
 	color: #da3546;
-	font-size: 15px;
+	font-size: 15px !important;
+}
+
+.event p{
+	color: #111111;
+	font-size: 14px;
+}
+
+.more{
+	cursor: pointer;
+	cursor: hand;
+	margin-right: 10px;
+}
+
+.event a{
+	font-size: 12px;
+	color: #da3546;
+}
+
+.event a:link, .event a:visited{
+	text-decoration: none;
+}
+
+.event a:hover, .event a:active{
+	text-decoration: underline;
+	color: #da3546;
+	background-color: #ffffff;
+}
+
+.buttons{
+	position:absolute;
+	top:95px;
+}
+
+#content{
+	margin-top:80px;
 }

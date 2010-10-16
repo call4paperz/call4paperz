@@ -518,6 +518,12 @@ a.prop_link:hover, a.prop_link:active{
 	float: left;
 }
 
+#events_list .create_button {
+  float:right;
+  margin-bottom: 15px;
+}
+
+
 .logo_small {
   border: 5px solid #B24450;
   float: left;

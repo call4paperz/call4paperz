@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<% flash.each do |key, content| -%>
+  <div><%= content %></div>
+<% end -%>
+
+<hr/>
+
 <%= yield %>
 
 </body>

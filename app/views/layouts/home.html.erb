@@ -7,16 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-	<div id="main_inner">
+	<div id="main">
 		<div class="container">
 			<div id="menu">			
 				<%= menu %>
 			</div>
-			<div id="breadcrumb">
-				
-			</div>
-
-			<br/><br/><br/><br/>
+			
+			<% flash.each do |key, content| -%>
+			  <div><%= content %></div>
+			<% end -%>
 
 			<%= yield %>
 

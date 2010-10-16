@@ -417,6 +417,18 @@ ul#menu_top li a:hover{
 	background-color: #ffffff;
 }
 
+a.prop_link:link, a.prop_link:visited{
+	color: #da3546;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+a.prop_link:hover, a.prop_link:active{
+	text-decoration: underline;
+	background-color: #ffffff;
+}
+
+
 .thumb{
 	border: 0 !important;
 }

@@ -1,6 +1,6 @@
 <div class="prop">
 	
-	<p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal) %></strong></p>
+	<p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
 	<p><%= proposal.description %></p>
 
 	<div class="prop_sub">

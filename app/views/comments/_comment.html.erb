@@ -1,4 +1,6 @@
 <p>
-  <%= comment.body %>
+  <%= comment.body %><br />
+  <%= image_tag comment.user.picture if comment.user.picture.present? %>
+  <%= comment.user.name %>	
 </p>
 <hr/>

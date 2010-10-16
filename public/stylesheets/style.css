@@ -436,16 +436,6 @@ a.prop_link:hover, a.prop_link:active{
 	background-color: #ffffff;
 }
 
-prop_link a:link, prop_link a:visited{
-	color: #da3546;
-	text-decoration: none;
-	font-size: 14px;
-}
-
-prop_link a:hover, prop_link a:active{
-	text-decoration: underline;
-	background-color: #ffffff;
-}
 
 
 .thumb{

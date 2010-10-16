@@ -39,6 +39,7 @@
 	</div>
 
 	<div id="most_recent_comments">
+		
 		<div class="head">
 			<%= image_tag '/images/most_recent_comments.png' %><br />
 			<p><strong>What people think about last proposals.</strong></p>
@@ -47,12 +48,18 @@
 		<div id="comments">
 			<% @comments.each do |comment| %>
 				<div class="comment">
-					<%= comment.body %><br/>
-					<%= comment.user.name %><br/>
-					<%= image_tag comment.user.picture if comment.user.picture.present? %>
+					<div class="comment_pic">
+						<%= image_tag comment.user.picture if comment.user.picture.present? %>
+					</div>
+					<div class="comment_detail">
+						<p><%= truncate(comment.body, :length => 60) %></p>
+						<p><small><%= comment.user.name %></small></p>
+					</div>
+					<div style="clear:both"></div>
 				</div>	
 			<% end %>	
 		</div>
+		
 	</div>
 
 </div>

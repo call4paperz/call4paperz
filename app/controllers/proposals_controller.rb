@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  before_filter :event
+  
   # GET /proposals
   # GET /proposals.xml
   def index
@@ -13,11 +15,10 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.xml
   def show
-    @proposal = Proposal.find(params[:id])
-    @comments = @proposal.comments
+    @comments = proposal.comments
 
     @comment = Comment.new
-    @comment.proposal = @proposal
+    @comment.proposal = proposal
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,7 +39,7 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1/edit
   def edit
-    @proposal = Proposal.find(params[:id])
+    proposal
   end
 
   # POST /proposals
@@ -46,11 +47,11 @@ class ProposalsController < ApplicationController
   def create
     @proposal = Proposal.new(params[:proposal])
     @proposal.user = current_user
-    @proposal.event = current_user.events.find(params[:proposal][:event_id])
+    @proposal.event = current_user.events.find(params[:event_id])
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to(@proposal, :notice => 'Proposal was successfully created.') }
+        format.html { redirect_to([@event, @proposal], :notice => 'Proposal was successfully created.') }
         format.xml  { render :xml => @proposal, :status => :created, :location => @proposal }
       else
         format.html { render :action => "new" }
@@ -62,10 +63,8 @@ class ProposalsController < ApplicationController
   # PUT /proposals/1
   # PUT /proposals/1.xml
   def update
-    @proposal = Proposal.find(params[:id])
-
     respond_to do |format|
-      if @proposal.update_attributes(params[:proposal])
+      if proposal.update_attributes(params[:proposal])
         format.html { redirect_to(@proposal, :notice => 'Proposal was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -78,12 +77,40 @@ class ProposalsController < ApplicationController
   # DELETE /proposals/1
   # DELETE /proposals/1.xml
   def destroy
-    @proposal = Proposal.find(params[:id])
-    @proposal.destroy
+    proposal.destroy
 
     respond_to do |format|
       format.html { redirect_to(proposals_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def like
+    Vote.like! proposal, current_user
+
+    respond_to do |format|
+      format.html { redirect_to(event_url(event)) }
+      format.xml  { head :ok }
+    end
+    
+  end
+  
+  def dislike
+    Vote.dislike! proposal, current_user
+    
+    respond_to do |format|
+      format.html { redirect_to(event_url(event)) }
+      format.xml  { head :ok }
+    end
+    
+  end
+  
+  private
+  def event
+    @event ||= Event.find params[:event_id]
+  end
+  
+  def proposal
+    @proposal ||= Proposal.find(params[:id])
   end
 end

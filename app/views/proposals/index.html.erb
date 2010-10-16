@@ -15,13 +15,13 @@
     <td><%= proposal.name %></td>
     <td><%= proposal.description %></td>
     <td><%= proposal.user %></td>
-    <td><%= link_to 'Show', proposal %></td>
-    <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-    <td><%= link_to 'Destroy', proposal, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', [@event, proposal] %></td>
+    <td><%= link_to 'Edit', edit_event_proposal_path(@event, proposal) %></td>
+    <td><%= link_to 'Destroy', [@event, proposal], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Proposal', new_proposal_path %>
+<%= link_to 'New Proposal', new_event_proposal_path(@event) %>

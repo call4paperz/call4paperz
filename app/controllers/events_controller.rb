@@ -14,7 +14,8 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
-    @proposal = @event.proposals.build
+    @proposal = Proposal.new
+    @proposal.event = @event
 
     respond_to do |format|
       format.html # show.html.erb

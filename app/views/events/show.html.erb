@@ -46,7 +46,7 @@
 </p>
 
 
-<%= render :partial => 'proposals/form' %>
+<%= link_to "New proposal", new_event_proposal_path(@event) %>
 
 <hr />
 <% @event.proposals.each do |proposal| %>

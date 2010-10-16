@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to(@comment.proposal, :notice => 'Comment was successfully created.') }
+        format.html { redirect_to([@comment.proposal.event, @comment.proposal], :notice => 'Comment was successfully created.') }
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         format.html { render :action => "new" }

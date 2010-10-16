@@ -28,5 +28,5 @@
   <%= render comment %>
 <% end -%>
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+<%= link_to 'Edit', edit_event_proposal_path(@event, @proposal) %> |
+<%= link_to 'Back', event_proposals_path(@event) %>

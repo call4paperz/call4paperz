@@ -15,10 +15,12 @@
   <%= @event.occurs_at %>
 </p>
 
-<p>
-  <b>Picture:</b>
-  <%= image_tag @event.picture.big.url %>
-</p>
+<% if @event.picture.present? -%>
+  <p>
+    <b>Picture:</b>
+    <%= image_tag @event.picture.big.url %>
+  </p>
+<% end -%>
 
 <p>
   <b>Url:</b>

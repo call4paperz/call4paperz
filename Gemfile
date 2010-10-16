@@ -20,6 +20,7 @@ group :development, :test do
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 

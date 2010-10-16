@@ -18,7 +18,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "/images/no-image.png"
+    "/images/no-image-#{version_name}.png"
   end
 
   # Process files as they are uploaded:
@@ -29,6 +29,10 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
+  version :small do
+    process :resize_to_fill => [90, 87]
+  end
 
   version :big do
     process :resize_to_fill => [180, 175]

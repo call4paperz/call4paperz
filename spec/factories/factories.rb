@@ -23,3 +23,10 @@ Factory.define(:comment) do |f|
   f.association   :user
 end
 
+
+Factory.define(:vote) do |f|
+  f.association   :user
+  f.association   :proposal
+  f.direction     1
+end
+

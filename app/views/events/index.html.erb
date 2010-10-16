@@ -1,6 +1,19 @@
-<div>
+<div id="events_list">
 	<% @events.each do |event| %>
-	    <p><%= event.name %><%= link_to 'Show', event %></p>
+    <div class="event_listed">
+      <%= image_tag event.picture.small.url, :class => 'logo_small' %>
+      <div class="event_desc">
+        <h1><%= link_to event.name, event %></h1>
+        <p>
+          <%= truncate(event.description, :length => 100) %>
+        </p>
+      </div>
+      <div class="event_status">
+        <span><%= event.proposals.size %></span> proposal(s)
+        <span><%= event.votes.size %></span> vote(s)
+        <span><%= event.comments.size %></span> comment(s)
+      </div>
+    </div>
 	<% end %>
 </div>
 

@@ -436,5 +436,66 @@ ul#menu_top li a:hover{
 
 #comments_list{
 	width: 200px;
-	
+
 }
+
+.event_listed {
+	background:url("/images/event_big_bg.png") repeat scroll 0 0 transparent;
+  width: 960px;
+  height: 133px;
+  margin-bottom: 20px;
+}
+
+.event_listed p {
+}
+
+.event_listed h1 a {
+  color: #DA3546;
+}
+.event_listed h1 a:hover {
+  background-color: white;
+}
+
+.event_listed h1 {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  font-size: 19px;
+}
+
+.event_status {
+  float: right;
+  padding: 15px 15px 0 0;
+}
+
+.event_desc {
+  width: 30%;
+  float: left;
+
+}
+
+.event_status span {
+  font-size: 5em;
+  font-weight: bold;
+  letter-spacing: -5px;
+  width: 10px;
+  margin-right: -5px;
+  margin-left: 15px;
+}
+
+#events_list {
+	margin-top:67px;
+	position:relative;
+	float: left;
+}
+
+.logo_small {
+  border: 5px solid #B24450;
+  float: left;
+  margin: 20px;
+  border-bottom-left-radius: 15px 15px;
+  border-bottom-right-radius: 15px 15px;
+  border-top-left-radius: 15px 15px;
+  border-top-right-radius: 15px 15px;
+}
+
+

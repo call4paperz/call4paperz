@@ -47,7 +47,6 @@ feature "Comment", %q{
     click_button 'Create Comment'
 
     page.should have_no_content "Sign in"
-    page.should have_content "Comment was successfully created."
     page.should have_content 'Lorem Ipsum Dolor'
   end
 end

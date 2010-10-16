@@ -5,4 +5,4 @@ path = "/u/apps/#{application}"
 user = 'call4paperz'
 ssh_opts = '-A'
 branch = 'production'
-app_folder = 'call4paperz'
+login_shell = true

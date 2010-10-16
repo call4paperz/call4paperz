@@ -6,6 +6,8 @@ class Vote < ActiveRecord::Base
   validates_associated :user
   validates_associated :proposal
   
+  validates_uniqueness_of :proposal_id, :scope  =>  :user_id
+  
   class << self
   
     def like! (proposal, user)

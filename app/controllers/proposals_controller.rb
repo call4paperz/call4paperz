@@ -14,6 +14,8 @@ class ProposalsController < ApplicationController
   # GET /proposals/1.xml
   def show
     @proposal = Proposal.find(params[:id])
+    @comments = @proposal.comments
+
     @comment = Comment.new
     @comment.proposal = @proposal
 

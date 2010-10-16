@@ -32,11 +32,11 @@ feature "Events", %q{
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
-      Factory(:event)
+      event = Factory(:event)
 
       visit '/events'
 
-      click_link "Show"
+      click_link event.name
 
       page.should have_content 'GURU-SP'
       page.should have_no_content 'Sign in'
@@ -66,6 +66,19 @@ feature "Events", %q{
       click_button "Create Event"
 
       page.should have_content "Description can't be blank"
+    end
+
+    scenario "I should be able to see stats for an event" do
+      Factory(:event)
+      proposal = Factory(:proposal)
+      Factory(:comment, :proposal => proposal)
+      2.times { Factory(:vote, :proposal => proposal) }
+
+      visit '/events'
+
+      page.should have_content("1 proposal(s)")
+      page.should have_content("1 comment(s)")
+      page.should have_content("2 vote(s)")
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do

@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
   validates_presence_of :name, :description, :occurs_at
   validates_associated :user
 
+  mount_uploader :picture, PictureUploader
+
 end

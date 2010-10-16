@@ -417,6 +417,18 @@ ul#menu_top li a:hover{
 	background-color: #ffffff;
 }
 
+a.prop_link:link, a.prop_link:visited{
+	color: #da3546;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+a.prop_link:hover, a.prop_link:active{
+	text-decoration: underline;
+	background-color: #ffffff;
+}
+
+
 .thumb{
 	border: 0 !important;
 }
@@ -434,10 +446,6 @@ ul#menu_top li a:hover{
   margin-bottom: 20px;
 }
 
-#comments_list{
-	width: 200px;
-
-}
 
 .event_listed {
 	background:url("/images/event_big_bg.png") repeat scroll 0 0 transparent;
@@ -499,3 +507,52 @@ ul#menu_top li a:hover{
 }
 
 
+.comments_list{
+	background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+	left:80px;
+	margin-bottom:10px;
+	min-height:110px;
+	position:relative;
+	width:512px;
+	padding: 20px;
+}
+
+.comments_list p{
+	font-size: 14px;
+	color: #111111;
+}
+
+.comments_list img{
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border: 5px solid #b24450;
+	float: left;
+	margin-right: 10px;
+}
+
+.comments_list p small{
+	font-size: 12px;
+	color: #da3546;
+	font-weight: bold;
+}
+
+.comments_list p spam{
+	font-size: 12px;
+	color: #da3546;
+}
+
+#comment_new form .field textarea{
+	border:2px solid #111111;
+	height:50px;
+	padding:3px;
+	width:427px;
+}
+
+#comment_new{
+	background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+	padding: 20px;
+	margin-bottom: 10px;
+	width: 512px;
+	position: relative;
+	left: 80px;
+}

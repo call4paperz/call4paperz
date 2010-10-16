@@ -1,24 +1,29 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div id="comment_new">
 
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
+	<%= form_for(@comment) do |f| %>
+	  <% if @comment.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-  <%= f.hidden_field :proposal_id %>
+	      <ul>
+	      <% @comment.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+	  <div class="field">
+		<%= image_tag current_user.picture, :class => 'borda_vinho' %>
+	    <%= f.text_area :body %>
+	  </div>
+
+	  <%= f.hidden_field :proposal_id %>
+
+	  <div class="actions">
+	    <%= image_submit_tag '/images/comment.png' %>
+	  </div>
+	<% end %>
+
+</div>

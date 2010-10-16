@@ -1,13 +1,13 @@
 <div class="prop">
 	
-	<p><strong><%= proposal.name %></strong></p>
+	<p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
 	<p><%= proposal.description %></p>
 
 	<div class="prop_sub">
 		<%= image_tag proposal.user.picture if proposal.user.picture.present? %>	
 		<small><%= proposal.user.name %></small>
 		<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
-<%= vote_box(@event, proposal, current_user) %>
+		<%= vote_box(@event, proposal, current_user) %>
 	</div>	
 	
 </div>

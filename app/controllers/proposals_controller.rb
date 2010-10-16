@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit]
+  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
   before_filter :event
 
   # GET /proposals
@@ -88,9 +88,9 @@ class ProposalsController < ApplicationController
 
     respond_to do |format|
       if Vote.like!(proposal, current_user)
-        format.html { redirect_to(event_url(event), :notice => 'Fuck yeah') }
+        format.html { redirect_to(event_url(event), :notice => 'You liked the proposal.') }
       else
-        format.html { redirect_to(event_url(event), :alert => 'Fuck no!!') }
+        format.html { redirect_to(event_url(event), :alert => "You've already expressed your opinion.") }
       end
     end
 
@@ -99,9 +99,9 @@ class ProposalsController < ApplicationController
   def dislike
     respond_to do |format|
       if Vote.dislike!(proposal, current_user)
-        format.html { redirect_to(event_url(event), :notice => 'Fuck yeah') }
+        format.html { redirect_to(event_url(event), :notice => 'You disliked the proposal.') }
       else
-        format.html { redirect_to(event_url(event), :alert => 'Fuck no!!') }
+        format.html { redirect_to(event_url(event), :alert => "You've already expressed your opinion.") }
       end
     end
   end

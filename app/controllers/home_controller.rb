@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   def index
     @events = Event.most_recent
     @comments = Comment.most_recent
+    @events_quantity = Event.all.size
   end
 end

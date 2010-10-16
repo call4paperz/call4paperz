@@ -161,9 +161,10 @@ ul#menu_top li a:hover{
 }
 
 .event{
-	background: url('/images/event_bg.png');
-	width: 617px;
-	height: 133px;
+	background: url('/images/event_bg.png') no-repeat;
+	width: 578px;
+	height: 115px;
+	padding: 20px;
 }
 
 .head{
@@ -175,4 +176,10 @@ ul#menu_top li a:hover{
 	float:right;
 	height:443px;
 	width:302px;
+}
+
+.event p strong{
+	font-weight: bold;
+	color: #da3546;
+	font-size: 15px;
 }

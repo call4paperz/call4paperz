@@ -21,7 +21,7 @@
 		
 	<% @events.each do |event| %>
 		<div class="event">
-			<%= event.name %><br/>
+			<p><strong><%= event.name %></strong></p><br/>
 			<%= event.description %><br/>
 			<%= pluralize event.proposals.size, 'proposal' %><br/>
 			<%= pluralize event.comments.size, 'comment' %><br/><br />	

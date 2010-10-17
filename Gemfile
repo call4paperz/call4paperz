@@ -20,13 +20,13 @@ gem 'validates_timeliness', '>= 3.0.0.beta.5'
 
 group :development, :test do
   gem 'autotest'
-  gem 'rspec-rails'
-  gem 'steak', '>= 1.0.0.rc.1'
+  gem 'autotest-fsevent'
   gem 'capybara'
+  gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'autotest'
-  gem 'autotest-fsevent'
+  gem 'rspec-rails'
+  gem 'steak', '>= 1.0.0.rc.1'
 end
 
 

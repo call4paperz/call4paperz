@@ -42,7 +42,9 @@
 
 			</div>
 		<% end %>
-		<p class="prop_link"><%= link_to "We have #{@events_quantity} open proposals available to vote. Click to see them.", events_path %></p>
+    <% if @events_quantity > 0 -%>
+      <p class="prop_link"><%= link_to "We have #{@events_quantity} open proposals available to vote. Click to see them.", events_path %></p>
+    <% end -%>
 		<br/>
 
 	</div>

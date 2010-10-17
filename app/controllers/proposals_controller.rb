@@ -1,5 +1,7 @@
 class ProposalsController < ApplicationController
   before_filter :event
+  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
+
 
   # GET /proposals
   # GET /proposals.xml
@@ -15,7 +17,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.xml
   def show
-    
+
     @comments = proposal.comments.order("created_at DESC")
 
     @comment = Comment.new
@@ -114,5 +116,5 @@ class ProposalsController < ApplicationController
   def proposal
     @proposal ||= Proposal.find(params[:id])
   end
-  
+
 end

@@ -15,6 +15,7 @@ gem 'mini_magick'
 gem 'rake'
 gem 'inploy'
 gem 'twitter'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'autotest'

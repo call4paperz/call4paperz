@@ -626,6 +626,13 @@ a.prop_link:hover, a.prop_link:active{
   width: 100%;
 }
 
+#new_item input[type=text]:focus,
+#new_item input[type=password]:focus,
+#new_item textarea:focus {
+  outline: none;
+  border-color: #DA3546;
+}
+
 #new_item input[type=text],
 #new_item input[type=password],
 #new_item select, #new_item textarea {

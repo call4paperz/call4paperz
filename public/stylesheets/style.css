@@ -54,7 +54,7 @@ body{
 }
 
 ul li a {
-	font-size: 12px;
+	font-size: 14px;
 	color: #da3546;
 }
 
@@ -849,4 +849,9 @@ a.prop_link:hover, a.prop_link:active{
 	color:#FFFFFF !important;
 	font-size:12px;
 	font-weight:bold;
+}
+
+a.logo_c4p img{
+	margin-left:27px;
+	margin-top:24px;
 }

@@ -1,4 +1,5 @@
 <div id="left_bar">
+	<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 	<div id="proposal">
 	  <%= link_to image_tag (@event.picture.big.url, :class => 'logo'), event_path(@event) %>
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
@@ -17,7 +18,7 @@
 	    <%= image_tag @event.user.picture, :class => 'organizer' %>
 	<% end -%>
 	</div>
-	<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
+
 </div>
 
 

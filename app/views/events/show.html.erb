@@ -22,7 +22,7 @@
 
 
 <%= javascript_tag do %>
-  $('.ajax_vote').live('click', function() {
+  $('.ajax_vote').click(function() {
       var thiz = this;
 
       FetchWithAjax.fetch({

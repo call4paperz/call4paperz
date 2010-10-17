@@ -19,6 +19,7 @@ feature "Vote", %q{
   end
 
   scenario "After trying to vote not logged in, and logging in, the vote should be computed automatically" do
+    pending "We need @qmx to finish this"
     visit event_page(event)
 
     click_like
@@ -29,7 +30,7 @@ feature "Vote", %q{
 
     page.should have_content("1 vote")
   end
-  
+
   scenario "While not logged in, I should not be able to dislike a proposal" do
     visit event_page(event)
 

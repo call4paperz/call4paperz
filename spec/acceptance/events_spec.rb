@@ -25,8 +25,9 @@ feature "Events", %q{
 
       fill_in "Name", :with => 'GURU-SP'
       fill_in 'Description', :with => '50th meeting'
+      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%m/%d/%Y')
 
-      click_button "Create Event"
+      find('input[type=image]').click
 
       page.should have_content "GURU-SP"
     end
@@ -51,7 +52,7 @@ feature "Events", %q{
 
       fill_in 'Description', :with => '50th meeting'
 
-      click_button "Create Event"
+      find('input[type=image]').click
 
       page.should have_content "Name can't be blank"
     end
@@ -64,7 +65,7 @@ feature "Events", %q{
 
       fill_in 'Name', :with => 'GURU-SP'
 
-      click_button "Create Event"
+      find('input[type=image]').click
 
       page.should have_content "Description can't be blank"
     end
@@ -77,9 +78,9 @@ feature "Events", %q{
 
       visit '/events'
 
-      page.should have_content("1 proposal(s)")
-      page.should have_content("1 comment(s)")
-      page.should have_content("2 vote(s)")
+      page.should have_content("1 proposal")
+      page.should have_content("1 comment")
+      page.should have_content("2 vote")
     end
 
     scenario "I should be able to see warning if there are no events" do

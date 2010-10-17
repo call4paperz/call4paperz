@@ -7,7 +7,6 @@ module NavigationHelpers
 
   def event_page(event)
     "/events/#{event.id}"
-
   end
 
   def event_proposals_page(event)

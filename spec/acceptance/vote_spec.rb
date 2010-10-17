@@ -18,6 +18,19 @@ feature "Vote", %q{
     page.should have_content("Login")
   end
 
+  scenario "After trying to vote not logged in, and logging in, the vote should be computed automatically" do
+    pending "We need @qmx to finish this"
+    visit event_page(event)
+
+    click_like
+
+    page.should have_content("Login")
+
+    sign_in_from_login_page
+
+    page.should have_content("1 vote")
+  end
+
   scenario "While not logged in, I should not be able to dislike a proposal" do
     visit event_page(event)
 
@@ -49,7 +62,7 @@ feature "Vote", %q{
     visit event_page(event)
 
     click_like
-    page.should have_content("Thanks for voting")
+    page.should have_css("img[alt='Thanks for voting!']")
   end
 
   def click_like

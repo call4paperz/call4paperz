@@ -11,11 +11,11 @@ module ApplicationHelper
       else
         content << content_tag(:li, link_to("Login", new_user_session_path))
       end
-      content << image_tag ('/images/rr_icone.gif', :class => 'rr')
+      content << image_tag('/images/rr_icone.gif', :class => 'rr')
       content
     end
   end
-  
+
   def users_number
     User.all.count
   end
@@ -23,4 +23,5 @@ module ApplicationHelper
   def render_flash_notice
     "<div id='logged'>#{flash[:notice]}</div>".html_safe if flash[:notice] 
   end
+
 end

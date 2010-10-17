@@ -19,6 +19,7 @@ describe ProposalsHelper do
       subject { helper.vote_box(event, proposal, nil) }
       it { should match(like_event_proposal_path(event, proposal)) }
       it { should match(dislike_event_proposal_path(event, proposal)) }
+      it { should_not match("ajax_vote") }
     end
   end
 end

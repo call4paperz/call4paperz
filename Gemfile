@@ -26,6 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'
+  gem 'rcov'
 end
 
 

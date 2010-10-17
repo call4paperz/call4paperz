@@ -35,13 +35,13 @@ feature "Proposal", %q{
     scenario "I can create a proposal" do
       sign_in
 
-      visit event_proposals_page(event)
-      click_link 'New Proposal'
+      visit event_page(event)
+      find('#left_bar a').click
 
       fill_in "Name", :with => 'Refactoring Ruby'
       fill_in 'Description', :with => 'Refactoring Ruby 2nd edition'
 
-      click_button "Create Proposal"
+      find('input[type=image]').click
 
       page.should have_content "Refactoring Ruby"
     end
@@ -49,12 +49,12 @@ feature "Proposal", %q{
     scenario "While registering, I can't register a proposal without a name" do
       sign_in
 
-      visit event_proposals_page(event)
-      click_link 'New Proposal'
+      visit event_page(event)
+      find('#left_bar a').click
 
       fill_in 'Description', :with => 'Refactoring Ruby 2nd edition'
 
-      click_button "Create Proposal"
+      find('input[type=image]').click
 
       page.should have_content "Name can't be blank"
     end
@@ -62,12 +62,13 @@ feature "Proposal", %q{
     scenario "While registering, I can't register a proposal without a name" do
       sign_in
 
-      visit event_proposals_page(event)
-      click_link 'New Proposal'
+      visit event_page(event)
+      find('#left_bar a').click
 
       fill_in 'Name', :with => 'GURU-SP'
 
-      click_button "Create Proposal"
+      find('input[type=image]').click
+
 
       page.should have_content "Description can't be blank"
     end

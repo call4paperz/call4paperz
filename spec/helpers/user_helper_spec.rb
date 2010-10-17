@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UserHelper do
   context "#user_picture" do
-    subject { helper.user_picture(user, options) }
+    subject { helper.user_picture(user, {}) }
     context "without an user" do
       let(:user) { nil }
       it { should match("no_avatar.png") }
@@ -19,7 +19,7 @@ describe UserHelper do
     end
     context "with options" do
       let(:user) { nil }
-      let(:options) { {:class => 'test'} }
+      subject { helper.user_picture(user, :class => 'test') }
       it { should match('test') }
     end
   end

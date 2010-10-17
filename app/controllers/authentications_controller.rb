@@ -3,7 +3,9 @@ class AuthenticationsController < ApplicationController
   def create
     auth = request.env["rack.auth"]
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])
-    redirect_to root_path, :notice => "Welcome #{current_user.name}!"
+
+    destination_url = stored_location_for(:user) || root_path
+    redirect_to destination_url, :notice => "Welcome #{current_user.name}!"
   end
 
   private

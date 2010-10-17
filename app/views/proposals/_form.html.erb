@@ -16,11 +16,14 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <p class="count_hint" id="name_hint"></p>
+  </div>
+  <div class="field">
     <%= f.label :description %> <small class="vermelho">*</small> <br/>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <p id="description_hint"></p>
+    <p class="count_hint" id="description_hint"></p>
   </div>
 
   <div class="actions">
@@ -30,26 +33,16 @@
 
 <%= javascript_tag do %>
 
-  function handleKeycount() {
-      var availableChars = 400 - $(this).val().length;
+  var descriptionKeycount = new HandleKeycount();
+  var nameKeycount = new HandleKeycount();
 
-      var counter = $('#description_hint').text(availableChars + " characters remaining");
-      if(availableChars < 0) {
-        $(counter).addClass('red_form');
-      } else {
-        $(counter).removeClass('red_form');
-      }
-  };
-
+  descriptionKeycount.init(400, $('#description_hint'), $('#proposal_description'));
+  nameKeycount.init(150, $('#name_hint'), $('#proposal_name'));
 
   $(document).ready(function() {
-    handleKeycount.call($('#proposal_description'));
-
-    $('#proposal_description').keydown(handleKeycount).blur(handleKeycount);
-
     var validator = $("#new_proposal").validate({
       rules: {
-        'proposal[name]': "required",
+        'proposal[name]': {required: true, maxlength: 150} ,
         'proposal[description]': { required: true, maxlength: 400 }
       }
     });

@@ -2,7 +2,7 @@
 <div id="footer">
   <div class="container">
     <div id="footer_cols">
-      <div id="footer_a">
+      <div class="footer_a">
         <%= image_tag '/images/f_call.png' %>
         <br/><br/>
         <p>
@@ -17,7 +17,7 @@
 		  
         </p>
       </div>
-      <div id="footer_a">
+      <div class="footer_a">
         <%= image_tag '/images/f_map.png' %>
         <br/><br/>
         <p>
@@ -29,15 +29,15 @@
           <%= image_tag '/images/f_linha.png' %>
         </p>
       </div>
-      <div id="footer_a">
+      <div class="footer_a">
         <%= image_tag '/images/f_about.png' %>
         <br/><br/>
         <p>
           Call4paperz was designed, developed and deployed in 48 hours by @anderson_leite,
 		  @qmx and @vinibaggio at Rails Rumble 2010.
           <br/><br/>
-          We are strateging some improvements and new features to 
-		  help every company or user group to keep track of your events. 
+          We are strateging some improvements and new features to
+		  help every company or user group to keep track of your events.
           <br/><br/>
           If you have any suggestion or doubt about <b>Call4Paperz</b>, please, let us know
 		  sending an email to <b>call4paperz@gmail.com</b>.
@@ -51,19 +51,19 @@
 		<div id="tw">
 		<%= render 'shared/tweet_button', :text => "I liked #call4paperz project at #railsrumble!", :url => root_path %>
 		</div>
-    
+
       <%= render 'shared/facebook_like', :url => root_path %>
 	</div>
   </div>
 </div>
 
 <script type="text/javascript">
-	
+
 	// $(document).ready(function(){
 	// 		setTimeout(function(){
 	// 			$("#tweeting").fadeIn('slow');
 	// 		}, 10000);
-	// 		
+	//
 	// 	});
 </script>
 

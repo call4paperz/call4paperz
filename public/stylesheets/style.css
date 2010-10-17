@@ -367,12 +367,12 @@ ul#menu_top li a:hover{
 	color: #ffffff;
 }
 
-#footer_a{
+.footer_a{
 	float: left;
 	width: 320px;
 }
 
-#footer_a a {
+.footer_a a {
   color: white;
   font-size: 11px;
 }
@@ -918,6 +918,7 @@ a.logo_c4p img{
   font-size: 26px;
   font-weight: bold;
   color: white;
+  text-align: right;
 }
 .percentage .gray {
   background-color: #BABABA;
@@ -925,12 +926,10 @@ a.logo_c4p img{
 }
 
 .percentage .red {
-  text-align: left;
   background-color: #F00;
 }
 
 .percentage .green {
-  text-align: right;
   background-color: #0F0;
 }
 .percentage span {
@@ -938,8 +937,9 @@ a.logo_c4p img{
   padding: 10px;
 }
 
-#description_hint {
+.count_hint {
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
 .spinner {

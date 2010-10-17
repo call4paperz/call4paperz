@@ -1,34 +1,34 @@
 <div id="left_bar">
 	<div id="proposal">
-	  <%= image_tag @event.picture.big.url, :class => 'logo' %>	
+	  <%= image_tag @event.picture.big.url, :class => 'logo' %>
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 	  <p><strong><%= @event.name %></strong></p>
-	  <p><%= truncate (@event.description, :length => 200) %></p>
+	  <p><%= truncate(@event.description, :length => 200) %></p>
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 	  <p><strong>Date: </strong><%= @event.occurs_at %></p>
 	  <p><strong>URL: </strong><%= @event.url %></p>
 	  <p><strong>Twitter: </strong><%= @event.twitter %></p>
 
-	  <p><strong>Start: </strong><%= @event.starts_votes_at %></p>	
+	  <p><strong>Start: </strong><%= @event.starts_votes_at %></p>
 	  <p><strong>End: </strong><%= @event.end_votes_at %></p>
 
 	<% if @event.picture.present? -%>
-	    <%= image_tag @event.user.picture, :class => 'organizer' %>	
+	    <%= image_tag @event.user.picture, :class => 'organizer' %>
 	<% end -%>
 	</div>
-<%= link_to  image_tag ('/images/your_proposal.png'), new_event_proposal_path(@event) %>
+<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 </div>
 
 
 <div id="proposal_list">
-	<%= image_tag '/images/prop_vote.png' %>	
+	<%= image_tag '/images/prop_vote.png' %>
 	<p class="sub_vote">Decide who goes to the conference!</p>
 	<br/>
 	<% @event.proposals.each do |proposal| %>
 		<%= render proposal %>
 	<%end  %>
-	
+
 	<%= render 'comments/form' %>
 
 	<% @comments.each do |comment| -%>

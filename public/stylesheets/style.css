@@ -343,6 +343,11 @@ ul#menu_top li a:hover{
 	width: 320px;
 }
 
+#footer_a a {
+  color: white;
+  font-size: 11px;
+}
+
 #copyright{
 	text-align: center;
 	font-size: 10px;
@@ -601,6 +606,14 @@ a.prop_link:hover, a.prop_link:active{
   font-weight: bold;
   margin-bottom: 20px;
 }
+#new_item h2 {
+  font-size: 14px;
+}
+
+#new_item .title {
+  display: block;
+  margin-bottom: 40px;
+}
 
 #login_container {
   width: 800px;
@@ -633,12 +646,21 @@ a.prop_link:hover, a.prop_link:active{
   border-color: #DA3546;
 }
 
+#new_item .remember {
+  font-size: 12px;
+}
+
 #new_item input[type=text],
 #new_item input[type=password],
 #new_item select, #new_item textarea {
+	border:2px solid #111111;
+	padding:3px;
   font-size: 16px;
-  padding: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+#new_item input[type=image] {
+  margin: 10px 0;
 }
 
 #new_item textarea {
@@ -646,5 +668,13 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #new_item label {
-  font-size: 16px;
+  font-size: 14px;
+}
+
+.devise_links {
+  margin: 10px 0;
+}
+
+.devise_links a {
+  font-size: 12px;
 }

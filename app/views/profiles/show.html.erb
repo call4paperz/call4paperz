@@ -1,6 +1,6 @@
 <div id="left_bar">
 	<div id="profile">
-	  <%= image_tag current_user.picture, :class => 'logo' %>
+    <%= user_picture(current_user, :class => 'logo') %>
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 	  <p><strong><%= current_user.name %></strong></p>
 	</div>
@@ -11,12 +11,12 @@
 	<%= image_tag '/images/admin_label.png' %>
 	<p class="sub_vote">Your call for papers's statistics.</p>
 	<br/>
-	
+
 	<% if @events.blank? %>
 	<spam class="yet">You don't have any event yet.</spam> <%= link_to "Try it now!", new_event_path %>
 	<% end %>
-	
-	
+
+
 	<% @events.each do |event|  %>
 		<div class="event_stat">
 
@@ -39,26 +39,26 @@
 			      </tr>
 			    </tfoot>
 			    <tbody>
-			<% event.proposals.each do |proposal| %>	
+			<% event.proposals.each do |proposal| %>
 
 
-					
+
 						<tr>
 							<td><%= proposal.name %></td>
 							<td><%= proposal.votes.positives.size %></td>
 							<td><%= proposal.votes.negatives.size %></td>
-						</tr>	
-					
+						</tr>
+
 
 			<% end %>
 			</tbody>
 			</table>
-			
-			</div>			
+
+			</div>
 			<br/><br/>
-			
+
 		</div>
-		
+
 	<% end %>
 </div>
 

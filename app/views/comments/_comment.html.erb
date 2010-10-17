@@ -1,5 +1,5 @@
 <div class="comments_list">
-  	<%= image_tag comment.user.picture if comment.user.picture.present? %>
+  	<%= user_picture(comment.user) %>
   	<p><%= truncate(comment.body, :lenght => 200) %></p>
 
   	<p><small><%= comment.user.name %></small></p>

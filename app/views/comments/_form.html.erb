@@ -15,9 +15,7 @@
 	  <% end %>
 
     <div class="field">
-      <% if user_signed_in? and current_user.picture.present? -%>
-        <%= image_tag current_user.picture, :class => 'borda_vinho' %>
-      <% end -%>
+      <%= user_picture(current_user, :class => 'borda_vinho') %>
       <%= f.text_area :body %>
     </div>
 

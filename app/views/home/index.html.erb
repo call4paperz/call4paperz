@@ -64,7 +64,7 @@
 			<% @comments.each do |comment| %>
 				<div class="comment">
 					<div class="comment_pic">
-						<%= image_tag comment.user.picture, :class => 'borda_vinho' if comment.user.picture.present? %>
+            <%= user_picture(comment.user, :class => 'borda_vinho') %>
 					</div>
 					<div>
 						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>

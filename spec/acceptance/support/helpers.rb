@@ -3,7 +3,7 @@ module HelperMethods
     visit '/users/sign_in'
     fill_in "Email", :with => user.email
     fill_in "Password", :with => user.password
-    click_button 'Sign in'
+    find('input[type=image]').click
   end
 
   def sign_in
@@ -12,7 +12,7 @@ module HelperMethods
     fill_in "Email", :with => 'email@example.com'
     fill_in "Password", :with => '123123'
     fill_in "Password confirmation", :with => '123123'
-    click_button 'Sign up'
+    find('input[type=image]').click
   end
 end
 

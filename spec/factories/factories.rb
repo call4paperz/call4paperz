@@ -7,6 +7,7 @@ end
 Factory.define(:event) do |f|
   f.name           'GURU-SP'
   f.description    '50th meeting'
+  f.association    :user
   f.occurs_at      { 1.month.from_now }
 end
 

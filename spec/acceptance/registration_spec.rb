@@ -12,7 +12,7 @@ feature "Registration", %q{
 
       fill_in "Password", :with => '123123'
       fill_in "Password confirmation", :with => '123123'
-      click_button "Sign up"
+      find("input[type=image]").click
 
       page.should have_content "Email can't be blank"
     end
@@ -21,7 +21,7 @@ feature "Registration", %q{
       visit '/users/sign_up'
 
       fill_in "Email", :with => 'email@example.com'
-      click_button "Sign up"
+      find("input[type=image]").click
 
       page.should have_content "Password can't be blank"
     end
@@ -31,7 +31,7 @@ feature "Registration", %q{
 
       fill_in "Email", :with => 'email@example.com'
       fill_in "Password", :with => '123123'
-      click_button "Sign up"
+      find("input[type=image]").click
 
       page.should have_content "Password doesn't match confirmation"
     end
@@ -42,7 +42,7 @@ feature "Registration", %q{
       fill_in "Email", :with => 'email@example.com'
       fill_in "Password", :with => '123123'
       fill_in "Password confirmation", :with => '123123'
-      click_button "Sign up"
+      find("input[type=image]").click
 
       page.should have_content "Logout"
 

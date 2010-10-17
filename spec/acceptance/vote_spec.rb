@@ -49,7 +49,7 @@ feature "Vote", %q{
     visit event_page(event)
 
     click_like
-    page.should have_content("Thanks for voting")
+    page.should have_css("img[alt='Thanks for voting!']")
   end
 
   def click_like

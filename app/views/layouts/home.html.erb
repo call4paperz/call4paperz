@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag :all %>
   <%= stylesheet_link_tag 'jquery-ui/jquery-ui-1.8.5.custom.css' %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'jquery-ui.min.js', 'jquery.tweet.min.js', 'call4paperz.js', :cache => true %>
+  <%= javascript_include_tag 'jquery-ui.min.js', 'jquery.tweet.min.js', 'call4paperz.js' %>
   <%= csrf_meta_tag %>
   <link rel="icon" href="/favicon.ico" type="image/ico"/>
 </head>
 <body>
-	
+
 	<div id="main">
 		<div class="container">
 			<%= render_flash_notice %>

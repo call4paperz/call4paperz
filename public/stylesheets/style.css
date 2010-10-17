@@ -651,7 +651,7 @@ a.prop_link:hover, a.prop_link:active{
 #new_item input[type=password]:focus,
 #new_item textarea:focus {
   outline: none;
-  border-color: #DA3546;
+  border-color: #bababa;
 }
 
 #new_item .remember {
@@ -664,7 +664,7 @@ a.prop_link:hover, a.prop_link:active{
 	background:url("https://www.mediatemple.net/_images/textinputbg.gif") repeat-x scroll 0 0 #FFFFFF;
 	border:1px solid #D3D3D3;
 	color:#000000;
-	font-size:15px;
+	font-size:12px;
 	margin-bottom:10px;
 	padding:7px 0;
 	text-indent:7px;

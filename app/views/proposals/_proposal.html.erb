@@ -6,12 +6,13 @@
   <div class="prop_sub">
     <%= image_tag proposal.user.picture if proposal.user.picture.present? %>  
     <small><%= proposal.user.name %></small>
-    <%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
-   
   </div>  
- <span class="voting_container">
-    <%= vote_box(@event, proposal, current_user) %>
-    </span>
+  
+  <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>
+  
+  <span class="voting_container">
+	<%= vote_box(@event, proposal, current_user) %>
+  </span>
 
   <script type="text/javascript">
     $(".ajax_vote").bind('ajax:success', function(xhr, result){

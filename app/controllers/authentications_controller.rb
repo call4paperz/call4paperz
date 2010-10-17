@@ -3,7 +3,7 @@ class AuthenticationsController < ApplicationController
   def create
     auth = request.env["rack.auth"]
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])
-    redirect_to root_path, :notice => "Authentication with #{auth['provider']} successful."
+    redirect_to root_path, :notice => "Welcome #{current_user.name}!"
   end
 
   private
@@ -20,7 +20,6 @@ class AuthenticationsController < ApplicationController
       user.save!
       sign_in(user)
     end
-    flash[:logged_now] = true
   end
 
 end

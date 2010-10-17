@@ -20,7 +20,7 @@ module ApplicationHelper
     User.all.count
   end
   
-  def logged_info
-    "<div id='logged' >Welcome #{current_user.name}!</div>".html_safe if flash[:logged_now]
+  def render_flash_notice
+    "<div id='logged'>#{flash[:notice]}</div>".html_safe if flash[:notice] 
   end
 end

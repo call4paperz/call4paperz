@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 function removeLoggedDiv(){
 	setTimeout(function(){
-		$('#logged').fadeOut('slow');
-	}, 2000);
+//		$('#logged').fadeOut('slow');
+	}, 5000);
 }
 

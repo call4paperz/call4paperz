@@ -21,6 +21,7 @@ group :development, :test do
   gem 'autotest'
   gem 'autotest-fsevent'
   gem 'capybara'
+  gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'rspec-rails'

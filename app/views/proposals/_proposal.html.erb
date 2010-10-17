@@ -7,12 +7,15 @@
     <%= image_tag proposal.user.picture if proposal.user.picture.present? %>  
     <small><%= proposal.user.name %></small>
     <%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
+    <span class="voting_container">
     <%= vote_box(@event, proposal, current_user) %>
+    </span>
   </div>  
 
   <script type="text/javascript">
     $(".ajax_vote").bind('ajax:success', function(xhr, result){
-      $(this).closest(".prop_sub").children("a.ajax_vote").hide().parent().append("You've already voted");
+      var container = $(this).closest(".voting_container");
+      container.html("Thanks for voting!");
     });
   </script>
   

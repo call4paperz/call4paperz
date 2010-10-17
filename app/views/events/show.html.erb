@@ -7,8 +7,8 @@
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 
     <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
-	  <p><strong>URL: </strong><%= @event.url %></p>
-	  <p><strong>Twitter: </strong><%= @event.twitter %></p>
+	  <p><strong>URL: </strong><%= link_to @event.url, @event.url if @event.url.present? %></p>
+    <p><strong>Twitter: </strong><%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}" if @event.twitter.present?  %></p>
 
     <p><strong>Start: </strong><%=l(@event.starts_votes_at, :format => :long) if @event.starts_votes_at %></p>
     <p><strong>End: </strong><%=l(@event.end_votes_at, :format => :long) if @event.end_votes_at %></p>
@@ -16,20 +16,20 @@
 	<% if @event.user.picture.present? -%>
 	    <%= image_tag @event.user.picture, :class => 'organizer' %>
 	<% end -%>
-	
-	
+
+
 	<div id="event_social">
-		
+
 		<div class="twit">
 	   <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
 		</div>
-    
+
       <%= render 'shared/facebook_like', :url => event_url(@event) %>
-	
+
 	</div>
-	
-	
-	
+
+
+
 	</div>
 <%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 </div>
@@ -42,12 +42,12 @@
 
 	<% if @event.proposals.blank? %>
 	  <spam class="yet">This event is ready to receive proposals!<br/><br/>
-	  Tweet this event to your friends so they can submit proposals and spread the word!</spam>	
+	  Tweet this event to your friends so they can submit proposals and spread the word!</spam>
 	<br/><br/>
 	<%= render 'shared/tweet_button', :text => "This event is on a call for papers run! Check it out. #call4paperz", :url => event_url(@event) %>
 	<% end %>
-	
-	
+
+
 	<% @event.proposals.each do |proposal| %>
 		<%= render proposal %>
 	<%end  %>

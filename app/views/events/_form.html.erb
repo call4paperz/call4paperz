@@ -37,7 +37,7 @@
 
   <div class="field">
     <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
+    <%= f.text_field :twitter, :class => 'twitter' %>
   </div>
 
   <div class="field">
@@ -59,6 +59,14 @@
 
 <%= javascript_tag do %>
   $(document).ready(function() {
+    $.validator.addMethod("twitter", function() {
+      var twitter = $('#event_twitter').val();
+
+      return twitter === '' || (twitter.match(/^([a-zA-Z0-9_]{1,15})$/) ||
+       twitter.match(/^@([a-zA-Z0-9_]{1,15})$/) ||
+       twitter.match(/^(http:\/\/)?www\.twitter\.com\/([a-zA-Z0-9_]{1,15})$/)) !== null;
+    }, "Incorrect twitter, enter either youraccount or @youraccount");
+
     var validator = $("#new_event").validate({
       rules: {
         'event[name]': "required",

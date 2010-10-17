@@ -1,6 +1,6 @@
 <div id="new_item">
   <div id="new_item_container">
-    <h1>Registration</h1>
+    <%= image_tag 'registration.png', :title => 'Registration' %>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -14,7 +14,7 @@
       <div class="field"><%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation %></div>
 
-      <div class="actions"><%= f.submit "Sign up" %></div>
+      <div class="actions"><%= image_submit_tag "sign_up_button.png" %></div>
     <% end %>
 
     <%= render :partial => "devise/shared/links" %>

@@ -37,14 +37,14 @@
 
 <div id="proposal_list">
 	<%= image_tag '/images/prop_vote.png' %>
-	<p class="sub_vote">Decide who goes to the conference!</p>
+	<p class="sub_vote">Decide who speaks at the conference!</p>
 	<br/>
 
 	<% if @event.proposals.blank? %>
 	  <spam class="yet">This event is ready to receive proposals!<br/><br/>
-	  Twit this event to your friends so they can submit proposals and spread the word!</spam>	
+	  Tweet this event to your friends so they can submit proposals and spread the word!</spam>	
 	<br/><br/>
-	<%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
+	<%= render 'shared/tweet_button', :text => "This event is on a call for papers run! Check it out. #call4paperz", :url => event_url(@event) %>
 	<% end %>
 	
 	

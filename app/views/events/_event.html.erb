@@ -12,8 +12,6 @@
 		<p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
 		<p><strong>Twitter: </strong>
 		  <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %></p>
-		<p><strong>Start: </strong><%=l(@event.starts_votes_at, :format => :long) if @event.starts_votes_at %></p>
-		<p><strong>End: </strong><%=l(@event.end_votes_at, :format => :long) if @event.end_votes_at %></p>
 		<%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 		<p><strong>Organizer: </strong><%= @event.user.name %><br/>

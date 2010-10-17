@@ -19,7 +19,7 @@
 		<div id="howto"></div>
 	</div>
     <div id="twitter">
-      <p id="twitter_status"><%= truncate(@latest_tweet, :length => 80) %></p>
+      <p id="twitter_status"></p>
     </div>
 </div>
 
@@ -100,5 +100,11 @@
 
   $(document).ready(function() {
     setTimeout(swapImage, timeout);
+
+    $('#twitter_status').tweet({
+         username: 'vinibaggio',
+         avatar_size: 0,
+         count: 1
+    });
   });
 <% end -%>

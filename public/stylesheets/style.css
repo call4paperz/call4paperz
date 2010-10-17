@@ -595,7 +595,7 @@ a.prop_link:hover, a.prop_link:active{
 
 .comments_list{
 	background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
-	left:80px;
+	left:69px;
 	margin-bottom:10px;
 	min-height:110px;
 	position:relative;
@@ -642,7 +642,7 @@ a.prop_link:hover, a.prop_link:active{
 	width: 512px;
 	position: relative;
   min-height: 110px;
-	left: 80px;
+	left: 69px;
 }
 
 #new_item h1 {
@@ -956,4 +956,10 @@ a.logo_c4p img{
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.rr{
+	bottom:11px;
+	left:41px;
+	position:relative;
 }

@@ -10,6 +10,7 @@
   <link rel="icon" href="/images/favicon.ico" type="image/ico"/>
 </head>
 <body>
+	
 	<div id="main">
 		<div class="container">
 			<div id="menu">
@@ -25,6 +26,17 @@
 	<%= render :partial => 'layouts/footer' %>
   <script type="text/javascript">
 
+   $(document).ready(function(){
+		$('.rr').hover(
+			function(){
+				$(this).fadeTo("slow", 0.1);				
+			},
+			function(){
+				$(this).fadeTo("slow", 1);
+			}
+		)
+	});
+
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-19140800-1']);
     _gaq.push(['_trackPageview']);
@@ -35,8 +47,9 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
 
+
+
   </script>
-  <div id="rr10sash" style="position: absolute; top: 0pt; right: 0pt; z-index: 1000; background: url(&quot;http://blog.railsrumble.com/images/rumble-r10-sash.png&quot;) repeat scroll 0% 0% transparent; width: 226px; height: 225px;"></div>
 </body>
 </html>
 

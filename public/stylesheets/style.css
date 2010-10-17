@@ -850,7 +850,7 @@ a.prop_link:hover, a.prop_link:active{
 	top: 7px;
 }
 
-.comment_detail:link, .comment_detail:visited{
+.comment_detail:link, .comment_detail:visited {
 	color:#FFFFFF !important;
 	font-size:12px;
 	font-weight:bold;
@@ -859,4 +859,5 @@ a.prop_link:hover, a.prop_link:active{
 a.logo_c4p img{
 	margin-left:27px;
 	margin-top:24px;
+  float: left;
 }

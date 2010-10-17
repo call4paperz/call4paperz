@@ -610,6 +610,13 @@ a.prop_link:hover, a.prop_link:active{
   font-size: 14px;
 }
 
+#new_item h3 {
+	color: #da3546;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 #new_item .title {
   display: block;
   margin-bottom: 40px;

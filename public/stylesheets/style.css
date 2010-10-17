@@ -494,6 +494,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_listed p {
+	font-size: 12px;
 }
 
 .event_listed h1 a {
@@ -510,6 +511,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_status {
+  color: #414141;	
   float: right;
   padding: 15px 15px 0 0;
 }

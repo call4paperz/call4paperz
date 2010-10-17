@@ -1,8 +1,11 @@
+
 <div id="events_list">
   <% if @events.empty? -%>
     <p>There are no events yet. <%= link_to "Be the first to create one!", new_event_path, :class => 'create_button' %></p>
     <br/>
   <% else -%>
+	<%= image_tag '/images/event_list.png' %>
+	<p class="sub_vote">A list of events you can proposal to speak or vote in the proposals.</p>	
     <%= link_to image_tag('/images/create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
     <div style="clear:both"></div>
     <% @events.each do |event| %>
@@ -15,9 +18,9 @@
           </p>
         </div>
         <div class="event_status">
-          <span><%= event.proposals.size %></span> proposal(s)
-          <span><%= event.votes.size %></span> vote(s)
-          <span><%= event.comments.size %></span> comment(s)
+          <span><%= event.proposals.size %></span> <%= pluralize(event.proposals.size, 'proposal')[2..-1] %>
+          <span><%= event.votes.size %></span> <%= pluralize(event.votes.size, 'proposal')[2..-1] %>
+          <span><%= event.comments.size %></span> <%= pluralize(event.comments.size, 'proposal')[2..-1] %>
         </div>
       </div>
     <% end %>

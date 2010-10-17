@@ -9,5 +9,12 @@
 		<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
 		<%= vote_box(@event, proposal, current_user) %>
 	</div>	
+
+    <script type="text/javascript">
+      $(".ajax_vote").bind('ajax:success', function(xhr, result){
+        $(this).closest(".prop_sub").children("a.ajax_vote").hide().parent().append("You've already voted");
+      });
+    </script>
+  
 	
 </div>

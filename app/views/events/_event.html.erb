@@ -1,7 +1,7 @@
 	<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 	
 	<div id="proposal">
-		<%= image_tag @event.picture.big.url, :class => 'logo' %>
+		<%= link_to image_tag (@event.picture.big.url, :class => 'logo'), event_proposal_path(@event) %>
 		<%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 		<p><strong><%= @event.name %></strong></p>

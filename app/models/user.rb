@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     votes.exists?(:proposal_id => proposal.id)
   end
 
+  def picture
+    attributes['picture'] || '/images/no_avatar.png'
+  end
+
   private
 
   def password_required?

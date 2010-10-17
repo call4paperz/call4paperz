@@ -48,6 +48,8 @@ blockquote, q {
 	quotes: "" "";
 }
 
+.red { color: #f00; }
+
 body{
 	font-family: helvetica;
 	background-color: #eff7fc;
@@ -883,10 +885,42 @@ a.logo_c4p img{
 	left:489px;
 	position:absolute;
 	top:143px;}
-	
+
 .com_prop{
 	display:inline-block;
 	left:269px;
 	position:absolute;
 	top:186px;
-}	
+}
+
+.percentage  {
+  float: right;
+  width: 200px;
+  border: 1px dotted #bababa;
+  background-color: #dedede;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+.percentage .gray {
+  background-color: #BABABA;
+  height: 100%;
+}
+
+.percentage .red {
+  text-align: left;
+  background-color: #F00;
+}
+
+.percentage .green {
+  text-align: right;
+  background-color: #0F0;
+}
+.percentage span {
+  display:block;
+  padding: 10px;
+}
+
+#description_hint {
+  font-size: 12px;
+}

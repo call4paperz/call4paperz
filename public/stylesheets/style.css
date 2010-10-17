@@ -53,7 +53,7 @@ body{
 	background-color: #eff7fc;
 }
 
-a {
+ul li a {
 	font-size: 12px;
 	color: #da3546;
 }
@@ -480,7 +480,7 @@ ul#menu_top li a:hover{
 a.prop_link:link, a.prop_link:visited{
 	color: #da3546;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 a.prop_link:hover, a.prop_link:active{
@@ -827,3 +827,31 @@ a.prop_link:hover, a.prop_link:active{
 	left:105px;
 	position:absolute;
 	top:498px;}
+
+#tweeting{
+	color: #ffffff;
+	padding: 10px;
+	font-size: 12px;
+	background-color: #111111;
+	cursor:pointer;
+	right: 40px;
+	bottom: 0px;
+	height:40px;
+	position:fixed;
+	width:118px;
+	border-color:black;
+	-moz-border-radius:8px 8px 0px 0px;
+	-webkit-border-radius:8px 8px 0px 0px;
+}
+
+#tweeting #tw{
+	display: inline;
+	position: relative;
+	top: 7px;
+}
+
+.comment_detail:link, .comment_detail:visited{
+	color:#FFFFFF !important;
+	font-size:12px;
+	font-weight:bold;
+}

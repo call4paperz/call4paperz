@@ -233,6 +233,8 @@ ul#menu_top li a:hover{
 }
 
 .more{
+	position: relative;
+	top: 5px;
 	cursor: pointer;
 	cursor: hand;
 	margin-right: 10px;

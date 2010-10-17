@@ -385,6 +385,7 @@ ul#menu_top li a:hover{
 	margin-top: 80px;
 	padding: 10px;
 	margin-bottom: 20px;
+	position: relative;
 }
 
 #proposal_list{
@@ -489,11 +490,11 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .organizer{
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	border: 3px solid #b24450;
-	left:200px;
-	position:relative;
+	-moz-border-radius:8px 8px 8px 8px;
+	border:3px solid #B24450;
+	left:42px;
+	position:absolute;
+	top:490px;
 }
 
 #left_bar{
@@ -727,3 +728,78 @@ a.prop_link:hover, a.prop_link:active{
 .datepicker{
 	appendText: '(yyyy-mm-dd)';
 }
+
+.event_stat p.name{
+	font-size: 14px;
+	color: #111111;
+	font-weight: bold;
+}
+
+.yet{
+	font-size: 14px;
+	color: #111111;
+
+}
+
+.event_stat p.name spam{
+	font-size: 14px;
+	color: #da3546;
+	font-weight: bold;
+}
+
+.proposals_stat{
+	position: relative;
+	left: 20px;
+}
+
+.proposals_stat p.list{
+	font-size: 14px;
+	color: #111111;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.prop_stat	p{
+	font-size: 12px;
+	color: #111111;
+}
+
+#composicao {
+  font: 9pt Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#composicao caption {
+  font-weight: bold;
+}
+
+#composicao tfoot tr {
+  border: solid 1px #333333;
+}
+
+#composicao tfoot td {
+  color: #ffffff;
+  padding: 5px;
+  background: #999999;
+}
+
+#composicao tr.alt td {
+  background: #CCCCCC;
+}
+
+#composicao tbody td,
+#composicao th {
+  padding: 5px;
+  border: solid 1px #333333;
+}
+
+#composicao th {
+  color: #DCDCDC;
+  background: #666666;
+}
+
+#event_social{
+	left:105px;
+	position:absolute;
+	top:498px;}

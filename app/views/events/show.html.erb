@@ -16,6 +16,20 @@
 	<% if @event.picture.present? -%>
 	    <%= image_tag @event.user.picture, :class => 'organizer' %>
 	<% end -%>
+	
+	
+	<div id="event_social">
+		
+		<div class="twit">
+	   <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
+		</div>
+    
+      <%= render 'shared/facebook_like', :url => event_url(@event) %>
+	
+	</div>
+	
+	
+	
 	</div>
 <%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 </div>
@@ -25,6 +39,15 @@
 	<%= image_tag '/images/prop_vote.png' %>
 	<p class="sub_vote">Decide who goes to the conference!</p>
 	<br/>
+
+	<% if @event.proposals.blank? %>
+	  <spam class="yet">This event is ready to receive proposals!<br/><br/>
+	  Twit this event to your friends so they can submit proposals and spread the word!</spam>	
+	<br/><br/>
+	<%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
+	<% end %>
+	
+	
 	<% @event.proposals.each do |proposal| %>
 		<%= render proposal %>
 	<%end  %>

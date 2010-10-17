@@ -4,6 +4,7 @@ Rr10Team71::Application.routes.draw do
   devise_for :users
 
   resources :comments
+  resources :profile
 
   resources :events do
     resources :proposals do

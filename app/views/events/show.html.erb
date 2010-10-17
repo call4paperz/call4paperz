@@ -6,12 +6,12 @@
 	  <p><%= truncate(@event.description, :length => 200) %></p>
 	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
 
-	  <p><strong>Date: </strong><%= @event.occurs_at %></p>
+    <p><strong>Date: </strong><%= l @event.occurs_at, :format => :long %></p>
 	  <p><strong>URL: </strong><%= @event.url %></p>
 	  <p><strong>Twitter: </strong><%= @event.twitter %></p>
 
-	  <p><strong>Start: </strong><%= @event.starts_votes_at %></p>
-	  <p><strong>End: </strong><%= @event.end_votes_at %></p>
+    <p><strong>Start: </strong><%=l  @event.starts_votes_at, :format => :long %></p>
+    <p><strong>End: </strong><%=l @event.end_votes_at, :format => :long %></p>
 
 	<% if @event.picture.present? -%>
 	    <%= image_tag @event.user.picture, :class => 'organizer' %>

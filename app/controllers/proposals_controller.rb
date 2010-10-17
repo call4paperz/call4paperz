@@ -87,14 +87,22 @@ class ProposalsController < ApplicationController
   def like
     Vote.like!(proposal, current_user)
     respond_to do |format|
+      if request.xhr?
         format.html { render proposal, :layout => false }
+      else
+        format.html { redirect_to(event_url(event), :notice => 'You liked the proposal.') }
+      end
     end
   end
 
   def dislike
     Vote.dislike!(proposal, current_user)
     respond_to do |format|
+      if request.xhr?
         format.html { render proposal, :layout => false }
+      else
+        format.html { redirect_to(event_url(event), :notice => 'You disliked the proposal.') }
+      end
     end
   end
 

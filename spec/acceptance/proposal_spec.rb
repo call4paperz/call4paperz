@@ -27,7 +27,7 @@ feature "Proposal", %q{
 
       page.should have_no_content 'Sign in'
       page.should have_content 'Refactoring Ruby'
-      page.should have_content 'Comments'
+      page.should have_content '0 comments'
     end
   end
 

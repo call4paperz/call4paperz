@@ -31,11 +31,11 @@ feature "Comment", %q{
   scenario "I shouldn't be able to make comments while not logged in" do
     visit proposal_page(proposal)
 
-    fill_in "Body", :with => 'Lorem Ipsum Dolor'
-    click_button 'Create Comment'
+    fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
+    find('.submit_comment').click
 
     page.should have_no_content "Comment was successfully created."
-    page.should have_content "Sign in"
+    page.should have_content "Login"
   end
 
   scenario "I should be able to make comments while logged in" do
@@ -43,10 +43,10 @@ feature "Comment", %q{
 
     visit proposal_page(proposal)
 
-    fill_in "Body", :with => 'Lorem Ipsum Dolor'
-    click_button 'Create Comment'
+    fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
+    find('.submit_comment').click
 
-    page.should have_no_content "Sign in"
+    page.should have_no_content "Login"
     page.should have_content 'Lorem Ipsum Dolor'
   end
 end

@@ -21,7 +21,7 @@ feature "Events", %q{
       sign_in
 
       visit '/events'
-      click_link 'New Event'
+      find('.create_button').click
 
       fill_in "Name", :with => 'GURU-SP'
       fill_in 'Description', :with => '50th meeting'
@@ -46,7 +46,8 @@ feature "Events", %q{
       sign_in
 
       visit '/events'
-      click_link 'New Event'
+      find('.create_button').click
+
 
       fill_in 'Description', :with => '50th meeting'
 
@@ -59,7 +60,7 @@ feature "Events", %q{
       sign_in
 
       visit '/events'
-      click_link 'New Event'
+      find('.create_button').click
 
       fill_in 'Name', :with => 'GURU-SP'
 
@@ -79,6 +80,11 @@ feature "Events", %q{
       page.should have_content("1 proposal(s)")
       page.should have_content("1 comment(s)")
       page.should have_content("2 vote(s)")
+    end
+
+    scenario "I should be able to see warning if there are no events" do
+      visit '/events'
+      page.should have_content('There are no events yet. Be the first to create one!')
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do

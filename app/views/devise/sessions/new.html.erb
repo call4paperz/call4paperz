@@ -4,7 +4,7 @@
     <h1>Login</h1>
     <div class="old_school">
       You can go old school:
-      <% form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <p><%= f.label :email %><br />
           <%= f.text_field :email %></p>
 

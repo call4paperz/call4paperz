@@ -15,14 +15,14 @@ feature "Vote", %q{
 
     click_like
 
-    page.should have_content("Sign in")
+    page.should have_content("Login")
   end
 
   scenario "While not logged in, I should not be able to dislike a proposal" do
     visit event_page(event)
 
     click_dislike
-    page.should have_content("Sign in")
+    page.should have_content("Login")
   end
 
   scenario "While logged in, I should be able to like a proposal" do
@@ -31,7 +31,7 @@ feature "Vote", %q{
     visit event_page(event)
 
     click_like
-    page.should have_no_content("Sign in")
+    page.should have_no_content("Login")
   end
 
   scenario "While logged in, I should be able to dislike a proposal" do
@@ -40,7 +40,7 @@ feature "Vote", %q{
     visit event_page(event)
 
     click_dislike
-    page.should have_no_content("Sign in")
+    page.should have_no_content("Login")
   end
 
   scenario "While I've already voted, I should be notified that I can't vote again" do

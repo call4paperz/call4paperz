@@ -14,16 +14,18 @@
 	    </div>
 	  <% end %>
 
-	  <div class="field">
-		<%= image_tag current_user.picture, :class => 'borda_vinho' %>
-	    <%= f.text_area :body %>
-	  </div>
+    <div class="field">
+      <% if user_signed_in? and current_user.picture.present? -%>
+        <%= image_tag current_user.picture, :class => 'borda_vinho' %>
+      <% end -%>
+      <%= f.text_area :body %>
+    </div>
 
-	  <%= f.hidden_field :proposal_id %>
+    <%= f.hidden_field :proposal_id %>
 
-	  <div class="actions">
-	    <%= image_submit_tag '/images/comment.png' %>
-	  </div>
-	<% end %>
+    <div class="actions">
+      <%= image_submit_tag '/images/comment.png', :class => 'submit_comment' %>
+    </div>
+  <% end %>
 
 </div>

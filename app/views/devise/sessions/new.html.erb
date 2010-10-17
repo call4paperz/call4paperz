@@ -2,8 +2,14 @@
 <div id="new_item">
 
   <div id="login_container">
+
     <%= image_tag 'sign_in.png', :title => 'Sign in', :class => 'title' %>
-	
+    <br/>
+
+    <div class="field">
+      <%= flash[:alert] %>
+      <br/>
+    </div>
 
     <div class="old_school">
       <h2>You can go old school:</h2>

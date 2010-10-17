@@ -5,6 +5,9 @@
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
+      <div class="field"><%= f.label :name %><br />
+        <%= f.text_field :name %></div>
+
       <div class="field"><%= f.label :email %><br />
         <%= f.text_field :email %></div>
 
@@ -26,6 +29,7 @@
     var validator = $("#user_new").validate({
       rules: {
         'user[email]': "required",
+        'user[name]': "required",
         'user[password]': { required: true, minlength: 6 },
         'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
       }

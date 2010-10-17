@@ -13,7 +13,7 @@
     <p><strong>Start: </strong><%=l(@event.starts_votes_at, :format => :long) if @event.starts_votes_at %></p>
     <p><strong>End: </strong><%=l(@event.end_votes_at, :format => :long) if @event.end_votes_at %></p>
 
-	<% if @event.picture.present? -%>
+	<% if @event.user.picture.present? -%>
 	    <%= image_tag @event.user.picture, :class => 'organizer' %>
 	<% end -%>
 	

@@ -127,7 +127,6 @@ ul#menu_top li a:hover{
 }
 
 #pic .showcase img {
-  float: left;
   position: absolute;
   left: 15px;
   top: 33px;
@@ -137,9 +136,13 @@ ul#menu_top li a:hover{
   overflow: hidden;
 }
 
+.showcase {
+  float:left;
+}
+
 #intro{
 	left:90px;
-	position:relative;
+	position:absolute;
 	top:-30px;
 	float: left;
   z-index: 100;

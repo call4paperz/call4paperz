@@ -1,6 +1,10 @@
 module HelperMethods
   def sign_in_with(user = Factory(:user))
     visit '/users/sign_in'
+    sign_in_from_login_page(user)
+  end
+
+  def sign_in_from_login_page(user = Factory(:user))
     fill_in "Email", :with => user.email
     fill_in "Password", :with => user.password
     find('input[type=image]').click

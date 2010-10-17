@@ -495,7 +495,7 @@ ul#menu_top li a:hover{
 a.prop_link:link, a.prop_link:visited{
 	color: #da3546;
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 a.prop_link:hover, a.prop_link:active{

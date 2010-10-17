@@ -8,6 +8,8 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :name, :description, :occurs_at
   validates_associated :user
+  validates_length_of :name, :within => 3..150
+  validates_length_of :description, :within => 3..400
 
   before_validation :twitter_has_valid_format
 

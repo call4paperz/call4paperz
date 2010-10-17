@@ -6,3 +6,4 @@ public/uploads
 Gemfile.lock
 .rvmrc
 capybara-*
+.DS_Store

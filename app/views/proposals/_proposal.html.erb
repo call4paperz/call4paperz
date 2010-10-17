@@ -15,7 +15,7 @@
   <script type="text/javascript">
     $(".ajax_vote").bind('ajax:success', function(xhr, result){
       var container = $(this).closest(".voting_container");
-      container.html("Thanks for voting!");
+      container.html('<%= image_tag('checked.png', :alt => 'Thanks for voting!') %>');
     });
   </script>
   

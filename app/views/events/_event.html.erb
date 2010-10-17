@@ -9,16 +9,16 @@
 		<%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 		<p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
-		<p><strong>URL: </strong><%= link_to @event.url, @event.url if @event.url.present? %></p>
+		<p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
 		<p><strong>Twitter: </strong>
-		  <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}" if @event.twitter.present?  %></p>
+		  <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %></p>
 		<p><strong>Start: </strong><%=l(@event.starts_votes_at, :format => :long) if @event.starts_votes_at %></p>
 		<p><strong>End: </strong><%=l(@event.end_votes_at, :format => :long) if @event.end_votes_at %></p>
 		<%= image_tag '/images/linha.png', :class  => 'linha' %>
 		
 		<p><strong>Organizer: </strong><%= @event.user.name %><br/>
 		<% if @event.user.picture.present? -%>
-		<%= image_tag @event.user.picture, :class => 'organizer' %>
+			<%= image_tag @event.user.picture, :class => 'organizer' %>
 		<% end -%>
 		
 		<div id="event_social">

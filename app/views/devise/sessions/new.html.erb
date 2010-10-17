@@ -3,8 +3,8 @@
   <div id="login_container">
     <h1>Login</h1>
     <div class="old_school">
-      <h2>You can go old school:</h2>
-      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      You can go old school:
+      <% form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <p><%= f.label :email %><br />
           <%= f.text_field :email %></p>
 
@@ -22,8 +22,8 @@
     <div>
       Or you can use the following services to login:
       <ul id="login_services">
-        <li><%= link_to(image_tag('auth/twitter_oauth.png'), '/auth/twitter') %></li>
-        <li><%= link_to(image_tag('auth/facebook_oauth.png'), '/auth/facebook') %></li>
+        <li><%= link_to(image_tag('auth/twitter_oauth.png', :title => 'Sign in with Twitter'), '/auth/twitter') %></li>
+        <li><%= link_to(image_tag('auth/facebook_oauth.png', :title => 'Login with Facebook'), '/auth/facebook') %></li>
       </ul>
     </div>
   </div>

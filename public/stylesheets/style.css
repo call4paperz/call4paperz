@@ -626,7 +626,9 @@ a.prop_link:hover, a.prop_link:active{
   width: 100%;
 }
 
-#new_item input, #new_item select, #new_item textarea {
+#new_item input[type=text],
+#new_item input[type=password],
+#new_item select, #new_item textarea {
   font-size: 16px;
   padding: 5px;
   margin-bottom: 30px;

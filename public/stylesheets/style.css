@@ -624,6 +624,7 @@ a.prop_link:hover, a.prop_link:active{
 	margin-bottom: 10px;
 	width: 512px;
 	position: relative;
+  min-height: 110px;
 	left: 80px;
 }
 

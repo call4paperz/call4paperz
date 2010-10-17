@@ -664,7 +664,7 @@ a.prop_link:hover, a.prop_link:active{
 
 #new_item .title {
   display: block;
-  margin-bottom: 40px;
+  margin-bottom: 5px;
 }
 
 #login_container {
@@ -672,11 +672,12 @@ a.prop_link:hover, a.prop_link:active{
   margin: auto;
 }
 #login_container .old_school {
-  border-right: 2px dotted #bababa;
-  padding-right: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  float: left;
+	border-right:2px dotted #BABABA;
+	float:left;
+	margin-bottom:20px;
+	margin-right:50px;
+	margin-top:20px;
+	padding-right:50px;
 }
 
 
@@ -966,4 +967,15 @@ a.logo_c4p img{
 
 .branco{
 	color: #ffffff;
+}
+
+#profile p {
+	color: #ffffff;
+	font-size: 14px;
+	position: relative;
+	left: 30px;
+}
+
+#providers{
+	margin-top: 20px;
 }

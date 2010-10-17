@@ -1,7 +1,10 @@
 
 <div id="new_item">
+
   <div id="login_container">
     <%= image_tag 'sign_in.png', :title => 'Sign in', :class => 'title' %>
+	
+
     <div class="old_school">
       <h2>You can go old school:</h2>
       <br/>
@@ -23,7 +26,7 @@
       <% end %>
       <%= render :partial => "devise/shared/links" %>
     </div>
-    <div>
+    <div id="providers">
       <h2>Or you can use the following services to login:</h2>
       <br/>
       <ul id="login_services">

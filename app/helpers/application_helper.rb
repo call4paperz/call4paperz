@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def menu
     content_tag :ul, :id  => "menu_top" do
       content = ''
@@ -14,4 +15,9 @@ module ApplicationHelper
       content
     end
   end
+  
+  def users_number
+    User.all.count
+  end
+  
 end

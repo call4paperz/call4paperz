@@ -16,6 +16,7 @@ gem 'rake'
 gem 'inploy'
 gem 'twitter'
 gem 'jquery-rails'
+gem 'validates_timeliness', '>= 3.0.0.beta.5'
 
 group :development, :test do
   gem 'autotest'

@@ -506,7 +506,7 @@ a.prop_link:hover, a.prop_link:active{
 .event_status span {
   font-size: 5em;
   font-weight: bold;
-  letter-spacing: -5px;
+  letter-spacing: -2px;
   width: 10px;
   margin-right: -5px;
   margin-left: 15px;
@@ -553,6 +553,7 @@ a.prop_link:hover, a.prop_link:active{
 .comments_list img{
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
+  border-radius: 8px;
 	border: 5px solid #b24450;
 	float: left;
 	margin-right: 10px;
@@ -583,4 +584,38 @@ a.prop_link:hover, a.prop_link:active{
 	width: 512px;
 	position: relative;
 	left: 80px;
+}
+
+#new_item h1 {
+  font-size: 32px;
+  letter-spacing: -2px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+#new_item_container {
+  width: 400px;
+  margin: auto;
+}
+
+#new_item {
+	margin-top:67px;
+	position:relative;
+	float: left;
+  width: 100%;
+}
+
+#new_item input, #new_item select, #new_item textarea {
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+#new_item textarea {
+  height: 200px;
+}
+
+#new_item label {
+  font-size: 16px;
 }

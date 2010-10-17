@@ -1,0 +1,35 @@
+<div id="left_bar">
+	<div id="proposal">
+	  <%= image_tag current_user.picture, :class => 'logo' %>
+	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
+	  <p><strong><%= current_user.name %></strong></p>
+	</div>
+</div>
+
+
+<div id="proposal_list">
+	<%= image_tag '/images/admin_label.png' %>
+	<p class="sub_vote">Your call for papers's statistics.</p>
+	<br/>
+	
+	<% @events.each do |event|  %>
+		<div class="event_stat">
+
+			Event: <%= event.name %>
+			<br/>
+			<% event.proposals.each do |proposal| %>	
+				<div class="">
+					<%= proposal.name %>
+					<%= pluralize proposal.votes.positives.size, 'positive' %>
+					<%= pluralize proposal.votes.negatives.size, 'negative' %>
+				</div>
+				<br/>			
+			<% end %>
+			<br/>
+			
+		</div>
+		
+		
+	<% end %>
+</div>
+

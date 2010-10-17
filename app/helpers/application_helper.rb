@@ -5,7 +5,8 @@ module ApplicationHelper
       content << content_tag(:li, link_to("Home", root_url))
       content << content_tag(:li, link_to("Events", events_path))
       if user_signed_in?
-        content << content_tag(:li, link_to("Logout", destroy_user_session_path))
+        content << content_tag(:li, link_to("Profile", profile_path(current_user)))
+        content << content_tag(:li, link_to("Logout", destroy_user_session_path))        
       else
         content << content_tag(:li, link_to("Login", new_user_session_path, :class => "fancy_login"))
       end

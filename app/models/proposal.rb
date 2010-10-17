@@ -9,4 +9,5 @@ class Proposal < ActiveRecord::Base
   validates_associated :user
 
   attr_protected :event_id
+  
 end

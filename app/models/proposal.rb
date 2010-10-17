@@ -8,6 +8,7 @@ class Proposal < ActiveRecord::Base
   validates_presence_of :name, :description
   validates_associated :user
 
+  validates_length_of :name, :within => 3..150
   validates_length_of :description, :within => 3..400
 
   attr_protected :event_id

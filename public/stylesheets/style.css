@@ -387,13 +387,13 @@ ul#menu_top li a:hover{
 }
 
 #proposal{
-	background: url('/images/proposal_black.png');
-	width: 281px;
-	height: 540px;
-	margin-top: 80px;
-	padding: 10px;
-	margin-bottom: 20px;
-	position: relative;
+	background:url("/images/proposal_black.png") repeat scroll 0 0 transparent;
+	height:540px;
+	margin-bottom:20px;
+	margin-top:20px;
+	padding:10px;
+	position:relative;
+	width:281px;
 }
 
 #proposal_list{
@@ -510,8 +510,9 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #left_bar{
-	float: left;
-  margin-bottom: 20px;
+	float:left;
+	margin-bottom:20px;
+	margin-top:80px;
 }
 
 

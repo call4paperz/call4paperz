@@ -49,7 +49,7 @@ feature "Vote", %q{
     visit event_page(event)
 
     click_like
-    page.should have_content("You've already voted")
+    page.should have_content("Thanks for voting")
   end
 
   def click_like

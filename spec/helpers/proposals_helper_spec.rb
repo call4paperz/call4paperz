@@ -12,7 +12,7 @@ describe ProposalsHelper do
       end
 
       subject { helper.vote_box(event, proposal,user) }
-      it { should match(/You've already voted/) }
+      it { should match(/Thanks for voting!/)}
     end
 
     context "no user" do

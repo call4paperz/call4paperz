@@ -917,6 +917,7 @@ a.logo_c4p img{
   font-size: 26px;
   font-weight: bold;
   color: white;
+  text-align: right;
 }
 .percentage .gray {
   background-color: #BABABA;
@@ -924,12 +925,10 @@ a.logo_c4p img{
 }
 
 .percentage .red {
-  text-align: left;
   background-color: #F00;
 }
 
 .percentage .green {
-  text-align: right;
   background-color: #0F0;
 }
 .percentage span {

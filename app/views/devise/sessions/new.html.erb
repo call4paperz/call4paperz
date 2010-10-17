@@ -1,9 +1,10 @@
 
 <div id="new_item">
   <div id="login_container">
-    <h1>Login</h1>
+    <%= image_tag 'sign_in.png', :title => 'Sign in', :class => 'title' %>
     <div class="old_school">
-      You can go old school:
+      <h2>You can go old school:</h2>
+      <br/>
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <p><%= f.label :email %><br />
           <%= f.text_field :email %></p>
@@ -12,15 +13,16 @@
           <%= f.password_field :password %></p>
 
         <% if devise_mapping.rememberable? -%>
-          <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+          <p><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => 'remember' %></p>
         <% end -%>
 
-        <p><%= f.submit "Sign in" %></p>
+        <p><%= image_submit_tag 'sign_in_button.png' %></p>
       <% end %>
       <%= render :partial => "devise/shared/links" %>
     </div>
     <div>
-      Or you can use the following services to login:
+      <h2>Or you can use the following services to login:</h2>
+      <br/>
       <ul id="login_services">
         <li><%= link_to(image_tag('auth/twitter_oauth.png', :title => 'Sign in with Twitter'), '/auth/twitter') %></li>
         <li><%= link_to(image_tag('auth/facebook_oauth.png', :title => 'Login with Facebook'), '/auth/facebook') %></li>

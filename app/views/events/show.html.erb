@@ -1,40 +1,6 @@
 <div id="left_bar">
-<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
-	<div id="proposal">
-	  <%= image_tag @event.picture.big.url, :class => 'logo' %>
-	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
-	  <p><strong><%= @event.name %></strong></p>
-	  <p><%= truncate(@event.description, :length => 200) %></p>
-	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
-
-    <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
-	  <p><strong>URL: </strong><%= link_to @event.url, @event.url if @event.url.present? %></p>
-    <p><strong>Twitter: </strong><%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}" if @event.twitter.present?  %></p>
-
-    <p><strong>Start: </strong><%=l(@event.starts_votes_at, :format => :long) if @event.starts_votes_at %></p>
-    <p><strong>End: </strong><%=l(@event.end_votes_at, :format => :long) if @event.end_votes_at %></p>
-
-	<% if @event.user.picture.present? -%>
-	    <%= image_tag @event.user.picture, :class => 'organizer' %>
-	<% end -%>
-
-
-	<div id="event_social">
-
-		<div class="twit">
-	   <%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
-		</div>
-
-      <%= render 'shared/facebook_like', :url => event_url(@event) %>
-
-	</div>
-
-
-
-	</div>
-
+	<%= render :partial => 'events/event' %>
 </div>
-
 
 <div id="proposal_list">
 	<%= image_tag '/images/prop_vote.png' %>

@@ -1,24 +1,5 @@
 <div id="left_bar">
-	<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
-	<div id="proposal">
-	  <%= link_to image_tag (@event.picture.big.url, :class => 'logo'), event_path(@event) %>
-	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
-	  <p><strong><%= @event.name %></strong></p>
-	  <p><%= truncate(@event.description, :length => 200) %></p>
-	  <%= image_tag '/images/linha.png', :class  => 'linha' %>
-
-	  <p><strong>Date: </strong><%= @event.occurs_at %></p>
-	  <p><strong>URL: </strong><%= @event.url %></p>
-	  <p><strong>Twitter: </strong><%= @event.twitter %></p>
-
-	  <p><strong>Start: </strong><%= @event.starts_votes_at %></p>
-	  <p><strong>End: </strong><%= @event.end_votes_at %></p>
-
-	<% if @event.picture.present? -%>
-	    <%= image_tag @event.user.picture, :class => 'organizer' %>
-	<% end -%>
-	</div>
-
+	<%= render :partial => 'events/event' %>
 </div>
 
 

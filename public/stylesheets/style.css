@@ -53,6 +53,20 @@ body{
 	background-color: #eff7fc;
 }
 
+a {
+	font-size: 14px;
+	color: #da3546;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	text-decoration: underline;
+	color: #da3546;
+}
+
 #main{
 	background: url('/images/bg.png') repeat-x;
 	width: 100%;
@@ -81,6 +95,7 @@ ul#menu_top{
 	top: 30px;
 	right: 50px;
   float: right;
+  margin-right: 40px;
 }
 
 #menu_top li {
@@ -305,22 +320,16 @@ ul#menu_top li a:hover{
 	height: 273px;
 }
 
-.auth_icon {
-  display: block;
-  float:left;
-  width: 32px;
-  height: 32px;
-  text-indent: -9999px;
-  bottom: 10px;
-  position: relative;
+.fancy_login {
+  border-bottom: 2px dotted #da3546;
+  padding-bottom: 2px;
 }
 
-.facebook_auth {
-  background: url('/images/auth/facebook_32.png');
+#login_services {
+  margin: 10px 0;
 }
-
-.twitter_auth {
-  background: url('/images/auth/twitter_32.png');
+#login_services li {
+  margin: 10px 0;
 }
 
 #footer_cols{
@@ -593,6 +602,17 @@ a.prop_link:hover, a.prop_link:active{
   margin-bottom: 20px;
 }
 
+#login_container {
+  width: 800px;
+  margin: auto;
+}
+#login_container .old_school {
+  border-right: 2px dotted #bababa;
+  padding-right: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  float: left;
+}
 
 #new_item_container {
   width: 400px;

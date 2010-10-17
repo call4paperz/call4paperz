@@ -1,5 +1,9 @@
 class AuthenticationsController < ApplicationController
-
+  
+  def skip_store_location
+    true
+  end
+  
   def create
     auth = request.env["rack.auth"]
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])

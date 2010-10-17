@@ -19,11 +19,11 @@ gem 'will_paginate'
 
 group :development, :test do
   gem 'autotest'
-  gem 'autotest-fsevent'
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'launchy'
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'rcov'

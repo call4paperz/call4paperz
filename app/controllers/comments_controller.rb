@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  prepend_before_filter :store_path
   before_filter :authenticate_user!
 
   # GET /comments
@@ -81,4 +82,12 @@ class CommentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def store_path
+    proposal = Proposal.find(params[:comment][:proposal_id])
+    session[:"user_return_to"] = event_proposal_path proposal.event, proposal
+  end
+  
+  
 end
+

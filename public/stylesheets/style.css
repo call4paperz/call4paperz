@@ -803,3 +803,25 @@ a.prop_link:hover, a.prop_link:active{
 	left:105px;
 	position:absolute;
 	top:498px;}
+
+#tweeting{
+	color: #ffffff;
+	padding: 10px;
+	font-size: 12px;
+	background-color: #111111;
+	cursor:pointer;
+	right: 40px;
+	bottom: 0px;
+	height:40px;
+	position:fixed;
+	width:118px;
+	border-color:black;
+	-moz-border-radius:8px 8px 0px 0px;
+	-webkit-border-radius:8px 8px 0px 0px;
+}
+
+#tweeting #tw{
+	display: inline;
+	position: relative;
+	top: 7px;
+}

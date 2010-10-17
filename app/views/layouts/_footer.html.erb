@@ -42,8 +42,27 @@
       </div>
     </div>
     <div style="clear:both"></div>
+	<div id="tweeting" style="display:none;">
+		Did you like this app?
+		<div id="tw">
+		<%= render 'shared/tweet_button', :text => "I liked #call4paperz project at #railsrumble!", :url => root_path %>
+		</div>
+    
+      <%= render 'shared/facebook_like', :url => root_path %>
+	</div>
   </div>
 </div>
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		setTimeout(function(){
+			$("#tweeting").fadeIn('slow');
+		}, 10000);
+		
+	});
+</script>
+
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 <div id="copyright">
   <p>Copyright © 2010. Powered by <strong>acts_as_monkeys_on_steroids</strong>, Developed in <strong>Rails Rumble 2010</strong>.</p>

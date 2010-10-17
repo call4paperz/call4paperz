@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id], :include => :proposals)
     @proposal = Proposal.new
     @proposal.event = @event
 

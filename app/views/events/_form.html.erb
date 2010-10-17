@@ -12,38 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %> <small class="vermelho">*</small><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %> <small class="vermelho">*</small><br />
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
-    <%= f.label :occurs_at %><br />
-    <%= f.date_select :occurs_at  %>
+    <%= f.label :occurs_at %> <small class="vermelho">*</small><br />
+    <%= f.text_field :occurs_at, :class => 'datepicker' %>
   </div>
+
+  <div class="field">
+    <%= f.label :starts_votes_at %><br />
+    <%= f.text_field :starts_votes_at, :class => 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_votes_at %><br />
+    <%= f.text_field :end_votes_at, :class => 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, 'Website' %><br />
+    <%= f.text_field :url %>
+  </div>
+
   <div class="field">
     <%= f.label :picture, 'Picture or logo' %><br />
     <%= f.file_field :picture %>
     <%= f.hidden_field :picture_cache %>
   </div>
-  <div class="field">
-    <%= f.label :url, 'Website' %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :starts_votes_at %><br />
-    <%= f.date_select :starts_votes_at %>
-  </div>
-  <div class="field">
-    <%= f.label :end_votes_at %><br />
-    <%= f.date_select :end_votes_at %>
-  </div>
+
+ 
   <div class="actions">
     <%= image_submit_tag '/images/create_event_button.png' %>
   </div>

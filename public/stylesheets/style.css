@@ -700,3 +700,11 @@ a.prop_link:hover, a.prop_link:active{
 	font-weight: bold;
 	font-size: 12px !important;
 }
+
+.vermelho{
+	color: #da3546;
+}
+
+.datepicker{
+	appendText: '(yyyy-mm-dd)';
+}

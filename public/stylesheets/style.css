@@ -169,11 +169,12 @@ ul#menu_top li a:hover{
 #twitter{
 	background:url("/images/twitter.png") repeat scroll 0 0 transparent;
 	float:right;
-	height:180px;
+	height:152px;
 	left:5px;
+	padding:15px 10px 10px;
 	position:relative;
 	top:81px;
-	width:377px;
+	width:347px;
 }
 
 #twitter a, #twitter a:hover {

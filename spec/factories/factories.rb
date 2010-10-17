@@ -30,3 +30,10 @@ Factory.define(:vote) do |f|
   f.direction     1
 end
 
+Factory.define(:positive_vote, :parent => :vote) do |f|
+  f.direction 1
+end
+
+Factory.define(:negative_vote, :parent => :vote) do |f|
+  f.direction(-1)
+end

@@ -9,4 +9,21 @@ module ProposalsHelper
       content.html_safe
     end
   end
+
+  def render_percentage_bar(percentage)
+    if percentage == 50.0
+      klass = 'gray'
+    elsif percentage > 0
+      klass = 'green'
+    else
+      klass = 'red'
+      percentage = percentage.abs
+    end
+
+    content_tag :div, :class => 'percentage' do
+      content_tag :div, :class => "#{klass}", :style => "width: #{percentage}%" do
+        content_tag :span, number_to_percentage(percentage, :precision => 0)
+      end
+    end
+  end
 end

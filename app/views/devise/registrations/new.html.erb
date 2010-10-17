@@ -27,7 +27,7 @@
       rules: {
         'user[email]': "required",
         'user[password]': { required: true, minlength: 6 },
-        'user[password_confirmation]': { required: true, minlength: 6, equalTo: true }
+        'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
       }
     });
   });

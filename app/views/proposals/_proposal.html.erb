@@ -1,17 +1,18 @@
 <div class="prop">
-  
+
   <p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
+  <%= render_percentage_bar(proposal.acceptance_percentage) %>
   <p><%= proposal.description %></p>
 
   <div class="prop_sub">
-    <%= image_tag proposal.user.picture if proposal.user.picture.present? %>  
+    <%= image_tag proposal.user.picture if proposal.user.picture.present? %>
     <small><%= proposal.user.name %></small>
-  </div>  
-  
+  </div>
+
   <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>
-  
+
   <span class="voting_container">
-	<%= vote_box(@event, proposal, current_user) %>
+    <%= vote_box(@event, proposal, current_user) %>
   </span>
 
   <script type="text/javascript">
@@ -20,6 +21,7 @@
       container.html('<%= image_tag('checked.png', :alt => 'Thanks for voting!') %>');
     });
   </script>
-  
-  
+
+
+
 </div>

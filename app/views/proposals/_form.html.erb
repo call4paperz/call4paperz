@@ -19,6 +19,9 @@
     <%= f.label :description %> <small class="vermelho">*</small> <br/>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <p id="description_hint"></p>
+  </div>
 
   <div class="actions">
     <%= image_submit_tag '/images/create_event_button.png', :class => 'comment_bt' %>
@@ -26,11 +29,28 @@
 <% end %>
 
 <%= javascript_tag do %>
+
+  function handleKeycount() {
+      var availableChars = 400 - $(this).val().length;
+
+      var counter = $('#description_hint').text(availableChars + " characters remaining");
+      if(availableChars < 0) {
+        $(counter).addClass('red');
+      } else {
+        $(counter).removeClass('red');
+      }
+  };
+
+
   $(document).ready(function() {
+    handleKeycount.call($('#proposal_description'));
+
+    $('#proposal_description').keydown(handleKeycount).blur(handleKeycount);
+
     var validator = $("#new_proposal").validate({
       rules: {
         'proposal[name]': "required",
-        'proposal[description]': "required"
+        'proposal[description]': { required: true, maxlength: 400 }
       }
     });
   });

@@ -18,6 +18,18 @@ feature "Vote", %q{
     page.should have_content("Login")
   end
 
+  scenario "After trying to vote not logged in, and logging in, the vote should be computed automatically" do
+    visit event_page(event)
+
+    click_like
+
+    page.should have_content("Login")
+
+    sign_in_from_login_page
+
+    page.should have_content("1 vote")
+  end
+  
   scenario "While not logged in, I should not be able to dislike a proposal" do
     visit event_page(event)
 

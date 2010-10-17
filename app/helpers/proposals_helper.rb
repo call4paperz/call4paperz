@@ -4,7 +4,7 @@ module ProposalsHelper
       "Thanks for voting!"
     else
       content = ''
-      content << link_to(image_tag('positive.png', :class => 'thumb'), like_event_proposal_path(event, proposal), {:remote => true, :class => "ajax_vote"})
+      content << link_to(image_tag('positive.png', :class => 'thumb thumb_p'), like_event_proposal_path(event, proposal), {:remote => true, :class => "ajax_vote"})
       content << link_to(image_tag('negative.png', :class => 'thumb'), dislike_event_proposal_path(event, proposal), {:remote => true, :class => "ajax_vote"})
       content.html_safe
     end

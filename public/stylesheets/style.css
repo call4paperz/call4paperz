@@ -488,10 +488,14 @@ a.prop_link:hover, a.prop_link:active{
 	background-color: #ffffff;
 }
 
-
-
 .thumb{
 	border: 0 !important;
+}
+
+.thumb_p{
+	display: inline-block;
+	position: relative;
+	right: 5px;
 }
 
 .organizer{
@@ -869,3 +873,8 @@ a.logo_c4p img{
 	position:relative;
 	top:6px;
 }
+
+.voting_container{
+	left:489px;
+	position:absolute;
+	top:143px;}

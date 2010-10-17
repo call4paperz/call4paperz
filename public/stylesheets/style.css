@@ -367,12 +367,12 @@ ul#menu_top li a:hover{
 	color: #ffffff;
 }
 
-#footer_a{
+.footer_a{
 	float: left;
 	width: 320px;
 }
 
-#footer_a a {
+.footer_a a {
   color: white;
   font-size: 11px;
 }

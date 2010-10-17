@@ -1,0 +1,18 @@
+#fourofour {
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+}
+
+#fourofour p a {
+  font-size: 42px;
+  color: white;
+  text-decoration: underline;
+}
+
+#fourofour p {
+  margin-bottom: 20px;
+}
+#footer{
+  height: 200px;
+}

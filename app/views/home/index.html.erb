@@ -6,16 +6,21 @@
 				...and let the audience voice be heard at your event!
 			</p>
 		</div>
-
+    <ul class="showcase">
+      <li><%= image_tag 'showcase/1.jpg', :class => 'active', :title => 'Event', :width => '496', :height => '346' %></li>
+      <li><%= image_tag 'showcase/2.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
+      <li><%= image_tag 'showcase/3.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
+    </ul>
 		<div id="create">
 			<%= link_to image_tag('/images/create_01.png'), new_event_path, :class => 'create_button' %>
 		</div>
+    <div style="clear:both;"></div>
 
 		<div id="howto"></div>
+	</div>
     <div id="twitter">
       <p id="twitter_status"><%= truncate(@latest_tweet, :length => 80) %></p>
     </div>
-	</div>
 </div>
 
 <div id="content">
@@ -74,3 +79,26 @@
 
 	</div>
 </div>
+<%= javascript_tag do %>
+  var timeout = 6000;
+
+  function swapImage() {
+    var nextItem = $('.showcase .active').fadeOut(800).delay(800).
+        parent().next().find('img').first();
+
+
+    $('.showcase .active').removeClass('active');
+
+    if(nextItem.size() == 0) {
+        nextItem = $('.showcase img').first();
+    }
+
+    nextItem.fadeIn(800).addClass('active');
+
+    setTimeout(swapImage, timeout);
+  }
+
+  $(document).ready(function() {
+    setTimeout(swapImage, timeout);
+  });
+<% end -%>

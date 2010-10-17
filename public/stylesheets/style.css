@@ -67,6 +67,10 @@ a:hover, a:active {
 	color: #da3546;
 }
 
+.hidden {
+  display: none;
+}
+
 #main{
 	background: url('/images/bg.png') repeat-x;
 	width: 100%;
@@ -116,9 +120,21 @@ ul#menu_top li a:hover{
 }
 
 #pic{
-	background: url('/images/pic3.jpg') no-repeat;
+	background: url('/images/showcase_frame.png') no-repeat;
 	height: 403px;
 	margin-top: 90px;
+  position:relative;
+}
+
+#pic .showcase img {
+  float: left;
+  position: absolute;
+  left: 15px;
+  top: 33px;
+  z-index: 50;
+  width: 496px;
+  height: 346px;
+  overflow: hidden;
 }
 
 #intro{
@@ -126,6 +142,7 @@ ul#menu_top li a:hover{
 	position:relative;
 	top:-30px;
 	float: left;
+  z-index: 100;
 }
 
 #intro p{
@@ -159,21 +176,20 @@ ul#menu_top li a:hover{
 #howto{
 	background:url("/images/howto.png") repeat scroll 0 0 transparent;
 	float:right;
-	left:230px;
+  left: 10px;
+  top: 10px;
 	min-height:197px;
 	position:relative;
-	top:67px;
 	width:388px;
 }
 
 #twitter{
 	background:url("/images/twitter.png") repeat scroll 0 0 transparent;
 	float:right;
+  margin-top: -125px;
 	height:152px;
-	left:5px;
 	padding:15px 10px 10px;
 	position:relative;
-	top:81px;
 	width:347px;
 }
 
@@ -511,7 +527,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_status {
-  color: #414141;	
+  color: #414141;
   float: right;
   padding: 15px 15px 0 0;
 }
@@ -696,7 +712,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #footer_a p{
-	line-height:1.3;	
+	line-height:1.3;
 }
 
 .field label{

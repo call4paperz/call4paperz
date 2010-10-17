@@ -4,6 +4,8 @@ class Comment < ActiveRecord::Base
 
   validates_associated :user, :proposal
 
+  validates_presence_of :body
+
   def self.most_recent
     order("created_at DESC").limit(4)
   end

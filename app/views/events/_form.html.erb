@@ -42,7 +42,7 @@
 
   <div class="field">
     <%= f.label :url, 'Website' %><br />
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :class => 'url' %>
   </div>
 
   <div class="field">
@@ -51,8 +51,20 @@
     <%= f.hidden_field :picture_cache %>
   </div>
 
- 
+
   <div class="actions">
     <%= image_submit_tag '/images/create_event_button.png' %>
   </div>
 <% end %>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var validator = $("#new_event").validate({
+      rules: {
+        'event[name]': "required",
+        'event[description]': "required",
+        'event[occurs_at]': "required"
+      }
+    });
+  });
+<% end -%>

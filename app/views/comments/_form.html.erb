@@ -29,3 +29,13 @@
   <% end %>
 
 </div>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var validator = $("#new_comment").validate({
+      rules: {
+        'comment[body]': "required"
+      },
+      messages: { 'comment[body]': 'Comment cannot be empty' }
+    });
+  });
+<% end -%>

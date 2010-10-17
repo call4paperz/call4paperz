@@ -700,12 +700,12 @@ a.prop_link:hover, a.prop_link:active{
 	background:url("/images/textinputbg.gif") repeat-x scroll 0 0 #FFFFFF;
 	border:1px solid #D3D3D3;
 	color:#000000;
+	float:left;
 	font-size:12px;
 	margin-bottom:10px;
-	padding:7px 0;
-	text-indent:7px;
+	padding:5px;
+	text-indent:0;
 	width:400px;
-  float: left;
 }
 
 #new_item input[type=text].error,
@@ -729,8 +729,9 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #new_item textarea {
-  	height: 200px;
-	width: 400px;
+	height:200px;
+	padding:5px;
+	width:400px;
 }
 
 #new_item label {

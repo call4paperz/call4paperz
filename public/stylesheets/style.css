@@ -705,6 +705,10 @@ a.prop_link:hover, a.prop_link:active{
   margin: 10px;
   color: #f00;
 }
+#new_item #login_container label.error {
+  float: none;
+  display: block;
+}
 
 #new_item input[type=image] {
   margin: 10px 0;

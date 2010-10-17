@@ -6,15 +6,18 @@
       <h2>You can go old school:</h2>
       <br/>
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-        <p><%= f.label :email %><br />
-          <%= f.text_field :email %></p>
 
-        <p><%= f.label :password %><br />
-          <%= f.password_field :password %></p>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.text_field :email %>
+        </div>
 
-        <% if devise_mapping.rememberable? -%>
-          <p><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => 'remember' %></p>
-        <% end -%>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password %>
+        </div>
+
+        <div class="field"><%= f.check_box :remember_me %> <%= f.label :remember_me, :class => 'remember' %></div>
 
         <p><%= image_submit_tag 'sign_in_button.png' %></p>
       <% end %>
@@ -31,3 +34,18 @@
   </div>
 </div>
 
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var validator = $("#user_new").validate({
+      rules: {
+        'user[email]': "required",
+        'user[password]': "required"
+      },
+      messages: {
+        'user[email]': "Email is required",
+        'user[password]': "Password is required"
+      }
+    });
+  });
+<% end -%>

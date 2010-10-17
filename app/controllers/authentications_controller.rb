@@ -20,6 +20,7 @@ class AuthenticationsController < ApplicationController
       user.save!
       sign_in(user)
     end
+    flash[:logged_now] = true
   end
 
 end

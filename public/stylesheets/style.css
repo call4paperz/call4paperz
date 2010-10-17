@@ -979,3 +979,20 @@ a.logo_c4p img{
 #providers{
 	margin-top: 20px;
 }
+
+#logged{
+	background-color:#212121;
+	color:#FFFFFF;
+	font-size:12px;
+	left:174px;
+	opacity:0.7;
+	padding:7px;
+	position:fixed;
+	text-align:center;
+	top:95px;
+	width:906px;
+	z-index:99999;	
+	-moz-border-radius:0px 0px 8px 8px;
+	-webkit-border-radius:0px 0px 8px 8px;
+
+}

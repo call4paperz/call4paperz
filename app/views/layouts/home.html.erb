@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Call4Paperz</title>
+  <title>Call4paperz</title>
   <%= stylesheet_link_tag :all %>
   <%= stylesheet_link_tag 'jquery-ui/jquery-ui-1.8.5.custom.css' %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'jquery-ui.min.js', 'jquery.tweet.min.js' %>
+  <%= javascript_include_tag 'call4paperz.js' %>
   <%= csrf_meta_tag %>
   <link rel="icon" href="/favicon.ico" type="image/ico"/>
 </head>
@@ -13,6 +14,7 @@
 	
 	<div id="main">
 		<div class="container">
+			<%= logged_info %>
 			<div id="menu">
 				<%= link_to image_tag("/images/logo_c4p.png"), root_path, :class => 'logo_c4p' %>
 				<%= menu %>
@@ -25,17 +27,6 @@
 	<div style="clear:both"></div>
 	<%= render :partial => 'layouts/footer' %>
   <script type="text/javascript">
-
-   $(document).ready(function(){
-		$('.rr').hover(
-			function(){
-				$(this).fadeTo("slow", 0.1);				
-			},
-			function(){
-				$(this).fadeTo("slow", 1);
-			}
-		)
-	});
 
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-19140800-1']);

@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %> <small class="vermelho">*</small><br/>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %> <small class="vermelho">*</small> <br/>
     <%= f.text_area :description %>
   </div>
 
@@ -24,3 +24,14 @@
     <%= image_submit_tag '/images/create_event_button.png' %>
   </div>
 <% end %>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var validator = $("#new_proposal").validate({
+      rules: {
+        'proposal[name]': "required",
+        'proposal[description]': "required"
+      }
+    });
+  });
+<% end -%>

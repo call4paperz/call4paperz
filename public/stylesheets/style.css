@@ -656,9 +656,6 @@ a.prop_link:hover, a.prop_link:active{
   float: left;
 }
 
-#new_item_container {
-  width: 400px;
-}
 
 #new_item {
 	margin-top:67px;
@@ -678,10 +675,15 @@ a.prop_link:hover, a.prop_link:active{
   font-size: 12px;
 }
 
+#new_item .actions,
+#new_item .field {
+  clear: both;
+}
+
 #new_item input[type=text],
 #new_item input[type=password],
 #new_item select, #new_item textarea {
-	background:url("https://www.mediatemple.net/_images/textinputbg.gif") repeat-x scroll 0 0 #FFFFFF;
+	background:url("/images/textinputbg.gif") repeat-x scroll 0 0 #FFFFFF;
 	border:1px solid #D3D3D3;
 	color:#000000;
 	font-size:12px;
@@ -689,6 +691,19 @@ a.prop_link:hover, a.prop_link:active{
 	padding:7px 0;
 	text-indent:7px;
 	width:400px;
+  float: left;
+}
+
+#new_item input[type=text].error,
+#new_item input[type=password].error,
+#new_item select.error, #new_item textarea.error {
+	background:url("/images/textinputbg-error.gif") repeat-x scroll 0 0 #FFDFDF;
+}
+
+#new_item label.error {
+  float: left;
+  margin: 10px;
+  color: #f00;
 }
 
 #new_item input[type=image] {

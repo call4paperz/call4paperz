@@ -23,7 +23,7 @@
 		
 		<div id="event_social">
 			<div class="twit">
-				<%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
+				<%= render 'shared/tweet_button', :text => "#{@event.name} is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
 			</div>
 			<%= render 'shared/facebook_like', :url => event_url(@event) %>
 		</div>

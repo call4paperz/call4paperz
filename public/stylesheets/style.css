@@ -860,3 +860,10 @@ a.logo_c4p img{
 	margin-left:27px;
 	margin-top:24px;
 }
+
+.actions input{
+	display:inline-block;
+	left:428px;
+	position:relative;
+	top:6px;
+}

@@ -89,6 +89,7 @@ class ProposalsController < ApplicationController
     respond_to do |format|
       if Vote.like!(proposal, current_user)
         format.html { redirect_to(event_url(event), :notice => 'You liked the proposal.') }
+        format.js { head :ok }
       else
         format.html { redirect_to(event_url(event), :alert => "You've already expressed your opinion.") }
       end
@@ -100,6 +101,7 @@ class ProposalsController < ApplicationController
     respond_to do |format|
       if Vote.dislike!(proposal, current_user)
         format.html { redirect_to(event_url(event), :notice => 'You disliked the proposal.') }
+        format.js { head :ok }
       else
         format.html { redirect_to(event_url(event), :alert => "You've already expressed your opinion.") }
       end

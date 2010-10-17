@@ -47,7 +47,7 @@
 			</div>
 		<% end %>
     <% if @events_quantity > 0 -%>
-      <p class="prop_link"><%= link_to "We have #{@events_quantity} open proposals available to vote. Click to see them.", events_path %></p>
+      <p class="prop_link"><%= link_to "We have #{@events_quantity} open proposals available to vote. Click to see them.", events_path, :class => "prop_link" %></p>
     <% end -%>
 		<br/>
 
@@ -66,8 +66,8 @@
 					<div class="comment_pic">
 						<%= image_tag comment.user.picture, :class => 'borda_vinho' if comment.user.picture.present? %>
 					</div>
-					<div class="comment_detail">
-						<p><%= truncate(comment.body, :length => 60) %></p>
+					<div>
+						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
 						<p><small><%= comment.user.name %></small></p>
 					</div>
 					<div style="clear:both"></div>

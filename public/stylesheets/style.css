@@ -53,7 +53,7 @@ body{
 	background-color: #eff7fc;
 }
 
-a {
+ul li a {
 	font-size: 12px;
 	color: #da3546;
 }
@@ -475,7 +475,7 @@ ul#menu_top li a:hover{
 a.prop_link:link, a.prop_link:visited{
 	color: #da3546;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 12px;
 }
 
 a.prop_link:hover, a.prop_link:active{
@@ -843,4 +843,10 @@ a.prop_link:hover, a.prop_link:active{
 	display: inline;
 	position: relative;
 	top: 7px;
+}
+
+.comment_detail:link, .comment_detail:visited{
+	color:#FFFFFF !important;
+	font-size:12px;
+	font-weight:bold;
 }

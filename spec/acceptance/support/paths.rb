@@ -9,10 +9,6 @@ module NavigationHelpers
     "/events/#{event.id}"
   end
 
-  def event_proposals_page(event)
-    "/events/#{event.id}/proposals"
-  end
-
   def proposal_page(proposal)
     "/events/#{proposal.event.id}/proposals/#{proposal.id}"
   end

@@ -1,20 +1,20 @@
 <div class="prop">
-	
-	<p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
-	<p><%= proposal.description %></p>
-
-	<div class="prop_sub">
-		<%= image_tag proposal.user.picture if proposal.user.picture.present? %>	
-		<small><%= proposal.user.name %></small>
-		<%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
-		<%= vote_box(@event, proposal, current_user) %>
-	</div>	
-
-    <script type="text/javascript">
-      $(".ajax_vote").bind('ajax:success', function(xhr, result){
-        $(this).closest(".prop_sub").children("a.ajax_vote").hide().parent().append("You've already voted");
-      });
-    </script>
   
-	
+  <p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
+  <p><%= proposal.description %></p>
+
+  <div class="prop_sub">
+    <%= image_tag proposal.user.picture if proposal.user.picture.present? %>  
+    <small><%= proposal.user.name %></small>
+    <%= link_to "#{proposal.comments.size} comments", [@event, proposal] %>
+    <%= vote_box(@event, proposal, current_user) %>
+  </div>  
+
+  <script type="text/javascript">
+    $(".ajax_vote").bind('ajax:success', function(xhr, result){
+      $(this).closest(".prop_sub").children("a.ajax_vote").hide().parent().append("You've already voted");
+    });
+  </script>
+  
+  
 </div>

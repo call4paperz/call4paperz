@@ -42,7 +42,7 @@
 
 	<% if @event.proposals.blank? %>
 	  <spam class="yet">This event is ready to receive proposals!<br/><br/>
-	  Twit this event to your friends so they can submit proposals and spread the word!</spam>	
+	  Tweet this event to your friends so they can submit proposals and spread the word!</spam>	
 	<br/><br/>
 	<%= render 'shared/tweet_button', :text => "This event is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
 	<% end %>

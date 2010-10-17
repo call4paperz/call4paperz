@@ -1,4 +1,7 @@
 <div class="prop">
+  <div class="spinner">
+    <%= image_tag 'ajax-loader.gif' %>
+  </div>
 
   <p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
   <%= render_percentage_bar(proposal.acceptance_percentage) %>
@@ -14,14 +17,4 @@
   <span class="voting_container">
     <%= vote_box(@event, proposal, current_user) %>
   </span>
-
-  <script type="text/javascript">
-    $(".ajax_vote").bind('ajax:success', function(xhr, result){
-      var container = $(this).closest(".voting_container");
-      container.html('<%= image_tag('checked.png', :alt => 'Thanks for voting!') %>');
-    });
-  </script>
-
-
-
 </div>

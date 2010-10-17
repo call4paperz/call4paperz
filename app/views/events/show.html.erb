@@ -20,3 +20,19 @@
 	<%end  %>
 </div>
 
+
+<%= javascript_tag do %>
+  $('.ajax_vote').live('click', function() {
+      var thiz = this;
+
+      FetchWithAjax.fetch({
+          url: this.href,
+          spinner: $(this).parents('.prop').find('.spinner'),
+          success: function(data) {
+              $(thiz).parents('.prop').replaceWith(data);
+          }
+      });
+
+      return false;
+  });
+<% end -%>

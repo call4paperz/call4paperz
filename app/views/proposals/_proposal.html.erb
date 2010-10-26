@@ -4,7 +4,7 @@
   </div>
 
   <p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
-  <%= render_percentage_bar(proposal.acceptance_percentage) %>
+  <%= render_percentage_bar(proposal.acceptance_points) %>
   <p><%= proposal.description %></p>
 
   <div class="prop_sub">

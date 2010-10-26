@@ -23,7 +23,7 @@ module ProposalsHelper
 
     content_tag :div, :class => 'percentage' do
       content_tag :div, :class => "#{klass}", :style => "width: #{percentage}%" do
-        content_tag :span, number_to_percentage(percentage, :precision => 0)
+        content_tag :span, percentage
       end
     end
   end

@@ -11,7 +11,6 @@ module ApplicationHelper
       else
         content << content_tag(:li, link_to("Login", new_user_session_path))
       end
-      content << image_tag('/images/rr_icone.gif', :class => 'rr')
       content
     end
   end

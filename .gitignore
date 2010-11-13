@@ -4,7 +4,6 @@ log/*.log
 tmp/**/*
 public/uploads
 config/database.yml
-Gemfile.lock
 .rvmrc
 capybara-*
 .DS_Store

@@ -17,6 +17,7 @@ gem 'omniauth'
 gem 'rake'
 gem 'validates_timeliness', '>= 3.0.0.beta.5'
 gem 'will_paginate'
+gem 'fog'
 
 group :development, :test do
   gem 'autotest'

@@ -84,16 +84,24 @@ feature "Events", %q{
     end
 
     scenario "I should be able to see the events sorted by the date the events occur" do
-      late_event = Factory(:event, :occurs_at => 5.days.from_now, :name => 'Late show')
-      early_event = Factory(:event, :occurs_at => 1.day.from_now, :name => 'Good morning Vietnam')
+      time_travel_to(2.days.ago) do
+        past_event = Factory(:event, :occurs_at => Time.now, :name => 'The Dinosaurs')
+        todays_event = Factory(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
+        late_event = Factory(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
+        early_event = Factory(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')
+      end
 
       visit '/events'
 
       within(:xpath, "//div[@class='event_listed'][1]") do
-        page.should have_content('Good morning Vietnam')
+        page.should have_content('Groundhog Day')
       end
 
       within(:xpath, "//div[@class='event_listed'][2]") do
+        page.should have_content('Good morning Vietnam')
+      end
+
+      within(:xpath, "//div[@class='event_listed'][3]") do
         page.should have_content('Late show')
       end
     end

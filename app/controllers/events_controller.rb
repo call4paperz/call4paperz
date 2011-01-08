@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.occurs_first
+    @events = Event.active.occurs_first
 
     respond_to do |format|
       format.html # index.html.erb

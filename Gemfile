@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,7 +12,6 @@ gem 'inploy'
 gem 'jquery-rails'
 gem 'mail_form'
 gem 'mini_magick'
-gem 'mysql', '2.8.1'
 gem 'omniauth'
 gem 'pg'
 gem 'rake'

@@ -15,8 +15,14 @@ class Event < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
-  def self.most_recent
-    order("created_at DESC").limit(3)
+  class << self
+    def most_recent
+      order("created_at DESC").limit(3)
+    end
+
+    def occurs_first
+      order("occurs_at ASC")
+    end
   end
 
   private

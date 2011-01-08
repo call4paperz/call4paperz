@@ -17,14 +17,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id], :include => :proposals)
 
-    
-    
-    
     @event.proposals.sort! do |x,y|
       y.acceptance_points <=> x.acceptance_points
-    end  
-    
-    
+    end
+
     @proposal = Proposal.new
     @proposal.event = @event
 
@@ -33,7 +29,7 @@ class EventsController < ApplicationController
       format.xml  { render :xml => @event }
     end
   end
-  
+
   # GET /events/new
   # GET /events/new.xml
   def new

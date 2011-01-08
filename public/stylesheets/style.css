@@ -562,7 +562,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_status span {
-  font-size: 5em;
+  font-size: 4.5em;
   font-weight: bold;
   letter-spacing: -2px;
   width: 10px;
@@ -990,7 +990,7 @@ a.logo_c4p img{
 	text-align:center;
 	top:95px;
 	width:943px;
-	z-index:99999;	
+	z-index:99999;
 	border: 1px solid #f2f2f2;
 
 

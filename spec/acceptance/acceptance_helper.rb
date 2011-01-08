@@ -5,10 +5,8 @@ require 'capybara/rails'
 Capybara.default_selector = :css
 
 RSpec.configuration.include Capybara, :type => :acceptance
-RSpec.configuration.include Delorean, :type => :acceptance
 RSpec.configuration.after(:each, :type => :acceptance) do
   page.driver.clear_cookies
-  back_to_the_present
 end
 
 

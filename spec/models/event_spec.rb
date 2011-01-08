@@ -22,11 +22,9 @@ describe Event do
     end
 
     it "should not inclue events from the past" do
-      time_travel_to(2.days.ago) do
-        ev = Factory(:event, :occurs_at => Time.now)
-      end
-
-      back_to_the_present
+      Timecop.freeze(2.days.ago)
+      ev = Factory(:event, :occurs_at => Time.now)
+      Timecop.return
 
       described_class.active.should be_empty
     end

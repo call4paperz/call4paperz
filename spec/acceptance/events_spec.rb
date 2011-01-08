@@ -83,6 +83,21 @@ feature "Events", %q{
       page.should have_content("2 vote")
     end
 
+    scenario "I should be able to see the events sorted by the date the events occur" do
+      late_event = Factory(:event, :occurs_at => 5.days.from_now, :name => 'Late show')
+      early_event = Factory(:event, :occurs_at => 1.day.from_now, :name => 'Good morning Vietnam')
+
+      visit '/events'
+
+      within(:xpath, "//div[@class='event_listed'][1]") do
+        page.should have_content('Good morning Vietnam')
+      end
+
+      within(:xpath, "//div[@class='event_listed'][2]") do
+        page.should have_content('Late show')
+      end
+    end
+
     scenario "I should be able to see warning if there are no events" do
       visit '/events'
       page.should have_content('There are no events yet. Be the first to create one!')

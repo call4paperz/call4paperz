@@ -49,9 +49,12 @@ GEM
     celerity (0.8.6)
     childprocess (0.1.6)
       ffi (~> 0.6.3)
+    chronic (0.3.0)
     configuration (1.2.0)
     culerity (0.2.14)
     database_cleaner (0.6.0)
+    delorean (0.2.1)
+      chronic
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -213,6 +216,7 @@ DEPENDENCIES
   carrierwave
   culerity
   database_cleaner
+  delorean
   devise
   factory_girl_rails
   fog

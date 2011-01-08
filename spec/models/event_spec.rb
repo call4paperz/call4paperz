@@ -9,4 +9,26 @@ describe Event do
       described_class.occurs_first.should == [early_event, late_event]
     end
   end
+
+  context ".active" do
+    it "should find events from the future!" do
+      ev = Factory(:event, :occurs_at => 5.days.from_now)
+      described_class.active.should == [ev]
+    end
+
+    it "should include events from today" do
+      ev = Factory(:event)
+      described_class.active.should == [ev]
+    end
+
+    it "should not inclue events from the past" do
+      time_travel_to(2.days.ago) do
+        ev = Factory(:event, :occurs_at => Time.now)
+      end
+
+      back_to_the_present
+
+      described_class.active.should be_empty
+    end
+  end
 end

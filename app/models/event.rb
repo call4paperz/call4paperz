@@ -23,6 +23,10 @@ class Event < ActiveRecord::Base
     def occurs_first
       order("occurs_at ASC")
     end
+
+    def active
+      where('occurs_at >= ?', Date.today)
+    end
   end
 
   private

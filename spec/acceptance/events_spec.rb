@@ -88,6 +88,15 @@ feature "Events", %q{
       page.should have_content('There are no events yet. Be the first to create one!')
     end
 
+    scenario "I should be able to go to the list of proposals clicking on the picture" do
+      event = Factory(:event)
+      visit event_page(event)
+
+      within '#proposal' do
+        page.should have_css("a[href*='#{event_page(event)}']")
+      end
+    end
+
     scenario "I should be able to create an event with an user registered thru omni auth" do
       pending "How?!"
       # user = User.new

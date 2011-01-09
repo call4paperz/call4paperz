@@ -1,0 +1,44 @@
+
+<%= image_tag @event.picture.url, :id => 'crop_target' %>
+
+Current picture:
+<%= image_tag @event.picture.big.url %>
+
+Preview:
+<div id="crop_preview_container">
+  <%= image_tag @event.picture.url, :id => 'crop_preview' %>
+</div>
+
+
+<%= javascript_tag do -%>
+  function changeCoords(coords) {
+      var origWidth = $('#crop_target').width();
+      var origHeight = $('#crop_target').height();
+
+      var factorW = 180.0 / coords.w;
+      var factorH = 175.0 / coords.h;
+
+      var marginTop = "-" + Math.round(coords.y * factorH) + "px";
+      var marginLeft = "-" + Math.round(coords.x * factorW) + "px";
+
+      var width = Math.round(origWidth * factorW) + 'px';
+      var height = Math.round(origHeight * factorH) + 'px';
+
+      console.debug(width + height);
+
+      $('#crop_preview').css({
+          marginTop: marginTop,
+          marginLeft: marginLeft,
+          width: width,
+          height: height
+      });
+  }
+
+  $(function(){
+      $('#crop_target').Jcrop({
+          aspectRatio: 0.97,
+          onChange: changeCoords,
+          onSelect: changeCoords
+      });
+  });
+<% end -%>

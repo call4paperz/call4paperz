@@ -52,5 +52,4 @@ class PictureUploader < CarrierWave::Uploader::Base
     "#{Rails.root}/tmp/uploads"
   end
 
-
 end

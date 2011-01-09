@@ -992,6 +992,19 @@ a.logo_c4p img{
 	width:943px;
 	z-index:99999;
 	border: 1px solid #f2f2f2;
+}
 
+#crop_target {
+}
 
+#crop_preview_container {
+  width: 180px;
+  height: 175px;
+  overflow: hidden;
+}
+
+#crop_preview {
+  width: 180px;
+  height: 175px;
+  position: relative;
 }

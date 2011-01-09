@@ -7,6 +7,10 @@ Rr10Team71::Application.routes.draw do
   resource :profile
 
   resources :events do
+    member do
+      get :crop
+    end
+
     resources :proposals do
       member do
         get :like

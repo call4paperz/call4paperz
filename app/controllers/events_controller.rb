@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :update, :edit]
+  before_filter :authenticate_user!, :only => [:new, :create, :update, :edit, :crop]
   respond_to :html, :json, :jsonp
 
   # GET /events
@@ -44,9 +44,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
-    @event = Event.new(params[:event])
-    @event.user = current_user
-    current_user.valid?
+    @event = current_user.events.build(params[:event])
 
     respond_to do |format|
       if @event.save
@@ -73,6 +71,11 @@ class EventsController < ApplicationController
         format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  # GET /events/1/crop
+  def crop
+    @event = current_user.events.find(params[:id])
   end
 
   # DELETE /events/1

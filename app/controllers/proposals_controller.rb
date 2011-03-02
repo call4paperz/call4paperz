@@ -2,6 +2,8 @@ class ProposalsController < ApplicationController
   before_filter :event
   before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
 
+  respond_to :html, :json
+
 
   # GET /proposals
   # GET /proposals.xml
@@ -23,10 +25,7 @@ class ProposalsController < ApplicationController
     @comment = Comment.new
     @comment.proposal = proposal
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @proposal }
-    end
+    respond_with @proposal
   end
 
   # GET /proposals/new

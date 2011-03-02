@@ -1,15 +1,12 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :update, :edit]
+  respond_to :html, :json
 
   # GET /events
   # GET /events.xml
   def index
     @events = Event.active.occurs_first
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @events }
-    end
+    respond_with @events
   end
 
   # GET /events/1
@@ -24,10 +21,8 @@ class EventsController < ApplicationController
     @proposal = Proposal.new
     @proposal.event = @event
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @event }
-    end
+    respond_with @event
+
   end
 
   # GET /events/new

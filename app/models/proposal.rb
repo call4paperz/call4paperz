@@ -19,4 +19,8 @@ class Proposal < ActiveRecord::Base
     votes.positives.count - votes.negatives.count
   end
 
+  def to_json(options=nil)
+    super(:include => :comments)
+  end
+
 end

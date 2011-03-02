@@ -162,6 +162,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rcov (0.9.9)
+    responders (0.6.2)
     rest-client (1.6.1)
       mime-types (>= 1.16)
     rspec (2.4.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   rails (= 3.0.3)
   rake
   rcov
+  responders (= 0.6.2)
   rspec-rails
   steak (>= 1.0.0.rc.1)
   timecop

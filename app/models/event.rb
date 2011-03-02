@@ -29,6 +29,10 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def to_json(options=nil)
+    super(:include => :proposals)
+  end
+
   private
   def twitter_has_valid_format
     match = twitter &&

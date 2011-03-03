@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :update, :edit]
-  respond_to :html, :json
+  respond_to :html, :json, :jsonp
 
   # GET /events
   # GET /events.xml

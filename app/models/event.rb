@@ -30,7 +30,15 @@ class Event < ActiveRecord::Base
   end
 
   def to_json(options=nil)
-    super(:include => :proposals)
+    super({
+      :include => {
+        :proposals => {
+          :methods => :votes_count,
+          :only => Proposal::JSON_ATTRIBUTES,
+          :include => {:user => {:only => :name}}
+        }
+      }
+    })
   end
 
   private

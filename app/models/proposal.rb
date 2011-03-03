@@ -1,4 +1,6 @@
 class Proposal < ActiveRecord::Base
+  JSON_ATTRIBUTES = [:name, :created_at, :description, :occurs_at].freeze
+
   attr_accessible :acceptance_points
 
   has_many :votes, :dependent => :destroy
@@ -20,7 +22,11 @@ class Proposal < ActiveRecord::Base
   end
 
   def to_json(options=nil)
-    super(:include => :comments)
+    super(:include => [:comments, :user], :only => JSON_ATTRIBUTES)
+  end
+
+  def votes_count
+    votes.count
   end
 
 end

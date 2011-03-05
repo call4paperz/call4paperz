@@ -29,4 +29,12 @@ class Proposal < ActiveRecord::Base
     votes.count
   end
 
+  def positive_points
+    votes.positives.count
+  end
+
+  def negative_points
+    votes.negatives.count
+  end
+
 end

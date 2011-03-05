@@ -33,7 +33,7 @@ class Event < ActiveRecord::Base
     super({
       :include => {
         :proposals => {
-          :methods => :votes_count,
+          :methods => [:votes_count, :acceptance_points, :positive_points, :negative_points],
           :only => Proposal::JSON_ATTRIBUTES,
           :include => {:user => {:only => :name}}
         }

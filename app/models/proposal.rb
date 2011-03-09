@@ -1,5 +1,5 @@
 class Proposal < ActiveRecord::Base
-  JSON_ATTRIBUTES = [:name, :created_at, :description, :occurs_at].freeze
+  JSON_ATTRIBUTES = [:id, :name, :created_at, :description, :occurs_at].freeze
 
   attr_accessible :acceptance_points
 

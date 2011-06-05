@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605062157) do
+ActiveRecord::Schema.define(:version => 20110605135828) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20110605062157) do
     t.datetime "updated_at"
     t.string   "cached_slug"
   end
+
+  add_index "events", ["cached_slug"], :name => "index_events_on_cached_slug", :unique => true
 
   create_table "proposals", :force => true do |t|
     t.string   "name"

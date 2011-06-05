@@ -18,6 +18,7 @@ gem 'rake'
 gem 'validates_timeliness', '>= 3.0.0.beta.5'
 gem 'will_paginate'
 gem 'responders', '0.6.2'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'autotest'

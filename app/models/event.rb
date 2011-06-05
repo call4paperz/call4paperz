@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  has_friendly_id :name, :use_slug => true
+
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y
 
   has_many :proposals, :dependent => :destroy

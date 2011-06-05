@@ -7,8 +7,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
   #
 
-  convert :format => :png
-
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :s3
@@ -33,10 +31,6 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   version :cropped do
     process :crop_image => [180, 175]
-  end
-
-  def filename
-    model.id.to_s + ".png"
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

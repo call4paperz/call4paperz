@@ -10,7 +10,7 @@
     <div style="clear:both"></div>
     <% @events.each do |event| %>
       <div class="event_listed">
-        <%= image_tag event.picture.small.url, :class => 'logo_small' %>
+        <%= image_tag event.picture.cropped.url, :class => 'logo_small' %>
         <div class="event_desc">
           <h1><%= link_to "#{event.name} (#{l(event.occurs_at, :format => :short)})", event %></h1>
           <p>

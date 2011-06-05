@@ -1,7 +1,9 @@
 	<%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
 
 	<div id="proposal">
-		<%= link_to image_tag(@event.picture.big.url, :class => 'logo'), event_path(@event) %>
+		<%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), event_path(@event) %>
+    <p><strong><%= link_to("Crop picture", crop_event_path(@event)) if @event.user == current_user %></strong></p>
+
 		<%= image_tag '/images/linha.png', :class  => 'linha' %>
 
 		<p><strong><%= @event.name %></strong></p>

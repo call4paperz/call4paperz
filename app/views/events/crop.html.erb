@@ -1,44 +1,63 @@
+<div id="new_item">
+  <div id="crop_original">
+    Original:<br/>
+    <%= image_tag @event.picture.url, :id => 'crop_target' %>
+  </div>
+  <div id="crop_previews">
+    Current picture:<br/>
+    <%= image_tag @event.picture.cropped.url, :size => "180x175" %><br/>
 
-<%= image_tag @event.picture.url, :id => 'crop_target' %>
+    Preview:<br/>
+    <div id="crop_preview_container">
+      <%= image_tag @event.picture.url, :id => 'crop_preview', :size => "180x175" %>
+    </div>
 
-Current picture:
-<%= image_tag @event.picture.big.url %>
+    <% form_for(@event) do |f| -%>
+      <%= f.hidden_field :crop_w, :id => 'photo_crop_w' %>
+      <%= f.hidden_field :crop_h, :id => 'photo_crop_h' %>
+      <%= f.hidden_field :crop_x, :id => 'photo_crop_x' %>
+      <%= f.hidden_field :crop_y, :id => 'photo_crop_y' %>
+      <%= f.submit 'Crop' %> or <%= link_to "Cancel", event_path(@event) %>
+    <% end -%>
+  </div>
 
-Preview:
-<div id="crop_preview_container">
-  <%= image_tag @event.picture.url, :id => 'crop_preview' %>
+  <%= javascript_tag do -%>
+    function changeCoords(coords) {
+        if (parseInt(coords.w) > 0) {
+            $("#photo_crop_x").val(coords.x);
+            $("#photo_crop_y").val(coords.y);
+            $("#photo_crop_w").val(coords.w);
+            $("#photo_crop_h").val(coords.h);
+        }
+
+        var origWidth = $('#crop_target').width();
+        var origHeight = $('#crop_target').height();
+
+        var factorW = 180.0 / coords.w;
+        var factorH = 175.0 / coords.h;
+
+        var marginTop = "-" + Math.round(coords.y * factorH);
+        var marginLeft = "-" + Math.round(coords.x * factorW);
+
+        var width = Math.round(origWidth * factorW);
+        var height = Math.round(origHeight * factorH);
+
+        $('#crop_preview').css({
+            marginTop: marginTop + 'px',
+            marginLeft: marginLeft + 'px',
+            width: width + 'px',
+            height: height + 'px'
+        });
+    }
+
+    $(function(){
+        $('#crop_target').Jcrop({
+            aspectRatio: 0.97,
+            onChange: changeCoords,
+            onSelect: changeCoords
+        });
+    });
+  <% end -%>
+  <div class="clear"></div>
+  <%= link_to "Back to event", event_path(@event) %>
 </div>
-
-
-<%= javascript_tag do -%>
-  function changeCoords(coords) {
-      var origWidth = $('#crop_target').width();
-      var origHeight = $('#crop_target').height();
-
-      var factorW = 180.0 / coords.w;
-      var factorH = 175.0 / coords.h;
-
-      var marginTop = "-" + Math.round(coords.y * factorH) + "px";
-      var marginLeft = "-" + Math.round(coords.x * factorW) + "px";
-
-      var width = Math.round(origWidth * factorW) + 'px';
-      var height = Math.round(origHeight * factorH) + 'px';
-
-      console.debug(width + height);
-
-      $('#crop_preview').css({
-          marginTop: marginTop,
-          marginLeft: marginLeft,
-          width: width,
-          height: height
-      });
-  }
-
-  $(function(){
-      $('#crop_target').Jcrop({
-          aspectRatio: 0.97,
-          onChange: changeCoords,
-          onSelect: changeCoords
-      });
-  });
-<% end -%>

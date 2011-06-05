@@ -29,7 +29,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'rcov'
+  gem 'silent-postgres'
   gem 'timecop'
+  gem 'ruby-debug'
 end
 
 

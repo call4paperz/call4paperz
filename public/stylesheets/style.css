@@ -73,6 +73,8 @@ a:hover, a:active {
   display: none;
 }
 
+.clear { clear: both; }
+
 #main{
 	background: url('/images/bg.png') repeat-x;
 	width: 100%;
@@ -417,6 +419,7 @@ ul#menu_top li a:hover{
 }
 
 .logo{
+  margin-bottom: 20px;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
 	border: 5px solid #b24450;
@@ -581,8 +584,10 @@ a.prop_link:hover, a.prop_link:active{
   margin-bottom: 15px;
 }
 
-
 .logo_small {
+  width: 90px;
+  height: 87px;
+
   border: 5px solid #B24450;
   float: left;
   margin: 20px;
@@ -994,7 +999,13 @@ a.logo_c4p img{
 	border: 1px solid #f2f2f2;
 }
 
-#crop_target {
+#crop_original {
+  float: left;
+  margin-right: 20px;
+}
+
+#crop_original img {
+  max-width: 700px;
 }
 
 #crop_preview_container {
@@ -1007,4 +1018,8 @@ a.logo_c4p img{
   width: 180px;
   height: 175px;
   position: relative;
+}
+
+#crop_previews {
+  float: left;
 }

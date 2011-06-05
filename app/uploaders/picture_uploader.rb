@@ -7,8 +7,11 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
-  storage :s3
+  if Rails.env.production?
+    storage :s3
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -30,12 +33,12 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
 
-  version :small do
-    process :resize_to_fill => [90, 87]
-  end
-
   version :big do
     process :resize_to_fill => [180, 175]
+  end
+
+  version :cropped do
+    process :crop_image => [180, 175]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -52,4 +55,18 @@ class PictureUploader < CarrierWave::Uploader::Base
     "#{Rails.root}/tmp/uploads"
   end
 
+  protected
+
+  def crop_image(height, width)
+    if model.respond_to?(:cropping?) and model.cropping?
+      manipulate! do |img|
+        img = MiniMagick::Image.open(model.picture.current_path)
+        geometry = "#{model.crop_w}x#{model.crop_h}+#{model.crop_x}+#{model.crop_y}"
+        img.crop(geometry)
+        img
+      end
+    else
+      resize_to_fill(height, width)
+    end
+  end
 end

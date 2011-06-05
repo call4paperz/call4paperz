@@ -18,11 +18,7 @@ class EventsController < ApplicationController
       y.acceptance_points <=> x.acceptance_points
     end
 
-    @proposal = Proposal.new
-    @proposal.event = @event
-
     respond_with @event
-
   end
 
   # GET /events/new
@@ -60,7 +56,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(params[:event])

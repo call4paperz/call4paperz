@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  attr_accessor :crop_w, :crop_h, :crop_x, :crop_y
+
   has_many :proposals, :dependent => :destroy
   has_many :comments, :through  => :proposals
   has_many :votes, :through  => :proposals
@@ -12,6 +14,12 @@ class Event < ActiveRecord::Base
   validates_length_of :description, :within => 3..400
 
   before_validation :twitter_has_valid_format
+
+  after_update :reprocess_photo, :if => :cropping?
+
+  attr_accessible :crop_w, :crop_h, :crop_x, :crop_y,
+    :picture_cache, :name, :description, :twitter,
+    :occurs_at, :url, :user_id, :picture
 
   mount_uploader :picture, PictureUploader
 
@@ -41,6 +49,10 @@ class Event < ActiveRecord::Base
     })
   end
 
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+
   private
   def twitter_has_valid_format
     match = twitter &&
@@ -55,4 +67,7 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def reprocess_photo
+    picture.recreate_versions!
+  end
 end

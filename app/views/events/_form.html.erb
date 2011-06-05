@@ -29,7 +29,11 @@
 
   <div class="field">
     <%= f.label :occurs_at %> <small class="vermelho">*</small><br />
-    <%= f.text_field :occurs_at, :class => 'datepicker' %>
+    <% if @event.new_record? %>
+      <%= f.text_field :occurs_at, :class => 'datepicker' %>
+    <% else -%>
+      <%= f.text_field :occurs_at, :class => 'datepicker', :value => l(@event.occurs_at, :format => :picker) %>
+    <% end %>
   </div>
 
   <div class="field">

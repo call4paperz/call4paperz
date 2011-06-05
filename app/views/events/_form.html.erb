@@ -55,7 +55,12 @@
 
 
   <div class="actions">
-    <%= image_submit_tag '/images/create_event_button.png' %>
+
+    <% if @event.new_record? %>
+      <%= image_submit_tag '/images/create_event_button.png' %>
+    <% else %>
+      <%= image_submit_tag '/images/save.png' %>
+    <% end %>
   </div>
 <% end %>
 

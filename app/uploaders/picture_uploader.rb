@@ -5,6 +5,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Include RMagick or ImageScience support:
   include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
+  #
+
+  convert :format => :png
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
@@ -24,21 +27,16 @@ class PictureUploader < CarrierWave::Uploader::Base
     "/images/no-image-#{version_name}.png"
   end
 
-  # Process files as they are uploaded:
-  # process :scale => [200, 300]
-  #
-  # def scale(width, height)
-  #   # do something
-  # end
-
-  # Create different versions of your uploaded files:
-
   version :big do
     process :resize_to_fill => [180, 175]
   end
 
   version :cropped do
     process :crop_image => [180, 175]
+  end
+
+  def filename
+    model.id.to_s + ".png"
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

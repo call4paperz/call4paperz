@@ -12,8 +12,8 @@ gem 'mini_magick'
 
 # brew install libidn, improves addressable performance
 gem 'idn'
-gem 'addressable', '= 2.2.4'
-gem 'omniauth'
+gem 'addressable'
+gem 'omniauth', '>= 0.3.0.rc3'
 gem 'pg'
 gem 'rake'
 gem 'validates_timeliness', '>= 3.0.0.beta.5'

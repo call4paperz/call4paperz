@@ -120,6 +120,30 @@ feature "Events", %q{
       within '#proposal' do
         page.should have_css("a[href*='#{event_path(event)}']")
       end
+
+      page.should have_no_content "Administrative tools"
+    end
+
+    scenario "I should be able to see admin links if I am the the owner" do
+      user = Factory(:user)
+      sign_in_with(user)
+
+      event = Factory(:event, :user => user)
+
+      visit event_path(event)
+
+      page.should have_content "Administrative tools"
+      page.should have_content "Edit event"
+      page.should have_content "Crop picture"
+    end
+
+    scenario "I should be able to edit an event" do
+      user = Factory(:user)
+      sign_in_with(user)
+
+      event = Factory(:event, :user => user)
+
+      visit edit_event_path(event)
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do

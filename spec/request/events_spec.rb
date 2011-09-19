@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require 'spec_helper'
 
 feature "Events", %q{
   In order to open call for papers
@@ -115,10 +115,10 @@ feature "Events", %q{
 
     scenario "I should be able to go to the list of proposals clicking on the picture" do
       event = Factory(:event)
-      visit event_page(event)
+      visit event_path(event)
 
       within '#proposal' do
-        page.should have_css("a[href*='#{event_page(event)}']")
+        page.should have_css("a[href*='#{event_path(event)}']")
       end
     end
 

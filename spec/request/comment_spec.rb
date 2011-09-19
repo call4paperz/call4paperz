@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require 'spec_helper'
 
 feature "Comment", %q{
   In order to talk to other people
@@ -10,26 +10,26 @@ feature "Comment", %q{
   let(:event) { proposal.event }
 
   scenario "I should see the number of comments change appropriately" do
-    visit event_page(event)
+    visit event_path(event)
     page.should have_content "0 comments"
 
     Factory(:comment, :proposal => proposal)
     Factory(:comment, :proposal => Factory(:proposal, :event => event))
 
-    visit event_page(event)
+    visit event_path(event)
     page.should have_content "1 comment"
     page.should have_no_content "2 comments"
   end
 
   scenario "I should be able to see people's comments" do
     Factory(:comment, :proposal => proposal)
-    visit proposal_page(proposal)
+    visit event_proposal_path(event, proposal)
 
     page.should have_content("Lorem Ipsum Dolor")
   end
 
   scenario "I shouldn't be able to make comments while not logged in" do
-    visit proposal_page(proposal)
+    visit event_proposal_path(event, proposal)
 
     fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
     find('.submit_comment').click
@@ -41,7 +41,7 @@ feature "Comment", %q{
   scenario "I should be able to make comments while logged in" do
     sign_in
 
-    visit proposal_page(proposal)
+    visit event_proposal_path(event, proposal)
 
     fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
     find('.submit_comment').click

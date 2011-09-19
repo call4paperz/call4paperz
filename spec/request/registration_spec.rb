@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require 'spec_helper'
 
 feature "Registration", %q{
   In order to interact with the site
@@ -46,7 +46,7 @@ feature "Registration", %q{
 
       page.should have_content "Logout"
 
-      current_path.should == homepage
+      current_path.should eq(root_path)
     end
   end
 end

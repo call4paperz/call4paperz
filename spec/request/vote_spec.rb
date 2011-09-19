@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require 'spec_helper'
 
 feature "Vote", %q{
   In order to express my opinion
@@ -11,7 +11,7 @@ feature "Vote", %q{
 
 
   scenario "While not logged in, I should not be able to like a proposal" do
-    visit event_page(event)
+    visit event_path(event)
 
     click_like
 
@@ -19,7 +19,7 @@ feature "Vote", %q{
   end
 
   scenario "After trying to vote not logged in, and logging in, the vote should be computed automatically" do
-    visit event_page(event)
+    visit event_path(event)
 
     click_like
 
@@ -30,7 +30,7 @@ feature "Vote", %q{
   end
 
   scenario "While not logged in, I should not be able to dislike a proposal" do
-    visit event_page(event)
+    visit event_path(event)
 
     click_dislike
     page.should have_content("Login")
@@ -39,7 +39,7 @@ feature "Vote", %q{
   scenario "While logged in, I should be able to like a proposal" do
     sign_in
 
-    visit event_page(event)
+    visit event_path(event)
 
     click_like
     page.should have_no_content("Login")
@@ -48,7 +48,7 @@ feature "Vote", %q{
   scenario "While logged in, I should be able to dislike a proposal" do
     sign_in
 
-    visit event_page(event)
+    visit event_path(event)
 
     click_dislike
     page.should have_no_content("Login")
@@ -57,7 +57,7 @@ feature "Vote", %q{
   scenario "While I've already voted, I should be notified that I can't vote again" do
     sign_in
 
-    visit event_page(event)
+    visit event_path(event)
 
     click_like
     page.should have_css("img[alt='Thanks for voting!']")

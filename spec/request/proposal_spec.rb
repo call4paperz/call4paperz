@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/acceptance_helper'
+require 'spec_helper'
 
 feature "Proposal", %q{
   In order to select proposals
@@ -12,7 +12,7 @@ feature "Proposal", %q{
   context "Viewing proposals" do
     scenario "While not logged in, I should be able to view proposal information" do
       proposal
-      visit event_page(event)
+      visit event_path(event)
 
       page.should have_no_content 'Sign in'
       page.should have_content 'Refactoring Ruby'
@@ -23,7 +23,7 @@ feature "Proposal", %q{
 
     scenario "While not logged in, I should be able to view proposals' details " do
       proposal
-      visit proposal_page(proposal)
+      visit event_proposal_path(event, proposal)
 
       page.should have_no_content 'Sign in'
       page.should have_content 'Refactoring Ruby'
@@ -35,7 +35,7 @@ feature "Proposal", %q{
     scenario "I can create a proposal" do
       sign_in
 
-      visit event_page(event)
+      visit event_path(event)
       find('#left_bar a').click
 
       fill_in "Name", :with => 'Refactoring Ruby'
@@ -49,7 +49,7 @@ feature "Proposal", %q{
     scenario "While registering, I can't register a proposal without a name" do
       sign_in
 
-      visit event_page(event)
+      visit event_path(event)
       find('#left_bar a').click
 
       fill_in 'Description', :with => 'Refactoring Ruby 2nd edition'
@@ -62,7 +62,7 @@ feature "Proposal", %q{
     scenario "While registering, I can't register a proposal without a name" do
       sign_in
 
-      visit event_page(event)
+      visit event_path(event)
       find('#left_bar a').click
 
       fill_in 'Name', :with => 'GURU-SP'

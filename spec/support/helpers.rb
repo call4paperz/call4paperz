@@ -19,5 +19,3 @@ module HelperMethods
     find('input[type=image]').click
   end
 end
-
-RSpec.configuration.include HelperMethods, :type => :acceptance

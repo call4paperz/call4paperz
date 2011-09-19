@@ -23,7 +23,6 @@ gem 'friendly_id'
 gem 'rbx-require-relative', '~> 0.0.5'
 
 group :development, :test do
-  gem 'autotest'
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Rr10Team71::Application.config.secret_token = '55181ae351020628bfe4eb0850c55e63f514f0721a7b16ad9b7c1cee1c0b8250132e29b66110dcc1c7c22418274a05be7ff3356ae0570dd03fac2d61321fd461'
+Rr10Team71::Application.config.secret_token = 'f90581d6c81bd68675852ebba81d7c64288bb41a40c8ea322932a93820a74576f78a2f9ad3bee7d58eb864281a7b4fce842a522277197ff5d969ebc3568fa4b3'

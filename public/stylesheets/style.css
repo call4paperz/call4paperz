@@ -1,6 +1,5 @@
 /* vermelho da3546 */
 /* azul eff7fc*/
-/*http://www.google.com.br/imgres?imgurl=http://www.ftg.com.br/english/img/mapa_brasil.jpg&imgrefurl=http://www.ftg.com.br/english/representantes.html&usg=__DxzMilhaqmZk9Yi34tPs-XrxmPo=&h=400&w=425&sz=22&hl=en&start=0&tbnid=KdT5_ak90YWpkM:&tbnh=167&tbnw=165&prev=/images%3Fq%3Dmapa%2Bbrasil%26um%3D1%26hl%3Den%26client%3Dfirefox-a%26sa%3DN%26rls%3Dorg.mozilla:pt-BR:official%26biw%3D1229%26bih%3D831%26tbs%3Disch:10%2C361&um=1&itbs=1&iact=rc&dur=350&ei=uiZPTJG6MYGDnQfYuLS_Bw&page=1&ndsp=24&ved=1t:429,r:23,s:0&biw=1229&bih=831*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -416,6 +415,12 @@ ul#menu_top li a:hover{
 	padding:19px;
 	position:relative;
 	float: left;
+}
+
+.admin_area {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
 }
 
 .logo{

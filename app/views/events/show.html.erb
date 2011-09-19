@@ -3,8 +3,8 @@
 </div>
 
 <div id="proposal_list">
-  <div class="admin_area">
-    <% if user_is_owner?(@event) %>
+  <% if user_is_owner?(@event) %>
+    <div class="admin_area">
       <p>
         Administrative tools:
         <strong>
@@ -12,8 +12,8 @@
           <%= link_to "Edit event", edit_event_path(@event) %>
         </strong>
       </p>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <%= image_tag '/images/prop_vote.png' %>
   <p class="sub_vote">Decide who speaks at the conference!</p>

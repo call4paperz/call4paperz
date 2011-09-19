@@ -6,11 +6,11 @@ module NavigationHelpers
   end
 
   def event_page(event)
-    "/events/#{event.id}"
+    "/events/#{event.slug.name}"
   end
 
   def proposal_page(proposal)
-    "/events/#{proposal.event.id}/proposals/#{proposal.id}"
+    "/events/#{proposal.event.slug}/proposals/#{proposal.id}"
   end
 end
 

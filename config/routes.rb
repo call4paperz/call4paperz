@@ -1,5 +1,6 @@
 Rr10Team71::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
+  match '/auth/failure' => 'authentications#failure'
 
   devise_for :users
 

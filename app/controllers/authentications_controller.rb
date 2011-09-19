@@ -5,7 +5,7 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
-    auth = request.env["rack.auth"]
+    auth = request.env["omniauth.auth"]
     authenticate!(auth['provider'], auth['uid'], auth['user_info'])
 
     destination_url = stored_location_for(:user) || root_path

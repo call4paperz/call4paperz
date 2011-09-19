@@ -144,6 +144,10 @@ feature "Events", %q{
       event = Factory(:event, :user => user)
 
       visit edit_event_path(event)
+      fill_in 'Occurs at', :with => '01/20/2011'
+
+      find(".actions input").click
+      page.should have_content "Event was successfully updated."
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do

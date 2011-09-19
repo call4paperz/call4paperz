@@ -418,7 +418,7 @@ ul#menu_top li a:hover{
 }
 
 .admin_area {
-  margin: 10px;
+  margin: 10px 10px 20px;
   padding: 10px;
   background-color: white;
 }

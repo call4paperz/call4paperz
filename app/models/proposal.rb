@@ -1,6 +1,8 @@
 class Proposal < ActiveRecord::Base
   JSON_ATTRIBUTES = [:id, :name, :created_at, :description, :occurs_at].freeze
 
+  GRACE_PERIOD = 30.minutes
+
   attr_accessible :acceptance_points
 
   has_many :votes, :dependent => :destroy
@@ -37,4 +39,12 @@ class Proposal < ActiveRecord::Base
     votes.negatives.count
   end
 
+  def grace_period_left
+    grace = (created_at - GRACE_PERIOD.ago).to_i
+    grace > 0 ? grace : 0
+  end
+
+  def has_grace_period_left?
+    grace_period_left > 0
+  end
 end

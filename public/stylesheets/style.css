@@ -881,6 +881,18 @@ a.prop_link:hover, a.prop_link:active{
 	top: 7px;
 }
 
+#edit_proposal {
+  margin-left: 5px;
+}
+
+#proposal_notice {
+  margin-bottom: 20px;
+}
+
+#proposal_notice strong {
+  text-decoration: underline;
+}
+
 .comment_detail:link, .comment_detail:visited {
 	color:#FFFFFF !important;
 	font-size:12px;

@@ -19,7 +19,6 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.xml
   def show
-
     @comments = proposal.comments.order("created_at DESC")
 
     @comment = Comment.new
@@ -41,6 +40,10 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1/edit
   def edit
+    unless proposal.has_grace_period_left?
+      redirect_to [event, proposal], :notice => "You cannot edit a proposal after 30 minutes of creation."
+    end
+
     proposal
   end
 

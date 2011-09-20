@@ -69,8 +69,38 @@ feature "Proposal", %q{
 
       find('input[type=image]').click
 
-
       page.should have_content "Description can't be blank"
+    end
+
+    scenario "I can't edit a proposal if I do not own it" do
+      visit event_proposal_path(event, proposal)
+
+      page.should have_no_content "Edit"
+    end
+
+    scenario "I can edit my proposal while it's under 30 minutes of publication" do
+      user = Factory(:user)
+      proposal = Factory(:proposal, :created_at => Time.now, :user => user)
+
+      sign_in_with(user)
+      visit event_proposal_path(event, proposal)
+      click_link 'edit'
+
+      fill_in 'Description', :with => 'Changed description'
+
+      page.should have_content "Changed description"
+    end
+
+    scenario "I can't edit my proposal while it's over 30 minutes of publication" do
+      user = Factory(:user)
+      proposal = Factory(:proposal, :created_at => 1.hour.ago, :user => user)
+
+      sign_in_with(user)
+      visit event_proposal_path(event, proposal)
+
+      click_link 'edit'
+
+      page.should have_content "You cannot edit a proposal after 30 minutes of creation."
     end
   end
 end

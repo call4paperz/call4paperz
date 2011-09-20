@@ -3,7 +3,16 @@
     <%= image_tag 'ajax-loader.gif' %>
   </div>
 
-  <p><strong><%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %></strong></p>
+  <p>
+    <strong>
+      <%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %>
+      <% if user_is_owner?(proposal) %>
+        <span id="edit_proposal">
+        <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) %>
+        </span>
+      <% end %>
+    </strong>
+  </p>
   <%= render_percentage_bar(proposal.acceptance_points) %>
   <p><%= proposal.description %></p>
 
@@ -13,6 +22,7 @@
   </div>
 
   <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>
+
 
   <span class="voting_container">
     <%= vote_box(@event, proposal, current_user) %>

@@ -1,21 +1,16 @@
 <div id="left_bar">
-	<%= render :partial => 'events/event' %>
+  <%= render :partial => 'events/event' %>
 </div>
-
 
 <div id="proposal_list">
-	<%= image_tag '/images/comments_label.jpg' %>
-	<p class="sub_vote">What people think about this proposal.</p>
-	<br/>
-	<%= render @comment.proposal %>
+  <%= image_tag '/images/comments_label.jpg' %>
+  <p class="sub_vote">What people think about this proposal.</p>
+  <br/>
+  <%= render @comment.proposal %>
 
-	<%= render 'comments/form' %>
+  <%= render 'comments/form' %>
 
-	<% @comments.each do |comment| -%>
-	  <%= render comment %>
-	<% end -%>
+  <% @comments.each do |comment| -%>
+    <%= render comment %>
+  <% end -%>
 </div>
-
-
-
-

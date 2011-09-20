@@ -1,0 +1,10 @@
+<div id="new_item">
+  <div id="new_item_container">
+	<p class="sub_add_prop">Editing your proposal</p>
+	<br/>
+
+    <%= render 'form' %>
+
+    <p id="proposal_notice"><strong>Please note</strong> you still have <%= distance_of_time_in_words_to_now(Time.now + @proposal.grace_period_left.seconds) %> minutes to make changes.</p>
+  </div>
+</div>

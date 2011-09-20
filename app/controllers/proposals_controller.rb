@@ -1,6 +1,7 @@
 class ProposalsController < ApplicationController
   before_filter :event
   before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
+  before_filter :verify_grace_period, :only => [:update, :edit]
 
   respond_to :html, :json
 
@@ -40,10 +41,6 @@ class ProposalsController < ApplicationController
 
   # GET /proposals/1/edit
   def edit
-    unless proposal.has_grace_period_left?
-      redirect_to [event, proposal], :notice => "You cannot edit a proposal after 30 minutes of creation."
-    end
-
     proposal
   end
 
@@ -119,4 +116,9 @@ class ProposalsController < ApplicationController
     @proposal ||= Proposal.find(params[:id])
   end
 
+  def verify_grace_period
+    unless proposal.has_grace_period_left?
+      redirect_to [event, proposal], :notice => "You cannot edit a proposal after 30 minutes of creation."
+    end
+  end
 end

@@ -17,7 +17,6 @@ gem 'validates_timeliness', '>= 3.0.0.beta.5'
 gem 'will_paginate'
 gem 'responders', '0.6.2'
 gem 'friendly_id'
-gem 'gravtastic'
 
 group :development, :test do
   gem 'capybara'

@@ -81,7 +81,6 @@ GEM
     formatador (0.2.1)
     friendly_id (3.3.0.1)
       babosa (~> 0.3.0)
-    gravtastic (3.2.6)
     hike (1.2.1)
     i18n (0.6.0)
     idn (0.0.2)
@@ -267,7 +266,6 @@ DEPENDENCIES
   factory_girl_rails
   fog
   friendly_id
-  gravtastic
   idn
   jquery-rails
   mail_form

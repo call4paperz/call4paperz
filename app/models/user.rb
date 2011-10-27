@@ -1,7 +1,4 @@
 class User < ActiveRecord::Base
-  include Gravtastic
-  gravtastic
-
   has_many :authentications, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :events, :dependent => :destroy

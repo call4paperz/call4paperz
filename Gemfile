@@ -5,13 +5,10 @@ gem 'rails', '3.1'
 gem 'carrierwave'
 gem 'devise'
 gem 'fog'
-# gem 'inploy'
 gem 'jquery-rails'
 gem 'mail_form'
 gem 'mini_magick'
-
-# brew install libidn, improves addressable performance
-gem 'idn'
+gem 'idn', :platform => :ruby_18
 gem 'addressable'
 gem 'omniauth', '>= 0.3.0.rc3'
 gem 'pg'
@@ -20,7 +17,6 @@ gem 'validates_timeliness', '>= 3.0.0.beta.5'
 gem 'will_paginate'
 gem 'responders', '0.6.2'
 gem 'friendly_id'
-gem 'rbx-require-relative', '~> 0.0.5'
 
 group :development, :test do
   gem 'capybara'
@@ -30,5 +26,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'silent-postgres'
   gem 'timecop'
-  gem 'ruby-debug'
+  gem 'ruby-debug', :platform => :ruby_18
+  gem 'ruby-debug19', :platform => :ruby_19
 end

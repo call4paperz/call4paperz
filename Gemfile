@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1'
+gem 'rails', '3.1.1'
 
 gem 'carrierwave'
 gem 'devise'
@@ -10,7 +10,7 @@ gem 'mail_form'
 gem 'mini_magick'
 gem 'idn', :platform => :ruby_18
 gem 'addressable'
-gem 'omniauth', '>= 0.3.0.rc3'
+gem 'omniauth', '= 0.3.2'
 gem 'pg'
 gem 'rake'
 gem 'validates_timeliness', '>= 3.0.0.beta.5'

@@ -11,7 +11,7 @@ describe UserHelper do
 
     context "user with picture without email" do
       let(:user) { Factory.stub(:user, :picture => "123.png", :email => nil) }
-      it { should match("no_avatar.png") }
+      it { should match("123.png") }
     end
 
     context "user without picture nor email" do

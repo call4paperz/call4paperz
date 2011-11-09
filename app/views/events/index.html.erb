@@ -18,9 +18,9 @@
           </p>
         </div>
         <div class="event_status">
-          <span><%= event.proposals.size %></span> <%= pluralize(event.proposals.size, 'proposal').split[1] %>
-          <span><%= event.votes.size %></span> <%= pluralize(event.votes.size, 'vote').split[1] %>
-          <span><%= event.comments.size %></span> <%= pluralize(event.comments.size, 'comment').split[1] %>
+          <span><%= event.proposals_count %></span> <%= pluralize(event.proposals_count, 'proposal').split[1] %>
+          <span><%= event.votes_count %></span> <%= pluralize(event.votes_count, 'vote').split[1] %>
+          <span><%= event.comments_count %></span> <%= pluralize(event.comments_count, 'comment').split[1] %>
         </div>
       </div>
     <% end %>

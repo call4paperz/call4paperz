@@ -23,12 +23,16 @@ class Proposal < ActiveRecord::Base
     votes.positives.count - votes.negatives.count
   end
 
-  def to_json(options=nil)
-    super(:include => [:comments, :user], :only => JSON_ATTRIBUTES)
+  def as_json(options=nil)
+    super(:include => [:comments, :user], :only => JSON_ATTRIBUTES, :methods => [:comments_count])
   end
 
   def votes_count
     votes.count
+  end
+
+  def comments_count
+    comments.count
   end
 
   def positive_points

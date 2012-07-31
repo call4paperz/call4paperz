@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.active.occurs_first
+    @events = Event.active.occurs_first.includes(:proposals => :comments).limit(100)
     respond_with @events
   end
 

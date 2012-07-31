@@ -17,6 +17,7 @@ gem 'validates_timeliness', '>= 3.0.0.beta.5'
 gem 'will_paginate'
 gem 'responders', '0.6.2'
 gem 'friendly_id'
+gem "recaptcha", :require => "recaptcha/rails"
 
 group :development, :test do
   gem 'capybara'
@@ -26,6 +27,4 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'silent-postgres'
   gem 'timecop'
-  gem 'ruby-debug', :platform => :ruby_18
-  gem 'ruby-debug19', :platform => :ruby_19
 end

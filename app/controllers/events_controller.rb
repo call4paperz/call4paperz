@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :create, :update, :edit, :crop]
+
   respond_to :html, :json, :jsonp
 
   # GET /events
@@ -43,7 +44,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(params[:event])
 
     respond_to do |format|
-      if @event.save
+      if verify_recaptcha(:model => @event, :message => 'Please type the captcha correctly') && @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else

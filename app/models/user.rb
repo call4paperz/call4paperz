@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  attr_accessor :email_confirmation
+
   has_many :authentications, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :events, :dependent => :destroy
@@ -12,7 +14,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :name, :picture
+                  :name, :picture, :email_confirmation
 
   validates_presence_of   :email, :if => :email_required?
 
@@ -21,6 +23,8 @@ class User < ActiveRecord::Base
     v.validates_confirmation_of :password
     v.validates_length_of       :password, :within => 6..20, :allow_blank => true
   end
+
+  validate :honeypot
 
   def has_vote_for?(proposal)
     votes.exists?(:proposal_id => proposal.id)
@@ -40,5 +44,7 @@ class User < ActiveRecord::Base
     authentications.empty?
   end
 
-
+  def honeypot
+    errors.add :email_confirmation, "You must confirm your email" unless email_confirmation.blank?
+  end
 end

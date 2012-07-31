@@ -542,6 +542,7 @@ a.prop_link:hover, a.prop_link:active{
 
 .event_listed p {
 	font-size: 12px;
+  line-height: 1.6px;
 }
 
 .event_listed h1 a {
@@ -1039,4 +1040,8 @@ a.logo_c4p img{
 
 #crop_previews {
   float: left;
+}
+
+form .special {
+  display: none;
 }

@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
 
-  attr_accessor :crop_w, :crop_h, :crop_x, :crop_y
+  attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
   has_many :proposals, :dependent => :destroy
   has_many :comments, :through  => :proposals
@@ -21,9 +21,10 @@ class Event < ActiveRecord::Base
 
   attr_accessible :crop_w, :crop_h, :crop_x, :crop_y,
     :picture_cache, :name, :description, :twitter,
-    :occurs_at, :url, :user_id, :picture
+    :occurs_at, :url, :user_id, :picture, :prod_description
 
   mount_uploader :picture, PictureUploader
+  validate :honeypot
 
   class << self
     def most_recent
@@ -71,6 +72,10 @@ class Event < ActiveRecord::Base
   end
 
   private
+  def honeypot
+    errors.add :prod_description, "lala" unless prod_description.blank?
+  end
+  
   def twitter_has_valid_format
     match = twitter &&
       (twitter.match(/^([a-zA-Z0-9_]{1,15})$/) ||

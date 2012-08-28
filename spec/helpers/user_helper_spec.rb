@@ -9,12 +9,12 @@ describe UserHelper do
     end
 
     context "user without picture" do
-      let(:user) { Factory.stub(:user, :picture => nil) }
+      let(:user) { FactoryGirl.build(:user, :picture => nil) }
       it { should match("no_avatar.png") }
     end
 
     context "user with picture" do
-      let(:user) { Factory.stub(:user, :picture => "123.png") }
+      let(:user) { FactoryGirl.build(:user, :picture => "123.png") }
       it { should match("123.png") }
     end
     context "with options" do

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe ProposalsHelper do
-  let(:user) { Factory(:user) }
-  let(:proposal) { Factory(:proposal) }
-  let(:event) { Factory(:event) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:proposal) { FactoryGirl.create(:proposal) }
+  let(:event) { FactoryGirl.create(:event) }
 
   describe "#vote_box" do
     context "user is set and has voted" do

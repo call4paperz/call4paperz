@@ -1,5 +1,19 @@
-CarrierWave.configure do |config|
-  config.s3_access_key_id = ENV['S3_ACCESS_KEY']
-  config.s3_secret_access_key = ENV['S3_SECRET_KEY']
-  config.s3_bucket = 'cdn.call4paperz.com'
+if Rails.env.test?
+
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+  end
+
+else
+
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+      :provider               => 'AWS',
+      :aws_access_key_id      => ENV['S3_ACCESS_KEY'],
+      :aws_secret_access_key  => ENV['S3_SECRET_KEY'],
+    }
+    config.fog_directory  = 'cdn.call4paperz.com'
+  end
+
 end

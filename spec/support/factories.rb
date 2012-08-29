@@ -1,4 +1,5 @@
 require 'factory_girl'
+FactoryGirl.factories.clear
 
 FactoryGirl.define do
   factory :user do

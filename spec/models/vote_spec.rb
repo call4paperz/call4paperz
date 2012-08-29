@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Vote do
-  let(:proposal) { Factory(:proposal) }
-  let(:user) { Factory(:user) }
+  let(:proposal) { FactoryGirl.create(:proposal) }
+  let(:user) { FactoryGirl.create(:user) }
 
   describe ".like!" do
     it "should generate a vote for the specified proposal and user" do

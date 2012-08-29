@@ -8,7 +8,7 @@ feature "Events", %q{
 
   context "Viewing events" do
     scenario "While not logged in, I should be able to view events" do
-      Factory(:event)
+      FactoryGirl.create(:event)
       visit '/events'
       page.should have_content 'GURU-SP'
       page.should have_no_content 'Sign in'
@@ -33,7 +33,7 @@ feature "Events", %q{
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
-      event = Factory(:event)
+      event = FactoryGirl.create(:event)
 
       visit '/events'
 
@@ -71,10 +71,10 @@ feature "Events", %q{
     end
 
     scenario "I should be able to see stats for an event" do
-      Factory(:event)
-      proposal = Factory(:proposal)
-      Factory(:comment, :proposal => proposal)
-      2.times { Factory(:vote, :proposal => proposal) }
+      FactoryGirl.create(:event)
+      proposal = FactoryGirl.create(:proposal)
+      FactoryGirl.create(:comment, :proposal => proposal)
+      2.times { FactoryGirl.create(:vote, :proposal => proposal) }
 
       visit '/events'
 
@@ -86,10 +86,10 @@ feature "Events", %q{
     scenario "I should be able to see the events sorted by the date the events occur" do
       Timecop.freeze(2.days.ago)
 
-      past_event = Factory(:event, :occurs_at => Time.now, :name => 'The Dinosaurs')
-      todays_event = Factory(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
-      late_event = Factory(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
-      early_event = Factory(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')
+      past_event = FactoryGirl.create(:event, :occurs_at => Time.now, :name => 'The Dinosaurs')
+      todays_event = FactoryGirl.create(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
+      late_event = FactoryGirl.create(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
+      early_event = FactoryGirl.create(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')
 
       Timecop.return
 
@@ -114,7 +114,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to go to the list of proposals clicking on the picture" do
-      event = Factory(:event)
+      event = FactoryGirl.create(:event)
       visit event_path(event)
 
       within '#proposal' do
@@ -125,10 +125,10 @@ feature "Events", %q{
     end
 
     scenario "I should be able to see admin links if I am the the owner" do
-      user = Factory(:user)
+      user = FactoryGirl.create(:user)
       sign_in_with(user)
 
-      event = Factory(:event, :user => user)
+      event = FactoryGirl.create(:event, :user => user)
 
       visit event_path(event)
 
@@ -138,10 +138,10 @@ feature "Events", %q{
     end
 
     scenario "I should be able to edit an event" do
-      user = Factory(:user)
+      user = FactoryGirl.create(:user)
       sign_in_with(user)
 
-      event = Factory(:event, :user => user)
+      event = FactoryGirl.create(:event, :user => user)
 
       visit edit_event_path(event)
       fill_in 'Occurs at', :with => '01/20/2011'

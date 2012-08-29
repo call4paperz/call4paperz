@@ -8,13 +8,13 @@ commented by the users.
 
 You must set the following environment variables for the system to fully work:
 
-S3_ACCESS_KEY
-S3_SECRET_KEY
-TWITTER_ACCESS
-TWITTER_SECRET
-FACEBOOK_ACCESS
-FACEBOOK_KEY
-SECRET_KEY
+    S3_ACCESS_KEY
+    S3_SECRET_KEY
+    TWITTER_ACCESS
+    TWITTER_SECRET
+    FACEBOOK_ACCESS
+    FACEBOOK_KEY
+    SECRET_KEY
 
 ## Links
 [Mailing list](https://groups.google.com/forum/#!forum/call4paperz-dev)
@@ -33,6 +33,10 @@ Maintenance is done by [vinibaggio](https://github.com/vinibaggio).
 - Anderson Leite (no longer active)
 - Douglas Campos (no longer active)
 - Vinicius Baggio Fuentes, [vinibaggio](https://github.com/vinibaggio)
+
+## Contributors
+- [akitaonrails](https://github.com/akitaonrails)
+- [fnando](https://github.com/fnando)
 
 ## License
 call4paperz uses the MIT license. Please check the LICENSE file for more details.

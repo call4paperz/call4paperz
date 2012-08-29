@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  has_friendly_id :name, :use_slug => true
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
@@ -75,7 +76,7 @@ class Event < ActiveRecord::Base
   def honeypot
     errors.add :prod_description, "lala" unless prod_description.blank?
   end
-  
+
   def twitter_has_valid_format
     match = twitter &&
       (twitter.match(/^([a-zA-Z0-9_]{1,15})$/) ||

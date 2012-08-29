@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-  let(:user) { Factory.stub(:user) }
+  let(:user) { FactoryGirl.stub(:user) }
 
   describe "#menu" do
     subject { helper.menu }

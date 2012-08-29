@@ -1,25 +1,32 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+ruby "1.9.3"
+
+gem 'rails', '3.2.8'
 
 gem 'carrierwave'
 gem 'devise'
+gem 'devise-encryptable'
 gem 'fog'
 gem 'jquery-rails'
 gem 'mail_form'
 gem 'mini_magick'
-gem 'idn', :platform => :ruby_18
 gem 'addressable'
-gem 'omniauth', '= 0.3.2'
+gem 'omniauth', '~> 1.1.1'
+gem 'omniauth-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'pg'
 gem 'rake'
-gem 'validates_timeliness', '>= 3.0.0.beta.5'
+gem 'validates_timeliness', "~> 3.0.14"
 gem 'will_paginate'
-gem 'responders', '0.6.2'
+gem 'responders', '0.9.2'
 gem 'friendly_id'
 gem "recaptcha", :require => "recaptcha/rails"
 
 group :development, :test do
+  gem 'pry-rails'
+  gem 'sqlite3'
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'

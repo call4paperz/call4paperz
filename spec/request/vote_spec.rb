@@ -6,7 +6,7 @@ feature "Vote", %q{
   I want to vote positively or negatively on a proposal
 } do
 
-  let(:proposal) { Factory(:proposal) }
+  let(:proposal) { FactoryGirl.create(:proposal) }
   let(:event) { proposal.event }
 
 

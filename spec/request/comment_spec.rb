@@ -6,15 +6,15 @@ feature "Comment", %q{
   I want to make comments about proposals
 } do
 
-  let(:proposal) { Factory(:proposal) }
+  let(:proposal) { FactoryGirl.create(:proposal) }
   let(:event) { proposal.event }
 
   scenario "I should see the number of comments change appropriately" do
     visit event_path(event)
     page.should have_content "0 comments"
 
-    Factory(:comment, :proposal => proposal)
-    Factory(:comment, :proposal => Factory(:proposal, :event => event))
+    FactoryGirl.create(:comment, :proposal => proposal)
+    FactoryGirl.create(:comment, :proposal => FactoryGirl.create(:proposal, :event => event))
 
     visit event_path(event)
     page.should have_content "1 comment"
@@ -22,7 +22,7 @@ feature "Comment", %q{
   end
 
   scenario "I should be able to see people's comments" do
-    Factory(:comment, :proposal => proposal)
+    FactoryGirl.create(:comment, :proposal => proposal)
     visit event_proposal_path(event, proposal)
 
     page.should have_content("Lorem Ipsum Dolor")

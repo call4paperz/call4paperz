@@ -4,6 +4,18 @@ call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and
 commented by the users.
 
+## Environment Configuration
+
+You must set the following environment variables for the system to fully work:
+
+S3_ACCESS_KEY
+S3_SECRET_KEY
+TWITTER_ACCESS
+TWITTER_SECRET
+FACEBOOK_ACCESS
+FACEBOOK_KEY
+SECRET_KEY
+
 ## Links
 [Mailing list](https://groups.google.com/forum/#!forum/call4paperz-dev)
 

@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: call4paperz_development
+  username: vagrant
+  password:

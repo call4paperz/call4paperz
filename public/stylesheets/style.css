@@ -859,9 +859,9 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #event_social{
-  left:105px;
+  left: 80px;
   position:absolute;
-  top:525px;
+  bottom: -50px;
 }
 
 #tweeting{
@@ -933,7 +933,6 @@ a.logo_c4p img{
   float: left;
   margin-right: 4px;
   display: inline-block;
-  bottom: 2px;
 }
 
 .percentage  {
@@ -1048,4 +1047,10 @@ a.logo_c4p img{
 
 form .special {
   display: none;
+}
+
+.fb_iframe_widget {
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
 }

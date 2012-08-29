@@ -239,11 +239,16 @@ ul#menu_top li a:hover{
 }
 
 .event{
-  background: url('/images/event_bg.png') no-repeat;
+  background: #fff;
+  border-radius: 10px;
   width: 578px;
   height: 115px;
   padding: 20px;
   position: relative;
+}
+
+.event + .event {
+  margin-top: 20px;
 }
 
 .head{
@@ -297,6 +302,10 @@ ul#menu_top li a:hover{
   top:95px;
 }
 
+.buttons a {
+  margin-right: 15px;
+}
+
 .buttons iframe {
   position: relative;
   top: 5px;
@@ -345,8 +354,10 @@ ul#menu_top li a:hover{
 }
 
 .prop_link{
+  margin-top: 40px;
   font-size: 12px;
   color: #da3546;
+  text-align: center;
 }
 .prop_link span{
   color: #111111;
@@ -459,8 +470,7 @@ ul#menu_top li a:hover{
   background: #fff;
   border-radius: 10px;
   margin-bottom:10px;
-  padding: 20px 125px 20px 20px;
-  height:176px;
+  padding: 20px 20px 120px 20px;
   width:581px;
   position: relative;
 }
@@ -604,10 +614,6 @@ a.prop_link:hover, a.prop_link:active{
   border: 5px solid #B24450;
   float: left;
   margin: 20px;
-  border-bottom-left-radius: 15px 15px;
-  border-bottom-right-radius: 15px 15px;
-  border-top-left-radius: 15px 15px;
-  border-top-right-radius: 15px 15px;
 }
 
 

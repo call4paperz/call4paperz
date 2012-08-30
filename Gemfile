@@ -21,8 +21,10 @@ gem 'will_paginate'
 gem 'responders', '0.9.2'
 gem 'friendly_id'
 gem "recaptcha", :require => "recaptcha/rails"
+gem 'thin'
 
 group :development, :test do
+  gem 'foreman'
   gem 'pry-rails'
   gem 'sqlite3'
   gem 'capybara'

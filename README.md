@@ -24,7 +24,7 @@ Install foreman:
 
 Then create file `$RAILS_ROOT/.env` file with the following content:
 
-    SECRET_TOKEN=2d48c32f2ecdc0507efb3ce66fea2196a585a0a652d93e537135944baa8
+    SECRET_KEY=2d48c32f2ecdc0507efb3ce66fea2196a585a0a652d93e537135944baa8
     TWITTER_ACCESS=<your twitter access key>
     TWITTER_SECRET=<your twitter secret key>
     FACEBOOK_ACCESS=<your facebook access key>

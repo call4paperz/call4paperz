@@ -30,6 +30,11 @@ Then create file `$RAILS_ROOT/.env` file with the following content:
     FACEBOOK_ACCESS=<your facebook access key>
     FACEBOOK_KEY=<your facebook api key>
 
+Then config database
+
+    cp config/database.yml.sample config/database.yml
+    bundle exec rake db:migrate
+
 Then start the server with the following command:
 
     $ foreman start -f Procfile.development

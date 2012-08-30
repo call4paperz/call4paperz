@@ -7,23 +7,24 @@
 	<%= image_tag '/images/event_list.png' %>
 	<p class="sub_vote">A list of events you can proposal to speak or vote in the proposals.</p>
     <%= link_to image_tag('/images/create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
-    <div style="clear:both"></div>
-    <% @events.each do |event| %>
-      <div class="event_listed">
-        <%= image_tag event.picture.cropped.url, :class => 'logo_small' %>
-        <div class="event_desc">
-          <h1><%= link_to "#{event.name} (#{l(event.occurs_at, :format => :short)})", event %></h1>
-          <p>
-            <%= truncate(event.description, :length => 100) %>
-          </p>
-        </div>
-        <div class="event_status">
-          <span><%= event.proposals_count %></span> <%= pluralize(event.proposals_count, 'proposal').split[1] %>
-          <span><%= event.votes_count %></span> <%= pluralize(event.votes_count, 'vote').split[1] %>
-          <span><%= event.comments_count %></span> <%= pluralize(event.comments_count, 'comment').split[1] %>
-        </div>
-      </div>
-    <% end %>
+    <ul id="events">
+      <% @events.each do |event| %>
+        <li class="event_listed">
+          <%= image_tag event.picture.cropped.url, :class => 'logo_small' %>
+          <div class="event_desc">
+            <h1><%= link_to "#{event.name} (#{l(event.occurs_at, :format => :short)})", event %></h1>
+            <p>
+              <%= truncate(event.description, :length => 100) %>
+            </p>
+          </div>
+          <div class="event_status">
+            <span><%= event.proposals_count %></span> <%= pluralize(event.proposals_count, 'proposal').split[1] %>
+            <span><%= event.votes_count %></span> <%= pluralize(event.votes_count, 'vote').split[1] %>
+            <span><%= event.comments_count %></span> <%= pluralize(event.comments_count, 'comment').split[1] %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
     <%= link_to image_tag('/images/create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
   <% end -%>
 </div>

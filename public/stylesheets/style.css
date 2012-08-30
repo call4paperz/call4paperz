@@ -266,7 +266,6 @@ ul#menu_top li a:hover{
 .event p strong{
   font-weight: bold;
   color: #da3546;
-  font-size: 15px !important;
 }
 
 .event p{
@@ -283,7 +282,7 @@ ul#menu_top li a:hover{
 }
 
 .event a{
-  font-size: 14px;
+  font-size: 15px;
   color: #da3546;
 }
 
@@ -345,7 +344,6 @@ ul#menu_top li a:hover{
   float: right;
   font-weight: bold;
   font-size: 12px;
-  color: #da3546 !important;
   margin-top: 20px;
 }
 
@@ -531,7 +529,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .thumb{
-  border: 0 !important;
+  border: 0;
 }
 
 .thumb_p{
@@ -765,10 +763,6 @@ a.prop_link:hover, a.prop_link:active{
   width:400px;
 }
 
-#new_item label {
-  font-size: 14px;
-}
-
 .devise_links {
   margin: 10px 0;
 }
@@ -783,7 +777,7 @@ a.prop_link:hover, a.prop_link:active{
 
 .field label{
   font-weight: bold;
-  font-size: 12px !important;
+  font-size: 12px;
 }
 
 .vermelho{
@@ -902,8 +896,8 @@ a.prop_link:hover, a.prop_link:active{
   text-decoration: underline;
 }
 
-.comment_detail:link, .comment_detail:visited {
-  color:#FFFFFF !important;
+a.comment_detail:link, a.comment_detail:visited {
+  color:#FFFFFF;
   font-size:12px;
   font-weight:bold;
 }

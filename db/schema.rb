@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "provider"
     t.string   "uid"
   end
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
     t.text     "body"
     t.integer  "proposal_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "events", :force => true do |t|
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
     t.integer  "user_id"
     t.date     "starts_votes_at"
     t.date     "end_votes_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "slug"
   end
 
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "event_id"
   end
 
@@ -68,18 +68,18 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
-    t.string   "remember_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "picture"
     t.string   "name"
   end
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(:version => 20120828134203) do
     t.integer  "direction"
     t.integer  "proposal_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "votes", ["proposal_id", "user_id"], :name => "index_votes_on_proposal_id_and_user_id", :unique => true

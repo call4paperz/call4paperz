@@ -332,13 +332,17 @@ ul#menu_top li a:hover{
   color: #da3546;
 }
 
-.comment_pic{
+.comment div{
   float: left;
+}
+
+.comment_pic{
   margin-right: 10px;
 }
 
 .comment{
   margin-top: 15px;
+  overflow: hidden;
 }
 
 .all{

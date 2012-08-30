@@ -57,9 +57,9 @@
 			<p><strong>What people think about the last proposals.</strong></p>
 		</div>
 
-		<div id="comments">
+		<ul id="comments">
 			<% @comments.each do |comment| %>
-				<div class="comment">
+				<li class="comment">
 					<div class="comment_pic">
             <%= user_picture(comment.user, :class => 'borda_vinho') %>
 					</div>
@@ -67,12 +67,11 @@
 						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
 						<p><small><%= comment.user.name %></small></p>
 					</div>
-					<div style="clear:both"></div>
 					<%= image_tag '/images/linha.png' %>
-				</div>
+				</li>
 			<% end %>
 			<%= link_to "all events", events_path, :class => 'all' %>
-		</div>
+		</ul>
 
 	</div>
 </div>

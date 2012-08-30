@@ -62,6 +62,7 @@ Maintenance is done by [vinibaggio](https://github.com/vinibaggio).
 
 ## Contributors
 - [akitaonrails](https://github.com/akitaonrails)
+- [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)
 
 ## License

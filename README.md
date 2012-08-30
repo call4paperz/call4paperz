@@ -15,6 +15,7 @@ You must set the following environment variables for the system to fully work:
     FACEBOOK_ACCESS
     FACEBOOK_KEY
     SECRET_KEY
+    DEVISE_PEPPER
 
 ## Bootstrapping with Foreman
 

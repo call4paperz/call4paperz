@@ -312,7 +312,8 @@ ul#menu_top li a:hover{
 }
 
 #content{
-  margin-top:80px;
+  margin: 80px 0 20px;
+  overflow: hidden;
 }
 
 .borda_vinho{
@@ -331,13 +332,17 @@ ul#menu_top li a:hover{
   color: #da3546;
 }
 
-.comment_pic{
+.comment div{
   float: left;
+}
+
+.comment_pic{
   margin-right: 10px;
 }
 
 .comment{
   margin-top: 15px;
+  overflow: hidden;
 }
 
 .all{
@@ -364,6 +369,7 @@ ul#menu_top li a:hover{
 #footer{
   background: url('/images/bg_footer.png');
   height: 273px;
+  clear: both;
 }
 
 .fancy_login {
@@ -548,6 +554,9 @@ a.prop_link:hover, a.prop_link:active{
   margin-top:80px;
 }
 
+#events{
+  clear: both;
+}
 
 .event_listed {
   background:url("/images/event_big_bg.png") repeat scroll 0 0 transparent;
@@ -876,6 +885,7 @@ a.prop_link:hover, a.prop_link:active{
   position:fixed;
   width:118px;
   border-color:black;
+  clear: both;
 }
 
 #tweeting #tw{

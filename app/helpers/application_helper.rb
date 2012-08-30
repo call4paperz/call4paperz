@@ -7,7 +7,7 @@ module ApplicationHelper
       content << content_tag(:li, link_to("Events", events_path))
       if user_signed_in?
         content << content_tag(:li, link_to("Profile", profile_path))
-        content << content_tag(:li, link_to("Logout", destroy_user_session_path))
+        content << content_tag(:li, link_to("Logout", destroy_user_session_path, :method => :delete))
       else
         content << content_tag(:li, link_to("Login", new_user_session_path))
       end

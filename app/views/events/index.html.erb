@@ -4,9 +4,9 @@
     <p>There are no events yet. <%= link_to "Be the first to create one!", new_event_path, :class => 'create_button' %></p>
     <br/>
   <% else -%>
-	<%= image_tag '/images/event_list.png' %>
+	<%= image_tag 'event_list.png' %>
 	<p class="sub_vote">A list of events you can proposal to speak or vote in the proposals.</p>
-    <%= link_to image_tag('/images/create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
+    <%= link_to image_tag('create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
     <ul id="events">
       <% @events.each do |event| %>
         <li class="event_listed">
@@ -25,7 +25,7 @@
         </li>
       <% end %>
     </ul>
-    <%= link_to image_tag('/images/create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
+    <%= link_to image_tag('create_transp.png', :title => 'Create new event'), new_event_path, :class => 'create_button' %>
   <% end -%>
 </div>
 

@@ -2,10 +2,8 @@
 <html>
 <head>
   <title>Call4Paperz</title>
-  <%= stylesheet_link_tag :all %>
-  <%= stylesheet_link_tag 'jquery-ui/jquery-ui-1.8.5.custom.css', 'jquery.Jcrop' %>
-  <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag 'jquery-ui.min.js', 'jquery.validate.min.js', 'ajax.js', 'call4paperz.js', 'jquery.Jcrop.min.js'  %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tag %>
   <link rel="icon" href="/favicon.ico" type="image/ico"/>
 </head>
@@ -16,7 +14,7 @@
 			<%= render_flash_notice %>
 
 			<div id="menu">
-				<%= link_to image_tag("/images/logo_c4p.png"), root_path, :class => 'logo_c4p' %>
+        <%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
 				<%= menu %>
 			</div>
 			<div id="breadcrumb" ></div>

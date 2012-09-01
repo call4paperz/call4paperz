@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def picture
-    attributes['picture'] || '/images/no_avatar.png'
+    attributes['picture'] || 'no_avatar.png'
   end
 
   private

@@ -22,6 +22,12 @@ gem 'responders', '0.9.2'
 gem 'friendly_id'
 gem "recaptcha", :require => "recaptcha/rails"
 gem 'thin'
+gem 'jquery-rails'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.2.0"
+  gem 'uglifier'
+end
 
 group :development, :test do
   gem 'foreman'

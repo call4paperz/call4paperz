@@ -1,3 +1,12 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery.Jcrop.min
+//= require jquery-ui.min
+//= require jquery.validate.min
+//= require ajax
+//= require call4paperz
+//= require_self
+
 $(function(){
   $('.datepicker').datepicker({
       onClose: function() {
@@ -12,8 +21,8 @@ var HandleKeycount = function() {
 
   this.limit = 0;
   this.hint = null;
-  
-  
+
+
   var handler = this;
 
   this.update = function() {

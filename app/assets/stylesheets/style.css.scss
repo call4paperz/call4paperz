@@ -84,12 +84,12 @@ a:hover, a:active {
 .clear { clear: both; }
 
 #main{
-  background: url('/images/bg.png') repeat-x;
+  background: image-url('bg.png') repeat-x;
   width: 100%;
 }
 
 #main_inner{
-  background: url('/images/bg2.png') repeat-x;
+  background: image-url('bg2.png') repeat-x;
   width: 100%;
   min-height:190px;
 }
@@ -100,7 +100,7 @@ a:hover, a:active {
 }
 
 #menu{
-  background: url('/images/menu.png') ;
+  background: image-url('menu.png') ;
   height: 70px;
   position: relative;
   top: 25px;
@@ -132,7 +132,7 @@ ul#menu_top li a:hover{
 }
 
 #pic{
-  background: url('/images/showcase_frame.png') no-repeat;
+  background: image-url('showcase_frame.png') no-repeat;
   height: 403px;
   margin-top: 90px;
   position:relative;
@@ -175,7 +175,7 @@ ul#menu_top li a:hover{
 }
 
 #breadcrumb{
-  background:url('/images/breadcrumb.png') repeat scroll 0 0 transparent;
+  background:image-url('breadcrumb.png') repeat scroll 0 0 transparent;
   height:70px;
   position:relative;
   top:33px;
@@ -189,7 +189,7 @@ ul#menu_top li a:hover{
 }
 
 #howto{
-  background:url("/images/howto.png") repeat scroll 0 0 transparent;
+  background:image-url('howto.png') repeat scroll 0 0 transparent;
   float:right;
   left: 10px;
   top: 10px;
@@ -199,7 +199,7 @@ ul#menu_top li a:hover{
 }
 
 #twitter{
-  background:url("/images/twitter.png") repeat scroll 0 0 transparent;
+  background:image-url('twitter.png') repeat scroll 0 0 transparent;
   float:right;
   margin-top: -125px;
   height:152px;
@@ -256,7 +256,7 @@ ul#menu_top li a:hover{
 }
 
 #comments{
-  background:url("/images/black.png") repeat scroll 0 0 transparent;
+  background:image-url('black.png') repeat scroll 0 0 transparent;
   float:right;
   height:403px;
   width: 262px;
@@ -367,7 +367,7 @@ ul#menu_top li a:hover{
 }
 
 #footer{
-  background: url('/images/bg_footer.png');
+  background: image-url('bg_footer.png');
   height: 273px;
   clear: both;
 }
@@ -422,7 +422,7 @@ ul#menu_top li a:hover{
 }
 
 #profile{
-  background:url("/images/comments_black.png") repeat scroll 0 0 transparent;
+  background:image-url('comments_black.png') repeat scroll 0 0 transparent;
   height:142px;
   margin-bottom:20px;
   margin-top:20px;
@@ -559,7 +559,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_listed {
-  background:url("/images/event_big_bg.png") repeat scroll 0 0 transparent;
+  background:image-url('event_big_bg.png') repeat scroll 0 0 transparent;
   width: 960px;
   height: 133px;
   margin-bottom: 20px;
@@ -625,7 +625,7 @@ a.prop_link:hover, a.prop_link:active{
 
 
 .comments_list{
-  background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+  background:image-url('comment_it.png') repeat scroll 0 0 transparent;
   left:69px;
   margin-bottom:10px;
   min-height:110px;
@@ -664,7 +664,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #comment_new{
-  background:url("/images/comment_it.png") repeat scroll 0 0 transparent;
+  background:image-url('comment_it.png') repeat scroll 0 0 transparent;
   padding: 20px;
   margin-bottom: 10px;
   width: 512px;
@@ -735,7 +735,7 @@ a.prop_link:hover, a.prop_link:active{
 #new_item input[type=text],
 #new_item input[type=password],
 #new_item select, #new_item textarea {
-  background:url("/images/textinputbg.gif") repeat-x scroll 0 0 #FFFFFF;
+  background:image-url('textinputbg.gif') repeat-x scroll 0 0 #FFFFFF;
   border:1px solid #D3D3D3;
   color:#000000;
   font-size:12px;
@@ -748,7 +748,7 @@ a.prop_link:hover, a.prop_link:active{
 #new_item input[type=text].error,
 #new_item input[type=password].error,
 #new_item select.error, #new_item textarea.error {
-  background:url("/images/textinputbg-error.gif") repeat-x scroll 0 0 #FFDFDF;
+  background:image-url('textinputbg-error.gif') repeat-x scroll 0 0 #FFDFDF;
   padding:7px;
 }
 

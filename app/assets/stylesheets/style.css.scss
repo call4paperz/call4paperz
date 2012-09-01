@@ -1,16 +1,16 @@
-/* vermelho da3546 */
-/* azul eff7fc*/
+$vermelho: #da3546;
+$azul: #eff7fc;
 
 .red_form { color: #f00; }
 
 body{
   font-family: helvetica;
-  background-color: #eff7fc;
+  background-color: $azul;
 }
 
 a {
   font-size: 14px;
-  color: #da3546;
+  color: $vermelho;
 }
 
 a:link, a:visited {
@@ -19,7 +19,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   text-decoration: underline;
-  color: #da3546;
+  color: $vermelho;
 }
 
 .hidden {
@@ -64,7 +64,7 @@ ul#menu_top{
 }
 
 ul#menu_top li a{
-  color:#da3546;
+  color:$vermelho;
   font-weight: bold;
   display:block;
   float: left;
@@ -73,7 +73,7 @@ ul#menu_top li a{
 }
 
 ul#menu_top li a:hover{
-  color: #eff7fc;
+  color: $azul;
 }
 
 #pic{
@@ -179,7 +179,7 @@ ul#menu_top li a:hover{
 #most_recent_events p strong,
 #most_recent_comments p strong{
   font-size: 12px;
-  color: #da3546;
+  color: $vermelho;
   font-weight: bold;
 }
 
@@ -210,7 +210,7 @@ ul#menu_top li a:hover{
 
 .event p strong{
   font-weight: bold;
-  color: #da3546;
+  color: $vermelho;
 }
 
 .event p{
@@ -228,7 +228,7 @@ ul#menu_top li a:hover{
 
 .event a{
   font-size: 15px;
-  color: #da3546;
+  color: $vermelho;
 }
 
 .event a:link, .event a:visited{
@@ -237,7 +237,7 @@ ul#menu_top li a:hover{
 
 .event a:hover, .event a:active{
   text-decoration: underline;
-  color: #da3546;
+  color: $vermelho;
   background-color: #ffffff;
 }
 
@@ -274,7 +274,7 @@ ul#menu_top li a:hover{
 .comment p small{
   font-size: 9px;
   font-weight: bold;
-  color: #da3546;
+  color: $vermelho;
 }
 
 .comment div{
@@ -304,7 +304,7 @@ ul#menu_top li a:hover{
 .prop_link{
   margin-top: 40px;
   font-size: 12px;
-  color: #da3546;
+  color: $vermelho;
   text-align: center;
 }
 .prop_link span{
@@ -318,7 +318,7 @@ ul#menu_top li a:hover{
 }
 
 .fancy_login {
-  border-bottom: 2px dotted #da3546;
+  border-bottom: 2px dotted $vermelho;
   padding-bottom: 2px;
 }
 
@@ -411,7 +411,7 @@ ul#menu_top li a:hover{
 
 #proposal p strong{
   font-weight: bold;
-  color: #da3546;
+  color: $vermelho;
   font-size: 14px;
 }
 
@@ -426,7 +426,7 @@ ul#menu_top li a:hover{
 
 .prop p strong, .sub_vote, .sub_add_prop{
   font-weight: bold;
-  color: #da3546;
+  color: $vermelho;
   font-size: 12px;
 }
 
@@ -445,7 +445,7 @@ ul#menu_top li a:hover{
 }
 
 .prop_sub small{
-  color: #da3546;
+  color: $vermelho;
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -458,18 +458,18 @@ ul#menu_top li a:hover{
 
 .prop_sub a:link, .prop_sub a:visited{
   font-size: 12px;
-  color: #da3546;
+  color: $vermelho;
   text-decoration: none;
 }
 
 .prop_sub a:hover, .prop_sub a:active{
   text-decoration: underline;
-  color: #da3546;
+  color: $vermelho;
   background-color: #ffffff;
 }
 
 a.prop_link:link, a.prop_link:visited{
-  color: #da3546;
+  color: $vermelho;
   text-decoration: none;
   font-size: 14px;
 }
@@ -592,13 +592,13 @@ a.prop_link:hover, a.prop_link:active{
 
 .comments_list p small{
   font-size: 12px;
-  color: #da3546;
+  color: $vermelho;
   font-weight: bold;
 }
 
 .comments_list p spam{
   font-size: 12px;
-  color: #da3546;
+  color: $vermelho;
 }
 
 #comment_new form .field textarea{
@@ -629,7 +629,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #new_item h3 {
-  color: #da3546;
+  color: $vermelho;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 10px;
@@ -735,7 +735,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .vermelho{
-  color: #da3546;
+  color: $vermelho;
 }
 
 .datepicker{
@@ -756,7 +756,7 @@ a.prop_link:hover, a.prop_link:active{
 
 .event_stat p.name spam{
   font-size: 14px;
-  color: #da3546;
+  color: $vermelho;
   font-weight: bold;
 }
 

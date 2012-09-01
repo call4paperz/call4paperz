@@ -1,18 +1,18 @@
-  <%= link_to  image_tag('/images/your_proposal.png'), new_event_proposal_path(@event) %>
+  <%= link_to  image_tag('your_proposal.png'), new_event_proposal_path(@event) %>
 
   <div id="proposal">
     <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), event_path(@event) %>
-    <%= image_tag '/images/linha.png', :class  => 'linha' %>
+    <%= image_tag 'linha.png', :class  => 'linha' %>
 
     <p><strong><%= @event.name %></strong></p>
     <p><%= truncate(@event.description, :length => 200) %></p>
-    <%= image_tag '/images/linha.png', :class  => 'linha' %>
+    <%= image_tag 'linha.png', :class  => 'linha' %>
 
     <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
     <p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
     <p><strong>Twitter: </strong>
       <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %></p>
-    <%= image_tag '/images/linha.png', :class  => 'linha' %>
+    <%= image_tag 'linha.png', :class  => 'linha' %>
 
     <p><strong>Organizer: </strong><%= @event.user.name %><br/>
       <%= user_picture(@event.user, :class => 'organizer') %>

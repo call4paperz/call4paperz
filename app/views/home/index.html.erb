@@ -21,7 +21,7 @@
 <div id="content">
 	<div id="most_recent_events">
 		<div class="head">
-			<%= image_tag '/images/most_recent_events.png' %><br />
+			<%= image_tag 'most_recent_events.png' %><br />
 			<p><strong>Decide which talks get accepted!</strong></p>
 		</div>
 
@@ -32,7 +32,7 @@
 				<p><%= truncate(event.description, :length => 170) %></p><br/>
 
 				<div class="buttons">
-					<%= link_to image_tag('/images/more.png'), event_path(event), :class => 'more' %>
+					<%= link_to image_tag('more.png'), event_path(event), :class => 'more' %>
 					<%= link_to pluralize(event.proposals.size, 'proposal'), event_path(event) %>
 					<%= link_to pluralize(event.comments.size, 'comment'), event_path(event) %>
           <%= render 'shared/tweet_button', :text => "#{event.name} is on a call for papers! Check it out. #call4paperz", :url => event_url(event) %>
@@ -51,7 +51,7 @@
 	<div id="most_recent_comments">
 
 		<div class="head">
-			<%= image_tag '/images/most_recent_comments.png' %><br />
+			<%= image_tag 'most_recent_comments.png' %><br />
 			<p><strong>What people think about the last proposals.</strong></p>
 		</div>
 
@@ -65,7 +65,7 @@
 						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
 						<p><small><%= comment.user.name %></small></p>
 					</div>
-					<%= image_tag '/images/linha.png' %>
+					<%= image_tag 'linha.png' %>
 				</li>
 			<% end %>
 			<%= link_to "all events", events_path, :class => 'all' %>

@@ -44,7 +44,14 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
+    chunky_png (1.2.5)
     coderay (1.0.7)
+    compass (0.12.1)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.2)
+      compass (>= 0.12.0, < 0.14)
     culerity (0.2.15)
     daemons (1.1.9)
     database_cleaner (0.8.0)
@@ -83,6 +90,7 @@ GEM
       thor (>= 0.13.6)
     formatador (0.2.3)
     friendly_id (4.0.8)
+    fssm (0.2.9)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.1)
@@ -228,6 +236,7 @@ DEPENDENCIES
   addressable
   capybara
   carrierwave
+  compass-rails
   culerity
   database_cleaner
   devise

@@ -27,6 +27,7 @@ gem 'jquery-rails'
 group :assets do
   gem 'sass-rails', "  ~> 3.2.0"
   gem 'uglifier'
+  gem 'compass-rails'
 end
 
 group :development, :test do

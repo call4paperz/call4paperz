@@ -12,13 +12,13 @@
       <%= image_tag @event.picture.url, :id => 'crop_preview', :size => "180x175" %>
     </div>
 
-    <% form_for(@event) do |f| -%>
+    <%= form_for(@event) do |f| %>
       <%= f.hidden_field :crop_w, :id => 'photo_crop_w' %>
       <%= f.hidden_field :crop_h, :id => 'photo_crop_h' %>
       <%= f.hidden_field :crop_x, :id => 'photo_crop_x' %>
       <%= f.hidden_field :crop_y, :id => 'photo_crop_y' %>
       <%= f.submit 'Crop' %> or <%= link_to "Cancel", event_path(@event) %>
-    <% end -%>
+    <% end %>
   </div>
 
   <%= javascript_tag do -%>

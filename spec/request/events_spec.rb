@@ -95,15 +95,15 @@ feature "Events", %q{
 
       visit '/events'
 
-      within(:xpath, "//div[@class='event_listed'][1]") do
+      within(:xpath, "//li[@class='event_listed'][1]") do
         page.should have_content('Groundhog Day')
       end
 
-      within(:xpath, "//div[@class='event_listed'][2]") do
+      within(:xpath, "//li[@class='event_listed'][2]") do
         page.should have_content('Good morning Vietnam')
       end
 
-      within(:xpath, "//div[@class='event_listed'][3]") do
+      within(:xpath, "//li[@class='event_listed'][3]") do
         page.should have_content('Late show')
       end
     end

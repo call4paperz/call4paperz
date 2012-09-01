@@ -1,3 +1,5 @@
+@import 'compass/css3';
+
 $vermelho: #da3546;
 $azul: #eff7fc;
 
@@ -31,12 +33,14 @@ a:hover, a:active {
 #main{
   background: image-url('bg.png') repeat-x;
   width: 100%;
+  overflow: hidden;
 }
 
 #main_inner{
   background: image-url('bg2.png') repeat-x;
   width: 100%;
   min-height:190px;
+  overflow: hidden;
 }
 
 .container{
@@ -45,18 +49,18 @@ a:hover, a:active {
 }
 
 #menu{
-  background: image-url('menu.png') ;
+  @include border-radius(20px);
+  background: #000;
   height: 70px;
-  position: relative;
-  top: 25px;
+  margin-top: 25px;
 }
 
 ul#menu_top{
-  position: relative;
-  top: 30px;
-  right: 50px;
+  margin: {
+    top: 25px;
+    right: 90px;
+  }
   float: right;
-  margin-right: 40px;
 }
 
 #menu_top li {
@@ -79,7 +83,7 @@ ul#menu_top li a:hover{
 #pic{
   background: image-url('showcase_frame.png') no-repeat;
   height: 403px;
-  margin-top: 90px;
+  margin-top: 65px;
   position:relative;
 }
 
@@ -109,6 +113,7 @@ ul#menu_top li a:hover{
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
+  line-height: 12px;
 }
 
 #intro p strong{
@@ -117,13 +122,13 @@ ul#menu_top li a:hover{
   color: #111111;
   display: block;
   margin-bottom: 4px;
+  line-height: 18px;
 }
 
 #breadcrumb{
   background:image-url('breadcrumb.png') repeat scroll 0 0 transparent;
   height:70px;
-  position:relative;
-  top:33px;
+  margin-top: 20px;
 }
 
 #create{
@@ -185,7 +190,7 @@ ul#menu_top li a:hover{
 
 .event{
   background: #fff;
-  border-radius: 10px;
+  @include border-radius(10px);
   width: 578px;
   height: 115px;
   padding: 20px;
@@ -312,7 +317,7 @@ ul#menu_top li a:hover{
 }
 
 #footer{
-  background: image-url('bg_footer.png');
+  background: $vermelho;
   height: 273px;
   clear: both;
 }
@@ -358,7 +363,7 @@ ul#menu_top li a:hover{
 
 #proposal{
   background: #191817;
-  border-radius: 10px;
+  @include border-radius(10px);
   margin-bottom:20px;
   margin-top:20px;
   padding:10px;
@@ -367,7 +372,11 @@ ul#menu_top li a:hover{
 }
 
 #profile{
-  background:image-url('comments_black.png') repeat scroll 0 0 transparent;
+  background: #000;
+  @include border-corner-radius(top, left, 20px 30px);
+  @include border-corner-radius(top, right,  20px 30px);
+  @include border-corner-radius(bottom, left,  20px 30px);
+  @include border-corner-radius(bottom, right,  20px 30px);
   height:142px;
   margin-bottom:20px;
   margin-top:20px;
@@ -417,7 +426,7 @@ ul#menu_top li a:hover{
 
 .prop{
   background: #fff;
-  border-radius: 10px;
+  @include border-radius(10px);
   margin-bottom:10px;
   padding: 20px 20px 120px 20px;
   width:581px;
@@ -504,7 +513,8 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_listed {
-  background:image-url('event_big_bg.png') repeat scroll 0 0 transparent;
+  @include border-radius(20px);
+  background: #FFF;
   width: 960px;
   height: 133px;
   margin-bottom: 20px;

@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require jquery.Jcrop.min
 //= require jquery-ui.min
+//= require jquery.tweet.min
 //= require jquery.validate.min
 //= require ajax
 //= require call4paperz

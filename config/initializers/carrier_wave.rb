@@ -1,12 +1,4 @@
-if Rails.env.test?
-
-  CarrierWave.configure do |config|
-    config.storage = :file
-    config.enable_processing = false
-  end
-
-else
-
+if Rails.env.production?
   CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider               => 'AWS',
@@ -16,5 +8,9 @@ else
     config.fog_directory  = 'cdn.call4paperz.com'
     config.storage :fog
   end
-
+else
+  CarrierWave.configure do |config|
+    config.storage = :file
+    config.enable_processing = false
+  end
 end

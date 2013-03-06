@@ -11,7 +11,7 @@ describe User do
 
       it "should not require password when user has authentications and no password" do
         user = User.new
-        user.authentications.build(:provider => 'twitter', :uid => '123')
+        user.authentications.build({:provider => 'twitter', :uid => '123'}, without_protection: true)
         user.should be_valid
         user.should have(0).errors_on(:password)
       end
@@ -25,7 +25,7 @@ describe User do
     context "email override" do
       it "should not require email if it has authentications" do
         user = User.new
-        user.authentications.build(:provider => 'twitter', :uid => '123')
+        user.authentications.build({:provider => 'twitter', :uid => '123'}, without_protection: true)
         user.should be_valid
         user.should have(0).errors_on(:email)
       end

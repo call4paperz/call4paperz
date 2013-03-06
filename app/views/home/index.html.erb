@@ -61,7 +61,7 @@
 					<div class="comment_pic">
             <%= user_picture(comment.user, :class => 'borda_vinho') %>
 					</div>
-					<div>
+          <div class="comment_text">
 						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
 						<p><small><%= comment.user.name %></small></p>
 					</div>

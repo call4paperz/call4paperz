@@ -116,6 +116,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
+    newrelic_rpm (3.5.8.72)
     nokogiri (1.5.5)
     oauth (0.4.6)
     oauth2 (0.6.1)
@@ -248,6 +249,7 @@ DEPENDENCIES
   jquery-rails
   mail_form
   mini_magick
+  newrelic_rpm
   omniauth (~> 1.1.1)
   omniauth-facebook
   omniauth-oauth2

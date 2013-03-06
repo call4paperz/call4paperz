@@ -26,6 +26,10 @@ gem "recaptcha", :require => "recaptcha/rails"
 gem 'thin'
 gem 'jquery-rails'
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :assets do
   gem 'sass-rails', "  ~> 3.2.0"
   gem 'uglifier'

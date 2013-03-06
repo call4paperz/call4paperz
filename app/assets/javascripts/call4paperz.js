@@ -9,12 +9,6 @@ $(document).ready(function(){
 		}
 	)
 
-	$(document).ready(function(){
-		setTimeout(function(){
-			$("#tweeting").fadeIn('slow');
-		}, 10000);
-	});
-
 	removeLoggedDiv();
 });
 

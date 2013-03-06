@@ -3,3 +3,4 @@ development:
   database: call4paperz_development
   username: vagrant
   password:
+  min_messages: WARNING

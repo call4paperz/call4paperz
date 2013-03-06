@@ -41,6 +41,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'silent-postgres'
   gem 'timecop'
 end

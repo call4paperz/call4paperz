@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  belongs_to :proposal
+  belongs_to :proposal, :counter_cache => true
   belongs_to :user
 
   validates_associated :user, :proposal

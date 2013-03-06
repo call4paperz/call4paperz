@@ -6,6 +6,7 @@ describe EventsHelper do
       user_stub = stub
       model_mock = mock(:user => user_stub)
 
+      helper.should_receive(:user_signed_in?).and_return(true)
       helper.should_receive(:current_user).and_return(user_stub)
 
       helper.user_is_owner?(model_mock).should be_true
@@ -15,6 +16,7 @@ describe EventsHelper do
       user_stub = stub
       model_mock = mock(:user => stub)
 
+      helper.should_receive(:user_signed_in?).and_return(true)
       helper.should_receive(:current_user).and_return(user_stub)
 
       helper.user_is_owner?(model_mock).should be_false

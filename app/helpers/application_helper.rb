@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def users_number
-    User.all.count
+    User.count
   end
 
   def render_flash_notice

@@ -17,8 +17,8 @@
   <p><%= proposal.description %></p>
 
   <div class="prop_sub">
-    <%= user_picture(proposal.user) %>
-    <small><%= proposal.user.name %></small>
+    <%= user_picture(proposal_user(proposal)) %>
+    <small><%= proposal_user(proposal).name %></small>
   </div>
 
   <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>

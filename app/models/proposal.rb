@@ -19,8 +19,15 @@ class Proposal < ActiveRecord::Base
 
   attr_protected :event_id
 
+  def self.with_preloads
+    select('SUM(v.direction) as acceptance_points, proposals.*').
+      joins('LEFT JOIN votes v ON v.proposal_id = proposals.id').
+      group('proposals.id').
+      order('acceptance_points DESC')
+  end
+
   def acceptance_points
-    votes.positives.count - votes.negatives.count
+    attributes['acceptance_points'].try(:to_i) || votes.sum('direction')
   end
 
   def as_json(options=nil)

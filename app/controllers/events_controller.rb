@@ -13,12 +13,12 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id], :include => :proposals)
+    @event = Event.find(params[:id])
 
-    @event.proposals.sort! do |x,y|
-      y.acceptance_points <=> x.acceptance_points
-    end
-
+    # Unfortunately I can't get Rails to preload
+    # users because of the crazy SQL involved.
+    users_pair = User.find(@event.proposals.pluck('user_id')).map { |u| [u.id, u] }
+    @users = Hash[users_pair]
     respond_with @event
   end
 

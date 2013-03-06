@@ -1,4 +1,13 @@
 module ProposalsHelper
+
+  def proposal_user(proposal)
+    if @users.present?
+      @users[proposal.user_id]
+    else
+      proposal.user
+    end
+  end
+
   def vote_box(event, proposal, user)
     if user && user.has_vote_for?(proposal)
       image_tag('checked.png', :alt => 'Thanks for voting!').html_safe

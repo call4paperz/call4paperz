@@ -1,5 +1,6 @@
 module EventsHelper
   def user_is_owner?(model)
-    model.user == current_user
+    user = @users.present? ? @users[model.user_id] : model.user
+    user == current_user
   end
 end

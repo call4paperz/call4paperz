@@ -11,11 +11,10 @@ class Vote < ActiveRecord::Base
 
   validates_uniqueness_of :proposal_id, :scope  =>  :user_id
 
-  scope :positives,  where(:direction => 1) 
-  scope :negatives,  where(:direction => -1) 
+  scope :positives,  where(:direction => LIKE)
+  scope :negatives,  where(:direction => DISLIKE)
 
   class << self
-
     def like! (proposal, user)
       Vote.create :proposal  => proposal, :user  => user, :direction  => LIKE
     end
@@ -23,6 +22,5 @@ class Vote < ActiveRecord::Base
     def dislike!  (proposal, user)
       Vote.create :proposal  => proposal, :user  => user, :direction  => DISLIKE
     end
-end
-
+  end
 end

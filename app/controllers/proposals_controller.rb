@@ -6,17 +6,6 @@ class ProposalsController < ApplicationController
   respond_to :html, :json
 
 
-  # GET /proposals
-  # GET /proposals.xml
-  def index
-    @proposals = Proposal.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @proposals }
-    end
-  end
-
   # GET /proposals/1
   # GET /proposals/1.xml
   def show

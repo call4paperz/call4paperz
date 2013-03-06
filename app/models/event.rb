@@ -4,9 +4,14 @@ class Event < ActiveRecord::Base
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
-  has_many :proposals, :dependent => :destroy
+  has_many :proposals, :dependent => :destroy, finder_sql: ->(_) {
+    Proposal.with_preloads.where(["proposals.event_id = ?", id]).to_sql
+  }, counter_sql: ->(_) {
+    Proposal.select('COUNT(*)').where(["proposals.event_id = ?", id]).to_sql
+  }
+
   has_many :comments, :through  => :proposals
-  has_many :votes, :through  => :proposals
+  has_many :votes, :through => :proposals
   belongs_to :user
 
   validates_date :occurs_at, :on => :create, :on_or_after => :today

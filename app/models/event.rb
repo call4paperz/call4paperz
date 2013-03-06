@@ -25,7 +25,6 @@ class Event < ActiveRecord::Base
     :occurs_at, :url, :user_id, :picture, :prod_description
 
   mount_uploader :picture, PictureUploader
-  validate :honeypot
 
   class << self
     def most_recent
@@ -73,9 +72,6 @@ class Event < ActiveRecord::Base
   end
 
   private
-  def honeypot
-    errors.add :prod_description, "lala" unless prod_description.blank?
-  end
 
   def twitter_has_valid_format
     match = twitter &&

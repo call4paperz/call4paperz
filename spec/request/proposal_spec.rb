@@ -80,7 +80,7 @@ feature "Proposal", %q{
 
     scenario "I can edit my proposal while it's under 30 minutes of publication" do
       user = FactoryGirl.create(:user)
-      proposal = FactoryGirl.create(:proposal, :created_at => Time.now, :user => user)
+      proposal = FactoryGirl.create(:proposal, :created_at => Time.current, :user => user)
 
       sign_in_with(user)
       visit event_proposal_path(event, proposal)

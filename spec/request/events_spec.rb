@@ -86,7 +86,7 @@ feature "Events", %q{
     scenario "I should be able to see the events sorted by the date the events occur" do
       Timecop.freeze(2.days.ago)
 
-      past_event = FactoryGirl.create(:event, :occurs_at => Time.now, :name => 'The Dinosaurs')
+      past_event = FactoryGirl.create(:event, :occurs_at => Time.current, :name => 'The Dinosaurs')
       todays_event = FactoryGirl.create(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
       late_event = FactoryGirl.create(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
       early_event = FactoryGirl.create(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')

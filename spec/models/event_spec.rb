@@ -23,7 +23,7 @@ describe Event do
 
     it "should not inclue events from the past" do
       Timecop.freeze(2.days.ago)
-      ev = FactoryGirl.create(:event, :occurs_at => Time.now)
+      ev = FactoryGirl.create(:event, :occurs_at => Time.current)
       Timecop.return
 
       described_class.active.should be_empty

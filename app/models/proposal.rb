@@ -9,7 +9,7 @@ class Proposal < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
 
   belongs_to :user
-  belongs_to :event
+  belongs_to :event, counter_cache: true
 
   validates_presence_of :name, :description
   validates_associated :user

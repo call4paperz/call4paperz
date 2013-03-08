@@ -4,5 +4,9 @@ namespace :app do
     Proposal.pluck('id').each do |id|
       Proposal.reset_counters(id, :comments)
     end
+
+    Event.pluck('id').each do |id|
+      Event.reset_counters(id, :proposals)
+    end
   end
 end

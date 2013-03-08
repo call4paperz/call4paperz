@@ -9,7 +9,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.xml
   def show
-    @comments = proposal.comments.order("created_at DESC")
+    @comments = proposal.comments.includes(:user).order("created_at DESC")
 
     @comment = Comment.new
     @comment.proposal = proposal

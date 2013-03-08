@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130306084250) do
+ActiveRecord::Schema.define(:version => 20130308064934) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20130306084250) do
     t.datetime "updated_at"
   end
 
+  add_index "comments", ["proposal_id"], :name => "index_comments_on_proposal_id"
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130306084250) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "proposals_count"
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true
@@ -55,6 +58,8 @@ ActiveRecord::Schema.define(:version => 20130306084250) do
     t.integer  "event_id"
     t.integer  "comments_count", :default => 0
   end
+
+  add_index "proposals", ["event_id"], :name => "index_proposals_on_event_id"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"

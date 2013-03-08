@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by_slug(params[:id])
 
     # Unfortunately I can't get Rails to preload
     # users because of the crazy SQL involved.
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = current_user.events.find(params[:id])
+    @event = current_user.events.find_by_slug(params[:id])
   end
 
   # POST /events
@@ -57,7 +57,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = current_user.events.find(params[:id])
+    @event = current_user.events.find_by_slug(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
@@ -72,13 +72,13 @@ class EventsController < ApplicationController
 
   # GET /events/1/crop
   def crop
-    @event = current_user.events.find(params[:id])
+    @event = current_user.events.find_by_slug(params[:id])
   end
 
   # DELETE /events/1
   # DELETE /events/1.xml
   def destroy
-    @event = Event.find(params[:id])
+    @event = Event.find_by_slug(params[:id])
     @event.destroy
 
     respond_to do |format|

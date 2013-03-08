@@ -1,7 +1,5 @@
 @import 'compass/css3';
-
-$vermelho: #da3546;
-$azul: #eff7fc;
+@import "constants";
 
 .red_form { color: #f00; }
 
@@ -353,6 +351,7 @@ ul#menu_top li a:hover{
 .footer_a a {
   color: white;
   font-size: 11px;
+  text-decoration: underline;
 }
 
 #copyright{
@@ -398,7 +397,9 @@ ul#menu_top li a:hover{
   float: left;
 }
 
-.admin_area {
+.event_notice_area {
+  @include border-radius(5px);
+  border: 1px solid lighten($vermelho, 20%);
   margin: 10px 10px 20px;
   padding: 10px;
   background-color: white;
@@ -670,7 +671,7 @@ a.prop_link:hover, a.prop_link:active{
 
 
 #new_item {
-  margin-top:67px;
+  margin-top:37px;
   position:relative;
   float: left;
   width: 100%;

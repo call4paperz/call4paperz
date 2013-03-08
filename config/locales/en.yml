@@ -6,3 +6,24 @@ en:
   date:
     formats:
       picker: "%m/%d/%Y"
+
+  events:
+    show:
+      crop: Crop picture
+      edit: Edit event
+      closed_false: Close for new proposals
+      closed_true: Open for new proposals
+      closed: This event is not accepting new proposals.
+  event_close:
+    warning_closing:
+      title: Closing %{event_name} for new proposals
+      closing: Are you sure you want to close the event for new proposals?
+      close: Yes, close for new proposals
+    warning_reopen:
+      title: Open %{event_name} for new proposals
+      reopening: Are you sure you want to open the event for new proposals?
+      reopen: Yes, open for new proposals
+  flash:
+    notice:
+      closed: This event is now closed for new proposals.
+      reopened: This event is now open for new proposals.

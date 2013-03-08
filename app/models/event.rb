@@ -32,6 +32,10 @@ class Event < ActiveRecord::Base
   mount_uploader :picture, PictureUploader
 
   class << self
+    def opened
+      where(closed_at: nil)
+    end
+
     def most_recent
       order("created_at DESC").limit(3)
     end
@@ -70,6 +74,18 @@ class Event < ActiveRecord::Base
 
   def comments_count
     comments.size
+  end
+
+  def closed?
+    closed_at.present?
+  end
+
+  def close!
+    update_attribute(:closed_at, Time.current)
+  end
+
+  def reopen!
+    update_attribute(:closed_at, nil)
   end
 
   def cropping?

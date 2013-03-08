@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130308064934) do
+ActiveRecord::Schema.define(:version => 20130308084033) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130308064934) do
     t.datetime "updated_at"
     t.string   "slug"
     t.integer  "proposals_count"
+    t.datetime "closed_at"
   end
 
   add_index "events", ["slug"], :name => "index_events_on_slug", :unique => true

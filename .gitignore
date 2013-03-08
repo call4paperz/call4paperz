@@ -9,3 +9,4 @@ capybara-*
 .DS_Store
 *.swp
 .env
+tmp/*

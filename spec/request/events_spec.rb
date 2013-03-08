@@ -169,4 +169,34 @@ feature "Events", %q{
       # page.should have_content 'Event was successfully created.'
     end
   end
+
+  context "Editing events" do
+    scenario "I should be able to edit an event" do
+      user = FactoryGirl.create(:user)
+      sign_in_with(user)
+
+      event = FactoryGirl.create(:event, :user => user)
+
+      visit event_path(event)
+
+      click_on "Close for new proposals"
+
+      page.should have_content "Are you sure you want to close the event for new proposals?"
+      click_on "Yes, close for new proposals"
+
+      page.should have_content "This event is now closed for new proposals"
+      page.should have_content "This event is not accepting new proposals."
+
+      within '#proposal' do
+        page.should have_no_css("a[href*='#{new_event_proposal_path(event)}']")
+      end
+      
+      click_on "Open for new proposals"
+      page.should have_content "Are you sure you want to open the event for new proposals?"
+      click_on "Yes, open for new proposals"
+
+      page.should have_content "This event is now open for new proposals."
+      page.should have_no_content "This event is not accepting new proposals."
+    end
+  end
 end

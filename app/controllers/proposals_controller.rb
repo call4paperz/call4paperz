@@ -2,9 +2,9 @@ class ProposalsController < ApplicationController
   before_filter :event
   before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
   before_filter :verify_grace_period, :only => [:update, :edit]
+  before_filter :verify_event_closed, only: [:new, :create]
 
   respond_to :html, :json
-
 
   # GET /proposals/1
   # GET /proposals/1.xml
@@ -103,6 +103,10 @@ class ProposalsController < ApplicationController
 
   def proposal
     @proposal ||= Proposal.find(params[:id])
+  end
+
+  def verify_event_closed
+    redirect_to event if event.closed?
   end
 
   def verify_grace_period

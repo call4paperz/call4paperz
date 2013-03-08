@@ -4,14 +4,21 @@
 
 <div id="proposal_list">
   <% if user_is_owner?(@event) %>
-    <div class="admin_area">
+    <div class="event_notice_area">
       <p>
         Administrative tools:
         <strong>
-          <%= link_to("Crop picture", crop_event_path(@event)) %> |
-          <%= link_to "Edit event", edit_event_path(@event) %>
+          <%= link_to t('.crop'), crop_event_path(@event) %> |
+          <%= link_to t('.edit'), edit_event_path(@event) %> |
+          <%= link_to t(".closed_#{@event.closed?}"), edit_event_close_path(@event) %>
         </strong>
       </p>
+    </div>
+  <% end %>
+
+  <% if @event.closed? %>
+    <div class="event_notice_area">
+      <p class="alert"><%= t('.closed') %></p>
     </div>
   <% end %>
 

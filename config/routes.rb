@@ -12,6 +12,8 @@ Rr10Team71::Application.routes.draw do
       get :crop
     end
 
+    resource :close, only: [:edit, :update], controller: "event_close"
+
     resources :proposals do
       member do
         get :like

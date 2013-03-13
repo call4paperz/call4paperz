@@ -4,7 +4,7 @@ call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and
 commented by the users.
 
-![Build Status](https://api.travis-ci.org/vinibaggio/call4paperz.png)(https://travis-ci.org/vinibaggio/call4paperz)
+[![Build Status](https://travis-ci.org/vinibaggio/call4paperz.png)](https://travis-ci.org/vinibaggio/call4paperz)
 
 ## Environment Configuration
 

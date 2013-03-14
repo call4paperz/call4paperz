@@ -1,10 +1,12 @@
 language: ruby
 rvm:
   - 1.9.3
+services: postgresql
 env:
-  - DB=postgresql
+  global:
+    - SECRET_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 script:
   - mv config/database.yml{.travis,}
-  - RAILS_ENV=test bundle exec rake --trace db:create db:migrate spec
+  - RAILS_ENV=test bundle exec rake --trace db:migrate spec
 before_script:
   - psql -c 'create database call4paperz_test' -U postgres

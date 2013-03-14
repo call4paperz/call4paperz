@@ -151,22 +151,23 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do
-      pending "How?!"
-      # user = User.new
-      # user.authentications.build(:uid => '123', :provider => 'twitter')
-      # user.save
+      user = User.new
+      user.authentications.build(uid: '123', provider: 'twitter')
+      user.save
 
-      # sign_in_with(user)
+      sign_in_via_twitter('123')
 
-      # visit '/events'
-      # click_link 'New Event'
-      # fill_in "Name", :with => 'GURU-SP'
-      # fill_in 'Description', :with => '50th meeting'
+      visit '/events'
+      find('.create_button').click
 
-      # click_button "Create Event"
+      fill_in "Name", :with => 'GURU-SP'
+      fill_in 'Description', :with => '50th meeting'
+      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%m/%d/%Y')
 
-      # page.should have_content "GURU-SP"
-      # page.should have_content 'Event was successfully created.'
+      find('input[type=image]').click
+
+      page.should have_content "GURU-SP"
+      page.should have_content 'Event was successfully created.'
     end
   end
 
@@ -190,7 +191,7 @@ feature "Events", %q{
       within '#proposal' do
         page.should have_no_css("a[href*='#{new_event_proposal_path(event)}']")
       end
-      
+
       click_on "Open for new proposals"
       page.should have_content "Are you sure you want to open the event for new proposals?"
       click_on "Yes, open for new proposals"

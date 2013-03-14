@@ -8,10 +8,11 @@ require 'rspec/rails'
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 
-
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+OmniAuth.config.test_mode = true
 
 RSpec.configure do |config|
   config.mock_with :rspec
@@ -22,5 +23,6 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.include HelperMethods, :type => :request
+  config.include OmniauthHelpers, :type => :request
   config.include Devise::TestHelpers, :type => :controller
 end

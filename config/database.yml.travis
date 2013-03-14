@@ -1,4 +1,4 @@
-development:
+test:
   adapter: postgresql
   database: call4paperz_test
   username: postgres

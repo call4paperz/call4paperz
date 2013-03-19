@@ -16,7 +16,7 @@ RSpec.configure do |config|
   config.filter_run :focus => true
   config.run_all_when_everything_filtered = true
 
-  config.include HelperMethods,       :type => :request
-  config.include OmniauthHelpers,     :type => :request
+  config.include HelperMethods,       :type => :feature
+  config.include OmniauthHelpers,     :type => :feature
   config.include Devise::TestHelpers, :type => :controller
 end

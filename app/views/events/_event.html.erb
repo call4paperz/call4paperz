@@ -4,11 +4,11 @@
 
 <div id="proposal">
   <% if @event.picture? %>
-    <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), event_path(@event) %>
+    <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), @event %>
     <%= image_tag 'linha.png', :class => 'linha' %>
   <% end %>
 
-  <p><strong><%= @event.name %></strong></p>
+  <p><strong><%= link_to @event.name, @event %></strong></p>
   <p><%= @event.description %></p>
   <%= image_tag 'linha.png', :class => 'linha' %>
 

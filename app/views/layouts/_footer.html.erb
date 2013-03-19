@@ -24,8 +24,10 @@
           <%= link_to "Events", events_path %><br/>
           <%= image_tag 'f_linha.png' %>
 
-          <%= link_to "Registration", new_user_registration_path %><br/>
-          <%= image_tag 'f_linha.png' %>
+          <% unless user_signed_in? %>
+            <%= link_to "Registration", new_user_registration_path %><br/>
+            <%= image_tag 'f_linha.png' %>
+          <% end %>
         </p>
       </div>
       <div class="footer_a">

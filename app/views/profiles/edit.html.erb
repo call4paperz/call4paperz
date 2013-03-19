@@ -21,7 +21,7 @@
 
       <div class='field'>
         <% if @user.picture? %>
-          <%= image_tag @user.picture %><br />
+          <%= user_picture @user %><br />
         <% end %>
         <%= f.label :picture, 'Picture' %><br />
         <%= f.file_field :picture %>

@@ -17,7 +17,7 @@ describe UserHelper do
     context "user with picture" do
       let(:user) { FactoryGirl.build(:user) }
       it do
-        user.stub(:picture).and_return('/path/123.png')
+        user.stub(:picture).and_return(OpenStruct.new(thumb: '/path/123.png'))
         should match('123.png')
       end
     end

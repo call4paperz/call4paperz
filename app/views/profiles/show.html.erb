@@ -17,7 +17,7 @@
 
   <% @events.each do |event| %>
     <div class="event_stat">
-      <p class="name">Event: <spam><%= event.name %></spam></p>
+      <p class="name">Event: <spam><%= link_to event.name, event %></spam></p>
       <br/>
       <div class="proposals_stat">
         <table id="composicao" cellspacing="0" cellpadding="0">

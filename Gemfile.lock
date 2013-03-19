@@ -32,6 +32,9 @@ GEM
     arel (3.0.2)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
+    better_errors (0.7.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.0.4)
     bullet (4.3.1)
       uniform_notifier
@@ -251,6 +254,7 @@ PLATFORMS
 
 DEPENDENCIES
   addressable
+  better_errors
   bullet
   capybara
   carrierwave

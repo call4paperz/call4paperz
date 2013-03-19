@@ -1,22 +1,19 @@
 class User < ActiveRecord::Base
   attr_accessor :email_confirmation
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :picture, :email_confirmation
 
   has_many :authentications, :dependent => :destroy
-  has_many :comments, :dependent => :destroy
-  has_many :events, :dependent => :destroy
-  has_many :proposals, :dependent => :destroy
-  has_many :votes, :dependent => :destroy
+  has_many :comments,        :dependent => :destroy
+  has_many :events,          :dependent => :destroy
+  has_many :proposals,       :dependent => :destroy
+  has_many :votes,           :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :name, :picture, :email_confirmation
-
-  validates_presence_of   :email, :if => :email_required?
+  validates_presence_of :email, :if => :email_required?
 
   with_options :if => :password_required? do |v|
     v.validates_presence_of     :password
@@ -26,12 +23,10 @@ class User < ActiveRecord::Base
 
   validate :honeypot
 
+  mount_uploader :picture, PictureUploader
+
   def has_vote_for?(proposal)
     votes.exists?(:proposal_id => proposal.id)
-  end
-
-  def picture
-    attributes['picture'] || 'no_avatar.png'
   end
 
   private

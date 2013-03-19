@@ -3,6 +3,7 @@ require 'spec_helper'
 describe UserHelper do
   context "#user_picture" do
     subject { helper.user_picture(user, {}) }
+
     context "without an user" do
       let(:user) { nil }
       it { should match("no_avatar.png") }
@@ -14,9 +15,13 @@ describe UserHelper do
     end
 
     context "user with picture" do
-      let(:user) { FactoryGirl.build(:user, :picture => "123.png") }
-      it { should match("123.png") }
+      let(:user) { FactoryGirl.build(:user) }
+      it do
+        user.stub(:picture).and_return('/path/123.png')
+        should match('123.png')
+      end
     end
+
     context "with options" do
       let(:user) { nil }
       subject { helper.user_picture(user, :class => 'test') }

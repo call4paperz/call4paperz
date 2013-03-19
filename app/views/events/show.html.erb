@@ -1,5 +1,5 @@
 <div id="left_bar">
-  <%= render :partial => 'events/event' %>
+  <%= render 'events/event' %>
 </div>
 
 <div id="proposal_list">
@@ -33,25 +33,23 @@
   <%= render 'shared/tweet_button', :text => "#{@event.name} is on a call for papers run! Check it out. #call4paperz", :url => event_url(@event) %>
   <% end %>
 
-
   <% @event.proposals.each do |proposal| %>
     <%= render proposal %>
   <%end  %>
 </div>
 
-
 <%= javascript_tag do %>
-  $('.ajax_vote').click(function() {
-      var thiz = this;
+  $('.ajax_vote').click(function(){
+    var thiz = this;
 
-      FetchWithAjax.fetch({
-          url: this.href,
-          spinner: $(this).parents('.prop').find('.spinner'),
-          success: function(data) {
-              $(thiz).parents('.prop').replaceWith(data);
-          }
-      });
+    FetchWithAjax.fetch({
+        url: this.href,
+        spinner: $(this).parents('.prop').find('.spinner'),
+        success: function(data) {
+            $(thiz).parents('.prop').replaceWith(data);
+        }
+    });
 
-      return false;
+    return false;
   });
-<% end -%>
+<% end %>

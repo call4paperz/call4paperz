@@ -2,12 +2,7 @@
   <div id="new_item_container">
     <%= image_tag 'event_label.png' %>
     <h3><%= t('.title', event_name: @event.name) %></h3>
-
-    <p>
-    <%= t('.reopening') %>
-    </p>
-    <p>
-    <%= link_to t('.reopen'), event_close_path(@event, close: false), method: :put, class: "btn-active" %>
-    </p>
+    <p><%= t('.reopening') %></p>
+    <p><%= link_to t('.reopen'), event_close_path(@event, close: false), method: :put, class: "btn-active" %></p>
   </div>
 </div>

@@ -1,5 +1,4 @@
 class AuthenticationsController < ApplicationController
-
   def skip_store_location
     true
   end
@@ -17,6 +16,7 @@ class AuthenticationsController < ApplicationController
   end
 
   private
+
   def authenticate!(provider, uid, user_info)
     auth_hash = request.env['omniauth.auth']
     authentication = Authentication.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
@@ -33,5 +33,4 @@ class AuthenticationsController < ApplicationController
       sign_in(user)
     end
   end
-
 end

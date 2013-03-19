@@ -7,6 +7,7 @@ config/database.yml
 .rvmrc
 capybara-*
 .DS_Store
-*.swp
+*.sw?
 .env
 tmp/*
+.routes

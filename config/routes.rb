@@ -1,11 +1,13 @@
 Rr10Team71::Application.routes.draw do
+  root :to => "home#index"
+
   match '/auth/:provider/callback' => 'authentications#create'
   match '/auth/failure' => 'authentications#failure'
 
-  devise_for :users, :controllers => {:registrations => :registrations}
+  devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :comments
-  resource :profile
+  resource :profile, only: [:show, :edit, :update]
 
   resources :events do
     member do
@@ -21,7 +23,4 @@ Rr10Team71::Application.routes.draw do
       end
     end
   end
-
-  root :to => "home#index"
-
 end

@@ -1,28 +1,22 @@
-require 'rubygems'
-
-# This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-
 require 'database_cleaner'
+
 DatabaseCleaner.strategy = :truncation
 
-# Requires supporting ruby files with custom matchers and macros, etc,
-# in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 OmniAuth.config.test_mode = true
 
 RSpec.configure do |config|
   config.mock_with :rspec
-
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
   config.use_transactional_fixtures = true
+  config.infer_base_class_for_anonymous_controllers = true
+  config.filter_run :focus => true
+  config.run_all_when_everything_filtered = true
 
-  config.include HelperMethods, :type => :request
-  config.include OmniauthHelpers, :type => :request
+  config.include HelperMethods,       :type => :feature
+  config.include OmniauthHelpers,     :type => :feature
   config.include Devise::TestHelpers, :type => :controller
 end

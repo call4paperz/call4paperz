@@ -36,7 +36,7 @@ feature "Proposal", %q{
       sign_in
 
       visit event_path(event)
-      find('#left_bar a').click
+      find('#left_bar a#add_proposal').click
 
       fill_in "Name", :with => 'Refactoring Ruby'
       fill_in 'Description', :with => 'Refactoring Ruby 2nd edition'
@@ -50,7 +50,7 @@ feature "Proposal", %q{
       sign_in
 
       visit event_path(event)
-      find('#left_bar a').click
+      find('#left_bar a#add_proposal').click
 
       fill_in 'Description', :with => 'Refactoring Ruby 2nd edition'
 
@@ -63,7 +63,7 @@ feature "Proposal", %q{
       sign_in
 
       visit event_path(event)
-      find('#left_bar a').click
+      find('#left_bar a#add_proposal').click
 
       fill_in 'Name', :with => 'GURU-SP'
 

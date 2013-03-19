@@ -1,64 +1,51 @@
 <div id="left_bar">
-	<div id="profile">
+  <div id="profile">
     <%= user_picture(current_user, :class => 'logo') %>
-	  <%= image_tag 'linha.png', :class  => 'linha' %>
-	  <p><strong><%= current_user.name %></strong></p>
-	</div>
+    <%= image_tag 'linha.png', :class  => 'linha' %>
+    <p><strong><%= current_user.name %></strong></p>
+  </div>
 </div>
-
 
 <div id="proposal_list">
-	<%= image_tag 'admin_label.png' %>
-	<p class="sub_vote">Your call for papers's statistics.</p>
-	<br/>
+  <%= image_tag 'admin_label.png' %>
+  <p class="sub_vote">Your call for papers's statistics.</p>
+  <br/>
 
-	<% if @events.blank? %>
-	<spam class="yet">You don't have any event yet.</spam> <%= link_to "Try it now!", new_event_path %>
-	<% end %>
+  <% if @events.blank? %>
+    <spam class="yet">You don't have any event yet.</spam> <%= link_to "Try it now!", new_event_path %>
+  <% end %>
 
-
-	<% @events.each do |event|  %>
-		<div class="event_stat">
-
-			<p class="name">Event: <spam><%= event.name %></spam></p>
-			<br/>
-			<div class="proposals_stat">
-
-			 <table id="composicao" cellspacing="0" cellpadding="0">
-			    <thead>
-			      <tr>
-			        <th>Proposal</th>
-			        <th>Positive votes</th>
-			        <th>Negative votes</th>
-			      </tr>
-			    </thead>
-			    <tfoot>
-			      <tr>
-			        <td></td>
-			        <td class="valor" colspan="2"></td>
-			      </tr>
-			    </tfoot>
-			    <tbody>
-			<% event.proposals.each do |proposal| %>
-
-
-
-						<tr>
-							<td><%= proposal.name %></td>
-							<td><%= proposal.votes.positives.size %></td>
-							<td><%= proposal.votes.negatives.size %></td>
-						</tr>
-
-
-			<% end %>
-			</tbody>
-			</table>
-
-			</div>
-			<br/><br/>
-
-		</div>
-
-	<% end %>
+  <% @events.each do |event| %>
+    <div class="event_stat">
+      <p class="name">Event: <spam><%= event.name %></spam></p>
+      <br/>
+      <div class="proposals_stat">
+        <table id="composicao" cellspacing="0" cellpadding="0">
+          <thead>
+            <tr>
+              <th>Proposal</th>
+              <th>Positive votes</th>
+              <th>Negative votes</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td class="valor" colspan="2"></td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <% event.proposals.each do |proposal| %>
+              <tr>
+                <td><%= proposal.name %></td>
+                <td><%= proposal.votes.positives.size %></td>
+                <td><%= proposal.votes.negatives.size %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <br/><br/>
+    </div>
+  <% end %>
 </div>
-

@@ -1,34 +1,33 @@
-  <% unless @event.closed? %>
-    <%= link_to  image_tag('your_proposal.png'), new_event_proposal_path(@event) %>
-  <% end %>
+<% unless @event.closed? %>
+  <%= link_to  image_tag('your_proposal.png'), new_event_proposal_path(@event) %>
+<% end %>
 
-  <div id="proposal">
-    <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), event_path(@event) %>
-    <%= image_tag 'linha.png', :class  => 'linha' %>
+<div id="proposal">
+  <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), event_path(@event) %>
+  <%= image_tag 'linha.png', :class => 'linha' %>
 
-    <p><strong><%= @event.name %></strong></p>
-    <p><%= truncate(@event.description, :length => 200) %></p>
-    <%= image_tag 'linha.png', :class  => 'linha' %>
+  <p><strong><%= @event.name %></strong></p>
+  <p><%= truncate(@event.description, :length => 200) %></p>
+  <%= image_tag 'linha.png', :class => 'linha' %>
 
-    <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
-    <p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
-    <p><strong>Twitter: </strong>
-      <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %>
-    </p>
+  <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
+  <p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
+  <p><strong>Twitter: </strong>
+    <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %>
+  </p>
 
-    <%= image_tag 'linha.png', :class  => 'linha' %>
+  <%= image_tag 'linha.png', :class => 'linha' %>
 
-    <p><strong>Organizer: </strong><%= @event.user.name %><br/>
-      <%= user_picture(@event.user, :class => 'organizer') %>
-    </p>
+  <p><strong>Organizer: </strong><%= @event.user.name %><br/>
+    <%= user_picture(@event.user, :class => 'organizer') %>
+  </p>
 
-    <%= image_tag 'linha.png', :class  => 'linha' %>
+  <%= image_tag 'linha.png', :class => 'linha' %>
 
-    <div class="event-social">
-      <div class="twit">
-        <%= render 'shared/tweet_button', :text => "#{@event.name} is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
-      </div>
-      <%= render 'shared/facebook_like', :url => event_url(@event) %>
+  <div class="event-social">
+    <div class="twit">
+      <%= render 'shared/tweet_button', :text => "#{@event.name} is on a call for papers! Check it out. #call4paperz", :url => event_url(@event) %>
     </div>
-
+    <%= render 'shared/facebook_like', :url => event_url(@event) %>
   </div>
+</div>

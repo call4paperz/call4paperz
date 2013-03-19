@@ -2,11 +2,10 @@
   <% if @proposal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
-
       <ul>
-      <% @proposal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @proposal.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -36,7 +35,6 @@
 <% end %>
 
 <%= javascript_tag do %>
-
   var descriptionKeycount = new HandleKeycount();
   var nameKeycount = new HandleKeycount();
 
@@ -51,4 +49,4 @@
       }
     });
   });
-<% end -%>
+<% end %>

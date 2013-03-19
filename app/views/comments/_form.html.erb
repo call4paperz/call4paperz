@@ -1,18 +1,16 @@
-
 <div id="comment_new">
+  <%= form_for(@comment) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-	<%= form_for(@comment) do |f| %>
-	  <% if @comment.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-	      <ul>
-	      <% @comment.errors.full_messages.each do |msg| %>
-	        <li><%= msg %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
+        <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= user_picture(current_user, :class => 'borda_vinho') %>
@@ -25,8 +23,8 @@
       <%= image_submit_tag 'comment.png', :class => 'submit_comment' %>
     </div>
   <% end %>
-
 </div>
+
 <%= javascript_tag do %>
   $(document).ready(function() {
     var validator = $("#new_comment").validate({

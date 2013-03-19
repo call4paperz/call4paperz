@@ -1,78 +1,74 @@
 <div id="top">
-	<div id="pic">
-		<div id="intro">
-			<p>
-				<strong>Keep track of your call for proposals</strong>
-				...and let the audience voice be heard at your event!
-			</p>
-		</div>
+  <div id="pic">
+    <div id="intro">
+      <p>
+        <strong>Keep track of your call for proposals</strong>
+        ...and let the audience voice be heard at your event!
+      </p>
+    </div>
     <ul class="showcase">
       <li><%= image_tag 'showcase/1.jpg', :class => 'active', :title => 'Event', :width => '496', :height => '346' %></li>
       <li><%= image_tag 'showcase/2.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
       <li><%= image_tag 'showcase/3.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
     </ul>
-		<div id="howto"></div>
-	</div>
+    <div id="howto"></div>
+  </div>
     <div id="twitter">
       <p id="twitter_status"></p>
     </div>
 </div>
 
 <div id="content">
-	<div id="most_recent_events">
-		<div class="head">
-			<%= image_tag 'most_recent_events.png' %><br />
-			<p><strong>Decide which talks get accepted!</strong></p>
-		</div>
+  <div id="most_recent_events">
+    <div class="head">
+      <%= image_tag 'most_recent_events.png' %><br />
+      <p><strong>Decide which talks get accepted!</strong></p>
+    </div>
 
-		<% @events.each do |event| %>
-			<div class="event">
-				<p><strong><%= link_to event.name, event_path(event) %></strong></p>
+    <% @events.each do |event| %>
+      <div class="event">
+        <p><strong><%= link_to event.name, event_path(event) %></strong></p>
+        <p><%= truncate(event.description, :length => 170) %></p><br/>
 
-				<p><%= truncate(event.description, :length => 170) %></p><br/>
-
-				<div class="buttons">
-					<%= link_to image_tag('more.png'), event_path(event), :class => 'more' %>
-					<%= link_to pluralize(event.proposals.size, 'proposal'), event_path(event) %>
-					<%= link_to pluralize(event.comments.size, 'comment'), event_path(event) %>
+        <div class="buttons">
+          <%= link_to image_tag('more.png'), event_path(event), :class => 'more' %>
+          <%= link_to pluralize(event.proposals.size, 'proposal'), event_path(event) %>
+          <%= link_to pluralize(event.comments.size, 'comment'), event_path(event) %>
           <%= render 'shared/tweet_button', :text => "#{event.name} is on a call for papers! Check it out. #call4paperz", :url => event_url(event) %>
           <%= render 'shared/facebook_like', :url => event_url(event) %>
-				</div>
-
-			</div>
-		<% end %>
+        </div>
+      </div>
+    <% end %>
     <% if @events_quantity > 0 -%>
       <p class="prop_link"><%= link_to "We have #{@events_quantity} open proposals available to vote. Click to see them.", events_path, :class => "prop_link" %></p>
     <% end -%>
-		<br/>
+    <br/>
+  </div>
 
-	</div>
+  <div id="most_recent_comments">
+    <div class="head">
+      <%= image_tag 'most_recent_comments.png' %><br />
+      <p><strong>What people think about the last proposals.</strong></p>
+    </div>
 
-	<div id="most_recent_comments">
-
-		<div class="head">
-			<%= image_tag 'most_recent_comments.png' %><br />
-			<p><strong>What people think about the last proposals.</strong></p>
-		</div>
-
-		<ul id="comments">
-			<% @comments.each do |comment| %>
-				<li class="comment">
-					<div class="comment_pic">
+    <ul id="comments">
+      <% @comments.each do |comment| %>
+        <li class="comment">
+          <div class="comment_pic">
             <%= user_picture(comment.user, :class => 'borda_vinho') %>
-					</div>
+          </div>
           <div class="comment_text">
-						<p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
-						<p><small><%= comment.user.name %></small></p>
-					</div>
-					<%= image_tag 'linha.png' %>
-				</li>
-			<% end %>
-			<%= link_to "all events", events_path, :class => 'all' %>
-		</ul>
-
-	</div>
+            <p class="cn"><%= link_to truncate(comment.body, :length => 60), event_proposal_path(comment.proposal.event, comment.proposal),  :class => "comment_detail" %></p>
+            <p><small><%= comment.user.name %></small></p>
+          </div>
+          <%= image_tag 'linha.png' %>
+        </li>
+      <% end %>
+      <%= link_to "all events", events_path, :class => 'all' %>
+    </ul>
+  </div>
 </div>
+
 <%= javascript_tag do %>
   var timeout = 6000;
 
@@ -101,4 +97,4 @@
          count: 1
     });
   });
-<% end -%>
+<% end %>

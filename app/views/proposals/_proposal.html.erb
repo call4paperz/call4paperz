@@ -23,7 +23,6 @@
 
   <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>
 
-
   <span class="voting_container">
     <%= vote_box(@event, proposal, current_user) %>
   </span>

@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Call4paperz</title>
-  <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tag %>
-  <link rel="icon" href="/favicon.ico" type="image/ico"/>
-</head>
-<body>
+  <head>
+    <title>Call4paperz</title>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tag %>
+    <link rel="icon" href="/favicon.ico" type="image/ico"/>
+  </head>
+  <body>
+    <div id="main">
+      <div class="container">
+        <%= render_flash_notice %>
+        <div id="menu">
+          <%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
+          <%= menu %>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
 
-	<div id="main">
-		<div class="container">
-			<%= render_flash_notice %>
-			<div id="menu">
-				<%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
-				<%= menu %>
-			</div>
+    <%= render 'layouts/footer' %>
 
-			<%= yield %>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-19140800-1']);
+      _gaq.push(['_trackPageview']);
 
-		</div>
-	</div>
-	<%= render :partial => 'layouts/footer' %>
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-19140800-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-
-
-  </script>
-</body>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
-
-

@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def menu
     content_tag :ul, :id  => "menu_top" do
       content = ''
@@ -22,5 +21,4 @@ module ApplicationHelper
   def render_flash_notice
     "<div id='logged'>#{flash[:notice]}</div>".html_safe if flash[:notice]
   end
-
 end

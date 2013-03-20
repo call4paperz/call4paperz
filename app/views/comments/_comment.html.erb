@@ -1,7 +1,7 @@
 <div class="comments_list">
-  	<%= user_picture(comment.user) %>
-  	<p><%= comment.body %></p>
+    <%= user_picture(comment.user) %>
+    <p><%= comment.body %></p>
 
-  	<p><small><%= comment.user.name %></small></p>
-	<p><spam><%= time_ago_in_words(comment.created_at) %></spam></p>
+    <p><small><%= comment.user.name %></small></p>
+  <p><spam><%= time_ago_in_words(comment.created_at) %></spam></p>
 </div>

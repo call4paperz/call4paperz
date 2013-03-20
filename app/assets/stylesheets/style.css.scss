@@ -184,7 +184,6 @@ ul#menu_top li a:hover{
   font-size: 12px;
   color: $vermelho;
   font-weight: bold;
-
 }
 
 .comment_text {
@@ -377,16 +376,19 @@ ul#menu_top li a:hover{
 
 #profile{
   background: #000;
-  @include border-corner-radius(top, left, 20px 30px);
-  @include border-corner-radius(top, right,  20px 30px);
+  @include border-corner-radius(top,    left,  20px 30px);
+  @include border-corner-radius(top,    right, 20px 30px);
   @include border-corner-radius(bottom, left,  20px 30px);
-  @include border-corner-radius(bottom, right,  20px 30px);
-  height:142px;
+  @include border-corner-radius(bottom, right, 20px 30px);
   margin-bottom:20px;
   margin-top:20px;
   padding:10px;
   position:relative;
   width:281px;
+}
+
+img#user_picture{
+  height:100px;
 }
 
 #proposal_list{
@@ -552,7 +554,6 @@ a.prop_link:hover, a.prop_link:active{
 .event_desc {
   width: 30%;
   float: left;
-
 }
 
 .event_status span {
@@ -571,7 +572,6 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #events_list .create_button {
-  float:right;
   margin-bottom: 15px;
 }
 
@@ -583,7 +583,6 @@ a.prop_link:hover, a.prop_link:active{
   float: left;
   margin: 20px;
 }
-
 
 .comments_list{
   background:image-url('comment_it.png') repeat scroll 0 0 transparent;

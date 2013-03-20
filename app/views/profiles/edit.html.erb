@@ -1,0 +1,35 @@
+<div id='new_item'>
+  <div id='new_item_container'>
+    <h3>Editing profile</h3>
+
+    <%= form_for @user, url: profile_path, method: :put, html: { multipart: true } do |f| %>
+      <% if @user.errors.any? %>
+        <div id='error_explanation'>
+          <h2><%= pluralize(@user.errors.count, 'error') %> prohibited this event from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class='field'>
+        <%= f.label :name %> <small class='vermelho'>*</small><br />
+        <%= f.text_field :name %>
+      </div>
+
+      <div class='field'>
+        <% if @user.picture? %>
+          <%= user_picture @user %><br />
+        <% end %>
+        <%= f.label :picture, 'Picture' %><br />
+        <%= f.file_field :picture %>
+      </div>
+
+      <div class='actions'>
+        <%= image_submit_tag 'save.png' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -42,6 +42,7 @@ end
 group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -49,7 +50,6 @@ group :test do
   gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'rspec-rails'
   gem 'sqlite3'
   gem 'timecop'
 end

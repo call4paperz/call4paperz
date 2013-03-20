@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     if photo?
       photo.thumb.url
     else
-      twitter_avatar.presence || '/images/no_avatar.png'
+      twitter_avatar.presence || '/assets/no_avatar.png'
     end
   end
 

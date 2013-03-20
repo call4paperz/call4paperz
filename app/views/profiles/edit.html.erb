@@ -18,16 +18,6 @@
         <%= f.label :name %> <small class='vermelho'>*</small><br />
         <%= f.text_field :name %>
       </div>
-
-      <div class='field'>
-        <%= user_picture @user %><br />
-        <%= f.label :photo, 'Picture' %><br />
-        <%= f.file_field :photo %>
-      </div>
-
-      <div class='actions'>
-        <%= image_submit_tag 'save.png' %>
-      </div>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :email_confirmation
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :picture, :email_confirmation
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation, :twitter_avatar
 
   has_many :authentications, :dependent => :destroy
   has_many :comments,        :dependent => :destroy
@@ -23,7 +23,15 @@ class User < ActiveRecord::Base
 
   validate :honeypot
 
-  mount_uploader :picture, PictureUploader
+  mount_uploader :photo, PictureUploader
+
+  def picture
+    if photo?
+      photo.thumb.url
+    else
+      twitter_avatar.presence || '/images/no_avatar.png'
+    end
+  end
 
   def has_vote_for?(proposal)
     votes.exists?(:proposal_id => proposal.id)

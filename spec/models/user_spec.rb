@@ -36,4 +36,30 @@ describe User do
       end
     end
   end
+
+  describe "photos" do
+    let(:user) { FactoryGirl.build(:user, twitter_avatar: nil, photo: nil) }
+
+    context "when the user has a photo" do
+      it "shows the photo" do
+        user.photo = File.open(Rails.root.join('spec', 'support', 'fixtures', 'guru_sp.png'))
+        user.save!
+
+        user.picture.should match /guru_sp/
+      end
+    end
+
+    context "when the user has no photo, but has an old avatar" do
+      it "shows the twitter avatar" do
+        user.twitter_avatar = "hello.png"
+        user.picture.should include("hello.png")
+      end
+    end
+
+    context "when the user has no photo" do
+      it "shows the no avatar image" do
+        user.picture.should match /no_avatar/
+      end
+    end
+  end
 end

@@ -20,11 +20,9 @@
       </div>
 
       <div class='field'>
-        <% if @user.picture? %>
-          <%= user_picture @user %><br />
-        <% end %>
-        <%= f.label :picture, 'Picture' %><br />
-        <%= f.file_field :picture %>
+        <%= user_picture @user %><br />
+        <%= f.label :photo, 'Picture' %><br />
+        <%= f.file_field :photo %>
       </div>
 
       <div class='actions'>

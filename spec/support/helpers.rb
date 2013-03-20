@@ -20,4 +20,8 @@ module HelperMethods
       find('input[type=image]').click
     end
   end
+
+  def fixture_file(fixture)
+    Rails.root.join('spec', 'support', 'fixtures', fixture)
+  end
 end

@@ -23,3 +23,5 @@ en:
     notice:
       closed: This event is now closed for new proposals.
       reopened: This event is now open for new proposals.
+
+      profile_updated: Profile was successfully updated.

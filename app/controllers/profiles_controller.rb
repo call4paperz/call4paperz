@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update_attributes params[:user]
-      flash[:notice] = 'User was successfully updated.'
+      flash[:notice] = I18n.t('flash.notice.profile_updated')
       redirect_to profile_path
     else
       render :edit

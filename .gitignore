@@ -11,3 +11,4 @@ capybara-*
 .env
 tmp/*
 .routes
+zeus.json

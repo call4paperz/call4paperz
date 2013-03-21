@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 ruby '1.9.3'
 
 gem 'addressable'
-gem 'carrierwave'
+gem 'carrierwave', github: 'jnicklas/carrierwave'
 gem 'devise'
 gem 'devise-encryptable'
 gem 'fog'

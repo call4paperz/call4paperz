@@ -18,8 +18,9 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "/images/no-image-#{version_name}.png"
+    "/assets/no-image-#{version_name}.png"
   end
+
 
   version :big do
     process :resize_to_fill => [180, 175]

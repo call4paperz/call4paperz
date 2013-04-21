@@ -24,6 +24,11 @@ describe ProposalsHelper do
   end
 
   describe "#render_percentage_bar" do
+    context "when receives -50 percent" do
+      it "returns progress bar with 100px width" do
+        helper.render_percentage_bar(-50).should include %{<div class="red" style="width: 100px"><span>50</span></div>}
+      end
+    end
     context "when receives 0 percent" do
       it "returns progress bar with 0px width" do
         helper.render_percentage_bar(0).should include %{<div class="red" style="width: 0px"><span>0</span></div>}

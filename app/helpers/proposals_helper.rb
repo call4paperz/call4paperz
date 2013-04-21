@@ -31,9 +31,17 @@ module ProposalsHelper
     end
 
     content_tag :div, :class => 'percentage' do
-      content_tag :div, :class => "#{klass}", :style => "width: #{percentage}%" do
+      content_tag :div, :class => "#{klass}", :style => "width: #{percentage_bar_width(percentage)}px" do
         content_tag :span, percentage
       end
     end
   end
+
+  private
+    PERCENTAGE_BAR_MAX_WIDTH = 200 # In pixels
+
+    def percentage_bar_width(value)
+      value * PERCENTAGE_BAR_MAX_WIDTH / 100
+    end
 end
+

@@ -8,6 +8,11 @@ body{
   background-color: $azul;
 }
 
+header {
+  border-top: 10px solid $azul;
+  background-color: #000;
+}
+
 a {
   font-size: 14px;
   color: $vermelho;
@@ -28,16 +33,9 @@ a:hover, a:active {
 
 .clear { clear: both; }
 
-#main{
-  background: image-url('bg.png') repeat-x;
+.main {
+  background-color: $vermelho;
   width: 100%;
-  overflow: hidden;
-}
-
-#main_inner{
-  background: image-url('bg2.png') repeat-x;
-  width: 100%;
-  min-height:190px;
   overflow: hidden;
 }
 
@@ -50,7 +48,6 @@ a:hover, a:active {
   @include border-radius(20px);
   background: #000;
   height: 70px;
-  margin-top: 25px;
 }
 
 ul#menu_top{
@@ -264,7 +261,7 @@ ul#menu_top li a:hover{
 }
 
 #content{
-  margin: 80px 0 20px;
+  margin: 20px 0 20px;
   overflow: hidden;
 }
 
@@ -566,7 +563,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #events_list {
-  margin-top:67px;
+  margin-top: 20px;
   position:relative;
   float: left;
 }
@@ -974,18 +971,17 @@ a.logo_c4p img{
   margin-top: 20px;
 }
 
-#logged{
+.notice {
+  position: absolute;
   background-color:#f2f2f2;
   color:#212121;
   font-size:14px;
-  opacity:0.9;
-  padding:7px;
-  position:fixed;
+  padding:20px;
   text-align:center;
-  top:95px;
-  width:943px;
   z-index:99999;
-  border: 1px solid #f2f2f2;
+  width:100%;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #crop_original {

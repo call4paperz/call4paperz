@@ -8,16 +8,44 @@
     <link rel="icon" href="/favicon.ico" type="image/ico"/>
   </head>
   <body>
-    <div id="main">
+    <%= render_flash_notice %>
+    <header>
       <div class="container">
-        <%= render_flash_notice %>
         <div id="menu">
           <%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
           <%= menu %>
         </div>
+      </div>
+    </header>
+    <section class="main">
+      <div class="container">
+        <div id="top">
+          <div id="pic">
+            <div id="intro">
+              <p>
+                <strong>Keep track of your call for proposals</strong>
+                ...and let the audience voice be heard at your event!
+              </p>
+            </div>
+            <ul class="showcase">
+              <li><%= image_tag 'showcase/1.jpg', :class => 'active', :title => 'Event', :width => '496', :height => '346' %></li>
+              <li><%= image_tag 'showcase/2.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
+              <li><%= image_tag 'showcase/3.jpg', :class => 'hidden', :title => 'Event', :width => '496', :height => '346' %></li>
+            </ul>
+            <div id="howto"></div>
+          </div>
+            <div id="twitter">
+              <p id="twitter_status"></p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container">
         <%= yield %>
       </div>
-    </div>
+    </section>
+
 
     <%= render 'layouts/footer' %>
 

@@ -971,18 +971,17 @@ a.logo_c4p img{
   margin-top: 20px;
 }
 
-#logged{
+.notice {
+  position: absolute;
   background-color:#f2f2f2;
   color:#212121;
   font-size:14px;
-  opacity:0.9;
-  padding:7px;
-  position:fixed;
+  padding:20px;
   text-align:center;
-  top:95px;
-  width:943px;
   z-index:99999;
-  border: 1px solid #f2f2f2;
+  width:100%;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #crop_original {

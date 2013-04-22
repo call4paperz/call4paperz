@@ -19,6 +19,8 @@ module ApplicationHelper
   end
 
   def render_flash_notice
-    "<div id='logged'>#{flash[:notice]}</div>".html_safe if flash[:notice]
+    if flash[:notice]
+      content_tag :p, flash[:notice], class: "notice"
+    end
   end
 end

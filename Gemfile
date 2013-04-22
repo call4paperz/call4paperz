@@ -20,7 +20,7 @@ gem 'rails', '3.2.12'
 gem 'rake'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'responders', '0.9.2'
-gem 'thin'
+gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'will_paginate'
 
@@ -37,6 +37,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'bullet'
+  gem "thin"
 end
 
 group :development, :test do

@@ -54,6 +54,11 @@ branch), with tests if possible. When your pull request is approved, you can
 request commit access to the repository, just bug
 [vinibaggio](https://github.com/vinibaggio).
 
+Also, please make feature branches. For instance, if you add a new
+feature, create a feature branch called "my-awesome-feature". That
+helps reviewing pull requests, specially if you have unrelated
+commits.
+
 ## Maintainer
 Maintenance is done by [vinibaggio](https://github.com/vinibaggio).
 

@@ -552,17 +552,17 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .event_desc {
-  width: 30%;
+  max-width: 30%;
   float: left;
 }
 
 .event_status span {
-  font-size: 4.5em;
+  font-size: 3.5em;
   font-weight: bold;
   letter-spacing: -2px;
   width: 10px;
   margin-right: -5px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 #events_list {

@@ -38,10 +38,14 @@ module ProposalsHelper
   end
 
   private
-    PERCENTAGE_BAR_MAX_WIDTH = 200 # In pixels
+    VOTES_BAR_MAX_WIDTH = 200 # In pixels
+    LIMIT = 100
 
     def votes_bar_width(value)
-      value * PERCENTAGE_BAR_MAX_WIDTH / 100
+      if value >= LIMIT
+        VOTES_BAR_MAX_WIDTH
+      else
+        value * VOTES_BAR_MAX_WIDTH / LIMIT
+      end
     end
 end
-

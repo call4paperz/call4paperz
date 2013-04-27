@@ -44,5 +44,15 @@ describe ProposalsHelper do
         helper.render_votes_bar(100).should include %{<div class="green" style="width: 200px"><span>100</span></div>}
       end
     end
+    context "when receives more than 100 votes" do
+      it "returns progress bar with 200px width" do
+        helper.render_votes_bar(136).should include %{<div class="green" style="width: 200px"><span>136</span></div>}
+      end
+    end
+    context "when receives more than 100 negatives votes" do
+      it "returns progress bar with 100px width" do
+        helper.render_votes_bar(-140).should include %{<div class="red" style="width: 200px"><span>140</span></div>}
+      end
+    end
   end
 end

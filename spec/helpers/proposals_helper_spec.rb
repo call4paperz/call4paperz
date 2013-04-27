@@ -23,25 +23,25 @@ describe ProposalsHelper do
     end
   end
 
-  describe "#render_percentage_bar" do
-    context "when receives -50 percent" do
+  describe "#render_votes_bar" do
+    context "when receives -50 votes" do
       it "returns progress bar with 100px width" do
-        helper.render_percentage_bar(-50).should include %{<div class="red" style="width: 100px"><span>50</span></div>}
+        helper.render_votes_bar(-50).should include %{<div class="red" style="width: 100px"><span>50</span></div>}
       end
     end
-    context "when receives 0 percent" do
+    context "when receives 0 votes" do
       it "returns progress bar with 0px width" do
-        helper.render_percentage_bar(0).should include %{<div class="red" style="width: 0px"><span>0</span></div>}
+        helper.render_votes_bar(0).should include %{<div class="red" style="width: 0px"><span>0</span></div>}
       end
     end
-    context "when receives 50 percent" do
+    context "when receives 50 votes" do
       it "returns progress bar with 100px width" do
-        helper.render_percentage_bar(50).should include %{<div class="gray" style="width: 100px"><span>50</span></div>}
+        helper.render_votes_bar(50).should include %{<div class="gray" style="width: 100px"><span>50</span></div>}
       end
     end
-    context "when receives 100 percent" do
+    context "when receives 100 votes" do
       it "returns progress bar with 200px width" do
-        helper.render_percentage_bar(100).should include %{<div class="green" style="width: 200px"><span>100</span></div>}
+        helper.render_votes_bar(100).should include %{<div class="green" style="width: 200px"><span>100</span></div>}
       end
     end
   end

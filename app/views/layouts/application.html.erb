@@ -7,15 +7,22 @@
     <%= favicon_link_tag %>
   </head>
   <body>
-    <div id='main_inner'>
-      <div class='container'>
-        <%= render_flash_notice %>
-
-        <div id='menu'>
-          <%= link_to image_tag('logo_c4p.png'), root_path, :class => 'logo_c4p' %>
+    <%= render_flash_notice %>
+    <header>
+      <div class="container">
+        <div id="menu">
+          <%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
           <%= menu %>
         </div>
+      </div>
+    </header>
+    <section class="main">
+      <div class="container">
         <div id='breadcrumb'></div>
+      </div>
+    </section>
+    <section>
+      <div class='container'>
         <%= yield %>
       </div>
     </div>

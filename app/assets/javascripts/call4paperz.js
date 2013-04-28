@@ -12,10 +12,9 @@ $(document).ready(function(){
 	removeLoggedDiv();
 });
 
-
 function removeLoggedDiv(){
-	setTimeout(function(){
-		$('#logged').fadeOut('slow');
-	}, 5000);
+  setTimeout(function(){
+    $('.notice').fadeOut('slow');
+  }, 5000);
 }
 

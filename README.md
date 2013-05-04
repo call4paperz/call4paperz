@@ -21,9 +21,10 @@ You must set the following environment variables for the system to fully work:
 
 ## Bootstrapping with Foreman
 
-Install foreman:
 
-    $ gem install foreman
+Install gems with bundle
+
+    $ bundle install
 
 Then create file `$RAILS_ROOT/.env` file with the following content:
 
@@ -33,10 +34,11 @@ Then create file `$RAILS_ROOT/.env` file with the following content:
     FACEBOOK_ACCESS=<your facebook access key>
     FACEBOOK_KEY=<your facebook api key>
 
+
 Then config database
 
-    cp config/database.yml.sample config/database.yml
-    bundle exec rake db:migrate
+    $ cp config/database.yml.sample config/database.yml
+    $ bundle exec rake db:create db:migrate db:test:prepare
 
 Then start the server with the following command:
 

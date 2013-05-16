@@ -129,6 +129,7 @@ feature "Events", %q{
       sign_in_with(user)
 
       event = FactoryGirl.create(:event, :user => user)
+      proposal = FactoryGirl.create(:proposal, :event => event)
 
       visit event_path(event)
 

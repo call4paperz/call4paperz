@@ -47,6 +47,11 @@ describe ApplicationHelper do
         helper.render_flash_notice.should be_nil
       end
     end
+  end
 
+  describe "#image_url" do
+    it 'given the image_path, it prepends the domain' do
+      helper.image_url('/images/awesome.png').should == 'http://test.host/images/awesome.png'
+    end
   end
 end

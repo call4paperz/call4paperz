@@ -56,7 +56,6 @@
     var nextItem = $('.showcase .active').fadeOut(800).delay(800).
         parent().next().find('img').first();
 
-
     $('.showcase .active').removeClass('active');
 
     if(nextItem.size() == 0) {
@@ -72,9 +71,10 @@
     setTimeout(swapImage, timeout);
 
     $('#twitter_status').tweet({
-         username: 'call4paperz',
-         avatar_size: 0,
-         count: 1
+        modpath: '<%= tweets_path %>',
+        username: 'call4paperz',
+        avatar_size: 0,
+        count: 1
     });
   });
 <% end %>

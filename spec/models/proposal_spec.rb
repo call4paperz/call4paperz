@@ -36,6 +36,13 @@ describe Proposal do
     end
   end
 
+  describe "associations" do
+    it { should have_many(:votes).dependent(:destroy) }
+    it { should have_many(:comments).dependent(:destroy) }
+    it { should belong_to(:user) }
+    it { should belong_to(:event) }
+  end
+
   describe "preloads comments count" do
     it "preloads the count" do
       3.times { FactoryGirl.create(:comment, :proposal => proposal)}

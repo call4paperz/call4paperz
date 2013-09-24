@@ -35,6 +35,12 @@ describe Event do
     end
   end
 
+  describe "associations" do
+    it { should have_many(:comments).through(:proposals) }
+    it { should have_many(:votes).through(:proposals) }
+    it { should belong_to(:user) }
+  end
+
   context ".occurs_first" do
     it "should sort the next to occur first" do
       late_event = FactoryGirl.create(:event, :occurs_at => 5.days.from_now)

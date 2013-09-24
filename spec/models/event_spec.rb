@@ -18,6 +18,23 @@ describe Event do
     end
   end
 
+  describe "validations" do
+
+    describe "requireds" do
+      [:name, :description, :occurs_at].each do |attr|
+        it { should validate_presence_of(attr) }
+      end
+    end
+
+    describe "name" do
+      it { should ensure_length_of(:name).is_at_least(3).is_at_most(150) }
+    end
+
+    describe "description" do
+      it { should ensure_length_of(:description).is_at_least(3).is_at_most(400) }
+    end
+  end
+
   context ".occurs_first" do
     it "should sort the next to occur first" do
       late_event = FactoryGirl.create(:event, :occurs_at => 5.days.from_now)

@@ -13,7 +13,16 @@ describe Vote do
     end
   end
 
+  describe "validations" do
 
+    describe "requireds" do
+      it { should validate_presence_of(:direction) }
+    end
+
+    describe "proposal_id" do
+      it { should validate_uniqueness_of(:proposal_id).scoped_to(:user_id) }
+    end
+  end
 
   describe ".like!" do
     it "should generate a vote for the specified proposal and user" do

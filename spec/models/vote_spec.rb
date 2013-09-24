@@ -24,6 +24,11 @@ describe Vote do
     end
   end
 
+  describe "associations" do
+    it { should belong_to(:user) }
+    it { should belong_to(:proposal) }
+  end
+
   describe ".like!" do
     it "should generate a vote for the specified proposal and user" do
       expect {

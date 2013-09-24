@@ -1,6 +1,26 @@
 require 'spec_helper'
 
 describe User do
+
+  describe "mass assignment" do
+
+    context "allowed" do
+      [:email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation,
+       :twitter_avatar].each do |attr|
+        it { should allow_mass_assignment_of(attr) }
+      end
+    end
+
+    context "not allowed" do
+      [:id, :encrypted_password, :password_salt, :reset_password_token,
+       :remember_token, :remember_created_at, :sign_in_count, :current_sign_in_at,
+       :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :reset_password_sent_at,
+       :created_at, :updated_at].each do |attr|
+        it { should_not allow_mass_assignment_of(attr) }
+      end
+    end
+  end
+
   describe "devise validations overrides" do
     context "password override" do
       it "should not be valid if none is passed" do

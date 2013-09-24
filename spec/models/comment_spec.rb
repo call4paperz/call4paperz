@@ -16,4 +16,11 @@ describe Comment do
       end
     end
   end
+
+  describe "validations" do
+
+    describe "requireds" do
+      it { should validate_presence_of(:body) }
+    end
+  end
 end

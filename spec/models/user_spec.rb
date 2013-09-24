@@ -21,6 +21,14 @@ describe User do
     end
   end
 
+  describe "associations" do
+    it { should have_many(:authentications).dependent(:destroy) }
+    it { should have_many(:comments).dependent(:destroy) }
+    it { should have_many(:events).dependent(:destroy) }
+    it { should have_many(:proposals).dependent(:destroy) }
+    it { should have_many(:votes).dependent(:destroy) }
+  end
+
   describe "devise validations overrides" do
     context "password override" do
       it "should not be valid if none is passed" do

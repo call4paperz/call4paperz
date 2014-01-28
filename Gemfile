@@ -53,4 +53,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'sqlite3'
   gem 'timecop'
+  gem 'shoulda-matchers'
 end

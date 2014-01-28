@@ -1,7 +1,47 @@
 require 'spec_helper'
 
 describe Proposal do
+
   let(:proposal) { FactoryGirl.create(:proposal)  }
+
+  describe "mass assignment" do
+
+    context "allowed" do
+      [:name, :description, :user_id, :created_at, :updated_at, :comments_count].each do |attr|
+        it { should allow_mass_assignment_of(attr) }
+      end
+    end
+
+    context "not allowed" do
+      [:id, :event_id].each do |attr|
+        it { should_not allow_mass_assignment_of(attr) }
+      end
+    end
+  end
+
+  describe "validations" do
+
+    describe "requireds" do
+      [:name, :description].each do |attr|
+        it { should validate_presence_of(attr) }
+      end
+    end
+
+    describe "name" do
+      it { should ensure_length_of(:name).is_at_least(3).is_at_most(150) }
+    end
+
+    describe "description" do
+      it { should ensure_length_of(:description).is_at_least(3).is_at_most(400) }
+    end
+  end
+
+  describe "associations" do
+    it { should have_many(:votes).dependent(:destroy) }
+    it { should have_many(:comments).dependent(:destroy) }
+    it { should belong_to(:user) }
+    it { should belong_to(:event) }
+  end
 
   describe "preloads comments count" do
     it "preloads the count" do

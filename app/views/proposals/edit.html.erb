@@ -5,6 +5,6 @@
 
     <%= render 'form' %>
 
-    <p id="proposal_notice"><strong>Please note</strong> you still have <%= distance_of_time_in_words_to_now(Time.now + @proposal.grace_period_left.seconds) %> minutes to make changes.</p>
+    <p id="proposal_notice"><strong>Please note</strong> you still have <%= distance_of_time_in_words_to_now(Time.now + @proposal.grace_period_left.seconds) %> to make changes.</p>
   </div>
 </div>

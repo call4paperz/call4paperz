@@ -124,18 +124,32 @@ feature "Events", %q{
       page.should have_no_content "Administrative tools"
     end
 
-    scenario "I should be able to see admin links if I am the the owner" do
-      user = FactoryGirl.create(:user)
-      sign_in_with(user)
+    context "I am the owner" do
+      let(:user) { FactoryGirl.create :user }
+      let(:event) { FactoryGirl.create :event, user: user }
 
-      event = FactoryGirl.create(:event, :user => user)
-      proposal = FactoryGirl.create(:proposal, :event => event)
+      background do
+        sign_in_with(user)
+      end
 
-      visit event_path(event)
+      scenario "I should be able to see admin links" do
+        visit event_path(event)
 
-      page.should have_content "Administrative tools"
-      page.should have_content "Edit event"
-      page.should have_content "Crop picture"
+        page.should have_content "Administrative tools"
+        page.should have_content "Edit event"
+        page.should have_content "Crop picture"
+      end
+
+      scenario "I should be able to see admin links for events with proposal" do
+        event = FactoryGirl.create :event, user: user
+        FactoryGirl.create :proposal, event: event
+
+        visit event_path(event)
+
+        page.should have_content "Administrative tools"
+        page.should have_content "Edit event"
+        page.should have_content "Crop picture"
+      end
     end
 
     scenario "I should be able to edit an event" do

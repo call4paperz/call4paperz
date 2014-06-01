@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do

@@ -20,20 +20,32 @@ module ProposalsHelper
     end
   end
 
-  def render_percentage_bar(percentage)
-    if percentage == 50.0
+  def render_votes_bar(votes_count)
+    if votes_count == 50.0
       klass = 'gray'
-    elsif percentage > 0
+    elsif votes_count > 0
       klass = 'green'
     else
       klass = 'red'
-      percentage = percentage.abs
+      votes_count = votes_count.abs
     end
 
     content_tag :div, :class => 'percentage' do
-      content_tag :div, :class => "#{klass}", :style => "width: #{percentage}%" do
-        content_tag :span, percentage
+      content_tag :div, :class => "#{klass}", :style => "width: #{votes_bar_width(votes_count)}px" do
+        content_tag :span, votes_count
       end
     end
   end
+
+  private
+    VOTES_BAR_MAX_WIDTH = 200 # In pixels
+    LIMIT = 100
+
+    def votes_bar_width(value)
+      if value >= LIMIT
+        VOTES_BAR_MAX_WIDTH
+      else
+        value * VOTES_BAR_MAX_WIDTH / LIMIT
+      end
+    end
 end

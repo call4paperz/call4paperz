@@ -23,8 +23,4 @@ module ApplicationHelper
       content_tag :p, flash[:notice], class: "notice"
     end
   end
-
-  def image_url(image_path)
-    request.protocol + request.host_with_port + image_path(image_path)
-  end
 end

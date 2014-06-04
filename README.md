@@ -52,9 +52,8 @@ That's it! Just go to <http://localhost:3000>.
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
-branch), with tests if possible. When your pull request is approved, you can
-request commit access to the repository, just bug
-[vinibaggio](https://github.com/vinibaggio).
+branch), with tests if possible. If you have any doubts, just bug
+[valeriano](https://github.com/ricardovaleriano).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
@@ -62,7 +61,8 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [vinibaggio](https://github.com/vinibaggio).
+Maintenance is done by [valeriano](https://github.com/ricardovaleriano).
+Before was bravely maintained by by [vinibaggio](https://github.com/vinibaggio).
 
 ## Original authors
 - Anderson Leite (no longer active)

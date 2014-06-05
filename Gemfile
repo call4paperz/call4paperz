@@ -19,10 +19,11 @@ gem 'rails', '~>3.2.18'
 gem 'rake'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'responders', '0.9.2'
-gem 'twitter'
+gem 'twitter', '~> 5.9.0'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'will_paginate'
+gem 'active_model_serializers'
 
 group :production do
   gem 'newrelic_rpm'
@@ -43,8 +44,9 @@ end
 group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
-  gem 'rspec-rails'
-  gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 2.99.0'
+  gem "dotenv-rails"
+  gem "debugger" if RUBY_VERSION < "2.0.0"
 end
 
 group :test do

@@ -4,8 +4,6 @@ Rr10Team71::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   match '/auth/failure' => 'authentications#failure'
 
-  match '/twitter/tweets' => 'twitter#tweets', as: :tweets
-
   devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :comments
@@ -25,4 +23,6 @@ Rr10Team71::Application.routes.draw do
       end
     end
   end
+
+  get "/twitter/last" => "twitter#last", as: :last_tweet
 end

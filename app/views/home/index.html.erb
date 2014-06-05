@@ -68,13 +68,8 @@
   }
 
   $(document).ready(function() {
-    setTimeout(swapImage, timeout);
+    setTimeout(swapImage, timeout)
+    new C4P.Twitter().loadLast("<%= last_tweet_path %>")
+  })
 
-    $('#twitter_status').tweet({
-        modpath: '<%= tweets_path %>',
-        username: 'call4paperz',
-        avatar_size: 0,
-        count: 1
-    });
-  });
 <% end %>

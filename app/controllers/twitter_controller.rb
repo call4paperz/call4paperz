@@ -1,17 +1,12 @@
 require 'twitter'
 
+# this should be in an api namespace?
 class TwitterController < ApplicationController
-  def tweets
-    @tweets = {
-      response: last_tweets
-    }
-
+  def last
     respond_to do |format|
-      format.json { render json: @tweets }
+      format.json { render json: TwitterClient.new.last, serializer: TweetSerializer }
     end
   end
 
-  def last_tweets
-    Twitter.user_timeline("call4paperz", count: 3)
   end
 end

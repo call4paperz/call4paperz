@@ -162,7 +162,13 @@ ul#menu_top li a:hover{
 #twitter_status {
   margin: 25px 5px 0;
   font-size: 12px;
-  width: 60%;
+  width: 18em;
+  line-height: 1.2;
+}
+
+.twitter_status_date {
+  @extend #twitter_status;
+  text-align: right;
 }
 
 .tweet_list .tweet_time {

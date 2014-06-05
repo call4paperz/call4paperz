@@ -42,6 +42,17 @@ Rr10Team71::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
+  client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                             username: ENV["MEMCACHIER_USERNAME"],
+                             password: ENV["MEMCACHIER_PASSWORD"],
+                             failover: true,
+                             socket_timeout: 1.5,
+                             socket_failure_delay: 0.2)
+  client = Dalli::Client.new
+  config.action_dispatch.rack_cache = {
+    metastore:  client,
+    entitystore: client
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   config.action_controller.asset_host = "http://call4paperz.com"

@@ -24,6 +24,8 @@ gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'will_paginate'
 gem 'active_model_serializers'
+gem 'rack-cache'
+gem 'dalli'
 
 group :production do
   gem 'newrelic_rpm'

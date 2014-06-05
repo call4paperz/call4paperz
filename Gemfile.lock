@@ -70,6 +70,7 @@ GEM
       compass (>= 0.12.2, < 0.14)
     culerity (0.2.15)
     daemons (1.1.9)
+    dalli (2.7.2)
     database_cleaner (0.9.1)
     debugger (1.6.6)
       columnize (>= 0.3.1)
@@ -311,6 +312,7 @@ DEPENDENCIES
   carrierwave!
   compass-rails
   culerity
+  dalli
   database_cleaner
   debugger
   devise
@@ -330,6 +332,7 @@ DEPENDENCIES
   omniauth-twitter
   pg
   pry-meta
+  rack-cache
   rails (~> 3.2.18)
   rake
   recaptcha

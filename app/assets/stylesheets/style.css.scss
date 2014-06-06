@@ -216,6 +216,7 @@ ul#menu_top li a:hover{
   height:403px;
   width: 262px;
   padding: 20px;
+  margin-bottom: 10px;
 }
 
 .event p strong{
@@ -252,8 +253,18 @@ ul#menu_top li a:hover{
 }
 
 .buttons{
-  position:absolute;
-  top:95px;
+  position: absolute;
+  top: 95px;
+  width: 25em;
+}
+
+.fb-like {
+  float: right;
+  top: -31px;
+}
+
+.fb_iframe_widget {
+  postion: absolute;
 }
 
 .buttons a {
@@ -268,7 +279,6 @@ ul#menu_top li a:hover{
 
 #content{
   margin: 20px 0 20px;
-  overflow: hidden;
 }
 
 .borda_vinho{
@@ -1016,10 +1026,4 @@ a.logo_c4p img{
 
 form .special {
   display: none;
-}
-
-.fb_iframe_widget {
-  line-height: 0;
-  font-size: 0;
-  overflow: hidden;
 }

@@ -255,16 +255,13 @@ ul#menu_top li a:hover{
 .buttons{
   position: absolute;
   top: 95px;
-  width: 25em;
-}
-
-.fb-like {
-  float: right;
-  top: -31px;
+  width: 400px;
 }
 
 .fb_iframe_widget {
-  postion: absolute;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
 }
 
 .buttons a {
@@ -273,8 +270,6 @@ ul#menu_top li a:hover{
 
 .buttons iframe {
   position: relative;
-  top: 5px;
-  padding-right: 5px;
 }
 
 #content{

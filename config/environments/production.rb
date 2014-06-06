@@ -48,7 +48,6 @@ Rr10Team71::Application.configure do
                              failover: true,
                              socket_timeout: 1.5,
                              socket_failure_delay: 0.2)
-  client = Dalli::Client.new
   config.action_dispatch.rack_cache = {
     metastore:  client,
     entitystore: client

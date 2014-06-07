@@ -15,6 +15,15 @@ body {
   font-weight: 400;
 }
 
+.logo-word {
+  background-color: #000;
+}
+
+.logo-word h1 {
+  color: #FFF;
+  font-size:50px;
+}
+
 h1 .logo-z {
   color: rgb(213, 55, 68)
 }
@@ -66,11 +75,25 @@ main {
   background-color: #FFF;
 }
 
-.logo-word {
-  background-color: #000;
+#what {
+  padding: 30px 20px 30px 20px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  background-color: #FFF;
 }
 
-.logo-word h1 {
+#about {
+  padding: 30px 20px 1px 20px;
+  font-size: 14px;
   color: #FFF;
-  font-size:50px;
+  letter-spacing: 0.05em;
+  background-color: rgb(213, 55, 68)
+}
+
+#copyright {
+  padding: 30px 30px 50px 30px;
+  font-size: 12px;
+  color: #FFF;
+  letter-spacing: 0.05em;
+  background-color: rgb(213, 55, 68)
 }

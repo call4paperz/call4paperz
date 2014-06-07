@@ -1,0 +1,76 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:500);
+
+body {
+  background-color: #000;
+  margin: 0px;
+}
+
+.headline {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+
+.paragraph {
+  font-family: 'Ubuntu mono';
+  font-weight: 400;
+}
+
+h1 .logo-z {
+  color: rgb(213, 55, 68)
+}
+
+h1 .logo-dot {
+  color: rgb(255, 255, 255)
+}
+
+header {
+  height: 300px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position:center;
+  background-image: url("/showcase/3.jpg")
+}
+
+header .headline {
+  background-color: #000;
+  height:110px;
+  width:100%;
+}
+
+header h1 {
+  color: #FFF;
+  font-size:50px;
+}
+
+header h2 {
+  color: #FFF;
+  font-size: 20px;
+  margin-top: -3.9em;
+}
+
+header h3 {
+  color: #FFF;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.053em;
+}
+
+
+
+main {
+  background-color: #FFF;
+}
+
+.logo-word {
+  background-color: #000;
+}
+
+.logo-word h1 {
+  color: #FFF;
+  font-size:50px;
+}

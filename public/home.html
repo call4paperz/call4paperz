@@ -3,29 +3,59 @@
 <head>
   <meta charset="utf-8">
   <title>call4paperz.com</title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico?v=2" />
   <link rel="stylesheet"
     href="/c4p.css" id="c4p-main-layout-css" type='text/css' media='all' />
 </head>
-<body>
+<body class="paragraph">
   <header>
     <div class="headline">
-      <h1 class="headline">call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</h1>
-      <h2 class="paragraph">Keep track of your call for proposals.</h2>
+      <div class="logo-word">
+        <h1 class="headline">call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</h1>
+      </div>
+      <h2>Keep track of your call for proposals.</h2>
     </div>
-    <h3 class="paragraph">And let the audience voice be heard at your event!</h3>
+    <h3>And let the audience voice be heard at your event!</h3>
   </header>
 
   <main>
-  xpto
+    <nav>
+      <a href="#">Events</a>
+      <a href="#" class="main-link">New Event</a>
+      <a href="#">Sign In(Up)</a>
+    </nav>
+
+    <hr />
+    <section id="recent">
+      <h2>
+        Recent opened
+        <span class="logo-word-black small">call4paper<span
+            class="logo-z">z</span>.</span>
+      </h2>
+
+      <article class="event">
+        <h3>Meetup de Junho da NodeBR - São Paulo</h3>
+        <img src="suamae" />
+        <p>
+          Crie ou vote em uma palestra da sua preferência para ser apresentada
+          no dia 14 de Junho durante o Meetup mensal da comunidade Node.js em São
+          Paulo.
+        </p>
+      </article>
+    </section>
+
+    <hr />
+    <section id="last-comments">
+      <h2>Last comment<span class="logo-z">z</span>.</h2>
+    </section>
   </main>
 
   <footer>
     <div class="logo-word">
-      <h1 class="headline">call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</h1>
+      <span>call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</span>
     </div>
-    <section id="what" class="paragraph">
-      <p>Have you ever had a difficult time to organize your local meetup?</p>
+    <section id="what">
+      <h2>Have you ever had a difficult time to organize your local meetup?</h2>
 
       <p>
         Call4paperz tries to help with event organization, call for papers,
@@ -35,11 +65,11 @@
 
       <p>We have now 11223 users to help with feedback!</p>
     </section>
-    <section id="about" class="paragraph">
-      <p>
+    <section id="about">
+      <h2>
         Call4paperz was designed, developed and deployed in 48 hours by
         @anderson_leite, @qmx and @vinibaggio at Rails Rumble 2010.
-      </p>
+      </h2>
 
       <p>It's maintained by @ricardovaleriano since 2014.</p>
 
@@ -54,8 +84,8 @@
       </p>
     </section>
 
-    <section id="copyright" class="paragraph">
-      <p>Copyright © 2010 — 2014.</p>
+    <section id="copyright">
+      <h2>Copyright © 2010 — 2014.</h2>
       <p>
         Powered by acts_as_monkeys_on_steroids,
         Developed in Rails Rumble 2010.

@@ -16,24 +16,35 @@ body {
 }
 
 .logo-word {
-  background-color: #000;
-}
-
-.logo-word h1 {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
   color: #FFF;
-  font-size:50px;
+  font-size: 50px;
+  background-color: #000;
+  font-weight: 500;
 }
 
-h1 .logo-z {
+.logo-z {
   color: rgb(213, 55, 68)
 }
 
-h1 .logo-dot {
+.logo-dot {
   color: rgb(255, 255, 255)
 }
 
+.logo-word-black {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
+  color: #000;
+  font-size:50px;
+}
+
+.logo-word-black {
+  font-size: 26px;
+}
+
 header {
-  height: 300px;
+  height: 280px;
   position: relative;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -42,9 +53,13 @@ header {
 }
 
 header .headline {
-  background-color: #000;
-  height:110px;
   width:100%;
+  background-color: #000;
+}
+
+header .headline .logo-word {
+  padding: 0px 10px 0px 10px;
+  margin-top: -30px;
 }
 
 header h1 {
@@ -54,8 +69,11 @@ header h1 {
 
 header h2 {
   color: #FFF;
-  font-size: 20px;
-  margin-top: -3.9em;
+  font-size: 18px;
+  position: relative;
+  margin-top: -1.5em;
+  padding: 0px 5px 5px 5px;
+  letter-spacing: 0.0685em;
 }
 
 header h3 {
@@ -67,6 +85,7 @@ header h3 {
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.053em;
+  padding: 0px 5px 0px 5px;
 }
 
 
@@ -96,4 +115,47 @@ main {
   color: #FFF;
   letter-spacing: 0.05em;
   background-color: rgb(213, 55, 68)
+}
+
+main {
+  padding: 0px 0px 65px 0px;
+}
+
+main nav {
+  padding: 35px 20px 35px 20px;
+  text-align: justify;
+}
+
+main a {
+  display:inline-block;
+  *display: inline;
+
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #FFF;
+}
+
+main a:hover {
+  border-bottom: 2px solid rgb(213, 55, 68);
+}
+
+main nav:after{
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+main nav .main-link {
+  font-weight: bold;
+}
+
+main h2 {
+  font-size: 26px;
+  text-align: center;
+}
+
+footer {
+  position: relative;
 }

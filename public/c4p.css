@@ -127,11 +127,6 @@ main hr {
 }
 
 
-
-main {
-  padding: 0px 0px 65px 0px;
-}
-
 main nav {
   padding: 35px 20px 10px 20px;
   text-align: justify;
@@ -209,8 +204,52 @@ main h2 {
   margin-bottom: 50px;
 }
 
+#last-comments .comment {
+  padding: 0px 12px 40px 12px;
+  clear: both;
+}
+
+#last-comments .comment div {
+  clear: both;
+}
+
+#last-comments img {
+  width: 57px;
+  height: 57px;
+}
+
+#last-comments p {
+  width: 100%;
+}
+
+#last-comments .comment:nth-child(even) img {
+  float: left;
+  padding-right: 20px;
+}
+
+#last-comments .comment:nth-child(even) span {
+  float: right;
+}
+
+#last-comments .comment:nth-child(even) .event-link {
+  text-align: right;
+}
+
+#last-comments .comment:nth-child(odd) img {
+  float: right;
+  padding-left: 20px;
+}
+
+#last-comments .comment:nth-child(odd) span {
+  float: left;
+}
+
 footer {
   position: relative;
+}
+
+footer .logo-word {
+  padding: 30px 10px 30px 10px;
 }
 
 footer h2 {

@@ -25,7 +25,7 @@ body {
 }
 
 .logo-z {
-  color: rgb(213, 55, 68)
+  color: rgb(213, 55, 68);
 }
 
 .logo-dot {
@@ -154,6 +154,31 @@ main nav .main-link {
 main h2 {
   font-size: 26px;
   text-align: center;
+}
+
+#recent .event {
+  padding: 0px 12px 0px 12px;
+}
+
+#recent .event h3 {
+  font-size: 22px;
+  color: rgb(213, 55, 68);
+  letter-spacing: 0.05em;
+}
+
+#recent .event img {
+  height: 85px;
+  width: 85px;
+  margin-right: 35px;
+  float: left;
+}
+
+#recent .event p {
+  font-size: 14px;
+}
+
+main hr {
+  clear: both;
 }
 
 footer {

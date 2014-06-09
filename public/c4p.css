@@ -219,7 +219,17 @@ main h2 {
 }
 
 #last-comments p {
+  padding: 10px 0px 0px 0px;
   width: 100%;
+}
+
+#last-comments .author {
+  color: rgb(213, 55, 68)
+}
+
+#last-comments a {
+  text-decoration: none;
+  color: rgb(213, 55, 68)
 }
 
 #last-comments .comment:nth-child(even) img {

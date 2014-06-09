@@ -88,10 +88,19 @@ header h3 {
   padding: 0px 5px 0px 5px;
 }
 
-
+hr {
+  border: 0;
+  color: #f00;
+  background-color: rgb(128, 129, 128);
+  height: 2px;
+}
 
 main {
   background-color: #FFF;
+}
+
+main hr {
+  clear: both;
 }
 
 #what {
@@ -117,16 +126,18 @@ main {
   background-color: rgb(213, 55, 68)
 }
 
+
+
 main {
   padding: 0px 0px 65px 0px;
 }
 
 main nav {
-  padding: 35px 20px 35px 20px;
+  padding: 35px 20px 10px 20px;
   text-align: justify;
 }
 
-main a {
+main nav a {
   display:inline-block;
   *display: inline;
 
@@ -137,7 +148,7 @@ main a {
   border-bottom: 2px solid #FFF;
 }
 
-main a:hover {
+main nav a:hover {
   border-bottom: 2px solid rgb(213, 55, 68);
 }
 
@@ -156,14 +167,28 @@ main h2 {
   text-align: center;
 }
 
+#recent h2 {
+  margin-top: 35px;
+}
+
 #recent .event {
   padding: 0px 12px 0px 12px;
+  clear: both;
 }
 
 #recent .event h3 {
+  padding: 60px 0px 0px 0px;
+}
+
+#recent .event h3 a {
   font-size: 22px;
   color: rgb(213, 55, 68);
   letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+#recent .event h3 a:hover {
+  text-decoration: none;
 }
 
 #recent .event img {
@@ -177,10 +202,18 @@ main h2 {
   font-size: 14px;
 }
 
-main hr {
-  clear: both;
+#recent:after{
+  content: "";
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 50px;
 }
 
 footer {
   position: relative;
+}
+
+footer h2 {
+  font-size: 14px;
+  font-weight: lighter;
 }

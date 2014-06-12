@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:500);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,400);
 
 body {
   background-color: #000;
@@ -265,4 +265,16 @@ footer .logo-word {
 footer h2 {
   font-size: 14px;
   font-weight: lighter;
+}
+
+@media only screen and (min-width : 700px) {
+  header .headline {
+    background-color: inherit;
+    font-size: 90px;
+    top: -10px;
+  }
+
+  .logo-word {
+    background-color: inherit;
+  }
 }

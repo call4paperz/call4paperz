@@ -6,7 +6,7 @@
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -52,7 +52,7 @@ table {
 
 
 body {
-  background-color: #000;
+  background-color: #FFF;
 }
 
 .headline {
@@ -95,7 +95,6 @@ body {
 
 header {
   height: 280px;
-  position: relative;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position:center;
@@ -134,7 +133,7 @@ header h3 {
   font-weight: bold;
   font-style: italic;
   letter-spacing: 0.053em;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px 70px 5px;
 }
 
 hr {
@@ -175,13 +174,13 @@ main hr {
   background-color: rgb(213, 55, 68)
 }
 
-
-main nav {
+nav {
   padding: 35px 20px 10px 20px;
   text-align: justify;
+  background-color: #FFF;
 }
 
-main nav a {
+nav a {
   display:inline-block;
   *display: inline;
 
@@ -192,17 +191,17 @@ main nav a {
   border-bottom: 2px solid #FFF;
 }
 
-main nav a:hover {
+nav a:hover {
   border-bottom: 2px solid rgb(213, 55, 68);
 }
 
-main nav:after{
+nav:after{
   content: "";
   width: 100%;
   display: inline-block;
 }
 
-main nav .main-link {
+nav .main-link {
   font-weight: bold;
 }
 
@@ -350,5 +349,8 @@ footer h2 {
 
   .logo-word {
     background-color: inherit;
+  }
+
+  nav {
   }
 }

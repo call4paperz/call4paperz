@@ -1,8 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:300,400);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400|Ubuntu:300,400);
 
 body {
   background-color: #000;
-  margin: 0px;
 }
 
 .headline {
@@ -271,10 +270,20 @@ footer h2 {
   header .headline {
     background-color: inherit;
     font-size: 90px;
-    top: -10px;
+  }
+
+  header h1 {
+    height: 80px;
   }
 
   .logo-word {
     background-color: inherit;
+  }
+
+  header h2 {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.08em;
   }
 }

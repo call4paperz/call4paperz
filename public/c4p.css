@@ -182,8 +182,6 @@ nav {
 
 nav a {
   display:inline-block;
-  *display: inline;
-
   font-family: "Helvetica Neue";
   font-size: 14px;
   text-decoration: none;
@@ -352,5 +350,23 @@ footer h2 {
   }
 
   nav {
+    position: relative;
+    top: -200px;
+    background: none;
+  }
+
+  nav a {
+    color: #FFF;
+  }
+
+  nav a {
+    display:inherit;
+    text-decoration: none;
+    color: #FFF;
+    border-bottom: none;
+  }
+
+  nav a:hover {
+    border-bottom: none;
   }
 }

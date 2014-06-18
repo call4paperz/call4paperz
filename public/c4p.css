@@ -57,7 +57,7 @@ body {
 
 .headline {
   font-family: 'Ubuntu', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .paragraph {
@@ -351,12 +351,23 @@ footer h2 {
 
   nav {
     position: relative;
-    top: -200px;
+    top: -260px;
     background: none;
+    line-height: 3.9em;
+    letter-spacing: 0.10em;
+    padding-bottom: 0px;
+  }
+
+  nav .main-link {
+    font-weight: 400;
+    font-size: 64px;
   }
 
   nav a {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
     color: #FFF;
+    font-size: 48px;
   }
 
   nav a {

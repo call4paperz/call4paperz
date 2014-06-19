@@ -432,4 +432,25 @@ footer h2 {
     letter-spacing: 0.075em;
     color: #FFF;
   }
+
+  #recent h2 {
+    font-size: 50px;
+  }
+
+  #recent .logo-word-black {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-size: 50px;
+  }
+
+  #recent .event .headline a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+  }
+
+  #recent .event img {
+    width: 95px;
+    height: 95px;
+    padding: 12px 0 0 0;
+  }
 }

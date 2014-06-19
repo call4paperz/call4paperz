@@ -349,6 +349,10 @@ footer h2 {
     background-color: inherit;
   }
 
+  .main-separator {
+    display: none;
+  }
+
   nav {
     background: none;
   }
@@ -370,7 +374,7 @@ footer h2 {
     line-height: 3.9em;
     letter-spacing: 0.10em;
     padding-bottom: 0px;
-    bottom: -80px;
+    top: 190px;
   }
 
   #menu .main-link {
@@ -409,13 +413,23 @@ footer h2 {
     letter-spacing: 0.075em;
   }
 
-
   #signed-in nav a:hover {
     text-decoration:none;
     border-bottom: 2px solid #FFF;
   }
 
   #user-links {
-    padding: 3.5em 30px 0 0;
+    padding: 4.5em 30px 0 0;
+  }
+
+  #signed-in .user-name {
+    padding: 12px 0 10px 0;
+    position: absolute;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 0.075em;
+    color: #FFF;
   }
 }

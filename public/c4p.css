@@ -350,24 +350,7 @@ footer h2 {
   }
 
   nav {
-    position: relative;
-    top: -260px;
     background: none;
-    line-height: 3.9em;
-    letter-spacing: 0.10em;
-    padding-bottom: 0px;
-  }
-
-  nav .main-link {
-    font-weight: 400;
-    font-size: 64px;
-  }
-
-  nav a {
-    font-family: 'Ubuntu mono', sans-serif;
-    font-weight: 400;
-    color: #FFF;
-    font-size: 48px;
   }
 
   nav a {
@@ -379,5 +362,60 @@ footer h2 {
 
   nav a:hover {
     border-bottom: none;
+  }
+
+  #menu {
+    position: absolute;
+    background: none;
+    line-height: 3.9em;
+    letter-spacing: 0.10em;
+    padding-bottom: 0px;
+    bottom: -80px;
+  }
+
+  #menu .main-link {
+    font-weight: 400;
+    font-size: 64px;
+  }
+
+  #menu a {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    color: #FFF;
+    font-size: 48px;
+  }
+
+  #signed-in {
+    background-color: rgb(213, 55, 68);
+    height: 7em;
+  }
+
+  #signed-in .user-avatar {
+    padding: 12px 40px 12px 10px;
+    width: 82px;
+    height: 82px;
+    float: left;
+  }
+
+  #signed-in nav {
+    text-align: justify;
+  }
+
+  #signed-in nav a {
+    display:inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.075em;
+  }
+
+
+  #signed-in nav a:hover {
+    text-decoration:none;
+    border-bottom: 2px solid #FFF;
+  }
+
+  #user-links {
+    padding: 3.5em 30px 0 0;
   }
 }

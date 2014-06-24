@@ -13,3 +13,4 @@ capybara-*
 tmp/*
 .routes
 zeus.json
+.ruby-gemset

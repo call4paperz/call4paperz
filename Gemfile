@@ -47,6 +47,7 @@ group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
   gem 'rspec-rails', '~> 2.99.0'
+  gem 'rspec-collection_matchers'
   gem "dotenv-rails"
   gem "debugger" if RUBY_VERSION < "2.0.0"
 end

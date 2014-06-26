@@ -9,5 +9,4 @@ RUN echo deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main > /et
 RUN apt-get update
 
 RUN apt-get install -yqq python-software-properties libxslt-dev libxml2-dev ruby1.9.1 ruby1.9.1-dev
-RUN gem update --system
 RUN gem install rake bundler --no-rdoc --no-ri

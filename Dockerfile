@@ -1,17 +1,13 @@
 FROM ubuntu:14.04
 MAINTAINER Ricardo Valeriano <ricardo.valeriano+c4p@gmail.com>
 RUN apt-get update
+RUN apt-get install -yqq ca-certificates
 
-RUN apt-get install -yqq git wget gcc make libxslt-dev libxml2-dev
+## Brightbox Ruby 1.9.3, 2.0 and 2.1
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C3173AA6
+RUN echo deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main > /etc/apt/sources.list.d/brightbox.list
+RUN apt-get update
 
-# rbenving the stuff
-RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-RUN git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-RUN git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-RUN git clone git://github.com/tpope/rbenv-aliases.git
-
-RUN $HOME/.rbenv/bin/rbenv install 1.9.3-p547
-RUN $HOME/.rbenv/bin/rbenv global 1.9.3
+RUN apt-get install -yqq python-software-properties libxslt-dev libxml2-dev ruby1.9.1 ruby1.9.1-dev
 RUN gem update --system
-RUN gem install bundler --no-rdoc --no-ri
+RUN gem install rake bundler --no-rdoc --no-ri

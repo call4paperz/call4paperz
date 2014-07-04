@@ -459,16 +459,38 @@ footer h2 {
     padding: 12px 0 0 0;
   }
 
-  #last-comments h2 {
-    padding: 50px 0 0 0;
-    font-size: 50px;
-  }
-
   .recent-separator {
     background-color: rgb(213, 55, 68);
     height: 2px;
     width: 500px;
     text-align:center;
     margin: 0 auto;
+  }
+
+  #last-comments h2 {
+    padding: 50px 0 0 0;
+    font-size: 50px;
+  }
+
+  #last-comments .comment p {
+    font-size: 24px;
+    padding: 0 0 13px 0;
+  }
+
+  #last-comments .comment:nth-child(even) span {
+    float: none;
+  }
+
+  #last-comments .comment:nth-child(odd) span {
+    float: none;
+  }
+
+  #last-comments .comment:nth-child(even) .event-link {
+    text-align: left;
+  }
+
+  #last-comments .author {
+    font-size: 24px;
+    padding: 10px 0 0 0;
   }
 }

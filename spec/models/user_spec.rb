@@ -60,6 +60,7 @@ describe User do
 
       it "should require email if it has authentications " do
         user = User.new
+        expect(user.valid?).to be false
         expect(user.errors[:email].size).to eq 1
       end
     end

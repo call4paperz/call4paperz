@@ -453,4 +453,22 @@ footer h2 {
     height: 95px;
     padding: 12px 0 0 0;
   }
+
+  #recent .event p {
+    font-size: 24px;
+    padding: 12px 0 0 0;
+  }
+
+  #last-comments h2 {
+    padding: 50px 0 0 0;
+    font-size: 50px;
+  }
+
+  .recent-separator {
+    background-color: rgb(213, 55, 68);
+    height: 2px;
+    width: 500px;
+    text-align:center;
+    margin: 0 auto;
+  }
 }

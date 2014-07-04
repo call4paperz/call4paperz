@@ -1,5 +1,8 @@
 source 'http://rubygems.org'
+
 ruby '1.9.3'
+
+gem 'rails', '~>3.2.19'
 
 gem 'addressable'
 gem 'carrierwave', github: 'jnicklas/carrierwave'
@@ -15,7 +18,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-oauth2'
 gem 'omniauth-twitter'
 gem 'pg'
-gem 'rails', '~>3.2.18'
 gem 'rake'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'responders', '0.9.2'

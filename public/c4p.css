@@ -166,6 +166,10 @@ main hr {
   background-color: rgb(213, 55, 68)
 }
 
+#about .title {
+  display: none;
+}
+
 #copyright {
   padding: 30px 30px 50px 30px;
   font-size: 12px;
@@ -498,5 +502,52 @@ footer h2 {
   #last-comments .author {
     font-size: 24px;
     padding: 10px 0 0 0;
+  }
+
+  footer .logo-word {
+    background-color: #000;
+    text-align: center;
+    font-size: 90px;
+    padding: 72px 0 72px 0;
+  }
+
+  #what h2 {
+    font-size: 22px;
+    padding: 0 0 10px 0;
+  }
+
+  #what p {
+    font-size: 20px;
+  }
+
+  #about {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+  }
+
+  #about .title {
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+    font-size: 60px;
+    padding: 40px 0 40px 0;
+  }
+
+  #about h2 {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    padding: 0 0 10px 0;
+  }
+
+  #copyright {
+    font-size: 20px;
+  }
+
+  #copyright h2 {
+    padding: 0 0 5px 0;
+    font-size: 20px;
   }
 }

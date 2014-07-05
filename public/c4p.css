@@ -485,6 +485,12 @@ footer h2 {
     float: none;
   }
 
+  #last-comments .comment:nth-child(odd) img {
+    float: left;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
   #last-comments .comment:nth-child(even) .event-link {
     text-align: left;
   }

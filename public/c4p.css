@@ -158,6 +158,10 @@ main hr {
   background-color: #FFF;
 }
 
+#last-tweet {
+  display: none;
+}
+
 #about {
   padding: 30px 20px 1px 20px;
   font-size: 14px;
@@ -511,6 +515,10 @@ footer h2 {
     padding: 72px 0 72px 0;
   }
 
+  #what {
+    position: relative;
+  }
+
   #what h2 {
     font-size: 22px;
     padding: 0 0 10px 0;
@@ -518,6 +526,7 @@ footer h2 {
 
   #what p {
     font-size: 20px;
+    padding: 0 0 10px 0;
   }
 
   #about {
@@ -540,6 +549,33 @@ footer h2 {
     font-size: 26px;
     letter-spacing: 0.08em;
     padding: 0 0 10px 0;
+  }
+
+  #about p {
+    padding: 0 0 10px 0;
+  }
+
+  #about-this {
+    margin-right: 220px;
+  }
+
+  #last-tweet {
+    padding: 0 0 20px 0;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+  }
+
+  #last-tweet pre {
+    font-size: 12px;
+  }
+
+  #last-tweet a {
+    font-size: 18px;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    color: rgb(213, 55, 68);
   }
 
   #copyright {

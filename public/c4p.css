@@ -560,11 +560,10 @@ footer h2 {
   }
 
   #last-tweet {
-    padding: 0 0 20px 0;
     display: block;
     position: absolute;
     right: 10px;
-    top: 30px;
+    top: 15px;
   }
 
   #last-tweet pre {
@@ -576,6 +575,10 @@ footer h2 {
     font-family: "Ubuntu", sans-serif;
     text-decoration: none;
     color: rgb(213, 55, 68);
+  }
+
+  #last-tweet img {
+    float: right;
   }
 
   #copyright {

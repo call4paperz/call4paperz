@@ -7,4 +7,9 @@ class HomeController < ApplicationController
     @events_quantity = Event.count
   end
 
+  def index_new
+    @user = current_user
+    render layout: false
+  end
+
 end

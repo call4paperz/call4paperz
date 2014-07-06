@@ -1,0 +1,592 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400|Ubuntu:300,400);
+
+/* {{{{{ RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, hr, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* }}}} RESET */
+
+
+body {
+  background-color: #FFF;
+}
+
+.headline {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.paragraph {
+  font-family: 'Ubuntu mono';
+  font-weight: 400;
+}
+
+.logo-word {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
+  color: #FFF;
+  font-size: 50px;
+  background-color: #000;
+  font-weight: 500;
+}
+
+.logo-z {
+  color: rgb(213, 55, 68);
+}
+
+.logo-dot {
+  color: rgb(255, 255, 255)
+}
+
+.logo-word-black {
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
+  color: #000;
+  font-size:50px;
+}
+
+.logo-word-black {
+  font-size: 26px;
+}
+
+header {
+  height: 280px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position:center;
+  background-image: url("/showcase/3.jpg")
+}
+
+header .headline {
+  width:100%;
+  background-color: #000;
+}
+
+header .headline .logo-word {
+  padding: 0px 10px 0px 10px;
+}
+
+header h1 {
+  color: #FFF;
+  font-size:50px;
+}
+
+header h2 {
+  color: #FFF;
+  font-size: 18px;
+  position: relative;
+  margin-top: 0.7em;
+  padding: 0px 5px 5px 5px;
+  letter-spacing: 0.0685em;
+}
+
+header h3 {
+  color: #FFF;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.053em;
+  padding: 0px 5px 70px 5px;
+}
+
+hr {
+  border: 0;
+  color: #f00;
+  background-color: rgb(128, 129, 128);
+  height: 2px;
+}
+
+main {
+  background-color: #FFF;
+}
+
+main hr {
+  clear: both;
+}
+
+#what {
+  padding: 30px 20px 30px 20px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  background-color: #FFF;
+}
+
+#last-tweet {
+  display: none;
+}
+
+#about {
+  padding: 30px 20px 1px 20px;
+  font-size: 14px;
+  color: #FFF;
+  letter-spacing: 0.05em;
+  background-color: rgb(213, 55, 68)
+}
+
+#about .title {
+  display: none;
+}
+
+#copyright {
+  padding: 30px 30px 50px 30px;
+  font-size: 12px;
+  color: #FFF;
+  letter-spacing: 0.05em;
+  background-color: rgb(213, 55, 68)
+}
+
+nav {
+  padding: 35px 20px 10px 20px;
+  text-align: justify;
+  background-color: #FFF;
+}
+
+nav a {
+  display:inline-block;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #FFF;
+}
+
+nav a:hover {
+  border-bottom: 2px solid rgb(213, 55, 68);
+}
+
+nav:after{
+  content: "";
+  width: 100%;
+  display: inline-block;
+}
+
+nav .main-link {
+  font-weight: bold;
+}
+
+main h2 {
+  font-size: 26px;
+  text-align: center;
+}
+
+#recent h2 {
+  margin-top: 35px;
+}
+
+#recent .event {
+  padding: 0px 12px 0px 12px;
+  clear: both;
+}
+
+#recent .event h3 {
+  padding: 60px 0px 0px 0px;
+}
+
+#recent .event h3 a {
+  font-size: 22px;
+  color: rgb(213, 55, 68);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+#recent .event h3 a:hover {
+  text-decoration: none;
+}
+
+#recent .event img {
+  height: 85px;
+  width: 85px;
+  margin-right: 35px;
+  float: left;
+}
+
+#recent .event p {
+  font-size: 14px;
+}
+
+#recent:after{
+  content: "";
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+#last-comments .comment {
+  padding: 0px 12px 40px 12px;
+  clear: both;
+}
+
+#last-comments .comment div {
+  clear: both;
+}
+
+#last-comments img {
+  width: 57px;
+  height: 57px;
+}
+
+#last-comments p {
+  padding: 10px 0px 0px 0px;
+  width: 100%;
+}
+
+#last-comments .author {
+  color: rgb(213, 55, 68)
+}
+
+#last-comments a {
+  text-decoration: none;
+  color: rgb(213, 55, 68)
+}
+
+#last-comments .comment:nth-child(even) img {
+  float: left;
+  padding-right: 20px;
+}
+
+#last-comments .comment:nth-child(even) span {
+  float: right;
+}
+
+#last-comments .comment:nth-child(even) .event-link {
+  text-align: right;
+}
+
+#last-comments .comment:nth-child(odd) img {
+  float: right;
+  padding-left: 20px;
+}
+
+#last-comments .comment:nth-child(odd) span {
+  float: left;
+}
+
+footer {
+  position: relative;
+}
+
+footer .logo-word {
+  padding: 30px 10px 30px 10px;
+}
+
+footer h2 {
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+@media only screen and (min-width : 700px) {
+  header {
+    height: 460px;
+  }
+
+  header .headline {
+    background-color: inherit;
+    font-size: 90px;
+  }
+
+  header h1 {
+    height: 80px;
+  }
+
+  header h2 {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+  }
+
+  header h3 {
+    bottom: auto;
+    width: 100%;
+    font-style: normal;
+
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-word {
+    background-color: inherit;
+  }
+
+  .main-separator {
+    display: none;
+  }
+
+  nav {
+    background: none;
+  }
+
+  nav a {
+    display:inherit;
+    text-decoration: none;
+    color: #FFF;
+    border-bottom: none;
+  }
+
+  nav a:hover {
+    border-bottom: none;
+  }
+
+  #menu {
+    position: absolute;
+    background: none;
+    line-height: 3.9em;
+    letter-spacing: 0.10em;
+    padding-bottom: 0px;
+    top: 190px;
+  }
+
+  #menu .main-link {
+    font-weight: 400;
+    font-size: 64px;
+  }
+
+  #menu a {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    color: #FFF;
+    font-size: 48px;
+  }
+
+  #signed-in {
+    background-color: rgb(213, 55, 68);
+    height: 7em;
+  }
+
+  #signed-in .user-avatar {
+    padding: 12px 40px 12px 10px;
+    width: 82px;
+    height: 82px;
+    float: left;
+  }
+
+  #signed-in nav {
+    text-align: justify;
+  }
+
+  #signed-in nav a {
+    display:inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.075em;
+  }
+
+  #signed-in nav a:hover {
+    text-decoration:none;
+    border-bottom: 2px solid #FFF;
+  }
+
+  #user-links {
+    padding: 4.5em 30px 0 0;
+  }
+
+  #signed-in .user-name {
+    padding: 12px 0 10px 0;
+    position: absolute;
+
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 0.075em;
+    color: #FFF;
+  }
+
+  #recent h2 {
+    font-size: 50px;
+  }
+
+  #recent .logo-word-black {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-size: 50px;
+  }
+
+  #recent .event .headline a {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 35px;
+  }
+
+  #recent .event img {
+    width: 95px;
+    height: 95px;
+    padding: 12px 0 0 0;
+  }
+
+  #recent .event p {
+    font-size: 24px;
+    padding: 12px 0 0 0;
+  }
+
+  .recent-separator {
+    background-color: rgb(213, 55, 68);
+    height: 2px;
+    width: 500px;
+    text-align:center;
+    margin: 0 auto;
+  }
+
+  #last-comments h2 {
+    padding: 50px 0 0 0;
+    font-size: 50px;
+  }
+
+  #last-comments .comment p {
+    font-size: 24px;
+    padding: 0 0 13px 0;
+  }
+
+  #last-comments .comment:nth-child(even) span {
+    float: none;
+  }
+
+  #last-comments .comment:nth-child(odd) span {
+    float: none;
+  }
+
+  #last-comments .comment:nth-child(odd) img {
+    float: left;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  #last-comments .comment:nth-child(even) .event-link {
+    text-align: left;
+  }
+
+  #last-comments .author {
+    font-size: 24px;
+    padding: 10px 0 0 0;
+  }
+
+  footer .logo-word {
+    background-color: #000;
+    text-align: center;
+    font-size: 90px;
+    padding: 72px 0 72px 0;
+  }
+
+  #what {
+    position: relative;
+  }
+
+  #what h2 {
+    font-size: 22px;
+    padding: 0 0 10px 0;
+  }
+
+  #what p {
+    font-size: 20px;
+    padding: 0 0 10px 0;
+  }
+
+  #about {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+  }
+
+  #about .title {
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+    font-size: 60px;
+    padding: 40px 0 40px 0;
+  }
+
+  #about h2 {
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    padding: 0 0 10px 0;
+  }
+
+  #about p {
+    padding: 0 0 10px 0;
+  }
+
+  #about-this {
+    margin-right: 220px;
+  }
+
+  #last-tweet {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+  }
+
+  #last-tweet pre {
+    font-size: 12px;
+  }
+
+  #last-tweet a {
+    font-size: 18px;
+    font-family: "Ubuntu", sans-serif;
+    text-decoration: none;
+    color: rgb(213, 55, 68);
+  }
+
+  #last-tweet img {
+    float: right;
+  }
+
+  #copyright {
+    font-size: 20px;
+  }
+
+  #copyright h2 {
+    padding: 0 0 5px 0;
+    font-size: 20px;
+  }
+}

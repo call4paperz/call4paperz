@@ -1,5 +1,6 @@
 Rr10Team71::Application.routes.draw do
   root :to => "home#index"
+  get "/home" => "home#index_new"
 
   match '/auth/:provider/callback' => 'authentications#create'
   match '/auth/failure' => 'authentications#failure'

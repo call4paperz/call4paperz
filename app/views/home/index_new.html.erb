@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>call4paperz.com</title>
+  <link rel="shortcut icon" href="/favicon.ico?v=2" />
+  <link rel="stylesheet"
+    href="/c4p.css" id="c4p-main-layout-css" type='text/css' media='all' />
+</head>
+<body class="paragraph">
+  <header>
+    <div class="logo-word">
+      <h1 class="headline">call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</h1>
+    </div>
+    <h2>Keep track of your call for proposals.</h2>
+    <h3>And let the audience voice be heard at your event!</h3>
+  </header>
+
+  <nav id="menu">
+    <a href="#new-event" class="main-link">New Event</a>
+    <a href="#events">Events</a>
+    <a href="#sign-in-up">Sign In(Up)</a>
+  </nav>
+
+  <hr class="main-separator" />
+
+  <section id="signed-in">
+    <%= user_picture @user, class: "user-avatar" %>
+    <span class="user-name"><%= @user.name %></span>
+    <nav id="user-links">
+      <a href="#my-events">my events</a>
+      <a href="#my-proposals">my proposals</a>
+      <a href="#edit-profile">edit profile</a>
+      <a href="#sign-out">sign out</a>
+    </nav>
+  </section>
+
+  <main>
+    <section id="recent">
+      <h2>
+        Recent opened
+        <span class="logo-word-black small">call4paper<span
+            class="logo-z">z</span>.</span>
+      </h2>
+
+      <article class="event">
+        <h3 class="headline">
+          <a href="#">Meetup de Junho da NodeBR - São Paulo</a>
+        </h3>
+        <img src="suamae" alt="" />
+        <p>
+          Crie ou vote em uma palestra da sua preferência para ser apresentada
+          no dia 14 de Junho durante o Meetup mensal da comunidade Node.js em São
+          Paulo.
+        </p>
+      </article>
+
+      <article class="event">
+        <h3 class="headline">
+          <a href="#">Virada Tecnológica</a>
+        </h3>
+        <p>
+          Evento com mais de 100 atividades a ser realizado nas instalações da PUC-SP durante um final de semana. Estão abertas submissões para palestras e oficinas relacionadas as áreas de segurança da informação, desenvolvimento, jogos digitais, qualidade de software, software livre, direito digital e leis de incentivo a inovação.
+        </p>
+      </article>
+
+      <article class="event">
+        <h3 class="headline">
+          <a href="#">Ruby on Rio - Junho/2014</a>
+        </h3>
+        <img src="suamae" alt="" />
+        <p>
+          Crie ou vote em uma palestra da sua preferência para ser apresentada
+          no dia 14 de Junho durante o Meetup mensal da comunidade Node.js em São
+          Paulo.
+        </p>
+      </article>
+    </section>
+
+    <hr class="recent-separator" />
+    <section id="last-comments">
+      <h2>Last comment<span class="logo-z">z</span>.</h2>
+
+      <article class="comment">
+        <div>
+          <img src="suamae" alt="" />
+          <p>
+            "Mtop bom hein"
+          </p>
+          <span class="author">Suissa</span>
+        </div>
+        <div>
+          <p class="event-link">(on <a href="#">Meetup de Junho da NodeBR - São Paulo</a>)</p>
+        </div>
+      </article>
+
+      <article class="comment">
+        <div>
+          <img src="suamae" alt="" />
+          <p>
+            "Erick é um cara incrível. Tenho certeza que a palestra e suas dicas são muito úteis no seu..."
+          </p>
+          <span class="author">Guilherme Araujo</span>
+        </div>
+        <div>
+          <p class="event-link">(on <a href="#">Rock n`Code - Front in Aracaju</a>)</p>
+        </div>
+      </article>
+
+      <article class="comment">
+        <div>
+          <p>
+            "Erick é um cara incrível. Tenho certeza que a palestra e suas dicas são muito úteis no seu..."
+          </p>
+          <span class="author">Guilherme Araujo</span>
+        </div>
+        <div>
+          <p class="event-link">(on <a href="#">Rock n`Code - Front in Aracaju</a>)</p>
+        </div>
+      </article>
+
+      <article class="comment">
+        <div>
+          <img src="suamae" alt="" />
+          <p>
+            "Erick é um cara incrível. Tenho certeza que a palestra e suas dicas são muito úteis no seu..."
+          </p>
+          <span class="author">Guilherme Araujo</span>
+        </div>
+        <div>
+          <p class="event-link">(on <a href="#">Rock n`Code - Front in Aracaju</a>)</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="logo-word">
+      <span>call4paper<span class="logo-z">z</span><span class="logo-dot">.</span>com</span>
+    </div>
+    <section id="what">
+        <section id="about-this">
+          <h2>Have you ever had a difficult time to organize your local meetup?</h2>
+
+          <p>
+            Call4paperz tries to help with event organization, call for papers,
+            voting on speakers and collecting feedback from the participants, and
+            schedule planning.
+          </p>
+
+          <p>We have now <%= @users %> users to help with feedback!</p>
+        </section>
+        <section id="last-tweet">
+          <pre class="paragraph">
+New version deployed!
+
+  - bug fix by @seixasfelipe
+  - bug fixes by @sr_valeriano
+  - features by @sr_valeriano
+
+  Thank you guys!
+          </pre>
+          <a href="http://twitter.com/call4paperz">@call4paperz</a>
+          <img src="" width="59" height="48" alt="twitterz" />
+        </section>
+    </section>
+    <section id="about">
+      <p class="title">about:</p>
+      <h2>
+        Call4paperz was designed, developed and deployed in 48 hours by
+        @anderson_leite, @qmx and @vinibaggio at Rails Rumble 2010.
+      </h2>
+
+      <p>It's maintained by @ricardovaleriano since 2014.</p>
+
+      <p>
+        We are open source. If you have any ideas, bugs or ideas, please visit
+        our GitHub repo. Pull requests and issues are welcome!
+      </p>
+
+      <p>
+        If you have any suggestions or questions about Call4Paperz, send us a
+        tweet (@call4paperz).
+      </p>
+    </section>
+
+    <section id="copyright">
+      <h2>Copyright © 2010 — 2014.</h2>
+      <p>
+        Powered by acts_as_monkeys_on_steroids,
+        Developed in Rails Rumble 2010.
+      </p>
+    </section>
+  </footer>
+</body>
+</html>

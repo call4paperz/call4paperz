@@ -20,7 +20,7 @@
 
   <nav id="menu">
     <a href="#new-event" class="main-link">New Event</a>
-    <a href="#events">Events</a>
+    <%= link_to "Events", events_path %>
     <% if @user.present? %>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
     <% else %>

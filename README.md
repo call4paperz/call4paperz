@@ -62,7 +62,7 @@ commits.
 
 ## Maintainer
 Maintenance is done by [valeriano](https://github.com/ricardovaleriano).
-Before was bravely maintained by by [vinibaggio](https://github.com/vinibaggio).
+Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 
 ## Original authors
 - Anderson Leite (no longer active)

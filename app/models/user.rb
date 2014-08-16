@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :email_confirmation
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation, :twitter_avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation, :twitter_avatar, :remote_photo_url
 
   has_many :authentications, :dependent => :destroy
   has_many :comments,        :dependent => :destroy

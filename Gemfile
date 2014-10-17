@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.3'
 
 gem 'rails', '~>3.2.19'
 
@@ -50,8 +50,8 @@ group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
   gem 'rspec-rails', '~> 2.99.0'
-  gem "dotenv-rails"
-  gem "debugger" if RUBY_VERSION < "2.0.0"
+  gem 'dotenv-rails'
+  gem 'byebug'
 end
 
 group :test do

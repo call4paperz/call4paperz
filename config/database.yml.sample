@@ -1,6 +1,12 @@
 development:
   adapter: postgresql
   database: call4paperz_development
-  username: vagrant
+  username: ::USER::
+  password:
+  min_messages: WARNING
+test:
+  adapter: postgresql
+  database: call4paperz_test
+  username: ::USER::
   password:
   min_messages: WARNING

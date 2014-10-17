@@ -9,6 +9,11 @@ module OmniauthHelpers
     visit '/auth/facebook'
   end
 
+  def sign_in_via_github(uid)
+    mock_omniauth_provider(uid, 'github')
+    visit '/auth/github'
+  end
+
   def mock_omniauth_provider(uid, provider)
     OmniAuth.config.mock_auth[provider.to_sym] = OmniAuth::AuthHash.new({
       provider: provider,

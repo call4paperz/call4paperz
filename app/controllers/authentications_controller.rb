@@ -26,7 +26,7 @@ class AuthenticationsController < ApplicationController
     elsif current_user
       current_user.authentications.create(:provider => provider, :uid => uid)
     else
-      user = User.new(:name => auth_hash["info"]['name'], :picture => auth_hash["info"]['image'])
+      user = User.new(:name => auth_hash["info"]['name'], :remote_photo_url => auth_hash["info"]['image'])
       user.email = auth_hash["info"]['email'] if auth_hash["info"]['email']
       user.authentications.build(:provider => provider, :uid => uid)
       user.save!

@@ -50,7 +50,7 @@ group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
   gem 'rspec-rails', '~> 2.99.0'
-  gem "dotenv-rails"
+  gem 'dotenv-rails'
   gem 'byebug'
 end
 

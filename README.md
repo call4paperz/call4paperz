@@ -16,6 +16,8 @@ You must set the following environment variables for the system to fully work:
     TWITTER_SECRET
     FACEBOOK_ACCESS
     FACEBOOK_KEY
+    GITHUB_CLIENT_ID
+    GITHUB_SECRET
     SECRET_KEY
     DEVISE_PEPPER
 

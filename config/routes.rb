@@ -24,5 +24,5 @@ Rr10Team71::Application.routes.draw do
     end
   end
 
-  get "/twitter/last" => "twitter#last", as: :last_tweet
+  get '/twitter/last' => 'twitter#last', as: :last_tweet
 end

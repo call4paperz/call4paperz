@@ -19,30 +19,39 @@ You must set the following environment variables for the system to fully work:
     SECRET_KEY
     DEVISE_PEPPER
 
-## Bootstrapping with Foreman
+## Bootstrapping (and using Foreman to run all the things)
 
+Your first time here? Just run:
 
-Install gems with bundle
+```
+$ bin/setup
+```
 
-    $ bundle install
+It will guide you through the basic dependencies needed to run the application.
+You can run it, see if it yells at you, fix it... and run it again!
 
-Then create file `$RAILS_ROOT/.env` file with the following content:
+Repeat until all the stuff is in place.
 
-    SECRET_KEY=2d48c32f2ecdc0507efb3ce66fea2196a585a0a652d93e537135944baa8
-    TWITTER_ACCESS=<your twitter access key>
-    TWITTER_SECRET=<your twitter secret key>
-    FACEBOOK_ACCESS=<your facebook access key>
-    FACEBOOK_KEY=<your facebook api key>
+### Environment variables
 
+Edit the file `.env` generated in the project's root dir and add your keys for
+twitter and facebook applications.
 
-Then config database
+### PostgreSQL
 
-    $ cp config/database.yml.sample config/database.yml
-    $ bundle exec rake db:create db:migrate db:test:prepare
+The setup will create a `config/database.yml`, the user configuration will point
+to your current s.o. user.
+
+Edit this file if you need, or if the setup process fail trying to use the
+credentatials auto generated.
+
+### let's go!
 
 Then start the server with the following command:
 
-    $ foreman start -f Procfile.development
+```
+$ foreman start -f Procfile.development
+```
 
 That's it! Just go to <http://localhost:3000>.
 
@@ -53,7 +62,7 @@ That's it! Just go to <http://localhost:3000>.
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
 branch), with tests if possible. If you have any doubts, just bug
-[valeriano](https://github.com/ricardovaleriano).
+[ricardovaleriano](https://github.com/ricardovaleriano).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
@@ -61,7 +70,7 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [valeriano](https://github.com/ricardovaleriano).
+Maintenance is done by [ricardovaleriano](https://github.com/ricardovaleriano).
 Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 
 ## Original authors

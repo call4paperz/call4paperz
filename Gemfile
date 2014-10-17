@@ -51,7 +51,7 @@ group :development, :test do
   gem 'foreman'
   gem 'rspec-rails', '~> 2.99.0'
   gem "dotenv-rails"
-  gem "debugger" if RUBY_VERSION < "2.0.0"
+  gem 'byebug'
 end
 
 group :test do

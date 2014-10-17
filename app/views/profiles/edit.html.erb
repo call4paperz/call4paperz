@@ -20,6 +20,11 @@
       </div>
 
       <div class='field'>
+        <%= f.label :email %> <small class='vermelho'>*</small><br />
+        <%= f.text_field :email %>
+      </div>
+
+      <div class='field'>
         <%= user_picture @user %><br />
         <%= f.label :photo, 'Picture' %><br />
         <%= f.file_field :photo %>

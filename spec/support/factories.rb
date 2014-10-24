@@ -38,6 +38,6 @@ FactoryGirl.define do
   end
 
   factory :negative_vote, :parent => :vote do
-    direction -1
+    direction(-1)
   end
 end

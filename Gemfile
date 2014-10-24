@@ -43,7 +43,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'bullet'
-  gem "thin"
+  gem 'thin'
 end
 
 group :development, :test do

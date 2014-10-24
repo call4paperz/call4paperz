@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :votes,           :dependent => :destroy
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
+  # :token_authenticatable, , :lockable and :timeoutable
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable
 
   validates_presence_of :email, :if => :email_required?

@@ -44,6 +44,7 @@ group :development do
   gem 'better_errors'
   gem 'bullet'
   gem 'thin'
+  gem 'mailcatcher'
 end
 
 group :development, :test do

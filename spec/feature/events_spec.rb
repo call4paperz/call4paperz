@@ -166,7 +166,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do
-      user = User.new
+      user = User.new(email: 'some_rubyist@example.org')
       user.authentications.build(uid: '123', provider: 'twitter')
       user.save
 
@@ -186,7 +186,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni github auth" do
-      user = User.new
+      user = User.new(email: 'another_rubyist@example.org')
       user.authentications.build(uid: '123', provider: 'github')
       user.save
 

@@ -32,6 +32,32 @@ feature "Proposal", %q{
   end
 
   context "Creating proposals" do
+    context 'User without email' do
+      let(:user_without_email) do
+        user = User.new(
+          name: 'Emailess Guy',
+          email: 'example@example.com',
+          password: '123123',
+          password_confirmation: '123123'
+        )
+        user.save! validate: false
+        user
+      end
+
+      scenario 'I will be asked for profile completion' do
+        # TODO: authenticate this user by other means, so we don't need to
+        # erraise the email here...
+        sign_in_with user_without_email
+        user_without_email.update_column :email, ''
+
+        visit event_path(event)
+        find('#left_bar a#add_proposal').click
+
+        expect(page).to have_content 'Editing profile'
+        expect(page).to have_content 'Please, complete your profile.'
+      end
+    end
+
     scenario "I can create a proposal" do
       sign_in
 

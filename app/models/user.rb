@@ -37,6 +37,10 @@ class User < ActiveRecord::Base
     votes.exists?(:proposal_id => proposal.id)
   end
 
+  def need_profile_completion?
+    !email.present?
+  end
+
   private
 
   def password_required?

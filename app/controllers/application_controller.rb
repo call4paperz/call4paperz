@@ -6,11 +6,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  # An user that haven't provide an email, have to do it now.
-  before_filter do
-    check_for_email_presence if user_signed_in?
-  end
-
   def store_location
     return if skip_store_location
 
@@ -31,10 +26,9 @@ class ApplicationController < ActionController::Base
        (params['action'] == 'update' || params['action'] == 'edit')
   end
 
-  def check_for_email_presence
-    need_completion = !current_user.email.present?
-    if need_completion && !profile_completing?
-      redirect_to edit_profile_path(current_user)
+  def check_profile_completion
+    if current_user.need_profile_completion? && !profile_completing?
+      redirect_to(edit_profile_path(current_user), notice: I18n.t('profile.completion'))
     end
   end
 end

@@ -17,6 +17,31 @@ feature "Events", %q{
   end
 
   context "Creating events" do
+    context 'User without email' do
+      let(:user_without_email) do
+        user = User.new(
+          name: 'Emailess Guy',
+          email: 'example@example.com',
+          password: '123123',
+          password_confirmation: '123123'
+        )
+        user.save! validate: false
+        user
+      end
+
+      scenario 'I will be asked for profile completion' do
+        # TODO: authenticate this user by other means, so we don't need to
+        # erraise the email here...
+        sign_in_with user_without_email
+        user_without_email.update_column :email, ''
+        visit '/events'
+        find('.create_button').click
+
+        expect(page).to have_content 'Editing profile'
+        expect(page).to have_content 'Please, complete your profile.'
+      end
+    end
+
     scenario "I can create an event" do
       sign_in
 
@@ -166,7 +191,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do
-      user = User.new
+      user = User.new email: 'lol@example.org'
       user.authentications.build(uid: '123', provider: 'twitter')
       user.save
 
@@ -186,7 +211,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni github auth" do
-      user = User.new
+      user = User.new email: 'github.user@example.org'
       user.authentications.build(uid: '123', provider: 'github')
       user.save
 

@@ -38,6 +38,15 @@
   <% @event.proposals.each do |proposal| %>
     <%= render proposal %>
   <%end  %>
+
+  <% if user_is_owner?(@event) %>
+    <div class="event_notice_area">
+      <p>Speakers:</p>
+      <% @users.each_pair do |k, user| %>
+        <%= user.name %> <%= user.email %>,
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <%= javascript_tag do %>

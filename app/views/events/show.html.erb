@@ -41,7 +41,7 @@
 
   <% if user_is_owner?(@event) %>
     <div class="event_notice_area">
-      <p>Speakers:</p>
+      <p>Speakers contacts:</p>
       <% @users.each_pair do |k, user| %>
         <%= user.name %> <%= user.email %>,
       <% end %>

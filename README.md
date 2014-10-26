@@ -81,6 +81,7 @@ Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 - Vinicius Baggio Fuentes, [vinibaggio](https://github.com/vinibaggio)
 
 ## Contributors
+- [lucianosouza](https://github.com/lucianosousa)
 - [akitaonrails](https://github.com/akitaonrails)
 - [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)

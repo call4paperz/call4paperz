@@ -124,6 +124,7 @@ feature "Events", %q{
       end
 
       page.should have_no_content 'Administrative tools'
+      page.should have_no_content 'Speakers contacts'
     end
 
     context "I am the owner" do
@@ -140,6 +141,7 @@ feature "Events", %q{
         page.should have_content 'Administrative tools'
         page.should have_content 'Edit event'
         page.should have_content 'Crop picture'
+        page.should have_content 'Speakers contacts'
       end
 
       scenario "I should be able to see admin links for events with proposal" do

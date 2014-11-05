@@ -43,31 +43,33 @@ feature "Events", %q{
       page.should have_no_content 'Sign in'
     end
 
-    scenario "While registering, I can't register an event without a name" do
-      sign_in
+    context 'Registering' do
+      scenario "I can't register an event without a name" do
+        sign_in
 
-      visit '/events'
-      find('.create_button').click
+        visit '/events'
+        find('.create_button').click
 
 
-      fill_in 'Description', :with => '50th meeting'
+        fill_in 'Description', :with => '50th meeting'
 
-      find('input[type=image]').click
+        find('input[type=image]').click
 
-      page.should have_content "Name can't be blank"
-    end
+        page.should have_content "Name can't be blank"
+      end
 
-    scenario "While registering, I can't register an event without a name" do
-      sign_in
+      scenario "I can't register an event without a name" do
+        sign_in
 
-      visit '/events'
-      find('.create_button').click
+        visit '/events'
+        find('.create_button').click
 
-      fill_in 'Name', :with => 'GURU-SP'
+        fill_in 'Name', :with => 'GURU-SP'
 
-      find('input[type=image]').click
+        find('input[type=image]').click
 
-      page.should have_content "Description can't be blank"
+        page.should have_content "Description can't be blank"
+      end
     end
 
     scenario "I should be able to see stats for an event" do
@@ -121,7 +123,8 @@ feature "Events", %q{
         page.should have_css("a[href*='#{event_path(event)}']")
       end
 
-      page.should have_no_content "Administrative tools"
+      page.should have_no_content 'Administrative tools'
+      page.should have_no_content 'Speakers contacts'
     end
 
     context "I am the owner" do
@@ -135,9 +138,10 @@ feature "Events", %q{
       scenario "I should be able to see admin links" do
         visit event_path(event)
 
-        page.should have_content "Administrative tools"
-        page.should have_content "Edit event"
-        page.should have_content "Crop picture"
+        page.should have_content 'Administrative tools'
+        page.should have_content 'Edit event'
+        page.should have_content 'Crop picture'
+        page.should have_content 'Speakers contacts'
       end
 
       scenario "I should be able to see admin links for events with proposal" do
@@ -166,9 +170,8 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do
-      user = User.new
-      user.authentications.build(uid: '123', provider: 'twitter')
-      user.save
+      auth_info = { 'email' => 'lol@example.org' }
+      user = User.create_from_auth_info('twitter', '123', auth_info)
 
       sign_in_via_twitter('123')
 
@@ -186,9 +189,8 @@ feature "Events", %q{
     end
 
     scenario "I should be able to create an event with an user registered thru omni github auth" do
-      user = User.new
-      user.authentications.build(uid: '123', provider: 'github')
-      user.save
+      auth_info = { 'email' => 'github.user@example.org' }
+      user = User.create_from_auth_info 'github', '123', auth_info
 
       sign_in_via_github('123')
 

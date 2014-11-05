@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_many :votes,           :dependent => :destroy
 
   # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
+  # :token_authenticatable, , :lockable and :timeoutable
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable
 
   validates_presence_of :email, :if => :email_required?
@@ -25,6 +25,23 @@ class User < ActiveRecord::Base
 
   mount_uploader :photo, PictureUploader
 
+  def self.create_from_auth_info(provider, uid, auth_info = {})
+    name = auth_info['name']
+    image = auth_info['image']
+    email = auth_info['email']
+
+    user = User.new(name: name, remote_photo_url: image)
+    if email
+      user.email = email
+      user.confirmed_at = Time.now
+    end
+
+    user.authentications.build(provider: provider, uid: uid)
+    user.save!
+
+    user
+  end
+
   def picture
     if photo?
       photo.thumb.url
@@ -35,6 +52,10 @@ class User < ActiveRecord::Base
 
   def has_vote_for?(proposal)
     votes.exists?(:proposal_id => proposal.id)
+  end
+
+  def need_profile_completion?
+    !email.present?
   end
 
   private

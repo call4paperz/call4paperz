@@ -5,6 +5,7 @@ FactoryGirl.define do
     name     'User'
     email    'example@example.com'
     password '123123'
+    confirmed_at (Time.now - 1.day)
   end
 
   factory :event do
@@ -38,6 +39,6 @@ FactoryGirl.define do
   end
 
   factory :negative_vote, :parent => :vote do
-    direction -1
+    direction(-1)
   end
 end

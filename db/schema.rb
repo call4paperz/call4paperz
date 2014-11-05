@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320061318) do
+ActiveRecord::Schema.define(:version => 20141024151108) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -90,8 +90,13 @@ ActiveRecord::Schema.define(:version => 20130320061318) do
     t.string   "twitter_avatar"
     t.string   "name"
     t.string   "photo"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
 
+  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "votes", :force => true do |t|

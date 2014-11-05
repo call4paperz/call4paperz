@@ -39,12 +39,17 @@ feature "Registration", %q{
     scenario "While registering, I'm able to register with valid data" do
       visit '/users/sign_up'
 
-      fill_in "user_email", :with => 'email@example.com'
-      fill_in "user_password", :with => '123123'
-      fill_in "user_password_confirmation", :with => '123123'
+      fill_in "user_email", with: 'email@example.com'
+      fill_in "user_password", with: '123123'
+      fill_in "user_password_confirmation", with: '123123'
       find("input[type=image]").click
 
-      page.should have_content "Logout"
+      page.should have_content 'A message with a confirmation link has been sent to your email address.'
+
+      user = User.where(email: 'email@example.com').first
+      user.confirm!
+      sign_in_with user, '123123'
+      page.should have_content 'Logout'
 
       current_path.should eq(root_path)
     end

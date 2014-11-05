@@ -34,3 +34,5 @@ en:
   comment_html:
     one: "<span>1</span> comment"
     other: "<span>%{count}</span> comments"
+  profile:
+    completion: 'Please, complete your profile.'

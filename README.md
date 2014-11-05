@@ -78,9 +78,10 @@ Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 ## Original authors
 - Anderson Leite (no longer active)
 - Douglas Campos (no longer active)
-- Vinicius Baggio Fuentes, [vinibaggio](https://github.com/vinibaggio)
+- Vinicius Baggio Fuentes (no longer active)
 
 ## Contributors
+- [lucianosousa](https://github.com/lucianosousa)
 - [akitaonrails](https://github.com/akitaonrails)
 - [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)

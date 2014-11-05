@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:new, :create, :update, :edit, :crop]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :check_profile_completion, except: [:index, :show]
 
   respond_to :html, :json, :jsonp
 

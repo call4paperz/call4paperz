@@ -8,7 +8,7 @@ describe ProposalsHelper do
   describe "#vote_box" do
     context "user is set and has voted" do
       before(:each) do
-        Vote.like!(proposal, user)
+        Vote.like(proposal, user)
       end
 
       subject { helper.vote_box(event, proposal,user) }

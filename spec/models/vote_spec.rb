@@ -29,15 +29,16 @@ describe Vote do
     it { should belong_to(:proposal) }
   end
 
-  describe ".like!" do
+  describe ".like" do
     it "should generate a vote for the specified proposal and user" do
       expect {
-        vote = described_class.like!(proposal, user)
+        described_class.like(proposal, user)
       }.to change(Vote, :count).by(1)
     end
 
     it "should set properties of vote correctly" do
-      vote = described_class.like!(proposal, user)
+      described_class.like(proposal, user)
+      vote = Vote.last
       vote.proposal.should == proposal
       vote.user.should == user
       vote.direction.should == Vote::LIKE
@@ -47,7 +48,7 @@ describe Vote do
   describe ".dislike!" do
     it "should generate a vote for the specified proposal and user" do
       expect {
-        vote = described_class.dislike!(proposal, user)
+        described_class.dislike!(proposal, user)
       }.to change(Vote, :count).by(1)
     end
 

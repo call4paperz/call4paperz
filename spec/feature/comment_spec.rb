@@ -31,11 +31,9 @@ feature "Comment", %q{
   scenario "I shouldn't be able to make comments while not logged in" do
     visit event_proposal_path(event, proposal)
 
-    fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
-    find('.submit_comment').click
-
-    page.should have_no_content "Comment was successfully created."
-    page.should have_content "Login"
+    expect(page).to_not have_content('.submit_comment')
+    expect(page).to have_content(I18n.t('proposals.comments.please_sign_in'))
+    expect(page).to have_content('Login')
   end
 
   scenario "I should be able to make comments while logged in" do

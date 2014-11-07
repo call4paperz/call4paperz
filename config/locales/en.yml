@@ -36,3 +36,6 @@ en:
     other: "<span>%{count}</span> comments"
   profile:
     completion: 'Please, complete your profile.'
+  proposals:
+    comments:
+      please_sign_in: If you want to add a comment to this proposal, please Sign In.

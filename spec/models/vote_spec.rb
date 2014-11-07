@@ -45,15 +45,16 @@ describe Vote do
     end
   end
 
-  describe ".dislike!" do
+  describe ".dislike" do
     it "should generate a vote for the specified proposal and user" do
       expect {
-        described_class.dislike!(proposal, user)
+        described_class.dislike(proposal, user)
       }.to change(Vote, :count).by(1)
     end
 
     it "should set properties of vote correctly" do
-      vote = described_class.dislike!(proposal, user)
+      described_class.dislike(proposal, user)
+      vote = Vote.last
       vote.proposal.should == proposal
       vote.user.should == user
       vote.direction.should == Vote::DISLIKE

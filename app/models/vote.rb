@@ -18,14 +18,8 @@ class Vote < ActiveRecord::Base
     vote proposal, user, LIKE
   end
 
-  def self.dislike!(proposal, user)
-    vote = new
-    vote.proposal = proposal
-    vote.user = user
-    vote.direction = DISLIKE
-    vote.save!
-
-    vote
+  def self.dislike(proposal, user)
+    vote proposal, user, DISLIKE
   end
 
   private

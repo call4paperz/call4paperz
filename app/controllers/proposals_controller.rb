@@ -92,7 +92,7 @@ class ProposalsController < ApplicationController
   end
 
   def dislike
-    Vote.dislike!(proposal, current_user)
+    Vote.dislike(proposal, current_user)
     respond_to do |format|
       if request.xhr?
         format.html { render proposal, :layout => false }

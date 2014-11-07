@@ -15,11 +15,7 @@ class Vote < ActiveRecord::Base
   scope :negatives,  where(:direction => DISLIKE)
 
   def self.like(proposal, user)
-    vote = new
-    vote.proposal = proposal
-    vote.user = user
-    vote.direction = LIKE
-    vote.save
+    vote proposal, user, LIKE
   end
 
   def self.dislike!(proposal, user)
@@ -30,5 +26,15 @@ class Vote < ActiveRecord::Base
     vote.save!
 
     vote
+  end
+
+  private
+
+  def self.vote(proposal, user, direction)
+    vote = new
+    vote.proposal = proposal
+    vote.user = user
+    vote.direction = direction
+    vote.save
   end
 end

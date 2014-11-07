@@ -76,23 +76,33 @@ class ProposalsController < ApplicationController
   end
 
   def like
-    Vote.like!(proposal, current_user)
+    if Vote.like(proposal, current_user)
+      notice = 'You liked the proposal.'
+    else
+      notice = t('proposals.likes.fail')
+    end
+
     respond_to do |format|
       if request.xhr?
-        format.html { render proposal, :layout => false }
+        format.html { render proposal, layout: false }
       else
-        format.html { redirect_to(event_url(event), :notice => 'You liked the proposal.') }
+        format.html { redirect_to(event_url(event), notice: notice) }
       end
     end
   end
 
   def dislike
-    Vote.dislike!(proposal, current_user)
+    if Vote.dislike(proposal, current_user)
+      notice = 'You disliked the proposal.'
+    else
+      notice = t('proposals.dislikes.fail')
+    end
+
     respond_to do |format|
       if request.xhr?
-        format.html { render proposal, :layout => false }
+        format.html { render proposal, layout: false }
       else
-        format.html { redirect_to(event_url(event), :notice => 'You disliked the proposal.') }
+        format.html { redirect_to(event_url(event), notice: notice) }
       end
     end
   end

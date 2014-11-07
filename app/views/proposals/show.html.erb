@@ -8,7 +8,11 @@
   <br/>
   <%= render @comment.proposal %>
 
-  <%= render 'comments/form' %>
+  <% if user_signed_in? %>
+    <%= render 'comments/form' %>
+  <% else %>
+    <%= link_to t('proposals.comments.please_sign_in'), new_user_session_path %>
+  <% end %>
 
   <% @comments.each do |comment| -%>
     <%= render comment %>

@@ -39,3 +39,5 @@ en:
   proposals:
     comments:
       please_sign_in: If you want to add a comment to this proposal, please Sign In.
+    likes:
+      fail: I think that you already liked this proposal, don't you?

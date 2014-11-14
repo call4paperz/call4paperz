@@ -23,4 +23,20 @@ class MergeUser
       remove_users users_to_remove
     end
   end
+
+  def count_associations(profile)
+    profile.authentications.count +
+      profile.comments.count +
+      profile.events.count +
+      profile.proposals.count +
+      profile.votes.count
+  end
+
+  # Internal: find the user register with more relations, and return it.
+  def elect_user(users)
+    profiles = users.map { |user| Profile.new user }
+    profiles.bsearch { |p1, p2|
+      count_associations(p1) <=> count_associations(p2)
+    }.user
+  end
 end

@@ -29,9 +29,17 @@ class MergeUser
 
   private
 
-  def merge_events
+  [ :events ].each do |collection_merge_method|
+    define_method "merge_#{collection_merge_method}" do
+      merge_collection collection_merge_method
+    end
+  end
+
+  def merge_collection(collection_name)
+    into_collection = @elected_profile.public_send collection_name
     @profiles_to_remove.each do |profile|
-      @elected_profile.events << profile.events
+      from_collection = profile.public_send collection_name
+      into_collection << from_collection
     end
   end
 

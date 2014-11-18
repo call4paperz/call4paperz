@@ -13,7 +13,7 @@ class Profile
 
   extend Forwardable
   def_delegators :@user, :authentications, :comments, :events, :proposals, :votes,
-                 :hash
+                 :reload, :destroy, :hash
 
   def initialize(user)
     @user = user

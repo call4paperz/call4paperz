@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable
 
-  validates_presence_of :email, :if => :email_required?
+  validates_presence_of :email, if: :email_required?
 
   with_options if: :password_required? do |v|
     v.validates_presence_of     :password

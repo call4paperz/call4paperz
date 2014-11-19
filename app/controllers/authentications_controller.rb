@@ -32,17 +32,19 @@ class AuthenticationsController < ApplicationController
       redirect_to new_user_session_path, notice: I18n.t('auth.cant_create_twitter')
       false
     else
-      user = authentication.create_user(request.env['omniauth.auth']['info'])
+      user = authentication.create_user
       sign_in(user)
       true
     end
   end
 
   def authentication
+    return @authentication if @authentication
     auth_hash = request.env['omniauth.auth']
-    @authentication ||=
+    @authentication =
       Authentication.find_by_provider_and_uid(auth_hash['provider'], auth_hash['uid']) ||
       Authentication.new(provider: auth_hash['provider'], uid: auth_hash['uid'])
+    @authentication.auth_info = auth_hash['info']
   end
 
   def authenticate!(provider, uid, user_info)

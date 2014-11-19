@@ -9,8 +9,8 @@ class Authentication < ActiveRecord::Base
       user.email = email
       user.confirmed_at = Time.now
     end
-    self.user = user
-    save!
+    user.authentications = [ self ]
+    user.save!
     user
   end
 end

@@ -10,6 +10,7 @@ en:
       closed_false: Close for new proposals
       closed_true: Open for new proposals
       closed: This event is not accepting new proposals.
+
   event_close:
     warning_closing:
       title: Closing %{event_name} for new proposals
@@ -19,23 +20,28 @@ en:
       title: Open %{event_name} for new proposals
       reopening: Are you sure you want to open the event for new proposals?
       reopen: Yes, open for new proposals
+
   flash:
     notice:
       closed: This event is now closed for new proposals.
       reopened: This event is now open for new proposals.
-
       profile_updated: Profile was successfully updated.
+
   proposal_html:
     one: "<span>1</span> proposal"
     other: "<span>%{count}</span> proposals"
+
   vote_html:
     one: "<span>1</span> vote"
     other: "<span>%{count}</span> votes"
+
   comment_html:
     one: "<span>1</span> comment"
     other: "<span>%{count}</span> comments"
+
   profile:
     completion: 'Please, complete your profile.'
+
   proposals:
     comments:
       please_sign_in: If you want to add a comment to this proposal, please Sign In.
@@ -43,3 +49,6 @@ en:
       fail: I think that you already liked this proposal, don't you?
     dislikes:
       fail: I think that you already disliked this proposal, don't you?
+
+  auth:
+    cant_create_twitter: "Sadly you can't create an account with the twitter sign in method. Use any other method and associate your twitter account with your profile then."

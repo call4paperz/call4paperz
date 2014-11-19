@@ -4,7 +4,7 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
-    auth = request.env["omniauth.auth"]
+    auth = request.env['omniauth.auth']
     destination_url = stored_location_for(:user) || root_path
 
     if user_signed_in?
@@ -27,25 +27,29 @@ class AuthenticationsController < ApplicationController
 
   private
 
-  def create_authentication_and_sign_in(provider, uid, auth_info)
-    if provider.to_s == 'twitter'
+  def create_user_and_sign_in(authentication)
+    if authentication.provider.to_s == 'twitter'
       redirect_to new_user_session_path, notice: I18n.t('auth.cant_create_twitter')
       false
     else
-      user = User.create_from_auth_info(provider, uid, auth_info)
+      user = authentication.create_user(request.env['omniauth.auth']['info'])
       sign_in(user)
       true
     end
   end
 
-  def authenticate!(provider, uid, user_info)
+  def authentication
     auth_hash = request.env['omniauth.auth']
-    authentication = Authentication.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
-    if authentication
+    @authentication ||=
+      Authentication.find_by_provider_and_uid(auth_hash['provider'], auth_hash['uid']) ||
+      Authentication.new(provider: auth_hash['provider'], uid: auth_hash['uid'])
+  end
+
+  def authenticate!(provider, uid, user_info)
+    if authentication.persisted?
       sign_in authentication.user
-      true
     else
-      create_authentication_and_sign_in(provider, uid, auth_hash['info'])
+      create_user_and_sign_in(authentication)
     end
   end
 end

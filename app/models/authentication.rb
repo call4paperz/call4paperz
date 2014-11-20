@@ -1,4 +1,6 @@
 class Authentication < ActiveRecord::Base
+  PROVIDERS = [ :github, :twitter, :google, :facebook ]
+
   belongs_to :user
   attr_accessible :provider, :uid
 

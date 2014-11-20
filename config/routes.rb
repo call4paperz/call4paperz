@@ -25,4 +25,5 @@ Rr10Team71::Application.routes.draw do
   end
 
   get '/twitter/last' => 'twitter#last', as: :last_tweet
+  get '/auth/google', to: redirect('/auth/google_oauth2')
 end

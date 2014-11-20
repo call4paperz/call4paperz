@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_filter :load_user, only: [:edit, :update]
 
   def show
-    @events = current_user.events
+    @profile = Profile.new current_user
   end
 
   def edit

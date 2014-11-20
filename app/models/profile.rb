@@ -23,4 +23,8 @@ class Profile
     user == profile.user
   end
   alias_method :eql?, :==
+
+  def unassociated_providers
+    Authentication::PROVIDERS - authentications.map { |a| a.provider.to_sym }
+  end
 end

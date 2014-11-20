@@ -10,11 +10,8 @@ class Authentication < ActiveRecord::Base
   end
 
   def create_user
-    user = User.new(name: name, remote_photo_url: image)
-    if email
-      user.email = email
-      user.confirmed_at = Time.now
-    end
+    user = User.new(name: name, remote_photo_url: image, email: email)
+    user.confirmed_at = Time.now
     user.authentications = [ self ]
     user.save!
     user

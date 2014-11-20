@@ -45,6 +45,7 @@ class AuthenticationsController < ApplicationController
       Authentication.find_by_provider_and_uid(auth_hash['provider'], auth_hash['uid']) ||
       Authentication.new(provider: auth_hash['provider'], uid: auth_hash['uid'])
     @authentication.auth_info = auth_hash['info']
+    @authentication
   end
 
   def authenticate!(provider, uid, user_info)

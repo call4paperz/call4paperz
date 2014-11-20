@@ -172,7 +172,7 @@ feature "Events", %q{
     scenario "I should be able to create an event with an user registered thru omni auth" do
       auth = Authentication.new provider: 'twitter', uid: '123'
       auth.auth_info = { 'email' => 'lol@example.org' }
-      user = auth.create_user
+      User.create_with_authentication auth
 
       sign_in_via_twitter('123')
 

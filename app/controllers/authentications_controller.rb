@@ -32,7 +32,7 @@ class AuthenticationsController < ApplicationController
       redirect_to new_user_session_path, notice: I18n.t('auth.cant_create_twitter')
       false
     else
-      user = authentication.create_user
+      user = User.create_with_authentication authentication
       sign_in(user)
       true
     end

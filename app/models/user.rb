@@ -27,6 +27,17 @@ class User < ActiveRecord::Base
 
   mount_uploader :photo, PictureUploader
 
+  def self.create_with_authentication(authentication)
+    user = User.new(
+      name: authentication.name,
+      remote_photo_url: authentication.image,
+      email: authentication.email)
+    user.confirmed_at = Time.now
+    user.authentications = [ authentication ]
+    user.save!
+    user
+  end
+
   def picture
     if photo?
       photo.thumb.url

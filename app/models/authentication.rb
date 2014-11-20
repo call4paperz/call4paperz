@@ -8,12 +8,4 @@ class Authentication < ActiveRecord::Base
       auth_info[_method.to_s]
     end
   end
-
-  def create_user
-    user = User.new(name: name, remote_photo_url: image, email: email)
-    user.confirmed_at = Time.now
-    user.authentications = [ self ]
-    user.save!
-    user
-  end
 end

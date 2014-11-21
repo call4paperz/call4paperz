@@ -5,7 +5,7 @@ ruby '2.1.3'
 gem 'rails', '~>3.2.19'
 
 gem 'addressable'
-gem 'carrierwave', github: 'jnicklas/carrierwave'
+gem 'carrierwave'
 gem 'devise'
 gem 'devise-encryptable'
 gem 'fog'

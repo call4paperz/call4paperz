@@ -10,8 +10,11 @@ class MergeUser
     return false if users.size <= 1
 
     elect_a_profile users
+    transfer_avatars
     merge_all_collections
-    # merge avatars somehow?
+    destroy_extra_profiles
+
+    @elected_profile.user.save!
   end
 
   private
@@ -20,6 +23,26 @@ class MergeUser
     define_method "merge_#{collection_merge_method}" do
       merge_collection collection_merge_method
     end
+  end
+
+  def extra_twitter_avatar
+    @profiles_to_remove.map { |profile|
+      profile.user.twitter_avatar
+    }.compact.first
+  end
+
+  def extra_photo
+    @profiles_to_remove.map { |profile|
+      profile.user.photo? ? profile.user.photo : nil
+    }.compact.first
+  end
+
+  def transfer_avatars
+    user = @elected_profile.user
+    return if user.photo? || !user.twitter_avatar.nil?
+
+    user.twitter_avatar = extra_twitter_avatar
+    user.photo = extra_photo
   end
 
   def count_associations(profile)
@@ -61,8 +84,6 @@ class MergeUser
   def merge_all_collections
     User.transaction do
       COLLECTIONS.each { |collection| send "merge_#{collection}" }
-      # avatar and twitter avatar removal here?
-      destroy_extra_profiles
     end
   end
 end

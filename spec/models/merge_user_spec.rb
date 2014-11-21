@@ -56,6 +56,42 @@ describe MergeUser do
     end
   end
 
+  context 'moving avatars into the elected profile' do
+    it 'move twitter avatar' do
+      menino_lambao.twitter_avatar = 'opa/lhes/twitter.png'
+      menino_lambao.save!
+      merger.merge
+      expect(joao_popular.reload.twitter_avatar).to eq 'opa/lhes/twitter.png'
+    end
+
+    it 'do not touch twitter avatar if it already exists' do
+      joao_popular.twitter_avatar = 'current/avatar.png'
+      joao_popular.save!
+      menino_lambao.twitter_avatar = 'opa/lhes/twitter.png'
+      menino_lambao.save!
+      merger.merge
+      expect(joao_popular.reload.twitter_avatar).to eq 'current/avatar.png'
+    end
+
+    it 'move photo' do
+      menino_lambao.photo = File.open(Rails.root + 'spec/fixtures/image_1.png')
+      menino_lambao.save!
+      merger.merge
+      filename = Pathname.new(joao_popular.reload.photo.current_path).basename.to_s
+      expect(filename).to eq 'image_1.png'
+    end
+
+    it 'do not touch photo if it already exists' do
+      menino_lambao.photo = File.open(Rails.root + 'spec/fixtures/image_1.png')
+      menino_lambao.save!
+      joao_popular.photo = File.open(Rails.root + 'spec/fixtures/image_2.png')
+      joao_popular.save!
+      merger.merge
+      filename = Pathname.new(joao_popular.reload.photo.current_path).basename.to_s
+      expect(filename).to eq 'image_2.png'
+    end
+  end
+
   context 'removing old users' do
     it 'delete empty users after merge' do
       deleted_ids = [ menino_lambao.id, newbie.id ]

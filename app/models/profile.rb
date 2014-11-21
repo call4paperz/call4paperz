@@ -23,4 +23,16 @@ class Profile
     user == profile.user
   end
   alias_method :eql?, :==
+
+  def unassociated_providers
+    Authentication.providers_not_in authentications
+  end
+
+  def add_authentication(authentication)
+    auth = authentications.
+      where(provider: authentication.provider, uid: authentication.uid).first
+    unless auth
+      authentications << authentication
+    end
+  end
 end

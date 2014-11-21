@@ -32,9 +32,17 @@
       <h2>Or you can use the following services to login:</h2>
       <br/>
       <ul id="login_services">
-        <li><%= link_to(image_tag('auth/twitter_oauth.png', :title => 'Sign in with Twitter'), '/auth/twitter') %></li>
-        <li><%= link_to(image_tag('auth/facebook_oauth.png', :title => 'Login with Facebook'), '/auth/facebook') %></li>
-        <li><%= link_to(image_tag('auth/github_oauth.png', :title => 'Login with Github'), '/auth/github') %></li>
+        <% Authentication.providers.
+            reject { |provider| provider.aka == :twitter }.each do |provider| %>
+            <li><%= link_to(image_tag("auth/#{provider.aka}_oauth.png",
+                                      title: 'Login with Facebook'),
+                            "/auth/#{provider.name}") %></li>
+        <% end %>
+      </ul>
+      Already have an account? You also can sign in with twitter then:
+      <ul>
+        <li><%= link_to(image_tag('auth/twitter_oauth.png',
+                                  title: 'Sign in with Twitter'), '/auth/twitter') %></li>
       </ul>
     </div>
   </div>

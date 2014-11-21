@@ -11,6 +11,7 @@ class MergeUser
 
     elect_a_profile users
     merge_all_collections
+    # merge avatars somehow?
   end
 
   private

@@ -1,9 +1,21 @@
 <div id="left_bar">
   <div id="profile">
-    <%= user_picture(current_user) %>
-    <%= image_tag 'linha.png', :class => 'linha' %>
-    <p><strong><%= current_user.name %></strong></p>
+    <%= user_picture(@profile.user) %>
+    <%= image_tag 'linha.png', class: 'linha' %>
+    <p><strong><%= @profile.user.name %></strong></p>
     <p><strong><%= link_to 'Edit profile', edit_profile_path %></strong></p>
+
+    <% if @profile.unassociated_providers.size > 0 %>
+    <%= image_tag 'linha.png', class: 'linha' %>
+    <p>Associate other accounts with your profile. This way, you can use any of
+    them to authenticate in the Call4Paperz:</p>
+    <br />
+    <ul>
+      <% @profile.unassociated_providers.each do |provider| %>
+        <li><%= link_to(provider.show_name, "auth/#{provider.aka}") %></li>
+      <% end %>
+    </ul>
+    <% end %>
   </div>
 </div>
 
@@ -12,11 +24,11 @@
   <p class="sub_vote">Your call for papers's statistics.</p>
   <br/>
 
-  <% if @events.blank? %>
+  <% if @profile.events.blank? %>
     <spam class="yet">You don't have any event yet.</spam> <%= link_to "Try it now!", new_event_path %>
   <% end %>
 
-  <% @events.each do |event| %>
+  <% @profile.events.each do |event| %>
     <div class="event_stat">
       <p class="name">Event: <spam><%= link_to event.name, event %></spam></p>
       <br/>

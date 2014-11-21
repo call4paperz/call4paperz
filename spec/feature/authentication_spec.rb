@@ -4,7 +4,7 @@ feature 'Authentications' do
   scenario 'authenticating with some oauth provider' do
     auth = Authentication.new provider: 'github', uid: 'github-uid'
     auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
-    User.create_with_authentication auth
+    User.find_or_create_with_authentication auth
     sign_in_via_github('github-uid')
 
     expect(page).to have_content('Welcome Opa Lhes')
@@ -12,7 +12,7 @@ feature 'Authentications' do
 
   context 'signed in user' do
     let(:auth) { Authentication.new(provider: 'github', uid: 'github-uid') }
-    let(:user) { User.create_with_authentication auth }
+    let(:user) { User.find_or_create_with_authentication auth }
 
     before do
       auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
@@ -52,10 +52,28 @@ feature 'Authentications' do
       twitter_uid = 'twitter-123'
       auth = Authentication.new provider: 'twitter', uid: twitter_uid
       auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
-      User.create_with_authentication auth
+      User.find_or_create_with_authentication auth
       sign_in_via_twitter(twitter_uid)
 
       expect(page).to have_content('Welcome Opa Lhes')
+    end
+  end
+
+  context 'Existent user using different authentications' do
+    let(:auth) { Authentication.new(provider: 'github', uid: 'github-uid') }
+    let(:user) { User.find_or_create_with_authentication auth }
+
+    before do
+      auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
+    end
+
+    scenario 'sign in with new authentication method' do
+      sign_in_via_google_oauth2('google-uid-123', 'info' => { 'email' => user.email })
+      # do not create new user
+      expect(User.count).to eq 1
+      providers = user.reload.authentications.map { |auth| auth.provider }
+      # add the new authentication to the user
+      expect(providers).to eq ['github',  'google_oauth2']
     end
   end
 end

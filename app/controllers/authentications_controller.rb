@@ -27,12 +27,12 @@ class AuthenticationsController < ApplicationController
 
   private
 
-  def create_user_and_sign_in(authentication)
+  def find_or_create_user_and_sign_in(authentication)
     if authentication.provider.to_s == 'twitter'
       redirect_to new_user_session_path, notice: I18n.t('auth.cant_create_twitter')
       false
     else
-      user = User.create_with_authentication authentication
+      user = User.find_or_create_with_authentication authentication
       sign_in(user)
       true
     end
@@ -53,7 +53,7 @@ class AuthenticationsController < ApplicationController
     if authentication.persisted?
       sign_in authentication.user
     else
-      create_user_and_sign_in(authentication)
+      find_or_create_user_and_sign_in(authentication)
     end
   end
 end

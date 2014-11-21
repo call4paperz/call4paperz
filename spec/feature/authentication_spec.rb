@@ -10,20 +10,36 @@ feature 'Authentications' do
     expect(page).to have_content('Welcome Opa Lhes')
   end
 
-  scenario 'associating authentication with a signed in user' do
-    auth = Authentication.new(provider: 'github', uid: 'github-uid')
-    auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
-    user = User.create_with_authentication auth
-    sign_in_via_github('github-uid')
+  context 'signed in user' do
+    let(:auth) { Authentication.new(provider: 'github', uid: 'github-uid') }
+    let(:user) { User.create_with_authentication auth }
 
-    twitter_uid = 'twitter-123'
-    sign_in_via_twitter(twitter_uid)
+    before do
+      auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
+      auth.save!
+      user.save!
+      sign_in_via_github('github-uid')
+    end
 
-    authentication_providers = user.reload.authentications.map { |a| a.provider }
-    expect(authentication_providers).to include('github', 'twitter')
+    scenario 'associating authentication with a signed in user' do
+      twitter_uid = 'twitter-123'
+      sign_in_via_twitter(twitter_uid)
+
+      authentication_providers = user.reload.authentications.map { |a| a.provider }
+      expect(authentication_providers).to include('github', 'twitter')
+    end
+
+    scenario 'using a pre-existent authentication different than the current one' do
+      Authentication.new(provider: 'twitter', uid: 'twitter-uid-123')
+      sign_in_via_twitter('twitter-uid-123')
+
+      authentication_providers = user.reload.authentications.map { |a| a.provider }
+      # do not created repeated authentications for the same provider
+      expect(authentication_providers).to eq [ 'github', 'twitter' ]
+    end
   end
 
-  context 'twitter' do
+  context 'twitter authentication provider' do
     scenario 'forbiddes account creation, since twitter doesn\'t gives us email' do
       twitter_uid = 'twitter-123'
       sign_in_via_twitter(twitter_uid)

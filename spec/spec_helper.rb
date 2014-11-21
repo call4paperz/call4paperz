@@ -21,4 +21,27 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
 
   config.infer_spec_type_from_file_location!
+
+  class RSpecState
+    def self.my_server_pid=(pid)
+      @pid = pid
+    end
+
+    def self.my_server_pid
+      @pid
+    end
+  end
+
+  config.before(:suite) do
+    unless ENV['running_on_ci']
+      path = Rails.root + 'spec/fixtures/'
+      RSpecState.my_server_pid = spawn "ruby -run -e httpd #{path} -p 3101"
+    end
+  end
+
+  config.after(:suite) do
+    unless ENV['running_on_ci']
+      Process.kill 'KILL', RSpecState.my_server_pid
+    end
+  end
 end

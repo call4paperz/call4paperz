@@ -4,15 +4,6 @@ describe TwitterAvatarPromotion do
   let(:fulano) { FactoryGirl.create :user }
   let(:promoter) { TwitterAvatarPromotion.new fulano }
 
-  before(:all) do
-    path = Rails.root + 'spec/fixtures/'
-    @server_pid = spawn "ruby -run -e httpd #{path} -p 3101"
-  end
-
-  after(:all) do
-    Process.kill 'KILL', @server_pid
-  end
-
   it 'copy a valid twitter avatar' do
     fulano.twitter_avatar = 'http://localhost:3101/image_1.png'
     fulano.save!

@@ -4,15 +4,18 @@
     <%= image_tag 'linha.png', class: 'linha' %>
     <p><strong><%= @profile.user.name %></strong></p>
     <p><strong><%= link_to 'Edit profile', edit_profile_path %></strong></p>
+
+    <% if @profile.unassociated_providers.size > 0 %>
     <%= image_tag 'linha.png', class: 'linha' %>
     <p>Associate other accounts with your profile. This way, you can use any of
     them to authenticate in the Call4Paperz:</p>
     <br />
     <ul>
       <% @profile.unassociated_providers.each do |provider| %>
-        <li><%= link_to(provider.to_s.capitalize, "auth/#{provider}") %></li>
+        <li><%= link_to(provider.show_name, "auth/#{provider.aka}") %></li>
       <% end %>
     </ul>
+    <% end %>
   </div>
 </div>
 

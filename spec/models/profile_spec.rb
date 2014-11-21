@@ -19,4 +19,11 @@ describe Profile do
     profile = Profile.new user
     expect(profile.unassociated_providers).to_not include :twitter
   end
+
+  it 'recognizes `:google` as `:google_oauth2`' do
+    user = User.new
+    user.authentications = [ Authentication.new(provider: :google_oauth2) ]
+    profile = Profile.new user
+    expect(profile.unassociated_providers).to_not include :google, :google_oauth2
+  end
 end

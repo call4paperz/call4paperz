@@ -25,6 +25,6 @@ class Profile
   alias_method :eql?, :==
 
   def unassociated_providers
-    Authentication::PROVIDERS - authentications.map { |a| a.provider.to_sym }
+    Authentication.providers_not_in authentications
   end
 end

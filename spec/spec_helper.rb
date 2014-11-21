@@ -22,6 +22,8 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 
+  # this server preparation can be removed as soon as we remove the
+  # twitter_avatar form the project
   class RSpecState
     def self.my_server_pid=(pid)
       @pid = pid

@@ -11,4 +11,4 @@ script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate spec
 before_script:
   - psql -c 'create database call4paperz_test' -U postgres
-  - "ruby -run -e httpd spec/fixtures/ -p 3101"
+  - "ruby -run -e httpd spec/fixtures/ -p 3101 &"

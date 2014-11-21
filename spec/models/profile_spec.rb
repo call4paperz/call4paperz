@@ -12,4 +12,11 @@ describe Profile do
     expect(profile1).to eq profile3_user1
     expect(profile1).to_not eq profile2
   end
+
+  it 'returns all user\'s non associated auth methods' do
+    user = User.new
+    user.authentications = [ Authentication.new(provider: :twitter) ]
+    profile = Profile.new user
+    expect(profile.unassociated_providers).to_not include :twitter
+  end
 end

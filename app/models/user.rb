@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessor :email_confirmation
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation, :twitter_avatar, :remote_photo_url
+  attr_accessible :email, :password, :password_confirmation, :remember_me,
+                  :name, :photo, :email_confirmation, :twitter_avatar,
+                  :remote_photo_url
 
   has_many :authentications, :dependent => :destroy
   has_many :comments,        :dependent => :destroy
@@ -13,7 +15,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable
 
-  validates_presence_of :email, :if => :email_required?
+  validates_presence_of :email, if: :email_required?
 
   with_options if: :password_required? do |v|
     v.validates_presence_of     :password
@@ -25,20 +27,14 @@ class User < ActiveRecord::Base
 
   mount_uploader :photo, PictureUploader
 
-  def self.create_from_auth_info(provider, uid, auth_info = {})
-    name = auth_info['name']
-    image = auth_info['image']
-    email = auth_info['email']
-
-    user = User.new(name: name, remote_photo_url: image)
-    if email
-      user.email = email
-      user.confirmed_at = Time.now
-    end
-
-    user.authentications.build(provider: provider, uid: uid)
+  def self.create_with_authentication(authentication)
+    user = User.new(
+      name: authentication.name,
+      remote_photo_url: authentication.image,
+      email: authentication.email)
+    user.confirmed_at = Time.now
+    user.authentications = [ authentication ]
     user.save!
-
     user
   end
 
@@ -61,7 +57,8 @@ class User < ActiveRecord::Base
   private
 
   def password_required?
-    (authentications.empty? || !password.blank?) && (!persisted? || !password.nil? || !password_confirmation.nil?)
+    (authentications.empty? || !password.blank?) &&
+      (!persisted? || !password.nil? || !password_confirmation.nil?)
   end
 
   def email_required?

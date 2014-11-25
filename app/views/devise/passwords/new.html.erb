@@ -15,7 +15,8 @@
   <%= render 'devise/shared/links' %>
 </div>
 
-<%= javascript_tag do %>
+<%= content_for :js do %>
+<script>
   $(document).ready(function(){
     var validator = $("#user_new").validate({
       rules: {
@@ -23,4 +24,5 @@
       }
     });
   });
+</script>
 <% end %>

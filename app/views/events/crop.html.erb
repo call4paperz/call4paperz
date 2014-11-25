@@ -21,7 +21,8 @@
     <% end %>
   </div>
 
-  <%= javascript_tag do -%>
+  <%= content_for :js do %>
+  <script>
     function changeCoords(coords) {
         if (parseInt(coords.w) > 0) {
             $("#photo_crop_x").val(coords.x);
@@ -57,6 +58,7 @@
             onSelect: changeCoords
         });
     });
+  </script>
   <% end %>
 
   <div class="clear"></div>

@@ -1,13 +1,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.Jcrop.min
-//= require jquery-ui.min
+//= require jquery-ui-1.11.2.min
 //= require jquery.validate.min
 //= require ajax
 //= require call4paperz
 //= require_self
 
 $(function(){
+  $.browser = { 'msie': '' } // Gambis to bring back jquery
+
   $('.datepicker').datepicker({
       onClose: function() {
           if($(this).closest('form').validate !== undefined) {

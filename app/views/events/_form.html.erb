@@ -68,7 +68,8 @@
   </div>
 <% end %>
 
-<%= javascript_tag do %>
+<%= content_for :js do %>
+<script>
   $(document).ready(function() {
     var descriptionKeycount = new HandleKeycount();
     var nameKeycount = new HandleKeycount();
@@ -92,4 +93,5 @@
       }
     });
   });
+</script>
 <% end %>

@@ -33,17 +33,4 @@ RSpec.configure do |config|
       @pid
     end
   end
-
-  config.before(:suite) do
-    unless ENV['running_on_ci']
-      path = Rails.root + 'spec/fixtures/'
-      RSpecState.my_server_pid = spawn "ruby -run -e httpd #{path} -p 3101"
-    end
-  end
-
-  config.after(:suite) do
-    unless ENV['running_on_ci']
-      Process.kill 'KILL', RSpecState.my_server_pid
-    end
-  end
 end

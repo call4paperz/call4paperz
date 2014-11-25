@@ -25,12 +25,6 @@ class MergeUser
     end
   end
 
-  def extra_twitter_avatar
-    @profiles_to_remove.map { |profile|
-      profile.user.twitter_avatar
-    }.compact.first
-  end
-
   def extra_photo
     @profiles_to_remove.map { |profile|
       profile.user.photo? ? profile.user.photo : nil
@@ -39,9 +33,7 @@ class MergeUser
 
   def transfer_avatars
     user = @elected_profile.user
-    return if user.photo? || !user.twitter_avatar.nil?
-
-    user.twitter_avatar = extra_twitter_avatar
+    return if user.photo?
     user.photo = extra_photo
   end
 

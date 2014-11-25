@@ -10,7 +10,7 @@ describe UserHelper do
     end
 
     context "user without picture" do
-      let(:user) { FactoryGirl.build(:user, photo: nil, twitter_avatar: nil) }
+      let(:user) { FactoryGirl.build(:user, photo: nil) }
       it { should match("no_avatar.png") }
     end
 

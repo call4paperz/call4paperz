@@ -57,22 +57,6 @@ describe MergeUser do
   end
 
   context 'moving avatars into the elected profile' do
-    it 'move twitter avatar' do
-      menino_lambao.twitter_avatar = 'opa/lhes/twitter.png'
-      menino_lambao.save!
-      merger.merge
-      expect(joao_popular.reload.twitter_avatar).to eq 'opa/lhes/twitter.png'
-    end
-
-    it 'do not touch twitter avatar if it already exists' do
-      joao_popular.twitter_avatar = 'current/avatar.png'
-      joao_popular.save!
-      menino_lambao.twitter_avatar = 'opa/lhes/twitter.png'
-      menino_lambao.save!
-      merger.merge
-      expect(joao_popular.reload.twitter_avatar).to eq 'current/avatar.png'
-    end
-
     it 'move photo' do
       menino_lambao.photo = File.open(Rails.root + 'spec/fixtures/image_1.png')
       menino_lambao.save!

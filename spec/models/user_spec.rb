@@ -5,8 +5,10 @@ describe User do
   describe "mass assignment" do
 
     context "allowed" do
-      [:email, :password, :password_confirmation, :remember_me, :name, :photo, :email_confirmation,
-       :twitter_avatar].each do |attr|
+      [
+        :email, :password, :password_confirmation, :remember_me, :name, :photo,
+        :email_confirmation
+      ].each do |attr|
         it { should allow_mass_assignment_of(attr) }
       end
     end
@@ -67,7 +69,7 @@ describe User do
   end
 
   describe "photos" do
-    let(:user) { FactoryGirl.build(:user, twitter_avatar: nil, photo: nil) }
+    let(:user) { FactoryGirl.build(:user, photo: nil) }
 
     context "when the user has a photo" do
       it "shows the photo" do
@@ -75,13 +77,6 @@ describe User do
         user.save!
 
         user.picture.should match /guru_sp/
-      end
-    end
-
-    context "when the user has no photo, but has an old avatar" do
-      it "shows the twitter avatar" do
-        user.twitter_avatar = "hello.png"
-        user.picture.should include("hello.png")
       end
     end
 

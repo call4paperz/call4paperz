@@ -5,8 +5,10 @@ services: postgresql
 env:
   global:
     - SECRET_KEY=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  running_on_ci: true
 script:
   - mv config/database.yml{.travis,}
   - RAILS_ENV=test bundle exec rake --trace db:migrate spec
 before_script:
   - psql -c 'create database call4paperz_test' -U postgres
+  - "ruby -run -e httpd spec/fixtures/ -p 3101 &"

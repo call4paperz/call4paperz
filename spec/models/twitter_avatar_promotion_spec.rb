@@ -23,6 +23,6 @@ describe TwitterAvatarPromotion do
     fulano.remote_photo_url = 'http://localhost:3101/image_2.png'
     fulano.save!
     promoter.promote
-    expect(fulano.photo.filename).to eq 'image_1.png'
+    expect(fulano.photo.filename).to eq 'image_2.png'
   end
 end

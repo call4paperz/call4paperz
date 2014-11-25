@@ -8,6 +8,8 @@ class TwitterAvatarPromotion
 
   def promote
     return if @user.photo? || !(avatar = @user.twitter_avatar)
+
+    avatar = follow_redirect_on_fb_avatar(avatar)
     @user.remote_photo_url = avatar
     begin
       @user.save!
@@ -19,5 +21,20 @@ class TwitterAvatarPromotion
       end
       false
     end
+  end
+
+  private
+
+  def follow_redirect_on_fb_avatar(avatar)
+    url = URI.parse(avatar)
+    if url.to_s =~ /facebook\.com/
+      req = Net::HTTP::Get.new(url.path)
+      response = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
+      case response
+        when Net::HTTPRedirection
+          return response['location']
+      end
+    end
+    avatar
   end
 end

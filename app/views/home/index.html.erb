@@ -51,7 +51,8 @@
   </div>
 </div>
 
-<%= javascript_tag do %>
+<%= content_for :js do %>
+<script>
   var timeout = 6000;
 
   function swapImage() {
@@ -73,5 +74,5 @@
     setTimeout(swapImage, timeout)
     new C4P.Twitter().loadLast("<%= last_tweet_path %>")
   })
-
+</script>
 <% end %>

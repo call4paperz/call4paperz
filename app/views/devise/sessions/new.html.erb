@@ -48,7 +48,8 @@
   </div>
 </div>
 
-<%= javascript_tag do %>
+<%= content_tag :js do %>
+<script>
   $(document).ready(function() {
     var validator = $("#user_new").validate({
       rules: {
@@ -61,4 +62,5 @@
       }
     });
   });
+</script>
 <% end %>

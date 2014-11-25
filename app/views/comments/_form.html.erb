@@ -25,7 +25,8 @@
   <% end %>
 </div>
 
-<%= javascript_tag do %>
+<%= content_for :js do %>
+<script>
   $(document).ready(function() {
     var validator = $("#new_comment").validate({
       rules: {
@@ -34,4 +35,5 @@
       messages: { 'comment[body]': 'Comment cannot be empty' }
     });
   });
+</script>
 <% end -%>

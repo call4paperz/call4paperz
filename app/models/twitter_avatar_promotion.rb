@@ -7,7 +7,7 @@ class TwitterAvatarPromotion
   end
 
   def promote
-    return unless avatar = @user.twitter_avatar
+    return unless @user.photo? || avatar = @user.twitter_avatar
     @user.remote_photo_url = avatar
     begin
       @user.save!

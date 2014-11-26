@@ -8,6 +8,7 @@ Devise.setup do |config|
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
+  config.secret_key = ENV['SECRET_KEY']
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -230,4 +231,3 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 end
-

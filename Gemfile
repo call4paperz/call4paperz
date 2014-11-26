@@ -1,13 +1,12 @@
 source 'http://rubygems.org'
 
-ruby '2.1.3'
+ruby '2.1.5'
 
 gem 'rails', '~>3.2.19'
 
 gem 'addressable'
 gem 'carrierwave'
 gem 'devise'
-gem 'devise-encryptable'
 gem 'fog'
 gem 'friendly_id'
 gem 'jquery-rails'

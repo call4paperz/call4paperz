@@ -130,8 +130,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mail_form (1.4.1)
-      actionmailer (~> 3.0)
     mailcatcher (0.5.12)
       activesupport (~> 3.0)
       eventmachine (~> 1.0.0)
@@ -331,7 +329,6 @@ DEPENDENCIES
   foreman
   friendly_id
   jquery-rails
-  mail_form
   mailcatcher
   mini_magick
   newrelic_rpm

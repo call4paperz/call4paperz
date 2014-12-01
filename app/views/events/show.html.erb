@@ -49,7 +49,8 @@
   <% end %>
 </div>
 
-<%= javascript_tag do %>
+<%= content_for :js do %>
+  <script>
   $('.ajax_vote').click(function(){
     var thiz = this;
 
@@ -63,4 +64,5 @@
 
     return false;
   });
+  </script>
 <% end %>

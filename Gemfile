@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby '2.1.3'
 
-gem 'rails', '~>3.2.19'
+gem 'rails', '~> 3.2.19'
 
 gem 'addressable'
 gem 'carrierwave'
@@ -10,7 +10,7 @@ gem 'devise'
 gem 'devise-encryptable'
 gem 'fog'
 gem 'friendly_id'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.0'
 gem 'mail_form'
 gem 'mini_magick'
 gem 'omniauth'

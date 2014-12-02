@@ -12,7 +12,7 @@
     <br />
     <ul>
       <% @profile.unassociated_providers.each do |provider| %>
-        <li><%= link_to(provider.show_name, "auth/#{provider.aka}") %></li>
+        <li><%= link_to(provider.show_name, "auth/#{provider.name}") %></li>
       <% end %>
     </ul>
     <% end %>

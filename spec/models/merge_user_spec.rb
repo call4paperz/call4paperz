@@ -83,4 +83,11 @@ describe MergeUser do
       expect(User.where(id: deleted_ids).count).to eq 0
     end
   end
+
+  context 'when the email is an empty string =(' do
+    it 'do not tries to merge anything!' do
+      merger = MergeUser.new('')
+      expect(merger.merge).to eq false
+    end
+  end
 end

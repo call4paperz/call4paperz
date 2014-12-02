@@ -6,7 +6,7 @@ class MergeUser
   end
 
   def merge
-    return false if @email == ''
+    return false if @email.blank?
 
     users = User.where(email: @email)
     return false if users.size <= 1

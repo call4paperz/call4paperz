@@ -277,7 +277,7 @@ GEM
       trollop
     rdoc (3.12.2)
       json (~> 1.4)
-    recaptcha (0.3.5)
+    recaptcha (0.3.6)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec-collection_matchers (1.0.0)

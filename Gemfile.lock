@@ -357,7 +357,7 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.3)
       rack (>= 1.0)
-    will_paginate (3.0.4)
+    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 

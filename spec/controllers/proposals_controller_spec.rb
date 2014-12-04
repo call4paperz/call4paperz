@@ -5,12 +5,12 @@ describe ProposalsController, :type => :controller do
 
   before do
     sign_in FactoryGirl.create(:user)
-    controller.stub(event: event)
+    allow(controller).to receive(:event) { event }
   end
 
   describe "new proposal" do
     it "does not allow to show the form for new proposals for closed events" do
-      event.stub(closed?: true)
+      allow(event).to receive(:closed?) { true }
 
       get :new, event_id: 123
 
@@ -20,7 +20,7 @@ describe ProposalsController, :type => :controller do
 
   describe "create proposal" do
     it "does not allow to create new proposals for closed events" do
-      event.stub(closed?: true)
+      allow(event).to receive(:closed?) { true }
 
       post :create, event_id: 123
 

@@ -15,7 +15,7 @@ feature "Vote", %q{
 
     click_like
 
-    page.should have_content("Login")
+    expect(page).to have_content("Login")
   end
 
   scenario "After trying to vote not logged in, and logging in, the vote should be computed automatically" do
@@ -23,17 +23,17 @@ feature "Vote", %q{
 
     click_like
 
-    page.should have_content("Login")
+    expect(page).to have_content("Login")
 
     sign_in_from_login_page
-    page.should have_content("You liked the proposal.")
+    expect(page).to have_content("You liked the proposal.")
   end
 
   scenario "While not logged in, I should not be able to dislike a proposal" do
     visit event_path(event)
 
     click_dislike
-    page.should have_content("Login")
+    expect(page).to have_content("Login")
   end
 
   scenario "While logged in, I should be able to like a proposal" do
@@ -42,7 +42,7 @@ feature "Vote", %q{
     visit event_path(event)
 
     click_like
-    page.should have_no_content("Login")
+    expect(page).to have_no_content("Login")
   end
 
   scenario "While logged in, I should be able to dislike a proposal" do
@@ -51,7 +51,7 @@ feature "Vote", %q{
     visit event_path(event)
 
     click_dislike
-    page.should have_no_content("Login")
+    expect(page).to have_no_content("Login")
   end
 
   scenario "While I've already voted, I should be notified that I can't vote again" do
@@ -60,7 +60,7 @@ feature "Vote", %q{
     visit event_path(event)
 
     click_like
-    page.should have_css("img[alt='Thanks for voting!']")
+    expect(page).to have_css("img[alt='Thanks for voting!']")
   end
 
   def click_like

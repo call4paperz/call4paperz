@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Vote do
+describe Vote, :type => :model do
   let(:proposal) { FactoryGirl.create(:proposal) }
   let(:user) { FactoryGirl.create(:user) }
 
@@ -8,7 +8,7 @@ describe Vote do
 
     context "not allowed" do
       [:id, :direction, :proposal_id, :user_id, :created_at, :updated_at].each do |attr|
-        it { should_not allow_mass_assignment_of(attr) }
+        it { is_expected.not_to allow_mass_assignment_of(attr) }
       end
     end
   end
@@ -16,17 +16,17 @@ describe Vote do
   describe "validations" do
 
     describe "requireds" do
-      it { should validate_presence_of(:direction) }
+      it { is_expected.to validate_presence_of(:direction) }
     end
 
     describe "proposal_id" do
-      it { should validate_uniqueness_of(:proposal_id).scoped_to(:user_id) }
+      it { is_expected.to validate_uniqueness_of(:proposal_id).scoped_to(:user_id) }
     end
   end
 
   describe "associations" do
-    it { should belong_to(:user) }
-    it { should belong_to(:proposal) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:proposal) }
   end
 
   describe ".like" do
@@ -39,9 +39,9 @@ describe Vote do
     it "should set properties of vote correctly" do
       described_class.like(proposal, user)
       vote = Vote.last
-      vote.proposal.should == proposal
-      vote.user.should == user
-      vote.direction.should == Vote::LIKE
+      expect(vote.proposal).to eq(proposal)
+      expect(vote.user).to eq(user)
+      expect(vote.direction).to eq(Vote::LIKE)
     end
   end
 
@@ -55,9 +55,9 @@ describe Vote do
     it "should set properties of vote correctly" do
       described_class.dislike(proposal, user)
       vote = Vote.last
-      vote.proposal.should == proposal
-      vote.user.should == user
-      vote.direction.should == Vote::DISLIKE
+      expect(vote.proposal).to eq(proposal)
+      expect(vote.user).to eq(user)
+      expect(vote.direction).to eq(Vote::DISLIKE)
     end
   end
 end

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe ProposalsController do
+describe ProposalsController, :type => :controller do
   let(:event) { FactoryGirl.build_stubbed(:event) }
 
   before do
@@ -14,7 +14,7 @@ describe ProposalsController do
 
       get :new, event_id: 123
 
-      response.should redirect_to(event)
+      expect(response).to redirect_to(event)
     end
   end
 
@@ -24,7 +24,7 @@ describe ProposalsController do
 
       post :create, event_id: 123
 
-      response.should redirect_to(event)
+      expect(response).to redirect_to(event)
     end
   end
 

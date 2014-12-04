@@ -10,8 +10,8 @@ feature "Events", %q{
     scenario "While not logged in, I should be able to view events" do
       FactoryGirl.create(:event)
       visit '/events'
-      page.should have_content 'GURU-SP'
-      page.should have_no_content 'Sign in'
+      expect(page).to have_content 'GURU-SP'
+      expect(page).to have_no_content 'Sign in'
     end
 
   end
@@ -29,7 +29,7 @@ feature "Events", %q{
 
       find('input[type=image]').click
 
-      page.should have_content "GURU-SP"
+      expect(page).to have_content "GURU-SP"
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
@@ -39,8 +39,8 @@ feature "Events", %q{
 
       click_link event.name
 
-      page.should have_content 'GURU-SP'
-      page.should have_no_content 'Sign in'
+      expect(page).to have_content 'GURU-SP'
+      expect(page).to have_no_content 'Sign in'
     end
 
     context 'Registering' do
@@ -55,7 +55,7 @@ feature "Events", %q{
 
         find('input[type=image]').click
 
-        page.should have_content "Name can't be blank"
+        expect(page).to have_content "Name can't be blank"
       end
 
       scenario "I can't register an event without a name" do
@@ -68,7 +68,7 @@ feature "Events", %q{
 
         find('input[type=image]').click
 
-        page.should have_content "Description can't be blank"
+        expect(page).to have_content "Description can't be blank"
       end
     end
 
@@ -80,9 +80,9 @@ feature "Events", %q{
 
       visit '/events'
 
-      page.should have_content("1 proposal")
-      page.should have_content("1 comment")
-      page.should have_content("2 vote")
+      expect(page).to have_content("1 proposal")
+      expect(page).to have_content("1 comment")
+      expect(page).to have_content("2 vote")
     end
 
     scenario "I should be able to see the events sorted by the date the events occur" do
@@ -98,21 +98,21 @@ feature "Events", %q{
       visit '/events'
 
       within(:xpath, "//li[@class='event_listed'][1]") do
-        page.should have_content('Groundhog Day')
+        expect(page).to have_content('Groundhog Day')
       end
 
       within(:xpath, "//li[@class='event_listed'][2]") do
-        page.should have_content('Good morning Vietnam')
+        expect(page).to have_content('Good morning Vietnam')
       end
 
       within(:xpath, "//li[@class='event_listed'][3]") do
-        page.should have_content('Late show')
+        expect(page).to have_content('Late show')
       end
     end
 
     scenario "I should be able to see warning if there are no events" do
       visit '/events'
-      page.should have_content('There are no events yet. Be the first to create one!')
+      expect(page).to have_content('There are no events yet. Be the first to create one!')
     end
 
     scenario "I should be able to go to the list of proposals clicking on the picture" do
@@ -120,11 +120,11 @@ feature "Events", %q{
       visit event_path(event)
 
       within '#proposal' do
-        page.should have_css("a[href*='#{event_path(event)}']")
+        expect(page).to have_css("a[href*='#{event_path(event)}']")
       end
 
-      page.should have_no_content 'Administrative tools'
-      page.should have_no_content 'Speakers contacts'
+      expect(page).to have_no_content 'Administrative tools'
+      expect(page).to have_no_content 'Speakers contacts'
     end
 
     context "I am the owner" do
@@ -138,10 +138,10 @@ feature "Events", %q{
       scenario "I should be able to see admin links" do
         visit event_path(event)
 
-        page.should have_content 'Administrative tools'
-        page.should have_content 'Edit event'
-        page.should have_content 'Crop picture'
-        page.should have_content 'Speakers contacts'
+        expect(page).to have_content 'Administrative tools'
+        expect(page).to have_content 'Edit event'
+        expect(page).to have_content 'Crop picture'
+        expect(page).to have_content 'Speakers contacts'
       end
 
       scenario "I should be able to see admin links for events with proposal" do
@@ -150,9 +150,9 @@ feature "Events", %q{
 
         visit event_path(event)
 
-        page.should have_content "Administrative tools"
-        page.should have_content "Edit event"
-        page.should have_content "Crop picture"
+        expect(page).to have_content "Administrative tools"
+        expect(page).to have_content "Edit event"
+        expect(page).to have_content "Crop picture"
       end
     end
 
@@ -166,7 +166,7 @@ feature "Events", %q{
       fill_in 'Occurs at', :with => '01/20/2011'
 
       find(".actions input").click
-      page.should have_content "Event was successfully updated."
+      expect(page).to have_content "Event was successfully updated."
     end
 
     scenario "I should be able to create an event with an user registered thru omni auth" do
@@ -185,8 +185,8 @@ feature "Events", %q{
 
       find('input[type=image]').click
 
-      page.should have_content "GURU-SP"
-      page.should have_content 'Event was successfully created.'
+      expect(page).to have_content "GURU-SP"
+      expect(page).to have_content 'Event was successfully created.'
     end
   end
 
@@ -201,22 +201,22 @@ feature "Events", %q{
 
       click_on "Close for new proposals"
 
-      page.should have_content "Are you sure you want to close the event for new proposals?"
+      expect(page).to have_content "Are you sure you want to close the event for new proposals?"
       click_on "Yes, close for new proposals"
 
-      page.should have_content "This event is now closed for new proposals"
-      page.should have_content "This event is not accepting new proposals."
+      expect(page).to have_content "This event is now closed for new proposals"
+      expect(page).to have_content "This event is not accepting new proposals."
 
       within '#proposal' do
-        page.should have_no_css("a[href*='#{new_event_proposal_path(event)}']")
+        expect(page).to have_no_css("a[href*='#{new_event_proposal_path(event)}']")
       end
 
       click_on "Open for new proposals"
-      page.should have_content "Are you sure you want to open the event for new proposals?"
+      expect(page).to have_content "Are you sure you want to open the event for new proposals?"
       click_on "Yes, open for new proposals"
 
-      page.should have_content "This event is now open for new proposals."
-      page.should have_no_content "This event is not accepting new proposals."
+      expect(page).to have_content "This event is now open for new proposals."
+      expect(page).to have_no_content "This event is not accepting new proposals."
     end
   end
 end

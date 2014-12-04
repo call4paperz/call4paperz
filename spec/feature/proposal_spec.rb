@@ -14,20 +14,20 @@ feature "Proposal", %q{
       proposal
       visit event_path(event)
 
-      page.should have_no_content 'Sign in'
-      page.should have_content 'Refactoring Ruby'
-      page.should have_content "0 comments"
-      page.should have_css("img[src*='positive.png']")
-      page.should have_css("img[src*='negative.png']")
+      expect(page).to have_no_content 'Sign in'
+      expect(page).to have_content 'Refactoring Ruby'
+      expect(page).to have_content "0 comments"
+      expect(page).to have_css("img[src*='positive.png']")
+      expect(page).to have_css("img[src*='negative.png']")
     end
 
     scenario "While not logged in, I should be able to view proposals' details " do
       proposal
       visit event_proposal_path(event, proposal)
 
-      page.should have_no_content 'Sign in'
-      page.should have_content 'Refactoring Ruby'
-      page.should have_content '0 comments'
+      expect(page).to have_no_content 'Sign in'
+      expect(page).to have_content 'Refactoring Ruby'
+      expect(page).to have_content '0 comments'
     end
   end
 
@@ -43,7 +43,7 @@ feature "Proposal", %q{
 
       find('input[type=image]').click
 
-      page.should have_content "Refactoring Ruby"
+      expect(page).to have_content "Refactoring Ruby"
     end
 
     scenario "While registering, I can't register a proposal without a name" do
@@ -56,7 +56,7 @@ feature "Proposal", %q{
 
       find('input[type=image]').click
 
-      page.should have_content "Name can't be blank"
+      expect(page).to have_content "Name can't be blank"
     end
 
     scenario "While registering, I can't register a proposal without a name" do
@@ -69,13 +69,13 @@ feature "Proposal", %q{
 
       find('input[type=image]').click
 
-      page.should have_content "Description can't be blank"
+      expect(page).to have_content "Description can't be blank"
     end
 
     scenario "I can't edit a proposal if I do not own it" do
       visit event_proposal_path(event, proposal)
 
-      page.should have_no_content "Edit"
+      expect(page).to have_no_content "Edit"
     end
 
     scenario "I can edit my proposal while it's under 30 minutes of publication" do
@@ -88,7 +88,7 @@ feature "Proposal", %q{
 
       fill_in 'Description', :with => 'Changed description'
 
-      page.should have_content "Changed description"
+      expect(page).to have_content "Changed description"
     end
 
     scenario "I can't edit my proposal while it's over 30 minutes of publication" do
@@ -100,7 +100,7 @@ feature "Proposal", %q{
 
       click_link 'edit'
 
-      page.should have_content "You cannot edit a proposal after 30 minutes of creation."
+      expect(page).to have_content "You cannot edit a proposal after 30 minutes of creation."
     end
   end
 end

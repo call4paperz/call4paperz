@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MergeUser do
+describe MergeUser, :type => :model do
   def build_associations(user, how_many)
     how_many.times do
       auth = Authentication.new

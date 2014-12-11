@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EventsController do
+describe EventsController, :type => :controller do
   context 'Signed in but without email' do
     include HelperMethods::Controllers
 

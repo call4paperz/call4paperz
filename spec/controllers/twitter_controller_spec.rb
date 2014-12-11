@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe TwitterController do
+describe TwitterController, :type => :controller do
   let(:last_tweet) {
     TwitterClient::Tweet.new OpenStruct.new(
       created_at: Time.new(2013, 8, 29),

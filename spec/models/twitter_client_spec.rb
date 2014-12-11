@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe TwitterClient do
+describe TwitterClient, :type => :model do
   let(:tweet_inteface) {
     OpenStruct.new(
       created_at: Time.new(2013, 8, 29),
@@ -41,7 +41,7 @@ describe TwitterClient do
   end
 end
 
-describe TwitterClient::Tweet do
+describe TwitterClient::Tweet, :type => :model do
   let(:tweet_inteface) {
     OpenStruct.new(
       created_at: Time.new(2013, 8, 29),

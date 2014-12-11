@@ -11,21 +11,21 @@ feature "Comment", %q{
 
   scenario "I should see the number of comments change appropriately" do
     visit event_path(event)
-    page.should have_content "0 comments"
+    expect(page).to have_content "0 comments"
 
     FactoryGirl.create(:comment, :proposal => proposal)
     FactoryGirl.create(:comment, :proposal => FactoryGirl.create(:proposal, :event => event))
 
     visit event_path(event)
-    page.should have_content "1 comment"
-    page.should have_no_content "2 comments"
+    expect(page).to have_content "1 comment"
+    expect(page).to have_no_content "2 comments"
   end
 
   scenario "I should be able to see people's comments" do
     FactoryGirl.create(:comment, :proposal => proposal)
     visit event_proposal_path(event, proposal)
 
-    page.should have_content("Lorem Ipsum Dolor")
+    expect(page).to have_content("Lorem Ipsum Dolor")
   end
 
   scenario "I shouldn't be able to make comments while not logged in" do
@@ -44,7 +44,7 @@ feature "Comment", %q{
     fill_in "comment_body", :with => 'Lorem Ipsum Dolor'
     find('.submit_comment').click
 
-    page.should have_no_content "Login"
-    page.should have_content 'Lorem Ipsum Dolor'
+    expect(page).to have_no_content "Login"
+    expect(page).to have_content 'Lorem Ipsum Dolor'
   end
 end

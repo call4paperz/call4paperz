@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EventsHelper do
+describe EventsHelper, :type => :helper do
   describe "#user_is_owner?" do
     it "reports true if they match" do
       user_stub = double

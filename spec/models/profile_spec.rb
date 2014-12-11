@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Profile do
+describe Profile, :type => :model do
   it 'delegate equality notions to user' do
     user1 = User.new
     user2 = User.new

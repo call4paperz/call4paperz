@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ApplicationHelper do
+describe ApplicationHelper, :type => :helper do
   let(:user) { FactoryGirl.stub(:user) }
 
   describe "#menu" do
@@ -8,30 +8,30 @@ describe ApplicationHelper do
 
     context "logged in" do
       before(:each) do
-        helper.should_receive(:user_signed_in?).and_return(true)
+        expect(helper).to receive(:user_signed_in?).and_return(true)
       end
-      it { should match(/Home/) }
-      it { should match(root_url) }
-      it { should match(/Events/) }
-      it { should match(events_path) }
-      it { should match(/Logout/) }
-      it { should match(destroy_user_session_path) }
-      it { should_not match(/Login/) }
-      it { should_not match(new_user_session_path) }
+      it { is_expected.to match(/Home/) }
+      it { is_expected.to match(root_url) }
+      it { is_expected.to match(/Events/) }
+      it { is_expected.to match(events_path) }
+      it { is_expected.to match(/Logout/) }
+      it { is_expected.to match(destroy_user_session_path) }
+      it { is_expected.not_to match(/Login/) }
+      it { is_expected.not_to match(new_user_session_path) }
     end
 
     context "not logged in" do
       before(:each) do
-        helper.should_receive(:user_signed_in?).and_return(false)
+        expect(helper).to receive(:user_signed_in?).and_return(false)
       end
-      it { should match(/Home/) }
-      it { should match(root_url) }
-      it { should match(/Events/) }
-      it { should match(events_path) }
-      it { should match(/Login/) }
-      it { should match(new_user_session_path) }
-      it { should_not match(/Logout/) }
-      it { should_not match(destroy_user_session_path) }
+      it { is_expected.to match(/Home/) }
+      it { is_expected.to match(root_url) }
+      it { is_expected.to match(/Events/) }
+      it { is_expected.to match(events_path) }
+      it { is_expected.to match(/Login/) }
+      it { is_expected.to match(new_user_session_path) }
+      it { is_expected.not_to match(/Logout/) }
+      it { is_expected.not_to match(destroy_user_session_path) }
     end
   end
 
@@ -39,12 +39,12 @@ describe ApplicationHelper do
     context "when there is flash notice " do
       it "renders notice message" do
         flash[:notice] = "It is working"
-        helper.render_flash_notice.should eq %{<p class="notice">It is working</p>}
+        expect(helper.render_flash_notice).to eq %{<p class="notice">It is working</p>}
       end
     end
     context "when there is no flash notice " do
       it "renders nothing" do
-        helper.render_flash_notice.should be_nil
+        expect(helper.render_flash_notice).to be_nil
       end
     end
   end

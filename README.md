@@ -45,7 +45,7 @@ The setup will create a `config/database.yml`, the user configuration will point
 to your current s.o. user.
 
 Edit this file if you need, or if the setup process fail trying to use the
-credentatials auto generated.
+credentials auto generated.
 
 ### let's go!
 

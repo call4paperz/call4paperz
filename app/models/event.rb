@@ -25,10 +25,6 @@ class Event < ActiveRecord::Base
 
   after_update :reprocess_photo, :if => :cropping?
 
-  attr_accessible :crop_w, :crop_h, :crop_x, :crop_y,
-    :picture_cache, :name, :description, :twitter,
-    :occurs_at, :url, :user_id, :picture, :prod_description
-
   mount_uploader :picture, PictureUploader
 
   class << self

@@ -4,21 +4,6 @@ describe Proposal, :type => :model do
 
   let(:proposal) { FactoryGirl.create(:proposal)  }
 
-  describe "mass assignment" do
-
-    context "allowed" do
-      [:name, :description, :user_id, :created_at, :updated_at, :comments_count].each do |attr|
-        it { is_expected.to allow_mass_assignment_of(attr) }
-      end
-    end
-
-    context "not allowed" do
-      [:id, :event_id].each do |attr|
-        it { is_expected.not_to allow_mass_assignment_of(attr) }
-      end
-    end
-  end
-
   describe "validations" do
 
     describe "requireds" do

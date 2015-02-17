@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, :use => :slugged
+  friendly_id :name, use: [ :slugged, :finders ]
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 

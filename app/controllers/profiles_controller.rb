@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update_attributes params[:user]
+    if @user.update_attributes user_params
       flash[:notice] = I18n.t('flash.notice.profile_updated')
       redirect_to profile_path
     else
@@ -21,5 +21,9 @@ class ProfilesController < ApplicationController
 
   def load_user
     @user = current_user
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :photo, :photo_cache)
   end
 end

@@ -1,13 +1,13 @@
 source 'http://rubygems.org'
 
-ruby '2.1.5'
 gem 'rails', '~> 4.0.13'
 
 gem 'addressable'
 gem 'carrierwave'
-gem 'devise'
-gem 'fog'
-gem 'friendly_id'
+gem 'devise', '~> 3.4.1'
+gem 'fog', '~> 1.27.0'
+gem 'globalize3',  '~> 0.1.0'
+gem 'friendly_id', '~> 5.0'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'omniauth'
@@ -27,14 +27,11 @@ gem 'will_paginate'
 gem 'active_model_serializers'
 gem 'rack-cache'
 gem 'dalli'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier'
 
 group :production do
   gem 'newrelic_rpm'
-end
-
-group :assets do
-  gem 'sass-rails', '~> 4.0.0'
-  gem 'uglifier'
 end
 
 group :development do
@@ -47,7 +44,7 @@ end
 group :development, :test do
   gem 'pry-meta'
   gem 'foreman'
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 3.2'
   gem 'dotenv-rails'
   gem 'byebug'
 end
@@ -57,7 +54,6 @@ group :test do
   gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
   gem 'timecop'
   gem 'shoulda-matchers'
 end

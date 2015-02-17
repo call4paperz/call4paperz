@@ -43,7 +43,7 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.xml
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = Comment.new(comment_params)
     @comment.user = current_user
 
     respond_to do |format|
@@ -61,7 +61,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     respond_to do |format|
-      if @comment.update_attributes(params[:comment])
+      if @comment.update_attributes(comment_params)
         format.html { redirect_to(@comment, :notice => 'Comment was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -86,6 +86,12 @@ class CommentsController < ApplicationController
   def store_path
     proposal = Proposal.find(params[:comment][:proposal_id])
     session[:"user_return_to"] = event_proposal_path proposal.event, proposal
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:body, :proposal_id)
   end
 end
 

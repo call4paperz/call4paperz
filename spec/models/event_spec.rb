@@ -11,11 +11,11 @@ describe Event, :type => :model do
     end
 
     describe "name" do
-      it { is_expected.to ensure_length_of(:name).is_at_least(3).is_at_most(150) }
+      it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(150) }
     end
 
     describe "description" do
-      it { is_expected.to ensure_length_of(:description).is_at_least(3).is_at_most(400) }
+      it { is_expected.to validate_length_of(:description).is_at_least(3).is_at_most(400) }
     end
   end
 

@@ -19,7 +19,7 @@ class Proposal < ActiveRecord::Base
     select('SUM(v.direction) as acceptance_points, proposals.*').
       joins('LEFT JOIN votes v ON v.proposal_id = proposals.id').
       group('proposals.id').
-      order('acceptance_points DESC')
+      order('SUM(v.direction) DESC')
   end
 
   def acceptance_points

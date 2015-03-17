@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.1'
 
-gem 'rails', '~> 4.0.13'
+gem 'rails', '~> 4.2.0'
 
 gem 'addressable'
 gem 'carrierwave'
@@ -21,7 +21,7 @@ gem 'omniauth-google-oauth2'
 gem 'pg'
 gem 'rake'
 gem 'recaptcha', :require => 'recaptcha/rails'
-gem 'responders', '~> 1.1'
+gem 'responders'
 gem 'twitter', '~> 5.9.0'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'

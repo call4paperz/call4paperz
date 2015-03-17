@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe ApplicationHelper, :type => :helper do
-  let(:user) { allow(FactoryGirl).to receive(:user) }
-
   describe "#menu" do
     subject { helper.menu }
 

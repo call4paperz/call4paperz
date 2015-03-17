@@ -28,6 +28,7 @@
         <%= user_picture @user %><br />
         <%= f.label :photo, 'Picture' %><br />
         <%= f.file_field :photo %>
+        <%= f.hidden_field :photo_cache %>
       </div>
 
       <div class='actions'>

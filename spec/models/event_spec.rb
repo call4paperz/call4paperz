@@ -2,22 +2,6 @@ require 'spec_helper'
 
 describe Event, :type => :model do
 
-  describe "mass assignment" do
-
-    context "allowed" do
-      [:name, :description, :occurs_at, :picture, :url, :twitter, :user_id].each do |attr|
-        it { is_expected.to allow_mass_assignment_of(attr) }
-      end
-    end
-
-    context "not allowed" do
-      [:id, :created_at, :updated_at, :starts_votes_at, :end_votes_at, :slug,
-       :proposals_count, :closed_at].each do |attr|
-        it { is_expected.not_to allow_mass_assignment_of(attr) }
-      end
-    end
-  end
-
   describe "validations" do
 
     describe "requireds" do
@@ -27,11 +11,11 @@ describe Event, :type => :model do
     end
 
     describe "name" do
-      it { is_expected.to ensure_length_of(:name).is_at_least(3).is_at_most(150) }
+      it { is_expected.to validate_length_of(:name).is_at_least(3).is_at_most(150) }
     end
 
     describe "description" do
-      it { is_expected.to ensure_length_of(:description).is_at_least(3).is_at_most(400) }
+      it { is_expected.to validate_length_of(:description).is_at_least(3).is_at_most(400) }
     end
   end
 

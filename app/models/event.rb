@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, :use => :slugged
+  friendly_id :name, use: [ :slugged, :finders ]
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
@@ -24,10 +24,6 @@ class Event < ActiveRecord::Base
   before_validation :twitter_has_valid_format
 
   after_update :reprocess_photo, :if => :cropping?
-
-  attr_accessible :crop_w, :crop_h, :crop_x, :crop_y,
-    :picture_cache, :name, :description, :twitter,
-    :occurs_at, :url, :user_id, :picture, :prod_description
 
   mount_uploader :picture, PictureUploader
 

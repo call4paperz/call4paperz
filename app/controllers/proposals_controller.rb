@@ -37,7 +37,7 @@ class ProposalsController < ApplicationController
   # POST /proposals
   # POST /proposals.xml
   def create
-    @proposal = Proposal.new(params[:proposal])
+    @proposal = Proposal.new(proposal_params)
     @proposal.user = current_user
     @proposal.event = event
 
@@ -54,7 +54,7 @@ class ProposalsController < ApplicationController
   # PUT /proposals/1.xml
   def update
     respond_to do |format|
-      if proposal.update_attributes(params[:proposal])
+      if proposal.update_attributes(proposal_params)
         format.html { redirect_to(@proposal, :notice => 'Proposal was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -124,5 +124,9 @@ class ProposalsController < ApplicationController
     unless proposal.has_grace_period_left?
       redirect_to [event, proposal], :notice => "You cannot edit a proposal after 30 minutes of creation."
     end
+  end
+
+  def proposal_params
+    params.require(:proposal).permit(:name, :description)
   end
 end

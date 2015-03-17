@@ -44,7 +44,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry-meta'
   gem 'foreman'
   gem 'rspec-rails', '~> 3.2'
   gem 'dotenv-rails'

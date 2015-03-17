@@ -35,6 +35,11 @@
     <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label :tags %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
   <div class="field special">
     <%= f.label :prod_description %><br />
     <%= f.text_field :prod_description, :class => 'twitter' %>

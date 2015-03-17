@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
+    #TODO: filter by tags
     @events = Event.active.occurs_first.limit(100)
     respond_with @events
   end
@@ -91,6 +92,9 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :occurs_at, :prod_description, :twitter, :url, :picture, :picture_cache)
+    params.require(:event).permit(
+      :name, :description, :occurs_at, :prod_description, :twitter, :url,
+      :picture, :picture_cache, :tag_list
+    )
   end
 end

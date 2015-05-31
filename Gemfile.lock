@@ -423,3 +423,6 @@ DEPENDENCIES
   unicorn
   validates_timeliness (~> 3.0.14)
   will_paginate
+
+BUNDLED WITH
+   1.10.2

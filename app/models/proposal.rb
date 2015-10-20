@@ -3,8 +3,6 @@ class Proposal < ActiveRecord::Base
 
   GRACE_PERIOD = 30.minutes
 
-  attr_accessible :acceptance_points
-
   has_many :votes, :dependent => :destroy
   has_many :comments, :dependent => :destroy
 
@@ -17,13 +15,11 @@ class Proposal < ActiveRecord::Base
   validates_length_of :name, :within => 3..150
   validates_length_of :description, :within => 3..400
 
-  attr_protected :event_id
-
   def self.with_preloads
     select('SUM(v.direction) as acceptance_points, proposals.*').
       joins('LEFT JOIN votes v ON v.proposal_id = proposals.id').
       group('proposals.id').
-      order('acceptance_points DESC')
+      order('SUM(v.direction) DESC')
   end
 
   def acceptance_points

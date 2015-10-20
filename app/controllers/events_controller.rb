@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.xml
   def create
-    @event = current_user.events.build(params[:event])
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if verify_recaptcha(:model => @event, :message => 'Please type the captcha correctly') && @event.save
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
     @event = current_user.events.find_by_slug!(params[:id])
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(event_params)
         format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -88,4 +88,9 @@ class EventsController < ApplicationController
     end
   end
 
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :description, :occurs_at, :prod_description, :twitter, :url, :picture, :picture_cache)
+  end
 end

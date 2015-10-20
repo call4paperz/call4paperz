@@ -90,7 +90,9 @@ for sample in $(find config -type f -maxdepth 1 -name '*.sample'); do
 done
 
 # env vars...
-if [[ -f config/.env ]]; then
+if [[ ! -f .env ]]; then
+  echo "Generating .env file"
+
   cp config/.env.template .env
 fi
 

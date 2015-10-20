@@ -1,0 +1,49 @@
+#!/bin/bash
+
+echo
+read -p "Press [Enter] if your Docker is installed and started. If your Docker not installed or started, press [^C] to exit."
+
+green() {
+  echo -e "== \033[0;32m$1\033[0m"
+  echo
+}
+
+white() {
+  echo -e "== \033[0;37m$1\033[0m"
+}
+
+echo
+echo "Setting up your environment..."
+echo
+
+if [[ ! -f .env ]]; then
+	white "Generating a .env file"
+  cp config/.env.docker .env
+  green "done!"
+fi
+
+if [[ ! -f config/database.yml ]]; then
+	white "Generating a database.yml file"
+  cp config/database.yml.docker config/database.yml
+  green "done!"
+fi
+
+white "Building Docker image to Call4Paperz "
+echo
+docker-compose build
+echo
+green "done!"
+
+white "Creating database"
+echo
+docker-compose run --rm web bundle exec rake db:create
+echo
+green "done!"
+
+white "Executing migrate"
+echo
+docker-compose run --rm web bundle exec rake db:migrate
+echo
+green "done!"
+
+echo "Congratulations, your environment is ready. Run \`docker-compose up\` and enjoy!"

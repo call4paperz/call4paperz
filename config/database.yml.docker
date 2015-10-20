@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: call4paperz_development
+  username: postgres
+  password: 123456
+  host: postgres
+  min_messages: WARNING
+test:
+  adapter: postgresql
+  database: call4paperz_test
+  username: postgres
+  password: 123456
+  host: postgres
+  min_messages: WARNING

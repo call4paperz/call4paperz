@@ -1,0 +1,26 @@
+postgres:
+  image: postgres:latest
+  ports:
+    - 5432:5432
+  environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=123456
+
+memcached:
+  image: memcached:latest
+  ports:
+    - 11211:11211
+
+web:
+  build: .
+  command: foreman start -f Procfile.development
+  environment:
+    - RACK_ENV=development
+    - RAILS_ENV=development
+  volumes:
+    - .:/var/www
+  ports:
+    - 3000:3000
+  links:
+    - postgres
+    - memcached

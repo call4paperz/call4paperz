@@ -21,7 +21,7 @@ You must set the following environment variables for the system to fully work:
     SECRET_KEY
     DEVISE_PEPPER
 
-## Bootstrapping (and using Foreman to run all the things)
+## Bootstrapping without Docker (and using Foreman to run all the things)
 
 Your first time here? Just run:
 
@@ -56,6 +56,22 @@ $ foreman start -f Procfile.development
 ```
 
 That's it! Just go to <http://localhost:3000>.
+
+## Bootstrapping with Docker
+
+Your first time here? Just run:
+
+```
+$ bin/docker_setup
+```
+
+To use the system, just run:
+
+```
+$ docker-compose up
+```
+
+That's it! Just go to <http://\<docker_ip\>:3000>.
 
 ## Links
 [Mailing list](https://groups.google.com/forum/#!forum/call4paperz-dev)

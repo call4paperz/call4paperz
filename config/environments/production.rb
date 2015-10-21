@@ -1,4 +1,4 @@
-Rr10Team71::Application.configure do
+Call4Paperz::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

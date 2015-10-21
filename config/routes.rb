@@ -1,4 +1,4 @@
-Rr10Team71::Application.routes.draw do
+Call4Paperz::Application.routes.draw do
   root :to => "home#index"
 
   get '/auth/:provider/callback' => 'authentications#create'

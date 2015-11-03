@@ -36,7 +36,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = current_user.events.where(slug: params[:id]).first!
+    @event = load_user_event!(params[:id])
   end
 
   # POST /events
@@ -58,7 +58,7 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = load_user_event!(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(event_params)
@@ -73,7 +73,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/crop
   def crop
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = load_user_event!(params[:id])
   end
 
   # DELETE /events/1
@@ -92,5 +92,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :occurs_at, :prod_description, :twitter, :url, :picture, :picture_cache)
+  end
+
+  def load_user_event!(slug)
+    current_user.events.where(slug: slug).first!
   end
 end

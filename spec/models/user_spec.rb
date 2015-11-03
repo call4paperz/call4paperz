@@ -2,27 +2,6 @@ require 'spec_helper'
 
 describe User, :type => :model do
 
-  describe "mass assignment" do
-
-    context "allowed" do
-      [
-        :email, :password, :password_confirmation, :remember_me, :name, :photo,
-        :email_confirmation
-      ].each do |attr|
-        it { is_expected.to allow_mass_assignment_of(attr) }
-      end
-    end
-
-    context "not allowed" do
-      [:id, :encrypted_password, :password_salt, :reset_password_token,
-       :remember_token, :remember_created_at, :sign_in_count, :current_sign_in_at,
-       :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :reset_password_sent_at,
-       :created_at, :updated_at].each do |attr|
-        it { is_expected.not_to allow_mass_assignment_of(attr) }
-      end
-    end
-  end
-
   describe "associations" do
     it { is_expected.to have_many(:authentications).dependent(:destroy) }
     it { is_expected.to have_many(:comments).dependent(:destroy) }
@@ -41,7 +20,7 @@ describe User, :type => :model do
 
       it "should not require password when user has authentications and no password" do
         user = User.new
-        user.authentications.build({:provider => 'twitter', :uid => '123'}, without_protection: true)
+        user.authentications.build(:provider => 'twitter', :uid => '123')
         expect(user).to be_valid
         expect(user.errors[:password].size).to eq 0
       end
@@ -55,7 +34,7 @@ describe User, :type => :model do
     context "email override" do
       it "should not require email if it has authentications" do
         user = User.new
-        user.authentications.build({:provider => 'twitter', :uid => '123'}, without_protection: true)
+        user.authentications.build(:provider => 'twitter', :uid => '123')
         expect(user).to be_valid
         expect(user.errors[:email].size).to eq 0
       end

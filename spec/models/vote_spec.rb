@@ -4,15 +4,6 @@ describe Vote, :type => :model do
   let(:proposal) { FactoryGirl.create(:proposal) }
   let(:user) { FactoryGirl.create(:user) }
 
-  describe "mass assignment" do
-
-    context "not allowed" do
-      [:id, :direction, :proposal_id, :user_id, :created_at, :updated_at].each do |attr|
-        it { is_expected.not_to allow_mass_assignment_of(attr) }
-      end
-    end
-  end
-
   describe "validations" do
 
     describe "requireds" do

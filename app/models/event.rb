@@ -1,14 +1,18 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, :use => :slugged
+  friendly_id :name, use: [ :slugged, :finders ]
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
-  has_many :proposals, :dependent => :destroy, finder_sql: ->(_) {
-    Proposal.with_preloads.where(["proposals.event_id = ?", id]).to_sql
-  }, counter_sql: ->(_) {
-    Proposal.select('COUNT(*)').where(["proposals.event_id = ?", id]).to_sql
-  }
+  has_many :proposals,
+    ->(proposal) {
+      Proposal.with_preloads.where(["proposals.event_id = ?", proposal.id])
+    },
+    dependent: :destroy do
+      def count
+        Proposal.where(["proposals.event_id = ?", proxy_association.owner.id]).count
+      end
+    end
 
   has_many :comments, :through  => :proposals
   has_many :votes, :through => :proposals
@@ -24,10 +28,6 @@ class Event < ActiveRecord::Base
   before_validation :twitter_has_valid_format
 
   after_update :reprocess_photo, :if => :cropping?
-
-  attr_accessible :crop_w, :crop_h, :crop_x, :crop_y,
-    :picture_cache, :name, :description, :twitter,
-    :occurs_at, :url, :user_id, :picture, :prod_description
 
   mount_uploader :picture, PictureUploader
 

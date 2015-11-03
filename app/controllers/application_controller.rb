@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
-  protect_from_forgery
+  protect_from_forgery with: :exception
 
   def store_location
     return if skip_store_location

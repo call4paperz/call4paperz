@@ -4,7 +4,7 @@ call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and
 commented by the users.
 
-[![Build Status](https://travis-ci.org/ricardovaleriano/call4paperz.svg)](https://travis-ci.org/ricardovaleriano/call4paperz)
+[![Build Status](https://travis-ci.org/call4paperz/call4paperz.svg)](https://travis-ci.org/call4paperz/call4paperz)
 [![security](https://hakiri.io/github/call4paperz/call4paperz/master.svg)](https://hakiri.io/github/call4paperz/call4paperz/master)
 
 ## Environment Configuration

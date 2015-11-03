@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find_by_slug!(params[:id])
+    @event = Event.where(slug: params[:id]).first!
 
     # Unfortunately I can't get Rails to preload
     # users because of the crazy SQL involved.
@@ -36,7 +36,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = current_user.events.where(slug: params[:id]).first!
   end
 
   # POST /events

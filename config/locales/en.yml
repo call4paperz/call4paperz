@@ -10,6 +10,8 @@ en:
       closed_false: Close for new proposals
       closed_true: Open for new proposals
       closed: This event is not accepting new proposals.
+    share: "%{event_name} is on a call for papers! Check it out."
+
 
   event_close:
     warning_closing:

@@ -28,8 +28,7 @@
 
   <div class="event-social">
     <div class="twit">
-      <% event_text = "#{@event.name} is on a call for papers! Check it out." %>
-      <%= render 'shared/tweet_button', text: event_text, url: event_url(@event) %>
+      <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
     </div>
     <%= render 'shared/facebook_like', url: event_url(@event) %>
   </div>

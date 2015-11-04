@@ -71,12 +71,13 @@ Call4Paperz::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com'
+    :address              => 'smtp.sendgrid.net',
+    :port                 => '587',
+    :authentication       => :plain,
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
+    :domain               => 'heroku.com',
+    :enable_starttls_auto => true
   }
 
   config.action_mailer.delivery_method = :smtp

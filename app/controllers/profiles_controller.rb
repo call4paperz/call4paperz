@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update_attributes user_params
+      force_send_confirmation_email if @user.email.blank? && user_params[:email].present?
       flash[:notice] = I18n.t('flash.notice.profile_updated')
       redirect_to profile_path
     else
@@ -25,5 +26,9 @@ class ProfilesController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :photo, :photo_cache)
+  end
+
+  def force_send_confirmation_email
+    @user.send_confirmation_instructions
   end
 end

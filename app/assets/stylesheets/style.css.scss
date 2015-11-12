@@ -1024,6 +1024,17 @@ a.logo_c4p img{
   float: left;
 }
 
-form .special {
-  display: none;
+form {
+  .special {
+    display: none;
+  }
+
+  .field {
+    .special-warning {
+      margin: 0 5px;
+      clear: left;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
 }

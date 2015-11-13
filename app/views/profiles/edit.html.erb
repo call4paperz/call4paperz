@@ -20,7 +20,7 @@
       </div>
 
       <div class='field'>
-        <% if @user.email.nil? && @user.unconfirmed_email.present? %>
+        <% if @user.invalid_email_and_unconfirmed? %>
           <%= f.label :unconfirmed_email %> <small class='vermelho'>*</small><br />
           <%= f.text_field :unconfirmed_email %>
           <p class="special-warning"><%= t('profile.unconfirmed_email') %> <%= link_to t('profile.resend_confirmation_email'), resend_confirmation_email_profile_path %></p>

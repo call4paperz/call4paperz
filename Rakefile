@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Rr10Team71::Application.load_tasks
+Call4Paperz::Application.load_tasks

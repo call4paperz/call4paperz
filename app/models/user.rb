@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
   attr_accessor :email_confirmation
-  attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :name, :photo, :email_confirmation, :remote_photo_url
 
   has_many :authentications, :dependent => :destroy
   has_many :comments,        :dependent => :destroy
@@ -57,6 +55,10 @@ class User < ActiveRecord::Base
 
   def need_profile_completion?
     !email.present?
+  end
+
+  def invalid_email_and_unconfirmed?
+    email.blank? && unconfirmed_email.present?
   end
 
   private

@@ -33,7 +33,7 @@ feature "Registration", %q{
       fill_in "user_password", :with => '123123'
       find("input[type=image]").click
 
-      expect(page).to have_content "Password doesn't match confirmation"
+      expect(page).to have_content "Password confirmation doesn't match"
     end
 
     scenario "While registering, I'm able to register with valid data" do

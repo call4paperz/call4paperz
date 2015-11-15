@@ -20,14 +20,21 @@
       </div>
 
       <div class='field'>
-        <%= f.label :email %> <small class='vermelho'>*</small><br />
-        <%= f.text_field :email %>
+        <% if @user.invalid_email_and_unconfirmed? %>
+          <%= f.label :unconfirmed_email %> <small class='vermelho'>*</small><br />
+          <%= f.text_field :unconfirmed_email %>
+          <p class="special-warning"><%= t('profile.unconfirmed_email') %> <%= link_to t('profile.resend_confirmation_email'), resend_confirmation_email_profile_path %></p>
+        <% else %>
+          <%= f.label :email %> <small class='vermelho'>*</small><br />
+          <%= f.text_field :email %>
+        <% end %>
       </div>
 
       <div class='field'>
         <%= user_picture @user %><br />
         <%= f.label :photo, 'Picture' %><br />
         <%= f.file_field :photo %>
+        <%= f.hidden_field :photo_cache %>
       </div>
 
       <div class='actions'>

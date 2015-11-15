@@ -1,13 +1,15 @@
-Rr10Team71::Application.routes.draw do
+Call4Paperz::Application.routes.draw do
   root :to => "home#index"
 
-  match '/auth/:provider/callback' => 'authentications#create'
-  match '/auth/failure' => 'authentications#failure'
+  get '/auth/:provider/callback' => 'authentications#create'
+  get '/auth/failure' => 'authentications#failure'
 
   devise_for :users, controllers: { registrations: :registrations }
 
   resources :comments
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update] do
+    get :resend_confirmation_email
+  end
 
   resources :events do
     member do

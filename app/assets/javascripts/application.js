@@ -11,6 +11,7 @@ $(function(){
   $.browser = { 'msie': '' } // Gambis to bring back jquery
 
   $('.datepicker').datepicker({
+      dateFormat: "yy-mm-dd",
       onClose: function() {
           if($(this).closest('form').validate !== undefined) {
             $(this).closest('form').validate().element($(this));

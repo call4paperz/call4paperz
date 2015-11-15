@@ -11,8 +11,8 @@ class Vote < ActiveRecord::Base
 
   validates_uniqueness_of :proposal_id, :scope  =>  :user_id
 
-  scope :positives, where(direction: LIKE)
-  scope :negatives, where(direction: DISLIKE)
+  scope :positives, -> { where(direction: LIKE) }
+  scope :negatives, -> { where(direction: DISLIKE) }
 
   def self.like(proposal, user)
     vote proposal, user, LIKE

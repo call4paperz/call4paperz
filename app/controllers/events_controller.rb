@@ -36,13 +36,13 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = load_user_event!(params[:id])
   end
 
   # POST /events
   # POST /events.xml
   def create
-    @event = current_user.events.build(params[:event])
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if verify_recaptcha(:model => @event, :message => 'Please type the captcha correctly') && @event.save
@@ -58,11 +58,11 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.xml
   def update
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = load_user_event!(params[:id])
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
-        format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
+      if @event.update_attributes(event_params)
+        format.html { redirect_to(event_path(@event), :notice => 'Event was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -73,7 +73,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/crop
   def crop
-    @event = current_user.events.find_by_slug!(params[:id])
+    @event = load_user_event!(params[:id])
   end
 
   # DELETE /events/1
@@ -88,4 +88,13 @@ class EventsController < ApplicationController
     end
   end
 
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :description, :occurs_at, :prod_description, :twitter, :url, :picture, :picture_cache)
+  end
+
+  def load_user_event!(slug)
+    current_user.events.find_by_slug!(params[:id])
+  end
 end

@@ -19,7 +19,6 @@ class Authentication < ActiveRecord::Base
   end
 
   belongs_to :user
-  attr_accessible :provider, :uid
 
   attr_accessor :auth_info
 

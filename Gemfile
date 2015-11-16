@@ -56,5 +56,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'timecop'
+  gem 'simplecov'
   gem 'shoulda-matchers'
 end
+

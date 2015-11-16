@@ -9,8 +9,10 @@ config/database.yml
 capybara-*
 .DS_Store
 *.sw?
-.env
+.env*
 tmp/*
 .routes
 zeus.json
 .ruby-gemset
+coverage/
+

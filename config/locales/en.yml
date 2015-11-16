@@ -15,6 +15,8 @@ en:
       closed_false: Close for new proposals
       closed_true: Open for new proposals
       closed: This event is not accepting new proposals.
+    share: "%{event_name} is on a call for papers! Check it out."
+
 
   event_close:
     warning_closing:
@@ -31,6 +33,8 @@ en:
       closed: This event is now closed for new proposals.
       reopened: This event is now open for new proposals.
       profile_updated: Profile was successfully updated.
+      profile_email_updated: 'Profile was successfully updated. Check your e-mail to confirm the changes.'
+      profile_email_confirmation_sent: 'Another e-mail with the confirmation link has been sent. Please check your e-mail.'
 
   proposal_html:
     one: "<span>1</span> proposal"
@@ -46,6 +50,8 @@ en:
 
   profile:
     completion: 'Please, complete your profile.'
+    unconfirmed_email: 'Your e-mail is still unconfirmed. Please check your e-mail to confirm or'
+    resend_confirmation_email: 'resend the confirmation e-mail.'
 
   proposals:
     comments:

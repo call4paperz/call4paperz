@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
+
   friendly_id :name, use: [ :slugged, :finders ]
   acts_as_taggable
 
@@ -7,28 +8,30 @@ class Event < ActiveRecord::Base
 
   has_many :proposals,
     ->(proposal) {
-      Proposal.with_preloads.where(["proposals.event_id = ?", proposal.id])
+      Proposal.with_preloads.where(['proposals.event_id = ?', proposal.id])
     },
     dependent: :destroy do
       def count
-        Proposal.where(["proposals.event_id = ?", proxy_association.owner.id]).count
+        Proposal.
+            where(['proposals.event_id = ?', proxy_association.owner.id]).
+            count
       end
     end
 
-  has_many :comments, :through  => :proposals
-  has_many :votes, :through => :proposals
+  has_many :comments, through: :proposals
+  has_many :votes, through: :proposals
   belongs_to :user
 
-  validates_date :occurs_at, :on => :create, :on_or_after => :today
+  validates_date :occurs_at, on: :create, on_or_after: :today
 
-  validates_presence_of :name, :description, :occurs_at
+  validates :name, :description, :occurs_at, presence: true
   validates_associated :user
-  validates_length_of :name, :within => 3..150
-  validates_length_of :description, :within => 3..400
+  validates :name, length: { within: 3..150 }
+  validates :description, length: { within: 3..400 }
 
   before_validation :twitter_has_valid_format
 
-  after_update :reprocess_photo, :if => :cropping?
+  after_update :reprocess_photo, if: :cropping?
 
   mount_uploader :picture, PictureUploader
 
@@ -38,30 +41,30 @@ class Event < ActiveRecord::Base
     end
 
     def most_recent
-      order("created_at DESC").limit(3)
+      order('created_at DESC').limit(3)
     end
 
     def occurs_first
-      order("occurs_at ASC")
+      order('occurs_at ASC')
     end
 
     def active
-      where('occurs_at >= ?', Date.today)
+      where('occurs_at >= ?', Time.zone.today)
     end
   end
 
   def as_json(options=nil)
     super({
-      :include => {
-        :user => { :only => :name, :methods => [:picture] },
-        :proposals => {
-          :methods => [:votes_count, :comments_count, :acceptance_points,
+      include: {
+        user: { only: :name, methods: [:picture] },
+        proposals: {
+          methods: [:votes_count, :comments_count, :acceptance_points,
                        :positive_points, :negative_points],
-          :only => Proposal::JSON_ATTRIBUTES,
-          :include => {:user => {:only => :name}}
+          only: Proposal::JSON_ATTRIBUTES,
+          include: { user: { only: :name } }
         }
       },
-      :methods => [:proposals_count, :votes_count, :comments_count]
+      methods: [:proposals_count, :votes_count, :comments_count]
     })
   end
 
@@ -112,3 +115,4 @@ class Event < ActiveRecord::Base
     picture.recreate_versions!
   end
 end
+

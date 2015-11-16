@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
     !email.present?
   end
 
+  def invalid_email_and_unconfirmed?
+    email.blank? && unconfirmed_email.present?
+  end
+
   private
 
   def password_required?

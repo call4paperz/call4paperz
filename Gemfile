@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.2.1'
+ruby '2.2.3'
 
 gem 'rails', '~> 4.2.0'
 
@@ -10,7 +10,7 @@ gem 'devise', '~> 3.4.1'
 gem 'fog'
 gem 'globalize'
 gem 'friendly_id', '~> 5.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '4.0.5'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-github'
@@ -57,5 +57,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'timecop'
+  gem 'simplecov'
   gem 'shoulda-matchers'
 end
+

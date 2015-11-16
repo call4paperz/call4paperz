@@ -72,7 +72,7 @@ done
 
 (
   set -e
-  check_ruby "2.1.5"
+  check_ruby "2.2.3"
   test_dependency "psql" "PostgreSQL"
   install_bundler
 )
@@ -90,7 +90,9 @@ for sample in $(find config -type f -maxdepth 1 -name '*.sample'); do
 done
 
 # env vars...
-if [[ -f config/.env ]]; then
+if [[ ! -f .env ]]; then
+  echo "Generating .env file"
+
   cp config/.env.template .env
 fi
 

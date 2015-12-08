@@ -41,6 +41,7 @@ group :development do
   gem 'bullet'
   gem 'thin'
   gem 'mailcatcher'
+  gem 'spring'
 end
 
 group :development, :test do

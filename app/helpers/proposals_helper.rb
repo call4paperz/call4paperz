@@ -9,7 +9,7 @@ module ProposalsHelper
   end
 
   def vote_box(event, proposal, user)
-    if user && user.has_vote_for?(proposal)
+    if user&.has_vote_for?(proposal)
       image_tag('checked.png', :alt => 'Thanks for voting!').html_safe
     else
       content = ''

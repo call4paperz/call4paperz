@@ -42,6 +42,7 @@ group :development do
   gem 'thin'
   gem 'mailcatcher'
   gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do

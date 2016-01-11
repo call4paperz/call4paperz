@@ -218,7 +218,7 @@ GEM
     mime-types (2.6.2)
     mini_magick (4.1.0)
     mini_portile (0.6.2)
-    minitest (5.8.2)
+    minitest (5.8.3)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -319,8 +319,8 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    shoulda-matchers (2.8.0)
-      activesupport (>= 3.0.0)
+    shoulda-matchers (3.0.1)
+      activesupport (>= 4.0.0)
     simple_oauth (0.3.1)
     simplecov (0.10.0)
       docile (~> 1.1.0)
@@ -334,6 +334,9 @@ GEM
     skinny (0.2.3)
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
+    spring (1.5.0)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -423,6 +426,8 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   shoulda-matchers
   simplecov
+  spring
+  spring-commands-rspec
   thin
   timecop
   twitter

@@ -3,9 +3,13 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'simplecov'
+require 'coveralls'
+
 SimpleCov.start 'rails' do
   add_group "Serializers", "app/serializers"
 end
+
+Coveralls.wear!
 
 DatabaseCleaner.strategy = :truncation
 

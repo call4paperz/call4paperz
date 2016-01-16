@@ -42,6 +42,8 @@ group :development do
   gem 'bullet'
   gem 'thin'
   gem 'mailcatcher'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
 
 group :development, :test do
@@ -59,5 +61,6 @@ group :test do
   gem 'timecop'
   gem 'simplecov'
   gem 'shoulda-matchers'
+  gem 'coveralls', require: false
 end
 

@@ -3,9 +3,13 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'database_cleaner'
 require 'simplecov'
+require 'coveralls'
+
 SimpleCov.start 'rails' do
   add_group "Serializers", "app/serializers"
 end
+
+Coveralls.wear!
 
 DatabaseCleaner.strategy = :truncation
 
@@ -25,6 +29,13 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
 
   config.infer_spec_type_from_file_location!
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
 
   # this server preparation can be removed as soon as we remove the
   # twitter_avatar form the project

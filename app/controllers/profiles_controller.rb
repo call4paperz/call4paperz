@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
 
   def set_mail_changes
     flash[:notice] = I18n.t('flash.notice.profile_email_updated')
-    force_send_confirmation_email
+    force_send_confirmation_email if @user.email.blank?
   end
 
   def force_send_confirmation_email

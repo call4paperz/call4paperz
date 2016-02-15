@@ -67,7 +67,7 @@ That's it! Just go to <http://localhost:3000>.
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
 branch), with tests if possible. If you have any doubts, just bug
-[ricardovaleriano](https://github.com/ricardovaleriano).
+[lucianosousa](https://github.com/lucianosousa) or [tauil](https://github.com/tauil).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That

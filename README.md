@@ -75,8 +75,8 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [ricardovaleriano](https://github.com/ricardovaleriano).
-Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
+Maintenance is done by [lucianosousa](https://github.com/lucianosousa) and [tauil](https://github.com/tauil).
+Before was bravely maintained by [ricardovaleriano](https://github.com/ricardovaleriano) and [vinibaggio](https://github.com/vinibaggio).
 
 ## Original authors
 - Anderson Leite (no longer active)
@@ -84,7 +84,6 @@ Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 - Vinicius Baggio Fuentes (no longer active)
 
 ## Contributors
-- [lucianosousa](https://github.com/lucianosousa)
 - [akitaonrails](https://github.com/akitaonrails)
 - [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)

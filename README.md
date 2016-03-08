@@ -60,9 +60,6 @@ $ foreman start -f Procfile.development
 
 That's it! Just go to <http://localhost:3000>.
 
-## Links
-[Mailing list](https://groups.google.com/forum/#!forum/call4paperz-dev)
-
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature

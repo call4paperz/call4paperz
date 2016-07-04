@@ -23,7 +23,7 @@ module HelperMethods
     user = User.where(email: 'confirmed_user@example.com').first
     unless user
       user = FactoryGirl.create(:user, email: 'confirmed_user@example.com')
-      user.confirm!
+      user.confirm
     end
     user
   end

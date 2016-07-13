@@ -51,9 +51,16 @@ class AuthenticationsController < ApplicationController
 
   def authenticate!
     if authentication.persisted?
+      update_user_info(authentication.user) unless authentication.user.lock_profile?
       sign_in authentication.user
     else
       find_or_create_user_and_sign_in(authentication)
     end
+  end
+
+  def update_user_info(user)
+    user.update_attributes( email: @authentication.email,
+                            name: @authentication.name,
+                            remote_photo_url: @authentication.image )
   end
 end

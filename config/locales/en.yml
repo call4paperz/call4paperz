@@ -47,6 +47,8 @@ en:
     completion: 'Please, complete your profile.'
     unconfirmed_email: 'Your e-mail is still unconfirmed. Please check your e-mail to confirm or'
     resend_confirmation_email: 'resend the confirmation e-mail.'
+    lock_profile: 'Lock profile?'
+    lock_profile_help: 'If disabled, on the next time you login, your profile will be updated based on your profile in the authentication provider.'
 
   proposals:
     comments:

@@ -37,6 +37,11 @@
         <%= f.hidden_field :photo_cache %>
       </div>
 
+      <div class='field'>
+        <%= f.check_box :lock_profile %> <%= f.label :lock_profile, t('profile.lock_profile') %>
+        <p class="help-text"><%= t('profile.lock_profile_help') %></p>
+      </div>
+
       <div class='actions'>
         <%= image_submit_tag 'save.png' %>
       </div>

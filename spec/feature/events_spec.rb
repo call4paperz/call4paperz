@@ -174,7 +174,9 @@ feature "Events", %q{
       auth.auth_info = { 'email' => 'lol@example.org' }
       User.find_or_create_with_authentication auth
 
-      sign_in_via_twitter('123')
+      sign_in_via_twitter('123', {'info' => { 'name'  => 'Opa Lhes',
+                                              'email' => 'opalhes@example.org',
+                                              'image' => 'http://call4paperz.com/assets/logo_c4p-ea7e453659d491fc990475d90dc4fd12.png' }})
 
       visit '/events'
       find('.create_button').click

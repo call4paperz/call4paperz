@@ -1,14 +1,34 @@
 require 'spec_helper'
 
 feature 'Authentications' do
+  let!(:auth_info) { { 'name'  => 'Opa Lhes',
+                       'email' => 'opalhes@example.org',
+                       'image' => 'http://call4paperz.com/assets/logo_c4p-ea7e453659d491fc990475d90dc4fd12.png' } }
+
   scenario 'authenticating with some oauth provider' do
     auth = Authentication.new provider: 'github', uid: 'github-uid'
-    auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
+    auth.auth_info = auth_info
     User.find_or_create_with_authentication auth
-    sign_in_via_github('github-uid')
+    sign_in_via_github('github-uid', {'info' => auth_info})
 
     expect(page).to have_content('Welcome Opa Lhes')
   end
+
+    scenario 'updates user profile information' do
+      auth = Authentication.new provider: 'github', uid: 'github-uid'
+      auth.auth_info = auth_info
+      user = User.find_or_create_with_authentication auth
+      expect(user.name).to eq('Opa Lhes')
+      expect(user.email).to eq('opalhes@example.org')
+      expect(user.photo.file.filename).to eq('logo_c4p-ea7e453659d491fc990475d90dc4fd12.png')
+      sign_in_via_github('github-uid', {'info' => {'name' => 'A new name',
+                                                   'email' => 'new@example.org',
+                                                   'image' => 'http://call4paperz.com/assets/showcase/1-2d7ffc2e0760e04bf672e37fb4a48aa6.jpg'} })
+      expect(user.reload.name).to eq('A new name')
+      expect(user.reload.email).to eq('opalhes@example.org')
+      expect(user.reload.unconfirmed_email).to eq('new@example.org')
+      expect(user.reload.photo.file.filename).to eq('1-2d7ffc2e0760e04bf672e37fb4a48aa6.jpg')
+    end
 
   context 'signed in user' do
     let(:auth) { Authentication.new(provider: 'github', uid: 'github-uid') }
@@ -18,7 +38,7 @@ feature 'Authentications' do
       auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
       auth.save!
       user.save!
-      sign_in_via_github('github-uid')
+      sign_in_via_github('github-uid', {'info' => auth_info})
     end
 
     scenario 'associating authentication with a signed in user' do
@@ -53,7 +73,7 @@ feature 'Authentications' do
       auth = Authentication.new provider: 'twitter', uid: twitter_uid
       auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
       User.find_or_create_with_authentication auth
-      sign_in_via_twitter(twitter_uid)
+      sign_in_via_twitter(twitter_uid, {'info' => auth_info})
 
       expect(page).to have_content('Welcome Opa Lhes')
     end

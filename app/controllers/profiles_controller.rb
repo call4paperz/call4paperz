@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :photo, :photo_cache)
+    params.require(:user).permit(:name, :email, :photo, :photo_cache, :lock_profile)
   end
 
   def changed_email?

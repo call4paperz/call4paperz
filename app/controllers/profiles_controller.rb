@@ -10,8 +10,12 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:notice] = I18n.t('flash.notice.profile_updated')
-      set_mail_changes if changed_email?
+      flash[:notice] = if changed_email?
+        I18n.t('flash.notice.profile_email_updated')
+      else
+        I18n.t('flash.notice.profile_updated')
+      end
+
       redirect_to profile_path
     else
       render :edit
@@ -36,11 +40,6 @@ class ProfilesController < ApplicationController
 
   def changed_email?
     user_params[:email].present?
-  end
-
-  def set_mail_changes
-    flash[:notice] = I18n.t('flash.notice.profile_email_updated')
-    force_send_confirmation_email if @user.email.blank?
   end
 
   def force_send_confirmation_email

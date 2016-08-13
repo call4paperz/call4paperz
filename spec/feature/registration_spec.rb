@@ -47,7 +47,7 @@ feature "Registration", %q{
       expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
 
       user = User.where(email: 'email@example.com').first
-      user.confirm!
+      user.confirm
       sign_in_with user, '123123'
       expect(page).to have_content 'Logout'
 

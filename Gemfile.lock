@@ -64,6 +64,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    codeclimate-test-reporter (0.4.8)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     columnize (0.9.0)
     coveralls (0.8.9)
@@ -421,6 +423,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  codeclimate-test-reporter
   coveralls
   culerity
   dalli
@@ -463,5 +466,8 @@ DEPENDENCIES
   validates_timeliness (~> 3.0.14)
   will_paginate
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.12.5

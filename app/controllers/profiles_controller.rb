@@ -10,12 +10,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:notice] = if changed_email?
-        I18n.t('flash.notice.profile_email_updated')
-      else
-        I18n.t('flash.notice.profile_updated')
-      end
-
+      flash[:notice] = I18n.t('flash.notice.profile_updated')
       redirect_to profile_path
     else
       render :edit
@@ -36,10 +31,6 @@ class ProfilesController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :photo, :photo_cache)
-  end
-
-  def changed_email?
-    user_params[:email].present?
   end
 
   def force_send_confirmation_email

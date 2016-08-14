@@ -18,7 +18,7 @@ describe ProfilesController, :type => :controller do
 
     it 'assigns flash message' do
       subject
-      expect(flash[:notice]).to eq(I18n.t('flash.notice.profile_email_updated'))
+      expect(flash[:notice]).to eq(I18n.t('flash.notice.profile_updated'))
     end
 
     it 'redirects to profile_path' do

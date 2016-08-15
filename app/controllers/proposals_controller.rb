@@ -7,8 +7,6 @@ class ProposalsController < ApplicationController
 
   respond_to :html, :json
 
-  # GET /proposals/1
-  # GET /proposals/1.xml
   def show
     @comments = proposal.comments.includes(:user).order("created_at DESC")
 
@@ -18,8 +16,6 @@ class ProposalsController < ApplicationController
     respond_with @proposal
   end
 
-  # GET /proposals/new
-  # GET /proposals/new.xml
   def new
     @proposal = Proposal.new
 
@@ -29,13 +25,10 @@ class ProposalsController < ApplicationController
     end
   end
 
-  # GET /proposals/1/edit
   def edit
     proposal
   end
 
-  # POST /proposals
-  # POST /proposals.xml
   def create
     @proposal = Proposal.new(proposal_params)
     @proposal.user = current_user
@@ -50,28 +43,21 @@ class ProposalsController < ApplicationController
     end
   end
 
-  # PUT /proposals/1
-  # PUT /proposals/1.xml
   def update
     respond_to do |format|
       if proposal.update_attributes(proposal_params)
         format.html { redirect_to(@proposal, :notice => 'Proposal was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @proposal.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /proposals/1
-  # DELETE /proposals/1.xml
   def destroy
     proposal.destroy
 
     respond_to do |format|
       format.html { redirect_to(proposals_url) }
-      format.xml  { head :ok }
     end
   end
 

@@ -22,8 +22,6 @@ class Vote < ActiveRecord::Base
     vote proposal, user, DISLIKE
   end
 
-  private
-
   def self.vote(proposal, user, direction)
     vote = new
     vote.proposal = proposal
@@ -31,4 +29,6 @@ class Vote < ActiveRecord::Base
     vote.direction = direction
     vote.save
   end
+
+  private_class_method :vote
 end

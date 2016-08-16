@@ -14,3 +14,7 @@ script:
 before_script:
   - psql -c 'create database call4paperz_test' -U postgres
   - "ruby -run -e httpd spec/fixtures/ -p 3101 &"
+addons:
+  code_climate:
+    repo_token: e03721617acfa792a2a2909eb7cf44abd5352d2f287a56483a0894ef22e1a29b
+

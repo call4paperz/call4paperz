@@ -54,6 +54,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "codeclimate-test-reporter", require: nil
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
@@ -61,6 +62,5 @@ group :test do
   gem 'timecop'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'coveralls', require: false
 end
 

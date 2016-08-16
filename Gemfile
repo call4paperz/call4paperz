@@ -62,6 +62,5 @@ group :test do
   gem 'timecop'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'coveralls', require: false
 end
 

@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   def index
     @events = Event.most_recent
     @comments = Comment.most_recent.includes(:user, :proposal)
-    @events_quantity = Event.count
+    @events_quantity = Event.active.count
   end
-
 end

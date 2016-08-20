@@ -25,4 +25,3 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body, :proposal_id)
   end
 end
-

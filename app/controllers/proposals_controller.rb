@@ -62,35 +62,23 @@ class ProposalsController < ApplicationController
   end
 
   def like
-    if Vote.like(proposal, current_user)
-      notice = 'You liked the proposal.'
-    else
-      notice = t('proposals.likes.fail')
-    end
+    hash = {
+      success_message: t('proposals.likes.success'),
+      fail_message:    t('proposals.likes.fail'),
+      action:          :like
+    }
 
-    respond_to do |format|
-      if request.xhr?
-        format.html { render proposal, layout: false }
-      else
-        format.html { redirect_to(event_url(event), notice: notice) }
-      end
-    end
+    vote_action(hash)
   end
 
   def dislike
-    if Vote.dislike(proposal, current_user)
-      notice = 'You disliked the proposal.'
-    else
-      notice = t('proposals.dislikes.fail')
-    end
+    hash = {
+      success_message: t('proposals.dislikes.success'),
+      fail_message:    t('proposals.dislikes.fail'),
+      action:          :dislike
+    }
 
-    respond_to do |format|
-      if request.xhr?
-        format.html { render proposal, layout: false }
-      else
-        format.html { redirect_to(event_url(event), notice: notice) }
-      end
-    end
+    vote_action(hash)
   end
 
   private
@@ -114,5 +102,15 @@ class ProposalsController < ApplicationController
 
   def proposal_params
     params.require(:proposal).permit(:name, :description)
+  end
+
+  def vote_action(hash)
+    if Vote.send(hash[:action], proposal, current_user)
+      notice = hash[:success_message]
+    else
+      notice = hash[:fail_message]
+    end
+
+    redirect_to(event_url(event), notice: notice)
   end
 end

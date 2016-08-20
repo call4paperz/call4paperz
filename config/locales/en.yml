@@ -49,11 +49,13 @@ en:
 
   proposals:
     comments:
-      please_sign_in: If you want to add a comment to this proposal, please Sign In.
+      please_sign_in: "If you want to add a comment to this proposal, please Sign In."
     likes:
-      fail: I think that you already liked this proposal, don't you?
+      fail: "I think that you already liked this proposal, don't you?"
+      success: 'You liked the proposal.'
     dislikes:
-      fail: I think that you already disliked this proposal, don't you?
+      fail: "I think that you already disliked this proposal, don't you?"
+      success: 'You disliked the proposal.'
 
   auth:
     cant_create_twitter: "Sadly you can't create an account with the twitter sign in method. Use any other method and associate your twitter account with your profile then."

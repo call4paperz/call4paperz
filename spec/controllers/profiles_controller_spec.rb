@@ -3,11 +3,11 @@ require 'spec_helper'
 describe ProfilesController, :type => :controller do
   include HelperMethods::Controllers
 
-  describe 'POST update' do
-    let!(:user) { FactoryGirl.create(:user) }
-    let!(:params) { { user: { email: 'mynew@email.com' } } }
+  describe 'PUT update' do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:params) { { user: { email: 'mynew@email.com' } } }
 
-    subject { post :update, params }
+    subject { put :update, params }
 
     before { sign_in(user) }
 
@@ -18,7 +18,7 @@ describe ProfilesController, :type => :controller do
 
     it 'assigns flash message' do
       subject
-      expect(flash[:notice]).to eq(I18n.t('flash.notice.profile_email_updated'))
+      expect(flash[:notice]).to eq(I18n.t('flash.notice.profile_updated'))
     end
 
     it 'redirects to profile_path' do
@@ -35,6 +35,14 @@ describe ProfilesController, :type => :controller do
 
       it 'delivers a confirmation e-mail' do
         expect { subject }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      end
+    end
+
+    context 'with invalid params' do
+      let(:params) { { user: { email: '' } } }
+
+      it 'renders edit form' do
+        expect(subject).to render_template(:edit)
       end
     end
   end

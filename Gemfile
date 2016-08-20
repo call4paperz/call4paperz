@@ -6,7 +6,7 @@ gem 'rails', '~> 4.2.0'
 
 gem 'addressable'
 gem 'carrierwave'
-gem 'devise', '~> 3.4.1'
+gem 'devise', '~> 3.5.10'
 gem 'fog'
 gem 'globalize'
 gem 'friendly_id', '~> 5.0'
@@ -63,4 +63,3 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
 end
-

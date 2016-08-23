@@ -5,7 +5,6 @@ tmp/**/*
 public/uploads
 config/database.yml
 .rvmrc
-.ruby-version
 capybara-*
 .DS_Store
 *.sw?

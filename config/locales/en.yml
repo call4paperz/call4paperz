@@ -33,7 +33,6 @@ en:
       closed: This event is now closed for new proposals.
       reopened: This event is now open for new proposals.
       profile_updated: Profile was successfully updated.
-      profile_email_updated: 'Profile was successfully updated. Check your e-mail to confirm the changes.'
       profile_email_confirmation_sent: 'Another e-mail with the confirmation link has been sent. Please check your e-mail.'
 
   proposal_html:

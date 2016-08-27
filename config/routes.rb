@@ -6,7 +6,7 @@ Call4Paperz::Application.routes.draw do
 
   devise_for :users, controllers: { registrations: :registrations }
 
-  resources :comments
+  resources :comments, only: :create
   resource :profile, only: [:show, :edit, :update] do
     get :resend_confirmation_email
   end

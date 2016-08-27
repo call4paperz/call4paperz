@@ -1,15 +1,16 @@
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'rspec/rails'
-require 'database_cleaner'
 require 'simplecov'
-require 'coveralls'
 
 SimpleCov.start 'rails' do
   add_group "Serializers", "app/serializers"
 end
 
-Coveralls.wear!
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+require 'rspec/rails'
+require 'database_cleaner'
 
 DatabaseCleaner.strategy = :truncation
 

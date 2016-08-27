@@ -4,16 +4,12 @@ class EventsController < ApplicationController
 
   respond_to :html, :json, :jsonp
 
-  # GET /events
-  # GET /events.xml
   def index
     #TODO: filter by tags
     @events = Event.active.occurs_first.limit(100)
     respond_with @events
   end
 
-  # GET /events/1
-  # GET /events/1.xml
   def show
     @event = Event.find_by_slug!(params[:id])
 
@@ -24,50 +20,38 @@ class EventsController < ApplicationController
     respond_with @event
   end
 
-  # GET /events/new
-  # GET /events/new.xml
   def new
     @event = Event.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @event }
+      format.html
     end
   end
 
-  # GET /events/1/edit
   def edit
     @event = load_user_event!(params[:id])
   end
 
-  # POST /events
-  # POST /events.xml
   def create
     @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if verify_recaptcha(:model => @event, :message => 'Please type the captcha correctly') && @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
-        format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /events/1
-  # PUT /events/1.xml
   def update
     @event = load_user_event!(params[:id])
 
     respond_to do |format|
       if @event.update_attributes(event_params)
         format.html { redirect_to(event_path(@event), :notice => 'Event was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @event.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,15 +61,12 @@ class EventsController < ApplicationController
     @event = load_user_event!(params[:id])
   end
 
-  # DELETE /events/1
-  # DELETE /events/1.xml
   def destroy
     @event = Event.find_by_slug!(params[:id])
     @event.destroy
 
     respond_to do |format|
       format.html { redirect_to(events_url) }
-      format.xml  { head :ok }
     end
   end
 

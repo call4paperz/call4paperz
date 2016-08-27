@@ -1,12 +1,12 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 
 gem 'rails', '~> 4.2.0'
 
 gem 'addressable'
 gem 'carrierwave'
-gem 'devise', '~> 3.4.1'
+gem 'devise', '~> 3.5.10'
 gem 'fog'
 gem 'globalize'
 gem 'friendly_id', '~> 5.0'
@@ -22,7 +22,7 @@ gem 'pg'
 gem 'rake'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'responders'
-gem 'twitter'
+gem 'twitter', '~> 5.16.0'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'will_paginate'
@@ -35,6 +35,7 @@ gem 'acts-as-taggable-on'
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'rails_12factor'
 end
 
 group :development do
@@ -54,6 +55,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "codeclimate-test-reporter", require: nil
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
@@ -61,6 +63,4 @@ group :test do
   gem 'timecop'
   gem 'simplecov'
   gem 'shoulda-matchers'
-  gem 'coveralls', require: false
 end
-

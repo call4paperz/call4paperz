@@ -6,7 +6,7 @@ commented by the users.
 
 [![Build Status](https://travis-ci.org/call4paperz/call4paperz.svg)](https://travis-ci.org/call4paperz/call4paperz)
 [![Code Climate](https://codeclimate.com/github/call4paperz/call4paperz/badges/gpa.svg)](https://codeclimate.com/github/call4paperz/call4paperz)
-[![Coverage Status](https://coveralls.io/repos/call4paperz/call4paperz/badge.svg?branch=master&service=github)](https://coveralls.io/github/call4paperz/call4paperz?branch=master)
+[![Test Coverage](https://codeclimate.com/github/call4paperz/call4paperz/badges/coverage.svg)](https://codeclimate.com/github/call4paperz/call4paperz/coverage)
 [![security](https://hakiri.io/github/call4paperz/call4paperz/master.svg)](https://hakiri.io/github/call4paperz/call4paperz/master)
 
 ## Environment Configuration
@@ -60,14 +60,11 @@ $ foreman start -f Procfile.development
 
 That's it! Just go to <http://localhost:3000>.
 
-## Links
-[Mailing list](https://groups.google.com/forum/#!forum/call4paperz-dev)
-
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
 branch), with tests if possible. If you have any doubts, just bug
-[ricardovaleriano](https://github.com/ricardovaleriano).
+[lucianosousa](https://github.com/lucianosousa) or [tauil](https://github.com/tauil).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
@@ -75,8 +72,8 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [ricardovaleriano](https://github.com/ricardovaleriano).
-Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
+Maintenance is done by [lucianosousa](https://github.com/lucianosousa) and [tauil](https://github.com/tauil).
+Before was bravely maintained by [ricardovaleriano](https://github.com/ricardovaleriano) and [vinibaggio](https://github.com/vinibaggio).
 
 ## Original authors
 - Anderson Leite (no longer active)
@@ -84,7 +81,6 @@ Before was bravely maintained by [vinibaggio](https://github.com/vinibaggio).
 - Vinicius Baggio Fuentes (no longer active)
 
 ## Contributors
-- [lucianosousa](https://github.com/lucianosousa)
 - [akitaonrails](https://github.com/akitaonrails)
 - [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)

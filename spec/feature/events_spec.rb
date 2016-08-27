@@ -23,13 +23,15 @@ feature "Events", %q{
       visit '/events'
       find('.create_button').click
 
-      fill_in "Name", :with => 'GURU-SP'
-      fill_in 'Description', :with => '50th meeting'
-      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in "Name",            with: 'GURU-SP'
+      fill_in 'Description',     with: '50th meeting'
+      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in 'event_tag_list', with: 'ruby-lang'
 
       find('input[type=image]').click
 
       expect(page).to have_content "GURU-SP"
+      expect(page).to have_content "ruby-lang"
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do

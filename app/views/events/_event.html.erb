@@ -17,6 +17,10 @@
   <p><strong>Twitter: </strong>
     <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %>
   </p>
+  <p>
+    <strong>Tags:</strong>
+    <%= @event.tag_list.join(', ') if @event.tag_list %>
+  </p>
 
   <%= image_tag 'linha.png', :class => 'linha' %>
 

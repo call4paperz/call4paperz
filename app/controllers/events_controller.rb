@@ -1,12 +1,16 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :check_profile_completion, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :tags]
+  before_filter :check_profile_completion, except: [:index, :show, :tags]
 
   respond_to :html, :json, :jsonp
 
   def index
-    #TODO: filter by tags
     @events = Event.active.occurs_first.limit(100)
+    respond_with @events
+  end
+
+  def tags
+    @events = Event.active.tagged_with(params[:tag]).occurs_first.limit(100)
     respond_with @events
   end
 

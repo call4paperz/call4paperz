@@ -13,7 +13,18 @@ feature "Events", %q{
       expect(page).to have_content 'GURU-SP'
       expect(page).to have_no_content 'Sign in'
     end
+  end
 
+  context "Viewing tagged events" do
+    scenario "While not logged in, I should be able to view events" do
+      FactoryGirl.create(:event)
+      FactoryGirl.create(:event, name: 'RubyOnRio', tag_list: 'ruby')
+
+      visit '/events/tags/ruby'
+      expect(page).to have_content 'RubyOnRio'
+      expect(page).to have_no_content 'GURU-SP'
+      expect(page).to have_no_content 'Sign in'
+    end
   end
 
   context "Creating events" do

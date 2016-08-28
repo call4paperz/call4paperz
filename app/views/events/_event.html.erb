@@ -19,7 +19,9 @@
   </p>
   <p>
     <strong>Tags:</strong>
-    <%= @event.tag_list.join(', ') if @event.tag_list %>
+    <% @event.tag_list.each do |tag| %>
+      <%= link_to tag, tags_events_path(tag) %>
+    <% end %>
   </p>
 
   <%= image_tag 'linha.png', :class => 'linha' %>

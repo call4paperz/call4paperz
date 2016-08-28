@@ -24,6 +24,8 @@ Call4Paperz::Application.routes.draw do
         get :dislike
       end
     end
+
+    get '/tags/:tag', to: 'events#tags', on: :collection, as: :tags
   end
 
   get '/twitter/last' => 'twitter#last', as: :last_tweet

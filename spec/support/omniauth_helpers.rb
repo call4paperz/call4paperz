@@ -6,7 +6,7 @@ module OmniauthHelpers
     end
   end
 
-  def mock_omniauth_provider(uid, provider, options)
+  def mock_omniauth_provider(uid, provider, options = {})
     OmniAuth.config.mock_auth[provider] = OmniAuth::AuthHash.new(
       {
         provider: provider,

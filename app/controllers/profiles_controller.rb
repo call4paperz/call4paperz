@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :load_user, only: [:edit, :update, :resend_confirmation_email]
+  before_filter :store_location, only: :show
 
   def show
     @profile = Profile.new current_user

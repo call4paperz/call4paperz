@@ -1,8 +1,4 @@
 class AuthenticationsController < ApplicationController
-  def skip_store_location
-    true
-  end
-
   def create
     destination_url = stored_location_for(:user) || root_path
 

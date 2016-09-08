@@ -62,23 +62,23 @@ class ProposalsController < ApplicationController
   end
 
   def like
-    hash = {
+    message = {
       success_message: t('proposals.likes.success'),
       fail_message:    t('proposals.likes.fail'),
       action:          :like
     }
 
-    vote_action(hash)
+    vote_action(message)
   end
 
   def dislike
-    hash = {
+    message = {
       success_message: t('proposals.dislikes.success'),
       fail_message:    t('proposals.dislikes.fail'),
       action:          :dislike
     }
 
-    vote_action(hash)
+    vote_action(message)
   end
 
   private
@@ -104,11 +104,11 @@ class ProposalsController < ApplicationController
     params.require(:proposal).permit(:name, :description)
   end
 
-  def vote_action(hash)
-    if Vote.send(hash[:action], proposal, current_user)
-      notice = hash[:success_message]
+  def vote_action(message)
+    if Vote.send(message[:action], proposal, current_user)
+      notice = message[:success_message]
     else
-      notice = hash[:fail_message]
+      notice = message[:fail_message]
     end
 
     redirect_to(event_url(event), notice: notice)

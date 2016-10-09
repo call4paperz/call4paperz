@@ -389,10 +389,16 @@ ul#menu_top li a:hover{
   padding:10px;
   position:relative;
   width:281px;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: -1px;
 }
 
 img#user_picture{
-  height:50px;
+  height:70px;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 0px;
 }
 
 #proposal_list{
@@ -981,6 +987,10 @@ a.logo_c4p img{
   position: relative;
   left: 30px;
   width: 85%;
+  display: flex;
+  li {
+    padding-right: 10px;
+  }
 }
 
 #providers{

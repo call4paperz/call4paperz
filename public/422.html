@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <h1>The change you wanted was rejected.</h1>
-    <p>Maybe you tried to change something you didn't have access to.</p>
-  </div>
-</body>
+    <title>Call4Paperz - 422 Unprocessable Entity</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/public-assets/stylesheets/error-pages.css">
+    <link rel="icon" href="/favicon.ico" type="image/ico"/>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/public-assets/images/logo.png">
+        </a>
+      </div>
+    </nav>
+
+    <section class="container content">
+      <h1>422 - Unprocessable Entity</h1>
+      <p class="lead">
+        The change you wanted was rejected.
+        <br>
+        Maybe you tried to change something you didn't have access to.
+        <br>
+        Why don't you try to find out about some Events?
+      </p>
+      <a href="/events" class="btn btn-lg btn-default">List Events</a>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Copyright © Call4Paperz</p>
+      </div>
+    </footer>
+
+  </body>
 </html>

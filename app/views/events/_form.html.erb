@@ -37,7 +37,11 @@
 
   <div class="field">
     <%= f.label :tags %><br />
-    <%= f.text_field :tag_list %>
+    <% if @event.new_record? %>
+      <%= f.text_field :tag_list %>
+    <% else %>
+      <%= f.text_field :tag_list, value: @event.tag_list.join(', ') %>
+    <% end %>
   </div>
 
   <div class="field special">

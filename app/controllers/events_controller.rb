@@ -1,11 +1,16 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :check_profile_completion, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show, :tags]
+  before_filter :check_profile_completion, except: [:index, :show, :tags]
 
   respond_to :html, :json, :jsonp
 
   def index
     @events = Event.active.occurs_first.limit(100)
+    respond_with @events
+  end
+
+  def tags
+    @events = Event.active.tagged_with(params[:tag]).occurs_first.limit(100)
     respond_with @events
   end
 
@@ -72,7 +77,10 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :occurs_at, :prod_description, :twitter, :url, :picture, :picture_cache)
+    params.require(:event).permit(
+      :name, :description, :occurs_at, :prod_description, :twitter, :url,
+      :picture, :picture_cache, :tag_list
+    )
   end
 
   def load_user_event!(slug)

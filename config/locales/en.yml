@@ -3,6 +3,11 @@ en:
     formats:
       picker: "%m/%d/%Y"
 
+  activerecord:
+    attributes:
+      event:
+        tags: Tag list separated by ","
+
   events:
     show:
       crop: Crop picture

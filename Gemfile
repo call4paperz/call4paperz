@@ -31,6 +31,7 @@ gem 'rack-cache'
 gem 'dalli'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier'
+gem 'acts-as-taggable-on'
 
 group :production do
   gem 'newrelic_rpm'

@@ -34,6 +34,7 @@ gem 'uglifier'
 gem 'acts-as-taggable-on'
 
 group :production do
+  gem 'airbrake', '~> 5.0'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end

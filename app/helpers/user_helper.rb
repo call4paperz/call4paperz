@@ -1,6 +1,6 @@
 module UserHelper
   def user_picture(user, options={})
-    if user.try(:picture).present?
+    if user.try(:picture)
       image_tag user.picture, options.merge(id: 'user_picture')
     else
       image_tag 'no_avatar.png', options

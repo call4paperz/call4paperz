@@ -2,22 +2,33 @@ require 'spec_helper'
 
 feature 'Profiles' do
   context 'showing' do
-    let(:authentication) do
-      Authentication.new(provider: 'github', uid: 'github-uid')
-    end
     let(:user) do
-      FactoryGirl.create(:user, authentications: [ authentication ])
+      FactoryGirl.create(:user, authentications: authentications)
     end
 
     before do
       sign_in_with(user)
     end
 
-    scenario 'shows associated profiles' do
-      visit '/profile'
+    context 'when user has associated profiles' do
+      let(:authentications) do
+        [Authentication.new(provider: 'github', uid: 'github-uid')]
+      end
 
-      expect(page).to have_selector('#associated-profiles', text: 'Github')
-      expect(page).to_not have_selector('#associated-profiles', text: 'Twitter')
+      scenario 'shows associated profiles' do
+        visit '/profile'
+
+        expect(page).to have_selector('#associated-profiles', text: 'Github')
+        expect(page).to_not have_selector('#associated-profiles', text: 'Twitter')
+      end
+    end
+
+    context 'when user has no associated profiles' do
+      let(:authentications) { [] }
+
+      scenario 'does not show anything' do
+        expect(page).to_not have_selector('#associated-profiles')
+      end
     end
   end
 

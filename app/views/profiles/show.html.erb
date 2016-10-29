@@ -17,17 +17,19 @@
     </ul>
     <% end %>
 
-    <%= image_tag 'linha.png', class: 'linha' %>
+    <% unless @profile.authentications.empty? %>
+      <%= image_tag 'linha.png', class: 'linha' %>
 
-    <p>Associated profiles:</p>
-    <br>
-    <ul id="associated-profiles">
-      <% @profile.authentications.each do |authentication| %>
-        <li>
-          <%= authentication.provider.capitalize %>
-        </li>
-      <% end %>
-    </ul>
+      <p>Associated profiles:</p>
+      <br>
+      <ul id="associated-profiles">
+        <% @profile.authentications.each do |authentication| %>
+          <li>
+            <%= authentication.provider.capitalize %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
 </div>
 
 <div id="proposal_list">

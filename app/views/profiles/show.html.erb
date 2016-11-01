@@ -17,7 +17,7 @@
     </ul>
     <% end %>
 
-    <% unless @profile.authentications.empty? %>
+    <% if @profile.authentications.any? %>
       <%= image_tag 'linha.png', class: 'linha' %>
 
       <p>Associated profiles:</p>

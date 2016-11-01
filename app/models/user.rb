@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
     if photo?
       photo.thumb.url
     else
-      'no_avatar.png'
+      '/assets/no_avatar.png'
     end
   end
 

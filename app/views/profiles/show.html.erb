@@ -9,14 +9,27 @@
     <%= image_tag 'linha.png', class: 'linha' %>
     <p>Associate other accounts with your profile. This way, you can use any of
     them to authenticate in the Call4Paperz:</p>
-    <br />
+    <br>
     <ul>
       <% @profile.unassociated_providers.each do |provider| %>
         <li><%= link_to(provider.show_name, "auth/#{provider.name}") %></li>
       <% end %>
     </ul>
     <% end %>
-  </div>
+
+    <% if @profile.authentications.any? %>
+      <%= image_tag 'linha.png', class: 'linha' %>
+
+      <p>Associated profiles:</p>
+      <br>
+      <ul id="associated-profiles">
+        <% @profile.authentications.each do |authentication| %>
+          <li>
+            <%= authentication.provider.capitalize %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
 </div>
 
 <div id="proposal_list">

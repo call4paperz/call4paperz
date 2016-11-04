@@ -210,9 +210,10 @@ ul#menu_top li a:hover{
 }
 
 #comments{
-  background:image-url('black.png') repeat scroll 0 0 transparent;
+  background: #000;
+  border-radius: 15px;
   float:right;
-  height:403px;
+  height:800px;
   width: 262px;
   padding: 20px;
   margin-bottom: 10px;
@@ -396,9 +397,9 @@ ul#menu_top li a:hover{
 
 img#user_picture{
   height:70px;
-  padding-left: 30px;
-  padding-top: 20px;
-  padding-bottom: 0px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 #proposal_list{
@@ -463,7 +464,6 @@ img#user_picture{
 }
 
 .prop_sub{
-  position: absolute;
   bottom: 20px;
 }
 

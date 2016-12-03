@@ -23,7 +23,7 @@ Call4Paperz::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
+  config.action_mailer.smtp_settings = { address: ENV.fetch('MAILCATCHER_HOST', 'localhost'), port: 1025 }
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Raise an error on page load if there are pending migrations

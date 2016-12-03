@@ -58,6 +58,20 @@ Then start the server with the following command:
 $ foreman start -f Procfile.development
 ```
 
+## When using docker
+
+First, to build it:
+
+```
+$ docker-compose run --rm web bin/setup
+```
+
+Then, all you need to do is:
+
+```
+$ docker-compose up
+```
+
 That's it! Just go to <http://localhost:3000>.
 
 ## Contributions

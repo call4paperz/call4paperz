@@ -29,4 +29,6 @@ Call4Paperz::Application.routes.draw do
   end
 
   get '/twitter/last' => 'twitter#last', as: :last_tweet
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

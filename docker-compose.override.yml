@@ -4,14 +4,5 @@ services:
     volumes:
       - ./db_files:/var/lib/postgresql/data
   web:
-    depends_on:
-      - mailcatcher
-    environment:
-      MAILCATCHER_HOST: "mailcatcher"
     volumes:
       - .:/var/www/app
-  mailcatcher:
-    image: call4paperz_web
-    ports:
-      - "1080:1080"
-    command: mailcatcher --foreground --ip=0.0.0.0 

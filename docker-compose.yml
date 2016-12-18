@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DB_HOST: "db"
+    ports:
+      - "3000:3000"
+    command: bundle exec rails s -p 3000 --binding 0.0.0.0

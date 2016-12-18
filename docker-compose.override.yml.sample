@@ -1,0 +1,8 @@
+version: '2.0'
+services:
+  db:
+    volumes:
+      - ./db_files:/var/lib/postgresql/data
+  web:
+    volumes:
+      - .:/var/www/app

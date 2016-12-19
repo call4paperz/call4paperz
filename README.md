@@ -98,6 +98,7 @@ Before was bravely maintained by [ricardovaleriano](https://github.com/ricardova
 - [akitaonrails](https://github.com/akitaonrails)
 - [dukex](https://github.com/dukex)
 - [fnando](https://github.com/fnando)
+- [lucasrenan](https://github.com/lucasrenan)
 
 ## License
 call4paperz uses the MIT license. Please check the LICENSE file for more details.

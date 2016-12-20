@@ -60,13 +60,27 @@ $ foreman start -f Procfile.development
 
 ## When using docker
 
-First, to build it:
+### Setup
+
+To make the basic setup that make it possible to run the application, you only
+need to run:
 
 ```
 $ docker-compose run --rm web bin/setup
 ```
 
-Then, all you need to do is:
+### For development environment
+
+When in development environment, it would be useful to have some extra configs,
+like volumes to keep the application dir synced and avoid losing database files.
+
+In docker-compose.override.yml.sample exists some of those extra configs, so would
+be useful to run the command below after setup when in development:
+
+`$ cp docker-compose.override.yml.sample docker-compose.override.yml`
+
+
+### Running the application
 
 ```
 $ docker-compose up

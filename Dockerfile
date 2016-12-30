@@ -7,6 +7,6 @@ RUN mkdir -p /var/www/app
 WORKDIR /var/www/app
 COPY . /var/www/app
 
-ENV BUNDLE_PATH=/var/www/app/bundle
+ENV BUNDLE_PATH=/var/www/app/.bundle
 
 RUN bundle install

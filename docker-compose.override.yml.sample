@@ -6,3 +6,5 @@ services:
   web:
     volumes:
       - .:/var/www/app
+    environment:
+      DB_USER: postgres 

@@ -1,3 +1,5 @@
+
+
 # call4paperz.com
 
 call4paperz.com is a website for talk proposals, either to your own conference
@@ -60,13 +62,35 @@ $ foreman start -f Procfile.development
 
 ## When using docker
 
-First, to build it:
+At the time of writing it, it was tested with versions:
+
+For Docker Engine: 1.12.5
+
+For Docker Compose: 1.6.2
+
+### For development environment
+
+When in development environment, it can be useful to have some extra configs,
+like volumes to keep the application directory synced and avoid losing database files.
+
+In docker-compose.override.yml.sample exists some of those extra configs, so you
+can run the command below to make use of it:
+
+`$ cp docker-compose.override.yml.sample docker-compose.override.yml`
+
+### Setup
+
+After you're done with specific environment's steps,
+to setup the application, you need to run:
 
 ```
 $ docker-compose run --rm web bin/setup
 ```
 
-Then, all you need to do is:
+### Running the application
+
+Now that all setup steps are done, you only need to run the command below
+to get the application running:
 
 ```
 $ docker-compose up

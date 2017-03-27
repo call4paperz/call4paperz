@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:2.4.0
 
 RUN apt-get update
 RUN apt-get install -y build-essential nodejs postgresql-client bundler

@@ -8,7 +8,6 @@ body{
 }
 
 header {
-  border-top: 10px solid $azul;
   background-color: #000;
 }
 
@@ -117,12 +116,6 @@ ul#menu_top li a:hover{
   display: block;
   margin-bottom: 4px;
   line-height: 18px;
-}
-
-#breadcrumb{
-  background:image-url('breadcrumb.png') repeat scroll 0 0 transparent;
-  height:70px;
-  margin-top: 10px;
 }
 
 #create{

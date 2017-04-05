@@ -34,9 +34,18 @@
       color: #999;
       display: flex;
       justify-content: space-between;
+      font-size: .8em;
 
       #event-info {
         margin: 0 1em;
+
+        span {
+          margin: 0 1em 0 0;
+
+          .fa {
+            margin: 0 .5em 0 0;
+          }
+        }
       }
 
       #event-organizer {

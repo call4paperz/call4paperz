@@ -27,11 +27,11 @@
       <% end %>
 
       <% if @event.url.present? %>
-        <span><%= link_to fa_icon('link'), @event.url, class: 'branco' %></span>
+        <span><%= fa_icon('link') %><%= link_to 'Event url', @event.url %></span>
       <% end %>
 
       <% if @event.twitter.present? %>
-        <span><%= link_to fa_icon('twitter'), "http://www.twitter.com/#{@event.twitter}", class: 'branco' %></span>
+        <span><%= link_to fa_icon('twitter'), "http://www.twitter.com/#{@event.twitter}" %></span>
       <% end %>
 
       <% if @event.tag_list.any? %>
@@ -45,7 +45,7 @@
     </div>
 
     <div id="event-organizer">
-      <%= fa_icon('address-card-o') %> <%= user_picture(@event.user, width: '24px') %> <%= @event.user.name %>
+      Organizer: <%= user_picture(@event.user, width: '16px') %> <%= @event.user.name %>
     </div>
   </div>
 </header>

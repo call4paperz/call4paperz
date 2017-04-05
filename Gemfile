@@ -32,6 +32,7 @@ gem 'uglifier'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
 gem 'will_paginate'
+gem "font-awesome-rails"
 
 group :production do
   gem 'airbrake', '~> 5.0'

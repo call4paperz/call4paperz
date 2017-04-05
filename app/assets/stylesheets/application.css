@@ -2,6 +2,7 @@
 *= require_self
 *= require jquery-ui-1.11.2/jquery-ui.min.css
 *= require jquery.Jcrop
+*= require font-awesome
 *= require reset
 *= require style
 *= require widgets

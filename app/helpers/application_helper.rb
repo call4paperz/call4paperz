@@ -23,4 +23,9 @@ module ApplicationHelper
       content_tag :p, flash[:notice], class: "notice"
     end
   end
+
+  def page_id
+    controller_name = controller_path.gsub(/\//, "_")
+    "#{controller_name}-#{action_name}"
+  end
 end

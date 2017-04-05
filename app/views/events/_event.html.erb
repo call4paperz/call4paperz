@@ -2,40 +2,52 @@
   <%= link_to image_tag('your_proposal.png'), new_event_proposal_path(@event), id: 'add_proposal' %>
 <% end %>
 
-<div id="proposal">
+<header>
   <% if @event.picture? %>
-    <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), @event %>
-    <%= image_tag 'linha.png', :class => 'linha' %>
+    <%= link_to image_tag(@event.picture.cropped.url, class: 'logo', size: "180x175" ), @event %>
   <% end %>
 
-  <p><strong><%= link_to @event.name, @event %></strong></p>
-  <p><%= @event.description %></p>
-  <%= image_tag 'linha.png', :class => 'linha' %>
+  <div id="event-main-info">
+    <h1 id="event-title"><%= link_to @event.name, @event %></h1>
 
-  <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
-  <p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
-  <p><strong>Twitter: </strong>
-    <%= link_to @event.twitter, "http://www.twitter.com/#{@event.twitter}", :class => 'branco' if @event.twitter.present?  %>
-  </p>
-  <p>
-    <strong>Tags:</strong>
-    <% @event.tag_list.each do |tag| %>
-      <%= link_to tag, tags_events_path(tag) %>
-    <% end %>
-  </p>
+    <p id="event-description"><%= @event.description %></p>
 
-  <%= image_tag 'linha.png', :class => 'linha' %>
-
-  <p><strong>Organizer: </strong><%= @event.user.name %><br/>
-    <%= user_picture(@event.user, :class => 'organizer') %>
-  </p>
-
-  <%= image_tag 'linha.png', :class => 'linha' %>
-
-  <div class="event-social">
-    <div class="twit">
-      <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
+    <div id="event-social">
+      <div class="twit">
+        <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
+      </div>
+      <%= render 'shared/facebook_like', url: event_url(@event) %>
     </div>
-    <%= render 'shared/facebook_like', url: event_url(@event) %>
   </div>
-</div>
+
+  <div id="event-metadata">
+    <div id="event-info">
+      <% if @event.occurs_at %>
+        <span><%= fa_icon('calendar-check-o') %><%= l(@event.occurs_at, format: :long) %></span>
+      <% end %>
+
+      <% if @event.url.present? %>
+        <span><%= link_to fa_icon('link'), @event.url, class: 'branco' %></span>
+      <% end %>
+
+      <% if @event.twitter.present? %>
+        <span><%= link_to fa_icon('twitter'), "http://www.twitter.com/#{@event.twitter}", class: 'branco' %></span>
+      <% end %>
+
+      <% if @event.tag_list.any? %>
+        <span>
+          <%= fa_icon('tags') %>
+          <% @event.tag_list.each do |tag| %>
+            <%= link_to tag, tags_events_path(tag) %>
+          <% end %>
+        </span>
+      <% end %>
+    </div>
+
+    <div id="event-organizer">
+      <%= fa_icon('address-card-o') %>
+      <%= @event.user.name %><br/>
+      <%= user_picture(@event.user, class: 'organizer', width: '24px') %>
+    </div>
+  </div>
+</header>

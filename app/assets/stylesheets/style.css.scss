@@ -13,7 +13,6 @@ header#main-header {
 }
 
 a {
-  font-size: 14px;
   color: $vermelho;
 }
 
@@ -357,16 +356,6 @@ ul#menu_top li a:hover{
   font-weight: bold;
 }
 
-#proposal{
-  background: #191817;
-  border-radius: 10px;
-  margin-bottom:20px;
-  margin-top:20px;
-  padding:10px;
-  position:relative;
-  width:281px;
-}
-
 #profile{
   background: #000;
   border-radius: 20px/30px;
@@ -503,12 +492,6 @@ a.prop_link:hover, a.prop_link:active{
 
 .organizer{
   border: 3px solid #B24450;
-}
-
-#left_bar{
-  float:left;
-  margin-bottom:20px;
-  margin-top:45px;
 }
 
 #events{
@@ -822,10 +805,6 @@ a.prop_link:hover, a.prop_link:active{
   background: #666666;
 }
 
-.event-social {
-  margin-left: 35px;
-}
-
 #tweeting{
   color: #ffffff;
   padding: 10px;
@@ -866,8 +845,7 @@ a.comment_detail:link, a.comment_detail:visited {
 }
 
 a.logo_c4p img{
-  margin-left:27px;
-  margin-top:24px;
+  margin-top: .8em;
   float: left;
 }
 

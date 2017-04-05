@@ -1,0 +1,46 @@
+@import "constants";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#events-show {
+  header {
+    background-color: $bg-dark-grey;
+    border-top: 1px solid rgba(255,255,255,.1);
+    font-family: 'Roboto', sans-serif;
+
+    #event-main-info {
+      padding: .5em 1em;
+
+      #event-title {
+        font-size: 3em;
+        line-height: 1.4em;
+      }
+
+      #event-description {
+        font-size: 2em;
+        line-height: 1.1em;
+        color: #ccc;
+      }
+
+      #event-social {
+        margin: 1em 0 0;
+      }
+    }
+
+    #event-metadata {
+      background: #000;
+      border-top: 1px solid rgba(255,255,255,.3);
+      padding: 1em 0 0;
+      color: #999;
+      display: flex;
+
+      #event-info {
+
+      }
+
+      #event-organizer {
+
+      }
+    }
+  }
+}

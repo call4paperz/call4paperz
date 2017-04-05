@@ -45,9 +45,7 @@
     </div>
 
     <div id="event-organizer">
-      <%= fa_icon('address-card-o') %>
-      <%= @event.user.name %><br/>
-      <%= user_picture(@event.user, class: 'organizer', width: '24px') %>
+      <%= fa_icon('address-card-o') %> <%= user_picture(@event.user, width: '24px') %> <%= @event.user.name %>
     </div>
   </div>
 </header>

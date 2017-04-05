@@ -4,11 +4,12 @@
 
 body{
   font-family: helvetica;
-  background-color: $azul;
+  background-color: $bg-grey;
 }
 
-header {
-  background-color: #000;
+header#main-header {
+  background-color: $bg-dark-grey;
+  overflow: auto;
 }
 
 a {
@@ -42,17 +43,8 @@ a:hover, a:active {
   margin: 0 auto;
 }
 
-#menu{
-  border-radius: 20px;
-  background: #000;
-  height: 70px;
-}
-
 ul#menu_top{
-  margin: {
-    top: 25px;
-    right: 90px;
-  }
+  line-height: 3em;
   float: right;
 }
 
@@ -320,7 +312,7 @@ ul#menu_top li a:hover{
 }
 
 #footer{
-  background: $vermelho;
+  background: $bg-dark-grey;
   height: 273px;
   clear: both;
 }

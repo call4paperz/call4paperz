@@ -9,7 +9,7 @@
   <% end %>
 
   <p><strong><%= link_to @event.name, @event %></strong></p>
-  <p><%= @event.description %></p>
+  <p><%= raw @event.description %></p>
   <%= image_tag 'linha.png', :class => 'linha' %>
 
   <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>

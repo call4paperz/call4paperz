@@ -28,10 +28,15 @@
 
   <div class="field">
     <%= f.label :occurs_at %> <small class="vermelho">*</small><br />
+    <%= f.text_field :occurs_at, class: 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tags %><br />
     <% if @event.new_record? %>
-      <%= f.text_field :occurs_at, :class => 'datepicker' %>
-    <% else -%>
-      <%= f.text_field :occurs_at, :class => 'datepicker', :value => l(@event.occurs_at, :format => :picker) %>
+      <%= f.text_field :tag_list %>
+    <% else %>
+      <%= f.text_field :tag_list, value: @event.tag_list.join(', ') %>
     <% end %>
   </div>
 

@@ -1,8 +1,8 @@
 en:
-  date:
-    formats:
-      picker: "%m/%d/%Y"
-
+  activerecord:
+    attributes:
+      event:
+        tags: Tag list separated by ","
   events:
     show:
       crop: Crop picture
@@ -11,7 +11,6 @@ en:
       closed_true: Open for new proposals
       closed: This event is not accepting new proposals.
     share: "%{event_name} is on a call for papers! Check it out."
-
 
   event_close:
     warning_closing:
@@ -59,3 +58,4 @@ en:
 
   auth:
     cant_create_twitter: "Sadly you can't create an account with the twitter sign in method. Use any other method and associate your twitter account with your profile then."
+

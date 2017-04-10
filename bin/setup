@@ -49,8 +49,7 @@ check_ruby() {
 copy_sample() {
   local config_file="${1%.*}"
   if [[ ! -f "$config_file" ]]; then
-    sample=$(cat "$1")
-    echo "${sample//"::USER::"/$USER}" >> "$config_file"
+    cat "$1" >> "$config_file"
   fi
   echo "    $config_file"
 }
@@ -72,7 +71,7 @@ done
 
 (
   set -e
-  check_ruby "2.3.0"
+  check_ruby "2.4.0"
   test_dependency "psql" "PostgreSQL"
   install_bundler
 )

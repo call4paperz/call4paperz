@@ -42,11 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def picture
-    if photo?
-      photo.thumb.url
-    else
-      '/assets/no_avatar.png'
-    end
+    photo.thumb.url if photo?
   end
 
   def has_vote_for?(proposal)

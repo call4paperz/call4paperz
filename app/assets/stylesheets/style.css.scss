@@ -210,9 +210,10 @@ ul#menu_top li a:hover{
 }
 
 #comments{
-  background:image-url('black.png') repeat scroll 0 0 transparent;
+  background: #000;
+  border-radius: 15px;
   float:right;
-  height:403px;
+  height:800px;
   width: 262px;
   padding: 20px;
   margin-bottom: 10px;
@@ -389,10 +390,16 @@ ul#menu_top li a:hover{
   padding:10px;
   position:relative;
   width:281px;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: -1px;
 }
 
 img#user_picture{
-  height:50px;
+  height:70px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 #proposal_list{
@@ -457,7 +464,6 @@ img#user_picture{
 }
 
 .prop_sub{
-  position: absolute;
   bottom: 20px;
 }
 
@@ -981,6 +987,10 @@ a.logo_c4p img{
   position: relative;
   left: 30px;
   width: 85%;
+  display: flex;
+  li {
+    padding-right: 10px;
+  }
 }
 
 #providers{

@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
+
+  friendly_id :name, use: [ :slugged, :finders ]
+  acts_as_taggable
 
   attr_accessor :crop_w, :crop_h, :crop_x, :crop_y, :prod_description
 
@@ -113,3 +115,4 @@ class Event < ActiveRecord::Base
     picture.recreate_versions!
   end
 end
+

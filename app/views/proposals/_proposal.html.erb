@@ -14,7 +14,7 @@
     </strong>
   </p>
   <%= render_votes_bar(proposal.acceptance_points) %>
-  <p><%= proposal.description %></p>
+  <p><%= markdown(proposal.description) %></p>
 
   <div class="prop_sub">
     <%= user_picture(proposal_user(proposal)) %>

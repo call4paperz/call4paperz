@@ -38,6 +38,7 @@
   <script>
   var descriptionKeycount = new HandleKeycount();
   var nameKeycount = new HandleKeycount();
+  var simplemde = new SimpleMDE({ element: $("#proposal_description")[0], spellChecker: false });
 
   descriptionKeycount.init(400, $('#description_hint'), $('#proposal_description'));
   nameKeycount.init(150, $('#name_hint'), $('#proposal_name'));

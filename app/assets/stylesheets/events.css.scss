@@ -16,10 +16,13 @@
         line-height: 1.4em;
       }
 
-      #event-description {
-        font-size: 2em;
-        line-height: 1.1em;
-        color: #ccc;
+      #event-date {
+        color: #999;
+        font-weight: bold;
+
+        i {
+          margin: 0 .5em 0 0;
+        }
       }
 
       #event-social {
@@ -54,6 +57,42 @@
         img {
           vertical-align: middle;
         }
+      }
+    }
+  }
+
+  section {
+    #event-description {
+      font-size: 1.2em;
+      line-height: 1.1em;
+      color: #666;
+      padding: 1em;
+      background: #fff;
+
+      h1, h2, h3, h4, h5 {
+        color: #333;
+        font-weight: bold;
+        margin: .5em 0;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.8em;
+      }
+
+      h3 {
+        font-size: 1.6em;
+      }
+
+      h4 {
+        font-size: 1.4em;
+      }
+
+      h5 {
+        font-size: 1.2em;
       }
     }
   }

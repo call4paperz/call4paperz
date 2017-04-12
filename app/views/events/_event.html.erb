@@ -10,7 +10,9 @@
   <div id="event-main-info">
     <h1 id="event-title"><%= link_to @event.name, @event %></h1>
 
-    <p id="event-description"><%= @event.description %></p>
+    <% if @event.occurs_at %>
+      <div id="event-date"><%= fa_icon('calendar-check-o') %><%= l(@event.occurs_at, format: :long) %></div>
+    <% end %>
 
     <div id="event-social">
       <div class="twit">
@@ -22,10 +24,6 @@
 
   <div id="event-metadata">
     <div id="event-info">
-      <% if @event.occurs_at %>
-        <span><%= fa_icon('calendar-check-o') %><%= l(@event.occurs_at, format: :long) %></span>
-      <% end %>
-
       <% if @event.url.present? %>
         <span><%= fa_icon('link') %><%= link_to 'Event url', @event.url %></span>
       <% end %>
@@ -49,3 +47,30 @@
     </div>
   </div>
 </header>
+
+<section id="event-description">
+  <%= @event.description %>
+  <h1>Header 1</h1>
+  <h2>Header 2</h2>
+  <h3>Header 3</h3>
+  <h4>Header 4</h4>
+  <h5>Header 5</h5>
+
+  <p>This is a phrase with a <strong>bold</strong> word and with a <em>emphasis</em> word.</p>
+
+  <ul>
+    <li>Unordered list item</li>
+    <li>Unordered list item</li>
+    <li>Unordered list item</li>
+    <li>Unordered list item</li>
+    <li>Unordered list item</li>
+  </ul>
+
+  <ol>
+    <li>Ordered list item</li>
+    <li>Ordered list item</li>
+    <li>Ordered list item</li>
+    <li>Ordered list item</li>
+    <li>Ordered list item</li>
+  </ol>
+</section>

@@ -1,6 +1,8 @@
-<%= render 'events/event' %>
+<div id="event-details">
+  <%= render 'events/event' %>
+</div>
 
-<div id="proposal_list">
+<div id="event-proposals">
   <% if user_is_owner?(@event) %>
     <div class="event_notice_area">
       <p>
@@ -14,15 +16,10 @@
     </div>
   <% end %>
 
-  <% if @event.closed? %>
-    <div class="event_notice_area">
-      <p class="alert"><%= t('.closed') %></p>
-    </div>
-  <% end %>
+  <h2>Vote for it!</h2>
+  <p class="sub_vote">Decide who speaks at the conference.</p>
 
-  <%= image_tag 'prop_vote.png' %>
-  <p class="sub_vote">Decide who speaks at the conference!</p>
-  <br/>
+  <%= content_tag :p, t('.closed'), class: 'alert' if @event.closed?  %>
 
   <% if @event.proposals.blank? %>
     <span class="yet">This event is ready to receive proposals!</span><br/><br/>
@@ -31,9 +28,11 @@
     <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
   <% end %>
 
+  <section id="proposals-list">
   <% @event.proposals.each do |proposal| %>
     <%= render proposal %>
-  <%end  %>
+  <% end %>
+  </section>
 
   <% if user_is_owner?(@event) %>
     <div class="event_notice_area">

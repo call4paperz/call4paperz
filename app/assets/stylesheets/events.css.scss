@@ -3,8 +3,34 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 #events-show {
-  header {
-    background-color: $bg-dark-grey;
+  div, span, header, section, footer {
+    box-sizing: border-box;
+  }
+
+  #main-section {
+    display: flex;
+
+    #event-details {
+      width: 40%;
+      background-color: #fff;
+    }
+
+    #event-proposals {
+      width: 60%;
+      padding: 1em;
+    }
+  }
+
+  #event-proposals {
+    height: 100%;
+    overflow: auto;
+
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  #main-section header {
     border-top: 1px solid rgba(255,255,255,.1);
     font-family: 'Roboto', sans-serif;
 
@@ -31,7 +57,7 @@
     }
 
     #event-metadata {
-      background: #000;
+      background: #eee;
       border-top: 1px solid rgba(255,255,255,.3);
       padding: .5em 0;
       color: #999;
@@ -93,6 +119,58 @@
 
       h5 {
         font-size: 1.2em;
+      }
+    }
+  }
+
+  #proposals-list {
+    .proposal-item {
+      margin: 2em 0;
+
+      header {
+        h3 {
+          font-size: 2em;
+          border-bottom: 1px dotted #999;
+          padding: 0 0 .2em;
+          margin: 0 0 .3em;
+        }
+      }
+
+      .proposal-metadata {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0 0;
+
+        .proposal-author, .proposal-comments, .proposal-voting {
+          align-self: center;
+        }
+
+        .proposal-author {
+          img {
+            vertical-align: middle;
+          }
+        }
+      }
+
+      .proposal-voting {
+        display: flex;
+        justify-content: space-between;
+        margin: 1px 0 0;
+
+        .voting-controls {
+          button {
+            font-size: 1.4em;
+            cursor: pointer;
+            width: 5em;
+            line-height: 2em;
+            border: 0;
+            margin: 0 1px 0 0;
+          }
+        }
+
+        .total-votes {
+          font-size: 2.2em;
+        }
       }
     }
   }

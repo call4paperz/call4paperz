@@ -1,29 +1,34 @@
-<div class="prop">
-  <div class="spinner">
-    <%= image_tag 'ajax-loader.gif' %>
-  </div>
+<div class="proposal-item">
+  <%= content_tag :div, image_tag('ajax-loader.gif'), class: 'spinner' %>
 
-  <p>
-    <strong>
-      <%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %>
-      <% if user_is_owner?(proposal) %>
-        <span id="edit_proposal">
-        <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) %>
-        </span>
-      <% end %>
-    </strong>
-  </p>
-  <%= render_votes_bar(proposal.acceptance_points) %>
-  <p><%= proposal.description %></p>
+  <header>
+    <h3><%= link_to proposal.name, event_proposal_path(@event, proposal) %></h3>
+    <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) if user_is_owner?(proposal) %>
+  </header>
 
-  <div class="prop_sub">
-    <%= user_picture(proposal_user(proposal)) %>
-    <small><%= proposal_user(proposal).name %></small>
-  </div>
+  <section class="proposal-description">
+    <%= proposal.description %>
+  </section>
 
-  <%= link_to "#{proposal.comments.size} comments", [@event, proposal], :class => 'com_prop' %>
+  <section class="proposal-metadata">
+    <div class="proposal-author">
+      <%= user_picture(proposal_user(proposal), width: '24px') %>
+      <%= proposal_user(proposal).name %>
+    </div>
 
-  <span class="voting_container">
-    <%= vote_box(@event, proposal, current_user) %>
-  </span>
+    <%= link_to "#{proposal.comments.size} comments", [@event, proposal], class: 'proposal-comments' %>
+
+    <section class="proposal-voting">
+      <div class="voting-controls">
+        <% if current_user.has_vote_for?(proposal) %>
+          <%= content_tag :button, fa_icon('check') %>
+        <% else %>
+          <%= content_tag :button, fa_icon('thumbs-up') %>
+          <%= content_tag :button, fa_icon('thumbs-down') %>
+        <% end %>
+      </div>
+      <p class="total-votes"><%= proposal.acceptance_points %> votes</p>
+      <%#= vote_box(@event, proposal, current_user) %>
+    </section>
+  </section>
 </div>

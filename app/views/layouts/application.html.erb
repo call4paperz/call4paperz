@@ -10,17 +10,19 @@
   </head>
 
   <body id="<%= page_id %>">
-    <%= render_flash_notice %>
-    <header id="main-header">
-      <div class="container">
-        <%= link_to image_tag("logo_c4p.png"), root_path, :class => 'logo_c4p' %>
+    <div class="flex-container">
+      <header id="main-header">
+        <%= link_to root_path, id: 'logo' do %>
+          Call<em>4</em>Paper<strong>z</strong>
+        <% end %>
         <%= menu %>
-      </div>
-    </header>
-    <section>
-      <div class='container'>
+      </header>
+
+      <%= render_flash_notice %>
+
+      <section id="main-section">
         <%= yield %>
-      </div>
+      </section>
     </div>
 
     <%= render 'layouts/footer' %>

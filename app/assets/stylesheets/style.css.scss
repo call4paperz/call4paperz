@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 @import "constants";
 
 .red_form { color: #f00; }
@@ -10,6 +11,7 @@ body{
 header#main-header {
   background-color: $bg-dark-grey;
   overflow: auto;
+  width: 40%;
 }
 
 a {
@@ -40,28 +42,6 @@ a:hover, a:active {
 .container{
   width: 960px;
   margin: 0 auto;
-}
-
-ul#menu_top{
-  line-height: 3em;
-  float: right;
-}
-
-#menu_top li {
-  display: inline;
-}
-
-ul#menu_top li a{
-  color:$vermelho;
-  font-weight: bold;
-  display:block;
-  float: left;
-  margin-right: 25px;
-  text-decoration: none;
-}
-
-ul#menu_top li a:hover{
-  color: $azul;
 }
 
 #pic{
@@ -300,16 +280,6 @@ ul#menu_top li a:hover{
   text-decoration: underline;
 }
 
-.prop_link{
-  margin-top: 40px;
-  font-size: 12px;
-  color: $vermelho;
-  text-align: center;
-}
-.prop_link span{
-  color: #111111;
-}
-
 #footer{
   background: $bg-dark-grey;
   height: 273px;
@@ -376,28 +346,22 @@ img#user_picture{
   margin-bottom: 0px;
 }
 
-#proposal_list{
-  left:20px;
-  margin-top:17px;
-  padding:19px;
-  position:relative;
-  float: left;
-}
+#logo{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2em;
+  color: #ccc;
+  display: block;
+  text-align: center;
+  margin: .1em 0 .8em;
 
-.event_notice_area {
-  border-radius: 5px;
-  border: 1px solid lighten($vermelho, 20%);
-  margin: 10px 10px 20px;
-  padding: 10px;
-  background-color: white;
-}
+  em {
+    color: $red;
+  }
 
-.logo{
-  margin-bottom: 20px;
-  border: 5px solid #b24450;
-  position: relative;
-  top: 18px;
-  left: 34px;
+  strong {
+    color: $red;
+    text-transform: uppercase;
+  }
 }
 
 .linha{
@@ -415,69 +379,6 @@ img#user_picture{
   font-weight: bold;
   color: $vermelho;
   font-size: 14px;
-}
-
-.prop{
-  background: #fff;
-  border-radius: 10px;
-  margin-bottom:10px;
-  padding: 20px 20px 120px 20px;
-  width:581px;
-  position: relative;
-}
-
-.prop p strong, .sub_vote, .sub_add_prop{
-  font-weight: bold;
-  color: $vermelho;
-  font-size: 12px;
-}
-
-.prop p{
-  color: #111111;
-  font-size: 14px;
-}
-
-.prop_sub{
-  bottom: 20px;
-}
-
-.prop_sub img{
-  border: 5px solid #b24450;
-}
-
-.prop_sub small{
-  color: $vermelho;
-  display: block;
-  font-size: 12px;
-  font-weight: bold;
-  margin-right:200px;
-  width: 230px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.prop_sub a:link, .prop_sub a:visited{
-  font-size: 12px;
-  color: $vermelho;
-  text-decoration: none;
-}
-
-.prop_sub a:hover, .prop_sub a:active{
-  text-decoration: underline;
-  color: $vermelho;
-  background-color: #ffffff;
-}
-
-a.prop_link:link, a.prop_link:visited{
-  color: $vermelho;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-a.prop_link:hover, a.prop_link:active{
-  text-decoration: underline;
-  background-color: #ffffff;
 }
 
 .thumb{
@@ -822,10 +723,6 @@ a.prop_link:hover, a.prop_link:active{
   top: 7px;
 }
 
-#edit_proposal {
-  margin-left: 5px;
-}
-
 #proposal_notice {
   margin-bottom: 20px;
 }
@@ -840,30 +737,11 @@ a.comment_detail:link, a.comment_detail:visited {
   font-weight:bold;
 }
 
-a.logo_c4p img{
-  margin-top: .8em;
-  float: left;
-}
-
 .actions_com input{
   display:inline-block;
   left:428px;
   position:relative;
   top:6px;
-}
-
-.voting_container{
-  left:489px;
-  position:absolute;
-  bottom: 15px;
-}
-
-.com_prop{
-  display:inline-block;
-  left:269px;
-  position:absolute;
-  bottom: 20px;
-  z-index: 10;
 }
 
 .twit{
@@ -1004,6 +882,22 @@ form {
       clear: left;
       font-size: 14px;
       margin-bottom: 10px;
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+}
+
+#main-nav {
+  a {
+    display: block;
+    padding: 0 1em;
+    line-height: 3em;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    &:last-child {
+      border-bottom: 0;
     }
   }
 }

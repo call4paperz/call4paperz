@@ -145,6 +145,18 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jwt (1.4.1)
+    kaminari (1.0.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -325,7 +337,6 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.6)
       rack (>= 1.0)
-    will_paginate (3.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -354,6 +365,7 @@ DEPENDENCIES
   friendly_id (~> 5.0)
   globalize
   jquery-rails (= 4.0.5)
+  kaminari
   letter_opener_web
   mini_magick
   newrelic_rpm
@@ -382,7 +394,6 @@ DEPENDENCIES
   uglifier
   unicorn
   validates_timeliness (~> 3.0.14)
-  will_paginate
 
 RUBY VERSION
    ruby 2.4.1p111

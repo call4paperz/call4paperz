@@ -1,6 +1,10 @@
+require "fog/aws/storage"
+require "carrierwave"
+
 if Rails.env.production?
   CarrierWave.configure do |config|
-    config.storage :fog
+    config.storage         = :fog,
+    config.fog_provider    = 'fog/aws',
     config.fog_credentials = {
       :provider               => 'AWS',
       :aws_access_key_id      => ENV['S3_ACCESS_KEY'],
@@ -8,7 +12,7 @@ if Rails.env.production?
     }
 
     config.fog_use_ssl_for_aws = false
-    config.fog_directory  = 'cdn.call4paperz.com'
+    config.fog_directory       = 'cdn.call4paperz.com'
   end
 else
   CarrierWave.configure do |config|

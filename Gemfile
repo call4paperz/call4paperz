@@ -52,7 +52,7 @@ group :development, :test do
   gem 'foreman'
   gem 'rspec-rails', '~> 3.2'
   gem 'dotenv-rails'
-  gem 'byebug'
+  gem 'pry-byebug'
 end
 
 group :test do

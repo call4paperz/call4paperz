@@ -55,8 +55,7 @@ GEM
     bullet (5.5.1)
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.10.0)
-    byebug (4.0.2)
-      columnize (= 0.9.0)
+    byebug (9.0.6)
     capybara (2.4.4)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -71,7 +70,6 @@ GEM
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
-    columnize (0.9.0)
     culerity (0.2.15)
     daemons (1.2.1)
     dalli (2.7.3)
@@ -173,6 +171,7 @@ GEM
       mime-types (>= 1.16, < 4)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -217,6 +216,13 @@ GEM
       omniauth-oauth (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     public_suffix (2.0.5)
     rack (1.6.5)
     rack-cache (1.2)
@@ -288,6 +294,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -351,7 +358,6 @@ DEPENDENCIES
   airbrake (~> 5.0)
   better_errors
   bullet
-  byebug
   capybara
   carrierwave (~> 0.10.0)
   codeclimate-test-reporter
@@ -377,6 +383,7 @@ DEPENDENCIES
   omniauth-oauth2
   omniauth-twitter
   pg
+  pry-byebug
   rack-cache
   rails (~> 4.2.0)
   rails_12factor

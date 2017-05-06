@@ -25,6 +25,8 @@ You must set the following environment variables for the system to fully work:
     GITHUB_SECRET
     SECRET_KEY
     DEVISE_PEPPER
+    RECAPTCHA_PRIVATE_KEY
+    RECAPTCHA_PUBLIC_KEY
 
 ## Bootstrapping (and using Foreman to run all the things)
 

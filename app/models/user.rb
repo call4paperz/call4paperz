@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   end
 
   def picture
-    photo.thumb.url if photo?
+    photo_url(:thumb) if photo?
   end
 
   def has_vote_for?(proposal)

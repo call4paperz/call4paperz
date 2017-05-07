@@ -121,9 +121,7 @@ Before was bravely maintained by [ricardovaleriano](https://github.com/ricardova
 - Vinicius Baggio Fuentes (no longer active)
 
 ## Contributors
-- [akitaonrails](https://github.com/akitaonrails)
-- [dukex](https://github.com/dukex)
-- [fnando](https://github.com/fnando)
+We have a few awesome contributors that you can take a look here: https://github.com/call4paperz/call4paperz/graphs/contributors
 
 ## License
 call4paperz uses the MIT license. Please check the LICENSE file for more details.

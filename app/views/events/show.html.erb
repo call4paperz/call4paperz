@@ -16,23 +16,27 @@
     </div>
   <% end %>
 
-  <h2>Vote for it!</h2>
-  <p class="sub_vote">Decide who speaks at the conference.</p>
+  <header id="proposals-header">
+    <div>
+      <h2>Vote for it!</h2>
+      <p class="sub_vote">Decide who speaks at the conference.</p>
+    </div>
 
-  <%= content_tag :p, t('.closed'), class: 'alert' if @event.closed?  %>
-
-  <%= link_to(image_tag('your_proposal.png'), new_event_proposal_path(@event), id: 'add_proposal') unless @event.closed? %>
-
-  <% if @event.proposals.blank? %>
-    <div class="yet">This event is ready to receive proposals!<br />
-    Tweet this event to your friends so they can submit proposals and spread the word!</div>
-    <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
-  <% end %>
+    <%= link_to(fa_icon('bullhorn') + t('events.add_proposal'), new_event_proposal_path(@event), id: 'add-proposal') unless @event.closed? %>
+  </header>
 
   <section id="proposals-list">
-  <% @event.proposals.each do |proposal| %>
-    <%= render proposal %>
-  <% end %>
+    <%= content_tag :p, t('.closed'), class: 'alert' if @event.closed? %>
+
+    <% if @event.proposals.blank? %>
+      <div class="yet">This event is ready to receive proposals!<br />
+      Tweet this event to your friends so they can submit proposals and spread the word!</div>
+      <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
+    <% end %>
+
+    <% @event.proposals.each do |proposal| %>
+      <%= render proposal %>
+    <% end %>
   </section>
 
   <% if user_is_owner?(@event) %>

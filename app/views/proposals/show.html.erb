@@ -9,12 +9,16 @@
   <%= render @comment.proposal %>
 
   <% if user_signed_in? %>
-    <%= render 'comments/form' %>
+    <div class="content-box <%= @comments.any? ? 'top' : ''%>">
+      <%= render 'comments/form' %>
+    </div>
   <% else %>
     <%= link_to t('proposals.comments.please_sign_in'), new_user_session_path %>
   <% end %>
 
-  <% @comments.each do |comment| -%>
-    <%= render comment %>
+  <% @comments.each_with_index do |comment, index| -%>
+    <div class="content-box <%= last_comment?(@comments, index) ? 'bottom' : '' %>">
+      <%= render comment %>
+    </div>
   <% end -%>
 </div>

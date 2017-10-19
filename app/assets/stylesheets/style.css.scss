@@ -408,6 +408,7 @@ img#user_picture{
   padding:19px;
   position:relative;
   float: left;
+  width: 620px;
 }
 
 .event_notice_area {
@@ -448,7 +449,6 @@ img#user_picture{
   border-radius: 10px;
   margin-bottom:10px;
   padding: 20px 20px 120px 20px;
-  width:581px;
   position: relative;
 }
 
@@ -594,13 +594,30 @@ a.prop_link:hover, a.prop_link:active{
   margin: 20px;
 }
 
+.content-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+
+  &.top {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.content-box-divider {
+  border-top: 1px solid #eff7fc;
+  padding: 20px 0;
+}
+
 .comments_list{
-  background:image-url('comment_it.png') repeat scroll 0 0 transparent;
-  left:69px;
-  margin-bottom:10px;
-  min-height:110px;
-  position:relative;
-  width:512px;
+  background: #fff;
+  border-radius: 10px;
   padding: 20px;
 }
 
@@ -631,16 +648,6 @@ a.prop_link:hover, a.prop_link:active{
   height:50px;
   padding:3px;
   width:427px;
-}
-
-#comment_new{
-  background:image-url('comment_it.png') repeat scroll 0 0 transparent;
-  padding: 20px;
-  margin-bottom: 10px;
-  width: 512px;
-  position: relative;
-  min-height: 110px;
-  left: 69px;
 }
 
 #new_item h1 {
@@ -1047,4 +1054,8 @@ form {
       margin-bottom: 10px;
     }
   }
+}
+
+.adsbygoogle {
+  margin: 10px;
 }

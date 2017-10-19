@@ -10,6 +10,7 @@ commented by the users.
 [![Code Climate](https://codeclimate.com/github/call4paperz/call4paperz/badges/gpa.svg)](https://codeclimate.com/github/call4paperz/call4paperz)
 [![Test Coverage](https://codeclimate.com/github/call4paperz/call4paperz/badges/coverage.svg)](https://codeclimate.com/github/call4paperz/call4paperz/coverage)
 [![security](https://hakiri.io/github/call4paperz/call4paperz/master.svg)](https://hakiri.io/github/call4paperz/call4paperz/master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/call4paperz/call4paperz.svg)](https://gemnasium.com/github.com/call4paperz/call4paperz)
 
 ## Environment Configuration
 
@@ -25,6 +26,8 @@ You must set the following environment variables for the system to fully work:
     GITHUB_SECRET
     SECRET_KEY
     DEVISE_PEPPER
+    RECAPTCHA_PRIVATE_KEY
+    RECAPTCHA_PUBLIC_KEY
 
 ## Bootstrapping (and using Foreman to run all the things)
 
@@ -119,9 +122,7 @@ Before was bravely maintained by [ricardovaleriano](https://github.com/ricardova
 - Vinicius Baggio Fuentes (no longer active)
 
 ## Contributors
-- [akitaonrails](https://github.com/akitaonrails)
-- [dukex](https://github.com/dukex)
-- [fnando](https://github.com/fnando)
+We have a few awesome contributors that you can take a look here: https://github.com/call4paperz/call4paperz/graphs/contributors
 
 ## License
 call4paperz uses the MIT license. Please check the LICENSE file for more details.

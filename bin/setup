@@ -71,7 +71,7 @@ done
 
 (
   set -e
-  check_ruby "2.4.0"
+  check_ruby "2.4.1"
   test_dependency "psql" "PostgreSQL"
   install_bundler
 )

@@ -1,3 +1,7 @@
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
+
 if Rails.env.production?
   CarrierWave.configure do |config|
     config.storage :fog
@@ -8,7 +12,7 @@ if Rails.env.production?
     }
 
     config.fog_use_ssl_for_aws = false
-    config.fog_directory  = 'cdn.call4paperz.com'
+    config.fog_directory       = 'cdn.call4paperz.com'
   end
 else
   CarrierWave.configure do |config|

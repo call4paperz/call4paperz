@@ -82,6 +82,7 @@ class ProposalsController < ApplicationController
   end
 
   private
+
   def event
     @event ||= Event.find params[:event_id]
   end
@@ -111,6 +112,14 @@ class ProposalsController < ApplicationController
       notice = message[:fail_message]
     end
 
-    redirect_to(event_url(event), notice: notice)
+    respond_to do |format|
+      if request.xhr?
+        format.html { render proposal, layout: false }
+      else
+        format.html { redirect_to(event_url(event), notice: notice) }
+      end
+    end
   end
+
 end
+

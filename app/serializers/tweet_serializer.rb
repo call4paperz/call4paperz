@@ -7,7 +7,7 @@ class TweetSerializer < ActiveModel::Serializer
 
   def created_at
     Time.use_zone object.time_zone || "Brasilia" do
-      time_ago_in_words object.created_at
+      time_ago_in_words object.created_at.dup
     end
   end
 end

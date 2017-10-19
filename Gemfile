@@ -1,19 +1,20 @@
 source 'https://rubygems.org'
 
-ruby '2.4.0'
+ruby '2.4.1'
 
 gem 'rails', '~> 4.2.0'
 
 gem 'active_model_serializers'
 gem 'acts-as-taggable-on'
 gem 'addressable'
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
 gem 'dalli'
 gem 'devise', '~> 3.5.10'
 gem 'fog-aws'
 gem 'friendly_id', '~> 5.0'
 gem 'globalize'
 gem 'jquery-rails', '4.0.5'
+gem 'kaminari'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'

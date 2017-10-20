@@ -196,9 +196,15 @@ ul#menu_top li a:hover{
   background: #fff;
   border-radius: 10px;
   width: 578px;
-  height: 115px;
   padding: 20px;
-  position: relative;
+
+  h2 {
+    margin: 0 0 .5em;
+
+    a {
+      font-size: 22px;
+    }
+  }
 }
 
 .event + .event {
@@ -250,12 +256,6 @@ ul#menu_top li a:hover{
   text-decoration: underline;
   color: $vermelho;
   background-color: #ffffff;
-}
-
-.buttons{
-  position: absolute;
-  top: 95px;
-  width: 400px;
 }
 
 .fb_iframe_widget {

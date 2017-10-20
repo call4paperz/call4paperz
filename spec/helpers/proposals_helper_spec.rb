@@ -55,4 +55,20 @@ describe ProposalsHelper, :type => :helper do
       end
     end
   end
+
+  describe "#last_comment?" do
+    let(:comments) { [Comment.new, Comment.new] }
+
+    context "when given comment is the last" do
+      it "returns true" do
+        expect(helper.last_comment?(comments, 1)).to be_truthy
+      end
+    end
+
+    context "when given comment is not the last" do
+      it "returns false" do
+        expect(helper.last_comment?(comments, 0)).to be_falsy
+      end
+    end
+  end
 end

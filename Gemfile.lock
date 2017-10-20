@@ -54,7 +54,7 @@ GEM
     builder (3.2.3)
     bullet (5.5.1)
       activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.10.0)
+      uniform_notifier (>= 1.6.0)
     byebug (9.0.6)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -265,6 +265,7 @@ GEM
     raindrops (0.13.0)
     rake (12.1.0)
     recaptcha (0.3.6)
+    redcarpet (3.4.0)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
     rspec-core (3.7.0)
@@ -349,6 +350,7 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.6)
       rack (>= 1.0)
+    will_paginate (3.1.6)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -393,6 +395,7 @@ DEPENDENCIES
   rails_12factor
   rake
   recaptcha
+  redcarpet
   responders
   rspec-rails (~> 3.7)
   sass-rails (~> 4.0.0)
@@ -406,6 +409,7 @@ DEPENDENCIES
   uglifier
   unicorn
   validates_timeliness (~> 3.0.14)
+  will_paginate
 
 RUBY VERSION
    ruby 2.4.1p111

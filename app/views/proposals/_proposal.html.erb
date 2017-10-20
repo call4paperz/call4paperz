@@ -8,13 +8,17 @@
       <%= link_to proposal.name, event_proposal_path(@event, proposal), :class => "prop_link" %>
       <% if user_is_owner?(proposal) %>
         <span id="edit_proposal">
-        <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) %>
+          <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) %>
         </span>
       <% end %>
     </strong>
   </p>
+
   <%= render_votes_bar(proposal.acceptance_points) %>
-  <p><%= markdown(proposal.description) %></p>
+
+  <div class="using-markdown">
+    <%= markdown(proposal.description) %>
+  </div>
 
   <div class="prop_sub">
     <%= user_picture(proposal_user(proposal)) %>

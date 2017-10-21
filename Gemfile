@@ -39,7 +39,6 @@ group :production do
 end
 
 group :development do
-  gem 'better_errors'
   gem 'bullet'
   gem "letter_opener_web"
   gem 'spring'

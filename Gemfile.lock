@@ -360,7 +360,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts-as-taggable-on
-  addressable
   airbrake (~> 5.0)
   better_errors
   bullet

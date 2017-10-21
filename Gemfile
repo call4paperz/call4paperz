@@ -44,7 +44,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'bullet'
-  gem 'thin'
   gem "letter_opener_web"
   gem 'spring'
   gem 'spring-commands-rspec'

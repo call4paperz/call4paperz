@@ -76,6 +76,7 @@
 <%= content_for :js do %>
 <script>
   $(document).ready(function() {
+    var simplemde = new SimpleMDE({ element: $("#event_description")[0], spellChecker: false });
     var descriptionKeycount = new HandleKeycount();
     var nameKeycount = new HandleKeycount();
 

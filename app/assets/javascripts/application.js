@@ -5,6 +5,7 @@
 //= require jquery.validate.min
 //= require ajax
 //= require call4paperz
+//= require simplemde.min
 //= require_self
 
 $(function(){

@@ -32,6 +32,8 @@ gem 'twitter', '~> 5.16.0'
 gem 'uglifier'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
+gem 'will_paginate'
+gem 'redcarpet'
 
 group :production do
   gem 'airbrake', '~> 5.0'
@@ -50,7 +52,7 @@ end
 
 group :development, :test do
   gem 'foreman'
-  gem 'rspec-rails', '~> 3.2'
+  gem 'rspec-rails', '~> 3.7'
   gem 'dotenv-rails'
   gem 'pry-byebug'
 end

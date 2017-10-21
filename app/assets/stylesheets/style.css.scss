@@ -196,9 +196,15 @@ ul#menu_top li a:hover{
   background: #fff;
   border-radius: 10px;
   width: 578px;
-  height: 115px;
   padding: 20px;
-  position: relative;
+
+  h2 {
+    margin: 0 0 .5em;
+
+    a {
+      font-size: 22px;
+    }
+  }
 }
 
 .event + .event {
@@ -250,12 +256,6 @@ ul#menu_top li a:hover{
   text-decoration: underline;
   color: $vermelho;
   background-color: #ffffff;
-}
-
-.buttons{
-  position: absolute;
-  top: 95px;
-  width: 400px;
 }
 
 .fb_iframe_widget {
@@ -374,12 +374,12 @@ ul#menu_top li a:hover{
 
 #proposal{
   background: #191817;
+  color: white;
   border-radius: 10px;
-  margin-bottom:20px;
   margin-top:20px;
-  padding:10px;
-  position:relative;
-  width:281px;
+  padding:20px;
+  width: 300px;
+  box-sizing: border-box;
 }
 
 #profile{
@@ -435,7 +435,6 @@ img#user_picture{
 #proposal p{
   font-size: 12px;
   color: #ffffff;
-  margin-left: 35px;
 }
 
 #proposal p strong{
@@ -1058,4 +1057,32 @@ form {
 
 .adsbygoogle {
   margin: 10px;
+}
+
+.using-markdown {
+  img {
+    max-width: 100%;
+  }
+
+  h1, h2, h3, h4, h5, p {
+    margin: 1em 0;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  ol, ul {
+    font-size: 12px;
+    list-style-type: decimal;
+    padding: 0 0 0 2em;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
 }

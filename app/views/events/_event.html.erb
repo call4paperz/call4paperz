@@ -5,12 +5,13 @@
 <div id="proposal">
   <% if @event.picture? %>
     <%= link_to image_tag(@event.picture.cropped.url, :class => 'logo', :size => "180x175" ), @event %>
-    <%= image_tag 'linha.png', :class => 'linha' %>
   <% end %>
 
   <p><strong><%= link_to @event.name, @event %></strong></p>
-  <p><%= @event.description %></p>
-  <%= image_tag 'linha.png', :class => 'linha' %>
+
+  <div class="using-markdown">
+    <%= markdown(@event.description) %>
+  </div>
 
   <p><strong>Date: </strong><%= l(@event.occurs_at, :format => :long) if @event.occurs_at %></p>
   <p><strong>URL: </strong><%= link_to @event.url, @event.url, :class => 'branco' if @event.url.present? %></p>
@@ -24,13 +25,9 @@
     <% end %>
   </p>
 
-  <%= image_tag 'linha.png', :class => 'linha' %>
-
   <p><strong>Organizer: </strong><%= @event.user.name %><br/>
     <%= user_picture(@event.user, :class => 'organizer') %>
   </p>
-
-  <%= image_tag 'linha.png', :class => 'linha' %>
 
   <div class="event-social">
     <div class="twit">

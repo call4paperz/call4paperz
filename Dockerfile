@@ -1,12 +1,19 @@
-FROM ruby:2.4.1
+FROM ruby:2.4.1-slim
 
-RUN apt-get update
-RUN apt-get install -y build-essential nodejs postgresql-client bundler
+RUN apt-get update && \
+    apt-get install -y build-essential nodejs libpq-dev postgresql-client imagemagick
 
-RUN mkdir -p /var/www/app
-WORKDIR /var/www/app
-COPY . /var/www/app
+ENV APP_PATH /var/www/app
 
-ENV BUNDLE_PATH=/var/www/app/.bundle
+WORKDIR $APP_PATH
+
+COPY Gemfile* $APP_PATH/
+
+ENV \
+  BUNDLE_GEMFILE=$APP_PATH/Gemfile \
+  BUNDLE_JOBS=2 \
+  BUNDLE_PATH=/var/www/app/.bundle
 
 RUN bundle install
+
+COPY . $APP_PATH/

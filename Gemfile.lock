@@ -73,7 +73,6 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.2)
     culerity (0.2.15)
-    daemons (1.2.1)
     dalli (2.7.3)
     database_cleaner (1.4.1)
     devise (3.5.10)
@@ -92,7 +91,6 @@ GEM
       dotenv (= 2.0.0)
     equalizer (0.0.10)
     erubis (2.7.0)
-    eventmachine (1.0.5)
     excon (0.55.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -301,10 +299,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (1.4.1)
@@ -388,7 +382,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-commands-rspec
-  thin
   timecop
   twitter (~> 5.16.0)
   uglifier

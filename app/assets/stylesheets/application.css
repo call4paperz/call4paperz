@@ -7,4 +7,5 @@
 *= require style
 *= require widgets
 *= require events
+*= require simplemde.min
 */

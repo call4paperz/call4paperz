@@ -6,7 +6,6 @@ gem 'rails', '~> 4.2.0'
 
 gem 'active_model_serializers'
 gem 'acts-as-taggable-on'
-gem 'addressable'
 gem 'carrierwave', '~> 0.10.0'
 gem 'dalli'
 gem 'devise', '~> 3.5.10'

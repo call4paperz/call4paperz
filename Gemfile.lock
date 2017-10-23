@@ -52,9 +52,9 @@ GEM
       rack (>= 0.9.0)
     buftok (0.2.0)
     builder (3.2.3)
-    bullet (5.5.1)
+    bullet (5.6.1)
       activesupport (>= 3.0.0)
-      uniform_notifier (>= 1.6.0)
+      uniform_notifier (~> 1.10.0)
     byebug (9.0.6)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -73,7 +73,6 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.2)
     culerity (0.2.15)
-    daemons (1.2.1)
     dalli (2.7.3)
     database_cleaner (1.4.1)
     devise (3.5.10)
@@ -92,7 +91,6 @@ GEM
       dotenv (= 2.0.0)
     equalizer (0.0.10)
     erubis (2.7.0)
-    eventmachine (1.0.5)
     excon (0.55.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -147,18 +145,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jwt (1.4.1)
-    kaminari (1.0.1)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.0.1)
-      kaminari-activerecord (= 1.0.1)
-      kaminari-core (= 1.0.1)
-    kaminari-actionview (1.0.1)
-      actionview
-      kaminari-core (= 1.0.1)
-    kaminari-activerecord (1.0.1)
-      activerecord
-      kaminari-core (= 1.0.1)
-    kaminari-core (1.0.1)
     kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -313,10 +299,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (1.4.1)
@@ -350,7 +332,6 @@ GEM
       timeliness (~> 0.3.6)
     warden (1.2.6)
       rack (>= 1.0)
-    will_paginate (3.1.6)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -360,7 +341,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts-as-taggable-on
-  addressable
   airbrake (~> 5.0)
   better_errors
   bullet
@@ -378,7 +358,6 @@ DEPENDENCIES
   friendly_id (~> 5.0)
   globalize
   jquery-rails (= 4.0.5)
-  kaminari
   letter_opener_web
   mini_magick
   newrelic_rpm
@@ -403,13 +382,11 @@ DEPENDENCIES
   simplecov
   spring
   spring-commands-rspec
-  thin
   timecop
   twitter (~> 5.16.0)
   uglifier
   unicorn
   validates_timeliness (~> 3.0.14)
-  will_paginate
 
 RUBY VERSION
    ruby 2.4.1p111

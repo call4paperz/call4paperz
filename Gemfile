@@ -6,7 +6,6 @@ gem 'rails', '~> 4.2.0'
 
 gem 'active_model_serializers'
 gem 'acts-as-taggable-on'
-gem 'addressable'
 gem 'carrierwave', '~> 0.10.0'
 gem 'dalli'
 gem 'devise', '~> 3.5.10'
@@ -14,7 +13,6 @@ gem 'fog-aws'
 gem 'friendly_id', '~> 5.0'
 gem 'globalize'
 gem 'jquery-rails', '4.0.5'
-gem 'kaminari'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -32,7 +30,6 @@ gem 'twitter', '~> 5.16.0'
 gem 'uglifier'
 gem 'unicorn'
 gem 'validates_timeliness', '~> 3.0.14'
-gem 'will_paginate'
 gem 'redcarpet'
 
 group :production do
@@ -44,7 +41,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'bullet'
-  gem 'thin'
   gem "letter_opener_web"
   gem 'spring'
   gem 'spring-commands-rspec'

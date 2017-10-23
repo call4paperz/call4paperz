@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   respond_to :html, :json
 
   def show
-    @comments = proposal.comments.includes(:user).order("created_at DESC")
+    @comments = proposal.comments.includes(:user).order("created_at DESC").to_a
 
     @comment = Comment.new
     @comment.proposal = proposal

@@ -5,13 +5,13 @@
   display: inline-block;
   border-radius: 5px;
   color: white;
-  background-color: lighten($vermelho, 10%);
+  background-color: lighten($color-primary, 10%);
   padding: 5px 10px;
   margin: 20px 0;
 
   &:hover, &:active {
     text-decoration: none;
     color: white;
-    background-color: lighten($vermelho, 11%);
+    background-color: lighten($color-primary, 11%);
   }
 }

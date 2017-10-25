@@ -4,17 +4,17 @@
 
 body{
   font-family: helvetica;
-  background-color: $azul;
+  background-color: $color-secondary;
 }
 
 header {
-  border-top: 10px solid $azul;
+  border-top: 10px solid $color-secondary;
   background-color: #000;
 }
 
 a {
   font-size: 14px;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 a:link, a:visited {
@@ -23,7 +23,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   text-decoration: underline;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 .hidden {
@@ -33,7 +33,7 @@ a:hover, a:active {
 .clear { clear: both; }
 
 .main {
-  background-color: $vermelho;
+  background-color: $color-primary;
   width: 100%;
   overflow: hidden;
 }
@@ -62,7 +62,7 @@ ul#menu_top{
 }
 
 ul#menu_top li a{
-  color:$vermelho;
+  color:$color-primary;
   font-weight: bold;
   display:block;
   float: left;
@@ -71,7 +71,7 @@ ul#menu_top li a{
 }
 
 ul#menu_top li a:hover{
-  color: $azul;
+  color: $color-secondary;
 }
 
 #pic{
@@ -184,7 +184,7 @@ ul#menu_top li a:hover{
 #most_recent_events p strong,
 #most_recent_comments p strong{
   font-size: 12px;
-  color: $vermelho;
+  color: $color-primary;
   font-weight: bold;
 }
 
@@ -227,7 +227,7 @@ ul#menu_top li a:hover{
 
 .event p strong{
   font-weight: bold;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 .event p{
@@ -245,7 +245,7 @@ ul#menu_top li a:hover{
 
 .event a{
   font-size: 15px;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 .event a:link, .event a:visited{
@@ -254,7 +254,7 @@ ul#menu_top li a:hover{
 
 .event a:hover, .event a:active{
   text-decoration: underline;
-  color: $vermelho;
+  color: $color-primary;
   background-color: #ffffff;
 }
 
@@ -289,7 +289,7 @@ ul#menu_top li a:hover{
 .comment p small{
   font-size: 9px;
   font-weight: bold;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 .comment div{
@@ -319,7 +319,7 @@ ul#menu_top li a:hover{
 .prop_link{
   margin-top: 40px;
   font-size: 12px;
-  color: $vermelho;
+  color: $color-primary;
   text-align: center;
 }
 .prop_link span{
@@ -327,13 +327,13 @@ ul#menu_top li a:hover{
 }
 
 #footer{
-  background: $vermelho;
+  background: $color-primary;
   height: 273px;
   clear: both;
 }
 
 .fancy_login {
-  border-bottom: 2px dotted $vermelho;
+  border-bottom: 2px dotted $color-primary;
   padding-bottom: 2px;
 }
 
@@ -412,7 +412,7 @@ img#user_picture{
 
 .event_notice_area {
   border-radius: 5px;
-  border: 1px solid lighten($vermelho, 20%);
+  border: 1px solid lighten($color-primary, 20%);
   margin: 10px 10px 20px;
   padding: 10px;
   background-color: white;
@@ -438,7 +438,7 @@ img#user_picture{
 
 #proposal p strong{
   font-weight: bold;
-  color: $vermelho;
+  color: $color-primary;
   font-size: 14px;
 }
 
@@ -453,7 +453,7 @@ img#user_picture{
 
 .prop p strong, .sub_vote, .sub_add_prop{
   font-weight: bold;
-  color: $vermelho;
+  color: $color-primary;
   font-size: 12px;
 }
 
@@ -471,7 +471,7 @@ img#user_picture{
 }
 
 .prop_sub small{
-  color: $vermelho;
+  color: $color-primary;
   display: block;
   font-size: 12px;
   font-weight: bold;
@@ -484,18 +484,18 @@ img#user_picture{
 
 .prop_sub a:link, .prop_sub a:visited{
   font-size: 12px;
-  color: $vermelho;
+  color: $color-primary;
   text-decoration: none;
 }
 
 .prop_sub a:hover, .prop_sub a:active{
   text-decoration: underline;
-  color: $vermelho;
+  color: $color-primary;
   background-color: #ffffff;
 }
 
 a.prop_link:link, a.prop_link:visited{
-  color: $vermelho;
+  color: $color-primary;
   text-decoration: none;
   font-size: 14px;
 }
@@ -616,13 +616,13 @@ a.prop_link:hover, a.prop_link:active{
 
 .comments_list p small{
   font-size: 12px;
-  color: $vermelho;
+  color: $color-primary;
   font-weight: bold;
 }
 
 .comments_list p spam{
   font-size: 12px;
-  color: $vermelho;
+  color: $color-primary;
 }
 
 #comment_new form .field textarea{
@@ -653,7 +653,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 #new_item h3 {
-  color: $vermelho;
+  color: $color-primary;
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 10px;
@@ -759,7 +759,7 @@ a.prop_link:hover, a.prop_link:active{
 }
 
 .vermelho{
-  color: $vermelho;
+  color: $color-primary;
 }
 
 .datepicker{
@@ -780,7 +780,7 @@ a.prop_link:hover, a.prop_link:active{
 
 .event_stat p.name spam{
   font-size: 14px;
-  color: $vermelho;
+  color: $color-primary;
   font-weight: bold;
 }
 

@@ -37,6 +37,10 @@ module ProposalsHelper
     end
   end
 
+  def last_comment?(comments, index)
+    comments.size == index + 1
+  end
+
   private
     VOTES_BAR_MAX_WIDTH = 200 # In pixels
     LIMIT = 100

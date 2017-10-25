@@ -1,22 +1,31 @@
 <header>
-  <% if @event.picture? %>
-    <%= link_to image_tag(@event.picture.cropped.url, class: 'logo', size: "180x175" ), @event %>
-  <% end %>
-
-  <div id="event-main-info">
-    <h1 id="event-title"><%= link_to @event.name, @event %></h1>
-
-    <% if @event.occurs_at %>
-      <div id="event-date"><%= fa_icon('calendar-check-o') %><%= l(@event.occurs_at, format: :long) %></div>
+  <div id="event-header">
+    <% if @event.picture? %>
+      <%= link_to image_tag(@event.picture.cropped.url, id: 'event-picture', size: "150x150" ), crop_event_path(@event), title: t('events.show.crop') %>
     <% end %>
 
-    <div id="event-social">
-      <div class="twit">
-        <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
+    <div id="event-main-info">
+      <h1 id="event-title"><%= link_to @event.name, @event %></h1>
+
+      <% if @event.occurs_at %>
+        <div id="event-date"><%= fa_icon('calendar-check-o') %><%= l(@event.occurs_at, format: :long) %></div>
+      <% end %>
+
+      <div id="event-social">
+        <div class="twit">
+          <%= render 'shared/tweet_button', text: t('events.share', event_name: @event.name), url: event_url(@event) %>
+        </div>
+        <%= render 'shared/facebook_like', url: event_url(@event) %>
       </div>
-      <%= render 'shared/facebook_like', url: event_url(@event) %>
     </div>
   </div>
+
+  <% if user_is_owner?(@event) %>
+    <nav id="event-admin-nav">
+      <%= link_to t('events.show.edit'), edit_event_path(@event) %>
+      <%= link_to t("events.show.closed_#{@event.closed?}"), edit_event_close_path(@event) %>
+    </nav>
+  <% end %>
 
   <div id="event-metadata">
     <div id="event-info">
@@ -39,11 +48,23 @@
     </div>
 
     <div id="event-organizer">
-      Organizer: <%= user_picture(@event.user, width: '16px') %> <%= @event.user.name %>
+      <%= t('events.show.organizer_label') %> <%= user_picture(@event.user, width: '16px') %> <%= @event.user.name %>
     </div>
   </div>
+
+  <% if user_is_owner?(@event) %>
+    <div id="event-speakers">
+      <h3><%= t('events.show.speakers_contacts') %></h3>
+      <ul>
+        <% @users.each_pair do |k, user| %>
+          <li><%= user.name %> (<%= user.email ? user.email : user.authentications.first.provider %>)</li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 </header>
 
 <section id="event-description">
+  <h2><%= t('events.show.description_title') %></h2>
   <%= markdown(@event.description) %>
 </section>

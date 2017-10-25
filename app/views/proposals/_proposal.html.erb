@@ -3,7 +3,7 @@
 
   <header>
     <h3><%= link_to proposal.name, event_proposal_path(@event, proposal) %></h3>
-    <%= link_to "(edit)", edit_event_proposal_path(@event, proposal) if user_is_owner?(proposal) %>
+    <%= link_to "edit", edit_event_proposal_path(@event, proposal) if user_is_owner?(proposal) %>
   </header>
 
   <section class="proposal-description">
@@ -17,18 +17,18 @@
     </div>
 
     <%= link_to "#{proposal.comments.size} comments", [@event, proposal], class: 'proposal-comments' %>
+  </section>
 
-    <section class="proposal-voting">
-      <div class="voting-controls">
-        <% if current_user.has_vote_for?(proposal) %>
-          <%= content_tag :button, fa_icon('check') %>
-        <% else %>
-          <%= content_tag :button, fa_icon('thumbs-up') %>
-          <%= content_tag :button, fa_icon('thumbs-down') %>
-        <% end %>
-      </div>
-      <p class="total-votes"><%= proposal.acceptance_points %> votes</p>
-      <%#= vote_box(@event, proposal, current_user) %>
-    </section>
+  <section class="proposal-voting">
+    <div class="voting-controls">
+      <% if current_user.has_vote_for?(proposal) %>
+        <%= content_tag :button, fa_icon('check') %>
+      <% else %>
+        <%= content_tag :button, fa_icon('thumbs-up') %>
+        <%= content_tag :button, fa_icon('thumbs-down') %>
+      <% end %>
+    </div>
+    <p class="total-votes"><%= proposal.acceptance_points %> votes</p>
+    <%#= vote_box(@event, proposal, current_user) %>
   </section>
 </div>

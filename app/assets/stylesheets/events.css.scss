@@ -2,6 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+.button {
+  &.lighter {
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    display: block;
+    line-height: 1.6em;
+    padding: .7em;
+    box-sizing: border-box;
+    color: #555;
+
+    &:hover {
+      text-decoration: none;
+      color: #999;
+      border: 1px solid #dadada;
+    }
+
+    i {
+      margin: 0 .5em 0 0;
+    }
+  }
+}
+
 #events-show {
   div, span, header, section, footer {
     box-sizing: border-box;
@@ -9,14 +31,15 @@
 
   #main-section {
     display: flex;
+    width: calc(100vw - 10em);
 
     #event-details {
-      width: 40%;
+      width: 50%;
       background-color: #fff;
     }
 
     #event-proposals {
-      width: 60%;
+      width: 50%;
       padding: 1em;
     }
   }
@@ -31,6 +54,8 @@
 
     #proposals-header {
       display: flex;
+      justify-content: space-between;
+      margin: 1em 0;
     }
   }
 
@@ -38,11 +63,35 @@
     border-top: 1px solid rgba(255,255,255,.1);
     font-family: 'Roboto', sans-serif;
 
+    #event-header {
+      display: flex;
+      padding: .5em;
+    }
+
+    #event-picture {
+      background: rgba(0,0,0,.5);
+      color: #fff;
+
+      img {
+        display: block;
+      }
+
+      &:hover {
+        img {
+          opacity: .2;
+        }
+      }
+
+      &::before {
+        content: "Change image";
+      }
+    }
+
     #event-main-info {
       padding: .5em 1em;
 
       #event-title {
-        font-size: 3em;
+        font-size: 2.2em;
         line-height: 1.4em;
       }
 
@@ -60,18 +109,33 @@
       }
     }
 
+    #event-admin-nav {
+      font-size: .8em;
+      background: #f3f3f3;
+      border-bottom: 1px solid #fff;
+      padding: .5em;
+      display: flex;
+
+      a {
+        padding: 0 .7em;
+        display: block;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
     #event-metadata {
-      background: #eee;
-      border-top: 1px solid rgba(255,255,255,.3);
-      padding: .5em 0;
-      color: #999;
       display: flex;
       justify-content: space-between;
+      background: #eee;
+      border-top: 1px solid rgba(255,255,255,.3);
+      padding: .5em 1em;
+      color: #999;
       font-size: .8em;
 
       #event-info {
-        margin: 0 1em;
-
         span {
           margin: 0 1em 0 0;
 
@@ -82,10 +146,28 @@
       }
 
       #event-organizer {
-        margin: 0 1em;
-
         img {
           vertical-align: middle;
+        }
+      }
+    }
+
+    #event-speakers {
+      padding: .5em .7em;
+      color: #666;
+      border-bottom: 1px solid #eee;
+
+      h3 {
+        font-size: 1.4em;
+        margin: .5em 0;
+      }
+
+      ul {
+        overflow: auto;
+
+        li {
+          float: left;
+          width: 50%;
         }
       }
     }
@@ -96,12 +178,11 @@
       font-size: 1.2em;
       line-height: 1.1em;
       color: #666;
-      padding: 1em;
+      padding: .5em;
       background: #fff;
 
       h1, h2, h3, h4, h5 {
         color: #333;
-        font-weight: bold;
         margin: .5em 0;
       }
 
@@ -129,7 +210,10 @@
 
   #proposals-list {
     .proposal-item {
-      margin: 2em 0;
+      margin: 0 0 1em;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 1em;
 
       header {
         h3 {

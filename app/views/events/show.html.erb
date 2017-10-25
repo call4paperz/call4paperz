@@ -3,26 +3,15 @@
 </div>
 
 <div id="event-proposals">
-  <% if user_is_owner?(@event) %>
-    <div class="event_notice_area">
-      <p>
-        Administrative tools:
-        <strong>
-          <%= link_to t('.crop'), crop_event_path(@event) %> |
-          <%= link_to t('.edit'), edit_event_path(@event) %> |
-          <%= link_to t(".closed_#{@event.closed?}"), edit_event_close_path(@event) %>
-        </strong>
-      </p>
-    </div>
-  <% end %>
-
   <header id="proposals-header">
     <div>
       <h2>Vote for it!</h2>
       <p class="sub_vote">Decide who speaks at the conference.</p>
     </div>
 
-    <%= link_to(fa_icon('bullhorn') + t('events.add_proposal'), new_event_proposal_path(@event), id: 'add-proposal') unless @event.closed? %>
+    <div>
+      <%= link_to(fa_icon('plus-square-o') + t('events.add_proposal'), new_event_proposal_path(@event), id: 'add-proposal', class: 'button lighter') unless @event.closed? %>
+    </div>
   </header>
 
   <section id="proposals-list">
@@ -38,15 +27,6 @@
       <%= render proposal %>
     <% end %>
   </section>
-
-  <% if user_is_owner?(@event) %>
-    <div class="event_notice_area">
-      <p>Speakers contacts:</p>
-      <% @users.each_pair do |k, user| %>
-        <%= user.name %> <%= user.email %>,
-      <% end %>
-    </div>
-  <% end %>
 </div>
 
 <%= content_for :js do %>

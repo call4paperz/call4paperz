@@ -11,7 +11,7 @@ body{
 header#main-header {
   background-color: $bg-dark-grey;
   overflow: auto;
-  width: 36em;
+  width: 10em;
   /* max height - (footer height + copyright height) */
   height: calc(100vh - (273px + 15px));
 }
@@ -44,6 +44,11 @@ a:hover, a:active {
 .container{
   width: 960px;
   margin: 0 auto;
+}
+
+#googleads {
+  text-align: center;
+  padding: .5em;
 }
 
 #pic{
@@ -910,6 +915,7 @@ form {
     &:last-child {
       border-bottom: 0;
     }
+  }
 }
 
 .using-markdown {

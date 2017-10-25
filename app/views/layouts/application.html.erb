@@ -50,18 +50,7 @@
     <%= render 'layouts/footer' %>
 
     <%= javascript_include_tag 'application' %>
-    <script type='text/javascript'>
-      $(document).ready(function(){
-        $('.rr').hover(
-          function(){
-            $(this).fadeTo('slow', 0.1);
-          },
-          function(){
-            $(this).fadeTo('slow', 1);
-          }
-        )
-      });
-    </script>
+
     <%= yield :js %>
     <%= render 'shared/analytics' %>
   </body>

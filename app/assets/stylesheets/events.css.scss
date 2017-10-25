@@ -32,15 +32,19 @@
   #main-section {
     display: flex;
     width: calc(100vw - 10em);
+    background: $bg-grey;
 
     #event-details {
       width: 50%;
       background-color: #fff;
+      box-shadow: 0 0 1em rgba(0,0,0,.3);
+      z-index: 1;
     }
 
     #event-proposals {
       width: 50%;
-      padding: 1em;
+      padding: 1em 1em 1em 0;
+      z-index: 0;
     }
   }
 
@@ -55,7 +59,7 @@
     #proposals-header {
       display: flex;
       justify-content: space-between;
-      margin: 1em 0;
+      margin: 1em 0 1em 1em;
     }
   }
 
@@ -96,8 +100,7 @@
       }
 
       #event-date {
-        color: #999;
-        font-weight: bold;
+        color: #666;
 
         i {
           margin: 0 .5em 0 0;
@@ -212,7 +215,9 @@
     .proposal-item {
       margin: 0 0 1em;
       background: #fff;
-      border: 1px solid rgba(0,0,0,0.1);
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-right: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
       padding: 1em;
 
       header {

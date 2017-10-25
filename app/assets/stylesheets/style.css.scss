@@ -5,15 +5,13 @@
 
 body{
   font-family: helvetica;
-  background-color: $bg-grey;
+  background-color: $bg-dark-grey;
 }
 
 header#main-header {
   background-color: $bg-dark-grey;
   overflow: auto;
   width: 10em;
-  /* max height - (footer height + copyright height) */
-  height: calc(100vh - (273px + 15px));
 }
 
 a {

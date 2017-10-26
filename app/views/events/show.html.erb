@@ -31,18 +31,20 @@
 
 <%= content_for :js do %>
   <script>
-  $('.ajax_vote').click(function(){
-    var thiz = this;
+   $('.voting-controls button').click(function(){
+     var proposal = $(this).parents('.proposal-item');
+     var spinner = proposal.find('.voting-controls').find('.spinner')
 
-    FetchWithAjax.fetch({
-        url: this.href,
-        spinner: $(this).parents('.prop').find('.spinner'),
-        success: function(data) {
-            $(thiz).parents('.prop').replaceWith(data);
-        }
-    });
+     FetchWithAjax.fetch({
+       url: this.getAttribute('data-url'),
+       spinner: spinner,
+       success: function(data) {
+         spinner.removeAttr('style');
+         proposal.replaceWith(data);
+       }
+     });
 
-    return false;
-  });
+     return false;
+   });
   </script>
 <% end %>

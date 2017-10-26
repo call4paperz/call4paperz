@@ -222,17 +222,21 @@
 
       header {
         h3 {
-          font-size: 2em;
+          font-size: 1.6em;
           border-bottom: 1px dotted #999;
           padding: 0 0 .2em;
           margin: 0 0 .3em;
         }
       }
 
+      .proposal-description {
+        margin: 1em 0 2em;
+      }
+
       .proposal-metadata {
         display: flex;
         justify-content: space-between;
-        margin: 1em 0 0;
+        margin: 1em 0;
 
         .proposal-author, .proposal-comments, .proposal-voting {
           align-self: center;
@@ -251,6 +255,11 @@
         margin: 1px 0 0;
 
         .voting-controls {
+          .spinner {
+            display: none;
+            margin: 1em 3em;
+          }
+
           button {
             font-size: 1.4em;
             cursor: pointer;
@@ -262,7 +271,7 @@
         }
 
         .total-votes {
-          font-size: 2.2em;
+          font-size: 1.8em;
         }
       }
     }

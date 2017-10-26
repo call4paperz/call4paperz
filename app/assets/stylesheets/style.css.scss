@@ -797,23 +797,6 @@ a.comment_detail:link, a.comment_detail:visited {
   margin-bottom: 10px;
 }
 
-.spinner {
-  position: absolute;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-  height:176px;
-  width:581px;
-  background-color: white;
-  z-index: 50;
-  border: 2px solid white;
-  display: none;
-}
-.spinner img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
 .rr{
   bottom:11px;
   left:41px;

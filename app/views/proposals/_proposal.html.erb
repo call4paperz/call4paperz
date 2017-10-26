@@ -1,6 +1,4 @@
 <div class="proposal-item">
-  <%= content_tag :div, image_tag('ajax-loader.gif'), class: 'spinner' %>
-
   <header>
     <h3><%= link_to proposal.name, event_proposal_path(@event, proposal) %></h3>
     <%= link_to "edit", edit_event_proposal_path(@event, proposal) if user_is_owner?(proposal) %>
@@ -24,11 +22,11 @@
       <% if current_user.has_vote_for?(proposal) %>
         <%= content_tag :button, fa_icon('check') %>
       <% else %>
-        <%= content_tag :button, fa_icon('thumbs-up') %>
-        <%= content_tag :button, fa_icon('thumbs-down') %>
+        <%= image_tag 'ajax-loader.gif', class: 'spinner' %>
+        <%= content_tag :button, fa_icon('thumbs-up'), data: {url: like_event_proposal_path(@event, proposal)} %>
+        <%= content_tag :button, fa_icon('thumbs-down'), data: {url: dislike_event_proposal_path(@event, proposal)} %>
       <% end %>
     </div>
     <p class="total-votes"><%= proposal.acceptance_points %> votes</p>
-    <%#= vote_box(@event, proposal, current_user) %>
   </section>
 </div>

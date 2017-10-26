@@ -1,17 +1,39 @@
 @import "constants";
 
-.btn-active {
-  font-size: 18px;;
-  display: inline-block;
-  border-radius: 5px;
-  color: white;
-  background-color: lighten($vermelho, 10%);
-  padding: 5px 10px;
-  margin: 20px 0;
+.button {
+  cursor: pointer;
+  display: block;
+  line-height: 1.6em;
+  padding: .7em;
+  box-sizing: border-box;
 
-  &:hover, &:active {
+  &:hover {
     text-decoration: none;
-    color: white;
-    background-color: lighten($vermelho, 11%);
+  }
+
+  i {
+    margin: 0 .5em 0 0;
+  }
+
+  &.lighter {
+    background: #fff;
+    border: 1px solid #b9b9b9;
+    color: #555;
+
+    &:hover {
+      color: #999;
+      border: 1px solid #dadada;
+    }
+  }
+
+  &.darker {
+    background: #333;
+    border: 1px solid #000;
+    color: #eee;
+
+    &:hover {
+      color: #fff;
+      border: 1px solid #333;
+    }
   }
 }

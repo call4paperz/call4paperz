@@ -40,6 +40,13 @@ en:
     one: "<span>1</span> vote"
     other: "<span>%{count}</span> votes"
 
+  comments:
+    new:
+      title: "Leave your comment:"
+      submit: Post comment
+    comment:
+      time_ago: "%{user} commented %{datetime} ago:"
+
   comment_html:
     one: "<span>1</span> comment"
     other: "<span>%{count}</span> comments"

@@ -245,10 +245,6 @@ a:hover, a:active {
   margin: 20px 0 20px;
 }
 
-.borda_vinho{
-  border: 5px solid #b24450;
-}
-
 .comment p{
   color: #ffffff;
   font-size: 12px;
@@ -322,9 +318,8 @@ a:hover, a:active {
 
 #copyright{
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   color: #ffffff;
-  background-color: #111;
 }
 
 #copyright strong{
@@ -503,23 +498,6 @@ img#user_picture{
 .comments_list p spam{
   font-size: 12px;
   color: $vermelho;
-}
-
-#comment_new form .field textarea{
-  border:2px solid #111111;
-  height:50px;
-  padding:3px;
-  width:427px;
-}
-
-#comment_new{
-  background:image-url('comment_it.png') repeat scroll 0 0 transparent;
-  padding: 20px;
-  margin-bottom: 10px;
-  width: 512px;
-  position: relative;
-  min-height: 110px;
-  left: 69px;
 }
 
 #new_item h1 {
@@ -832,15 +810,14 @@ a.comment_detail:link, a.comment_detail:visited {
 }
 
 .notice {
-  background-color:#f2f2f2;
-  color:#212121;
-  font-size:14px;
-  padding: 20px 20px 10px 20px;
-  text-align:center;
-  z-index:99999;
-  width:100%;
-  font-size: 18px;
-  font-weight: bold;
+  position: absolute;
+  background-color: rgba(39, 39, 39,.95);
+  color: #49bd12;
+  padding: 1em 0;
+  text-align: center;
+  z-index: 99999;
+  width: 100%;
+  font-size: 1.6em;
 }
 
 #crop_original {

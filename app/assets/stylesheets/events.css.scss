@@ -2,29 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.button {
-  &.lighter {
-    background: #fff;
-    border: 1px solid #b9b9b9;
-    display: block;
-    line-height: 1.6em;
-    padding: .7em;
-    box-sizing: border-box;
-    color: #555;
-
-    &:hover {
-      text-decoration: none;
-      color: #999;
-      border: 1px solid #dadada;
-    }
-
-    i {
-      margin: 0 .5em 0 0;
-    }
-  }
-}
-
-#events-show {
+#events-show, #proposals-show {
   div, span, header, section, footer {
     box-sizing: border-box;
   }
@@ -212,14 +190,16 @@
   }
 
   #proposals-list {
-    .proposal-item {
+    .behind-card {
       margin: 0 0 1em;
       background: #fff;
       border-top: 1px solid rgba(0,0,0,0.1);
       border-right: 1px solid rgba(0,0,0,0.1);
       border-bottom: 1px solid rgba(0,0,0,0.1);
       padding: 1em;
+    }
 
+    .proposal-item {
       header {
         h3 {
           font-size: 1.6em;
@@ -272,6 +252,67 @@
 
         .total-votes {
           font-size: 1.8em;
+        }
+      }
+    }
+
+    #proposal-comments {
+      h3 {
+        font-size: 1.4em;
+        margin: 0 0 .5em;
+      }
+
+      form {
+        border-bottom: 1px solid #eee;
+        padding: 0 0 1em;
+
+        #field-container {
+          display: flex;
+          justify-content: space-between;
+
+          textarea {
+            width: 35em;
+            border: 1px solid #ccc;
+          }
+        }
+
+        .actions {
+          text-align: right;
+          padding: .5em 0 0;
+          overflow: auto;
+
+          .button {
+            float: right;
+          }
+        }
+      }
+
+      .comment-item {
+        display: flex;
+        align-items: flex-start;
+        margin: 1em 0;
+        border-bottom: 1px solid #eee;
+        padding: 0 0 1em 0;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        img {
+          margin: 0 .5em 0 0;
+        }
+
+        .comment-details {
+          width: 100%;
+        }
+
+        .comment-author-time {
+          font-size: .8em;
+          color: #999;
+        }
+
+        .comment-body {
+          margin: .5em 0;
         }
       }
     }

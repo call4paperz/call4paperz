@@ -1,4 +1,4 @@
-<div class="proposal-item">
+<div class="proposal-item behind-card">
   <header>
     <h3><%= link_to proposal.name, event_proposal_path(@event, proposal) %></h3>
     <%= link_to "edit", edit_event_proposal_path(@event, proposal) if user_is_owner?(proposal) %>

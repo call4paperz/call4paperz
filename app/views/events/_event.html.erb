@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <% if user_is_owner?(@event) %>
+  <% if @users.present? && user_is_owner?(@event) %>
     <div id="event-speakers">
       <h3><%= t('events.show.speakers_contacts') %></h3>
       <ul>

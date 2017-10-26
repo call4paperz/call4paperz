@@ -1,20 +1,25 @@
-<div id="left_bar">
+<div id="event-details">
   <%= render 'events/event' %>
 </div>
 
-<div id="proposal_list">
-  <%= image_tag 'comments_label.jpg' %>
-  <p class="sub_vote">What people think about this proposal.</p>
-  <br/>
-  <%= render @comment.proposal %>
+<div id="event-proposals">
+  <header id="proposals-header">
+    <h2>What people think about this proposal.</h2>
+  </header>
 
-  <% if user_signed_in? %>
-    <%= render 'comments/form' %>
-  <% else %>
-    <%= link_to t('proposals.comments.please_sign_in'), new_user_session_path %>
-  <% end %>
+  <div id="proposals-list">
+    <%= render @comment.proposal %>
 
-  <% @comments.each do |comment| -%>
-    <%= render comment %>
-  <% end %>
+    <div id="proposal-comments" class="behind-card">
+      <% if user_signed_in? %>
+        <%= render 'comments/form' %>
+      <% else %>
+        <%= link_to t('proposals.comments.please_sign_in'), new_user_session_path %>
+      <% end %>
+
+      <% @comments.each do |comment| -%>
+        <%= render comment %>
+      <% end %>
+    </div>
+  </div>
 </div>

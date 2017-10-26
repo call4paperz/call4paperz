@@ -1,29 +1,29 @@
-<div id="comment_new">
-  <%= form_for(@comment) do |f| %>
-    <% if @comment.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+<h3><%= t("comments.new.title") %></h3>
 
-        <ul>
-          <% @comment.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-    <div class="field">
-      <%= user_picture(current_user, :class => 'borda_vinho') %>
-      <%= f.text_area :body %>
-    </div>
-
-    <%= f.hidden_field :proposal_id %>
-
-    <div class="actions_com">
-      <%= image_submit_tag 'comment.png', :class => 'submit_comment' %>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+
+  <div id="field-container">
+    <%= user_picture(current_user, class: 'user-avatar') %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.hidden_field :proposal_id %>
+
+  <div class="actions">
+    <%= f.submit t("comments.new.submit"), class: 'button darker' %>
+  </div>
+<% end %>
 
 <%= content_for :js do %>
 <script>

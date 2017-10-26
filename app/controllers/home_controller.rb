@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  layout "home"
 
   def index
     @events = Event.most_recent
@@ -9,4 +8,5 @@ class HomeController < ApplicationController
 
   def about
   end
+
 end

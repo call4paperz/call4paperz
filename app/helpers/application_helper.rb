@@ -4,6 +4,7 @@ module ApplicationHelper
       content = ''
       content << link_to("Home", root_url)
       content << link_to("Events", events_path)
+      content << link_to("About", about_path)
       if user_signed_in?
         content << link_to("Profile", profile_path)
         content << link_to("Logout", destroy_user_session_path, :method => :delete)

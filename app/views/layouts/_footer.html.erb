@@ -1,57 +1,5 @@
-<div id="footer">
-  <section id="googleads"><%= render 'layouts/googleads' %></section>
-  <div class="container">
-    <div id="footer_cols">
-      <div class="footer_a">
-        <%= image_tag 'f_call.png' %>
-        <br/><br/>
-        <p>
-          Have you ever had a difficult time to organize your local meetup?
-          <br/>
-          <br/>
-          <b>Call4paperz</b> tries to help with event organization, call for papers,
-          voting on speakers and collecting feedback from the participants, and
-          schedule planning.
-          <br/><br/>
-          We have now <%= users_number %> users to help with feedback!
-        </p>
-      </div>
-      <div class="footer_a">
-        <%= image_tag 'f_map.png' %>
-        <br/><br/>
-        <p>
-          <%= link_to "Home", root_path %><br/>
-          <%= image_tag 'f_linha.png' %>
-
-          <%= link_to "Events", events_path %><br/>
-          <%= image_tag 'f_linha.png' %>
-
-          <% unless user_signed_in? %>
-            <%= link_to "Registration", new_user_registration_path %><br/>
-            <%= image_tag 'f_linha.png' %>
-          <% end %>
-        </p>
-      </div>
-      <div class="footer_a">
-        <%= image_tag 'f_about.png' %>
-        <br/><br/>
-        <p>
-          Call4paperz was designed, developed and deployed in 48 hours by @anderson_leite, @qmx and @vinibaggio at Rails Rumble 2010.<br />
-          It's maintained by @lucianosousa and @tauil since mid 2015. Previously by @ricardovaleriano.
-          <br/><br/>
-          We are open source. If you have any ideas or bugs, please
-          visit our <a href='http://github.com/call4paperz/call4paperz' target='_blank'>GitHub repo</a>. Pull requests and issues are welcome!
-          <br/><br/>
-          If you have any suggestions or questions about <b>Call4Paperz</b>, send us
-          a tweet (<strong><a href='http://twitter.com/call4paperz' target='_blank'>@call4paperz</a></strong>).
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="googleads"><%= render 'layouts/googleads' %></section>
 
 <div id="copyright">
   <p>Copyright © 2010 &mdash; <%= Date.today.year %>. Powered by <strong>acts_as_monkeys_on_steroids</strong>, Developed in <strong>Rails Rumble 2010</strong>.</p>
 </div>
-
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>

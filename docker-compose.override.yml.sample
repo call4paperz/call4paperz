@@ -1,10 +1,18 @@
 version: '2.0'
+
+volumes:
+  bundle_ruby241_slim:
+    driver: local
+
 services:
   db:
     volumes:
       - ./db_files:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
   web:
     volumes:
       - .:/var/www/app
+      - bundle_ruby241_slim:/var/www/app/.bundle:rw
     environment:
-      DB_USER: postgres 
+      DB_USER: postgres

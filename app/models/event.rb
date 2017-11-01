@@ -53,21 +53,6 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def as_json(options=nil)
-    super({
-      include: {
-        user: { only: :name, methods: [:picture] },
-        proposals: {
-          methods: [:votes_count, :comments_count, :acceptance_points,
-                       :positive_points, :negative_points],
-          only: Proposal::JSON_ATTRIBUTES,
-          include: { user: { only: :name } }
-        }
-      },
-      methods: [:proposals_count, :votes_count, :comments_count]
-    })
-  end
-
   def proposals_count
     proposals.size
   end

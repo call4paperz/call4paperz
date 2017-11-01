@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show, :tags]
   before_filter :check_profile_completion, except: [:index, :show, :tags]
 
-  respond_to :html, :json, :jsonp
+  respond_to :html
 
   def index
     @events = Event.active.occurs_first.limit(100)

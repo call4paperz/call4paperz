@@ -1,6 +1,4 @@
 class Proposal < ActiveRecord::Base
-  JSON_ATTRIBUTES = [:id, :name, :created_at, :description, :occurs_at].freeze
-
   GRACE_PERIOD = 30.minutes
 
   has_many :votes, :dependent => :destroy
@@ -24,10 +22,6 @@ class Proposal < ActiveRecord::Base
 
   def acceptance_points
     attributes['acceptance_points'].try(:to_i) || votes.sum('direction')
-  end
-
-  def as_json(options=nil)
-    super(:include => [:comments, :user], :only => JSON_ATTRIBUTES, :methods => [:comments_count])
   end
 
   def votes_count

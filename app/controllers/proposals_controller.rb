@@ -5,7 +5,7 @@ class ProposalsController < ApplicationController
   before_filter :verify_event_closed, only: [:new, :create]
   before_filter :check_profile_completion, only: [:create, :new, :update, :destroy, :edit]
 
-  respond_to :html, :json
+  respond_to :html
 
   def show
     @comments = proposal.comments.includes(:user).order("created_at DESC").to_a

@@ -1,9 +1,9 @@
 class ProposalsController < ApplicationController
-  before_filter :event
-  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
-  before_filter :verify_grace_period, :only => [:update, :edit]
-  before_filter :verify_event_closed, only: [:new, :create]
-  before_filter :check_profile_completion, only: [:create, :new, :update, :destroy, :edit]
+  before_action :event
+  before_action :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
+  before_action :verify_grace_period, :only => [:update, :edit]
+  before_action :verify_event_closed, only: [:new, :create]
+  before_action :check_profile_completion, only: [:create, :new, :update, :destroy, :edit]
 
   respond_to :html
 

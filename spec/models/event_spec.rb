@@ -27,8 +27,8 @@ describe Event, :type => :model do
 
   context ".occurs_first" do
     it "should sort the next to occur first" do
-      late_event = FactoryGirl.create(:event, :occurs_at => 5.days.from_now)
-      early_event = FactoryGirl.create(:event, :occurs_at => 1.day.from_now)
+      late_event = FactoryBot.create(:event, :occurs_at => 5.days.from_now)
+      early_event = FactoryBot.create(:event, :occurs_at => 1.day.from_now)
 
       expect(described_class.occurs_first).to eq([early_event, late_event])
     end
@@ -36,18 +36,18 @@ describe Event, :type => :model do
 
   context ".active" do
     it "should find events from the future!" do
-      ev = FactoryGirl.create(:event, :occurs_at => 5.days.from_now)
+      ev = FactoryBot.create(:event, :occurs_at => 5.days.from_now)
       expect(described_class.active).to eq([ev])
     end
 
     it "should include events from today" do
-      ev = FactoryGirl.create(:event)
+      ev = FactoryBot.create(:event)
       expect(described_class.active).to eq([ev])
     end
 
     it "should not inclue events from the past" do
       Timecop.freeze(2.days.ago)
-      ev = FactoryGirl.create(:event, :occurs_at => Time.current)
+      ev = FactoryBot.create(:event, :occurs_at => Time.current)
       Timecop.return
 
       expect(described_class.active).to be_empty

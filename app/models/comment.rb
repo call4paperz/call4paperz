@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   belongs_to :proposal, :counter_cache => true
   belongs_to :user
 

@@ -1,4 +1,4 @@
-class Proposal < ActiveRecord::Base
+class Proposal < ApplicationRecord
   GRACE_PERIOD = 30.minutes
 
   has_many :votes, :dependent => :destroy

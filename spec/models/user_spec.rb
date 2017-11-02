@@ -49,7 +49,7 @@ describe User, :type => :model do
   end
 
   describe 'photos' do
-    let(:user) { FactoryGirl.build(:user, photo: nil) }
+    let(:user) { FactoryBot.build(:user, photo: nil) }
 
     context 'when the user has a photo' do
       it 'shows the photo' do

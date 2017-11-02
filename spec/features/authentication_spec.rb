@@ -16,8 +16,8 @@ feature 'Authentications' do
 
     before do
       auth.auth_info = { 'name'  => 'Opa Lhes', 'email' => 'opalhes@example.org' }
-      auth.save!
       user.save!
+      auth.save!
       sign_in_via_github('github-uid')
     end
 

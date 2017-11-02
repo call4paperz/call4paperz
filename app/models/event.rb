@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   extend FriendlyId
 
   friendly_id :name, use: [ :slugged, :finders ]

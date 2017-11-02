@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show, :tags]
-  before_filter :check_profile_completion, except: [:index, :show, :tags]
+  before_action :authenticate_user!, except: [:index, :show, :tags]
+  before_action :check_profile_completion, except: [:index, :show, :tags]
 
   respond_to :html
 

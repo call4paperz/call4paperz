@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Profiles' do
   context 'showing user profile' do
     let(:user) do
-      FactoryGirl.create(:user, authentications: authentications)
+      FactoryBot.create(:user, authentications: authentications)
     end
 
     before do

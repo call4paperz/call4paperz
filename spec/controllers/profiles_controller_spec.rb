@@ -4,7 +4,7 @@ describe ProfilesController, :type => :controller do
   include HelperMethods::Controllers
 
   describe 'PUT update' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     let(:params) { { user: { email: 'mynew@email.com' } } }
 
     subject { put :update, params }
@@ -48,7 +48,7 @@ describe ProfilesController, :type => :controller do
   end
 
   describe 'GET resend_confirmation_email' do
-    let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryBot.create(:user) }
 
     subject { get :resend_confirmation_email }
 

@@ -4,9 +4,6 @@ SimpleCov.start 'rails' do
   add_group "Serializers", "app/serializers"
 end
 
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
@@ -27,7 +24,7 @@ RSpec.configure do |config|
 
   config.include HelperMethods,       :type => :feature
   config.include OmniauthHelpers,     :type => :feature
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 
   config.infer_spec_type_from_file_location!
 

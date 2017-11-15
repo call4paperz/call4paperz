@@ -1,4 +1,4 @@
-class CreateComments < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration[5.1]
   def self.up
     create_table :comments do |t|
       t.text :body

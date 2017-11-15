@@ -1,4 +1,4 @@
-class AddPictureToUsers < ActiveRecord::Migration
+class AddPictureToUsers < ActiveRecord::Migration[5.1]
   def self.up
     add_column :users, :picture, :string
   end

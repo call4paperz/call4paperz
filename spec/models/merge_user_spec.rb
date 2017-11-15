@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe MergeUser, :type => :model do
   def build_associations(user, how_many)

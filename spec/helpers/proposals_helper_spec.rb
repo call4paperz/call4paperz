@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ProposalsHelper, :type => :helper do
   let(:user) { FactoryBot.create(:user) }

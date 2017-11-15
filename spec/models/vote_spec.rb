@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Vote, :type => :model do
   let(:proposal) { FactoryBot.create(:proposal) }

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'Authentications' do
   scenario 'authenticating with some oauth provider' do

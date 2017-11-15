@@ -20,10 +20,10 @@ RSpec.describe UserHelper, type: :helper do
       let(:user) { FactoryBot.build(:user) }
 
       before do
-        allow(user).to receive(:picture).and_return(OpenStruct.new(thumb: '/path/123.png'))
+        allow(user).to receive(:picture).and_return('logo_c4p.png')
       end
 
-      it { is_expected.to match('123.png') }
+      it { is_expected.to match('logo_c4p.png') }
     end
 
     context 'with options' do

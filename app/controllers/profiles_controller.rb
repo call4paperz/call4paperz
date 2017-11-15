@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @user.update_attributes user_params
+    if @user.update(user_params)
       flash[:notice] = I18n.t('flash.notice.profile_updated')
       redirect_to profile_path
     else

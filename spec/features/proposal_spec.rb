@@ -80,15 +80,17 @@ feature "Proposal", %q{
 
     scenario "I can edit my proposal while it's under 30 minutes of publication" do
       user = FactoryBot.create(:user)
-      proposal = FactoryBot.create(:proposal, :created_at => Time.current, :user => user)
+      proposal = FactoryBot.create(:proposal, :created_at => Time.current, :user => user, event: event)
 
       sign_in_with(user)
       visit event_proposal_path(event, proposal)
       click_link 'edit'
 
-      fill_in 'Description', :with => 'Changed description'
+      fill_in 'Description', :with => 'Changed proposal description'
 
-      expect(page).to have_content "Changed description"
+      click_button 'Save'
+
+      expect(page).to have_content "Changed proposal description"
     end
 
     scenario "I can't edit my proposal while it's over 30 minutes of publication" do

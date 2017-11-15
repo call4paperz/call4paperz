@@ -46,7 +46,7 @@ class ProposalsController < ApplicationController
   def update
     respond_to do |format|
       if proposal.update_attributes(proposal_params)
-        format.html { redirect_to(@proposal, :notice => 'Proposal was successfully updated.') }
+        format.html { redirect_to(@event, :notice => 'Proposal was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end

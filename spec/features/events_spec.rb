@@ -36,7 +36,7 @@ feature "Events", %q{
 
       fill_in "Name",            with: 'GURU-SP'
       fill_in 'Description',     with: '50th meeting'
-      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%Y-%m-%d')
       fill_in 'event_tag_list', with: 'ruby-lang'
 
       find('input[type=image]').click
@@ -176,7 +176,7 @@ feature "Events", %q{
       event = FactoryBot.create(:event, :user => user)
 
       visit edit_event_path(event)
-      fill_in 'Occurs at', :with => '20/01/2011'
+      fill_in 'Occurs at', :with => '2011-01-20'
 
       find(".actions input").click
       expect(page).to have_content "Event was successfully updated."
@@ -194,7 +194,7 @@ feature "Events", %q{
 
       fill_in "Name", :with => 'GURU-SP'
       fill_in 'Description', :with => '50th meeting'
-      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%Y-%m-%d')
 
       find('input[type=image]').click
 

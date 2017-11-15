@@ -43,4 +43,18 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   config.cache_store = :null_store
+
+  #Assets config
+  config.assets.compress = false
+  config.assets.debug = false
+  config.assets.digest = false
+
+  # make our tests fast by avoiding asset compilation
+  # but do not raise when assets are not compiled either
+  config.assets.compile = false
+  Sprockets::Rails::Helper.prepend(Module.new do
+    def resolve_asset_path(path, *)
+      super || path
+    end
+  end)
 end

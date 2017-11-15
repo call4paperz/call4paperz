@@ -2,7 +2,7 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.4.1
+  - 2.4.2
 services: postgresql
 env:
   global:

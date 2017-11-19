@@ -363,7 +363,7 @@ DEPENDENCIES
   airbrake
   bullet
   capybara
-  carrierwave
+  carrierwave (~> 1.2.1)
   codeclimate-test-reporter
   culerity
   dalli

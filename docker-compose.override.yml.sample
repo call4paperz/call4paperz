@@ -1,7 +1,7 @@
 version: '2.0'
 
 volumes:
-  bundle_ruby242_slim:
+  bundle_ruby241_slim:
     driver: local
 
 services:
@@ -13,6 +13,6 @@ services:
   web:
     volumes:
       - .:/var/www/app
-      - bundle_ruby242_slim:/var/www/app/.bundle:rw
+      - bundle_ruby241_slim:/var/www/app/.bundle:rw
     environment:
       DB_USER: postgres

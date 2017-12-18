@@ -1,5 +1,5 @@
-Call4Paperz::Application.routes.draw do
-  root :to => "home#index"
+Rails.application.routes.draw do
+  root to: "home#index"
 
   get '/auth/:provider/callback' => 'authentications#create'
   get '/auth/failure' => 'authentications#failure'

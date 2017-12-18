@@ -1,4 +1,4 @@
-class RenameEventCachedSlugToSlug < ActiveRecord::Migration
+class RenameEventCachedSlugToSlug < ActiveRecord::Migration[5.1]
   def up
     remove_index :events, :column => :cached_slug
     rename_column :events, :cached_slug, :slug

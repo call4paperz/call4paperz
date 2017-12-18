@@ -2,17 +2,16 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.1.0'
 
 gem 'active_model_serializers'
 gem 'acts-as-taggable-on'
-gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave', '~> 1.2.1'
 gem 'dalli'
-gem 'devise', '~> 3.5.10'
+gem 'devise'
 gem 'fog-aws'
-gem 'friendly_id', '~> 5.0'
-gem 'globalize'
-gem 'jquery-rails', '4.0.5'
+gem 'friendly_id'
+gem 'jquery-rails'
 gem 'mini_magick'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -25,15 +24,15 @@ gem 'rack-cache'
 gem 'rake'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'responders'
-gem 'sass-rails', '~> 4.0.0'
-gem 'twitter', '~> 5.16.0'
+gem 'sass-rails'
+gem 'twitter'
 gem 'uglifier'
 gem 'unicorn'
-gem 'validates_timeliness', '~> 3.0.14'
+gem 'validates_timeliness'
 gem 'redcarpet'
 
 group :production do
-  gem 'airbrake', '~> 5.0'
+  gem 'airbrake'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
@@ -41,13 +40,14 @@ end
 group :development do
   gem 'bullet'
   gem "letter_opener_web"
+  gem 'listen'
   gem 'spring'
   gem 'spring-commands-rspec'
 end
 
 group :development, :test do
   gem 'foreman'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'pry-byebug'
 end
@@ -57,7 +57,8 @@ group :test do
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'timecop'
   gem 'simplecov'
   gem 'shoulda-matchers'

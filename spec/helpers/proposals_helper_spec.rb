@@ -1,9 +1,9 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ProposalsHelper, :type => :helper do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:proposal) { FactoryGirl.create(:proposal) }
-  let(:event) { FactoryGirl.create(:event) }
+  let(:user) { FactoryBot.create(:user) }
+  let(:proposal) { FactoryBot.create(:proposal) }
+  let(:event) { FactoryBot.create(:event) }
 
   describe "#vote_box" do
     context "user is set and has voted" do

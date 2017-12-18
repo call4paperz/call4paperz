@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Vote, :type => :model do
-  let(:proposal) { FactoryGirl.create(:proposal) }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:proposal) { FactoryBot.create(:proposal) }
+  let(:user) { FactoryBot.create(:user) }
 
   describe "validations" do
 

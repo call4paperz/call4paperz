@@ -1,4 +1,4 @@
-class RemoveColumnTwitterAvatarFromUsers < ActiveRecord::Migration
+class RemoveColumnTwitterAvatarFromUsers < ActiveRecord::Migration[5.1]
   def up
     remove_column :users, :twitter_avatar
   end

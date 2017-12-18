@@ -1,9 +1,9 @@
 class ProposalsController < ApplicationController
-  before_filter :event
-  before_filter :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
-  before_filter :verify_grace_period, :only => [:update, :edit]
-  before_filter :verify_event_closed, only: [:new, :create]
-  before_filter :check_profile_completion, only: [:create, :new, :update, :destroy, :edit]
+  before_action :event
+  before_action :authenticate_user!, :only => [:create, :new, :update, :destroy, :edit, :dislike, :like]
+  before_action :verify_grace_period, :only => [:update, :edit]
+  before_action :verify_event_closed, only: [:new, :create]
+  before_action :check_profile_completion, only: [:create, :new, :update, :destroy, :edit]
 
   respond_to :html
 
@@ -46,7 +46,7 @@ class ProposalsController < ApplicationController
   def update
     respond_to do |format|
       if proposal.update_attributes(proposal_params)
-        format.html { redirect_to(@proposal, :notice => 'Proposal was successfully updated.') }
+        format.html { redirect_to(@event, :notice => 'Proposal was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end

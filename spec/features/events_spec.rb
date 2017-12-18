@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature "Events", %q{
   In order to open call for papers
@@ -8,7 +8,7 @@ feature "Events", %q{
 
   context "Viewing events" do
     scenario "While not logged in, I should be able to view events" do
-      FactoryGirl.create(:event)
+      FactoryBot.create(:event)
       visit '/events'
       expect(page).to have_content 'GURU-SP'
       expect(page).to have_no_content 'Sign in'
@@ -17,8 +17,8 @@ feature "Events", %q{
 
   context "Viewing tagged events" do
     scenario "While not logged in, I should be able to view events" do
-      FactoryGirl.create(:event)
-      FactoryGirl.create(:event, name: 'RubyOnRio', tag_list: 'ruby')
+      FactoryBot.create(:event)
+      FactoryBot.create(:event, name: 'RubyOnRio', tag_list: 'ruby')
 
       visit '/events/tags/ruby'
       expect(page).to have_content 'RubyOnRio'
@@ -36,7 +36,7 @@ feature "Events", %q{
 
       fill_in "Name",            with: 'GURU-SP'
       fill_in 'Description',     with: '50th meeting'
-      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%Y-%m-%d')
       fill_in 'event_tag_list', with: 'ruby-lang'
 
       find('input[type=image]').click
@@ -46,7 +46,7 @@ feature "Events", %q{
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do
-      event = FactoryGirl.create(:event)
+      event = FactoryBot.create(:event)
 
       visit '/events'
 
@@ -86,10 +86,10 @@ feature "Events", %q{
     end
 
     scenario "I should be able to see stats for an event" do
-      FactoryGirl.create(:event)
-      proposal = FactoryGirl.create(:proposal)
-      FactoryGirl.create(:comment, :proposal => proposal)
-      2.times { FactoryGirl.create(:vote, :proposal => proposal) }
+      FactoryBot.create(:event)
+      proposal = FactoryBot.create(:proposal)
+      FactoryBot.create(:comment, :proposal => proposal)
+      2.times { FactoryBot.create(:vote, :proposal => proposal) }
 
       visit '/events'
 
@@ -101,10 +101,10 @@ feature "Events", %q{
     scenario "I should be able to see the events sorted by the date the events occur" do
       Timecop.freeze(2.days.ago)
 
-      past_event = FactoryGirl.create(:event, :occurs_at => Time.current, :name => 'The Dinosaurs')
-      todays_event = FactoryGirl.create(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
-      late_event = FactoryGirl.create(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
-      early_event = FactoryGirl.create(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')
+      past_event = FactoryBot.create(:event, :occurs_at => Time.current, :name => 'The Dinosaurs')
+      todays_event = FactoryBot.create(:event, :occurs_at => 2.days.from_now, :name => 'Groundhog Day')
+      late_event = FactoryBot.create(:event, :occurs_at => 10.days.from_now, :name => 'Late show')
+      early_event = FactoryBot.create(:event, :occurs_at => 5.day.from_now, :name => 'Good morning Vietnam')
 
       Timecop.return
 
@@ -129,7 +129,7 @@ feature "Events", %q{
     end
 
     scenario "I should be able to go to the list of proposals clicking on the picture" do
-      event = FactoryGirl.create(:event)
+      event = FactoryBot.create(:event)
       visit event_path(event)
 
       within '#proposal' do
@@ -141,8 +141,8 @@ feature "Events", %q{
     end
 
     context "I am the owner" do
-      let(:user) { FactoryGirl.create :user }
-      let(:event) { FactoryGirl.create :event, user: user }
+      let(:user) { FactoryBot.create :user }
+      let(:event) { FactoryBot.create :event, user: user }
 
       background do
         sign_in_with(user)
@@ -158,8 +158,8 @@ feature "Events", %q{
       end
 
       scenario "I should be able to see admin links for events with proposal" do
-        event = FactoryGirl.create :event, user: user
-        FactoryGirl.create :proposal, event: event
+        event = FactoryBot.create :event, user: user
+        FactoryBot.create :proposal, event: event
 
         visit event_path(event)
 
@@ -170,13 +170,13 @@ feature "Events", %q{
     end
 
     scenario "I should be able to edit an event" do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in_with(user)
 
-      event = FactoryGirl.create(:event, :user => user)
+      event = FactoryBot.create(:event, :user => user)
 
       visit edit_event_path(event)
-      fill_in 'Occurs at', :with => '20/01/2011'
+      fill_in 'Occurs at', :with => '2011-01-20'
 
       find(".actions input").click
       expect(page).to have_content "Event was successfully updated."
@@ -194,7 +194,7 @@ feature "Events", %q{
 
       fill_in "Name", :with => 'GURU-SP'
       fill_in 'Description', :with => '50th meeting'
-      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%d/%m/%Y')
+      fill_in 'Occurs at', :with => 1.day.from_now.strftime('%Y-%m-%d')
 
       find('input[type=image]').click
 
@@ -205,10 +205,10 @@ feature "Events", %q{
 
   context "Editing events" do
     scenario "I should be able to edit an event" do
-      user = FactoryGirl.create(:user)
+      user = FactoryBot.create(:user)
       sign_in_with(user)
 
-      event = FactoryGirl.create(:event, :user => user)
+      event = FactoryBot.create(:event, :user => user)
 
       visit event_path(event)
 

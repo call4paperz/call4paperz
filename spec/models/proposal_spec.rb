@@ -1,8 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Proposal, :type => :model do
 
-  let(:proposal) { FactoryGirl.create(:proposal)  }
+  let(:proposal) { FactoryBot.create(:proposal)  }
 
   describe "validations" do
 
@@ -30,7 +30,7 @@ describe Proposal, :type => :model do
 
   describe "preloads comments count" do
     it "preloads the count" do
-      3.times { FactoryGirl.create(:comment, :proposal => proposal)}
+      3.times { FactoryBot.create(:comment, :proposal => proposal)}
 
       proposal_from_db = described_class.with_preloads.find(proposal.id)
       expect(proposal_from_db.attributes['comments_count'].to_i).to eq(3)
@@ -40,8 +40,8 @@ describe Proposal, :type => :model do
   describe "acceptance points" do
     context "preloading acceptance points" do
       it "assigns acceptance points as attribute" do
-        FactoryGirl.create(:negative_vote, :proposal => proposal)
-        3.times { FactoryGirl.create(:positive_vote, :proposal => proposal)}
+        FactoryBot.create(:negative_vote, :proposal => proposal)
+        3.times { FactoryBot.create(:positive_vote, :proposal => proposal)}
 
         proposal_from_db = described_class.with_preloads.find(proposal.id)
         expect(proposal_from_db.attributes['acceptance_points'].to_i).to eq(2)
@@ -49,11 +49,11 @@ describe Proposal, :type => :model do
       end
 
       it "orders by acceptance points" do
-        FactoryGirl.create(:negative_vote, :proposal => proposal)
-        3.times { FactoryGirl.create(:positive_vote, :proposal => proposal)}
+        FactoryBot.create(:negative_vote, :proposal => proposal)
+        3.times { FactoryBot.create(:positive_vote, :proposal => proposal)}
 
-        another_proposal = FactoryGirl.create(:proposal)
-        3.times { FactoryGirl.create(:positive_vote, :proposal => another_proposal)}
+        another_proposal = FactoryBot.create(:proposal)
+        3.times { FactoryBot.create(:positive_vote, :proposal => another_proposal)}
 
         first_proposal, second_proposal = described_class.with_preloads
 
@@ -65,7 +65,7 @@ describe Proposal, :type => :model do
       end
 
       it "includes proposals with no votes" do
-        lonely_proposal = FactoryGirl.create(:proposal)
+        lonely_proposal = FactoryBot.create(:proposal)
 
         expect(described_class.with_preloads).to include(lonely_proposal)
       end
@@ -79,8 +79,8 @@ describe Proposal, :type => :model do
 
     context "with more positive than negative votes" do
       it "returns a positive value" do
-        FactoryGirl.create(:negative_vote, :proposal => proposal)
-        3.times { FactoryGirl.create(:positive_vote, :proposal => proposal)}
+        FactoryBot.create(:negative_vote, :proposal => proposal)
+        3.times { FactoryBot.create(:positive_vote, :proposal => proposal)}
 
         expect(proposal.acceptance_points).to eq(2)
       end
@@ -88,8 +88,8 @@ describe Proposal, :type => :model do
 
     context "with more negative than positive votes" do
       it "returns a negative value" do
-        FactoryGirl.create(:positive_vote, :proposal => proposal)
-        3.times { FactoryGirl.create(:negative_vote, :proposal => proposal)}
+        FactoryBot.create(:positive_vote, :proposal => proposal)
+        3.times { FactoryBot.create(:negative_vote, :proposal => proposal)}
 
         expect(proposal.acceptance_points).to eq(-2)
       end
@@ -97,7 +97,7 @@ describe Proposal, :type => :model do
 
     context "with no negative votes" do
       it "returns a positive value" do
-        FactoryGirl.create(:positive_vote, :proposal => proposal)
+        FactoryBot.create(:positive_vote, :proposal => proposal)
         expect(proposal.acceptance_points).to eq(1)
       end
     end
@@ -105,7 +105,7 @@ describe Proposal, :type => :model do
 
   describe "grace period calculation" do
     context "with grace period left" do
-      let(:proposal) { FactoryGirl.build(:proposal, :created_at => 10.minutes.ago) }
+      let(:proposal) { FactoryBot.build(:proposal, :created_at => 10.minutes.ago) }
 
       it "returns the number of seconds of grace period" do
         expect(proposal).to have_grace_period_left
@@ -114,7 +114,7 @@ describe Proposal, :type => :model do
     end
 
     context "with no grace period left" do
-      let(:old_proposal) { FactoryGirl.build(:proposal, :created_at => 30.days.ago) }
+      let(:old_proposal) { FactoryBot.build(:proposal, :created_at => 30.days.ago) }
 
       it "returns 0 as grace period" do
         expect(old_proposal).not_to have_grace_period_left

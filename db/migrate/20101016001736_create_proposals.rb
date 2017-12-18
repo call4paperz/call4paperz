@@ -1,4 +1,4 @@
-class CreateProposals < ActiveRecord::Migration
+class CreateProposals < ActiveRecord::Migration[5.1]
   def self.up
     create_table :proposals do |t|
       t.string :name

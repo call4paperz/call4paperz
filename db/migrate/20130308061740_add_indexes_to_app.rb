@@ -1,6 +1,5 @@
-class AddIndexesToApp < ActiveRecord::Migration
+class AddIndexesToApp < ActiveRecord::Migration[5.1]
   def change
     add_index :proposals, :event_id
-    add_index :comments, :proposal_id
   end
 end

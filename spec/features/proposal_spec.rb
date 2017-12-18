@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature "Proposal", %q{
   In order to select proposals
@@ -6,7 +6,7 @@ feature "Proposal", %q{
   I want to vote, create and comment on proposals
 } do
 
-  let(:proposal) { FactoryGirl.create(:proposal) }
+  let(:proposal) { FactoryBot.create(:proposal) }
   let(:event) { proposal.event }
 
   context "Viewing proposals" do
@@ -79,21 +79,23 @@ feature "Proposal", %q{
     end
 
     scenario "I can edit my proposal while it's under 30 minutes of publication" do
-      user = FactoryGirl.create(:user)
-      proposal = FactoryGirl.create(:proposal, :created_at => Time.current, :user => user)
+      user = FactoryBot.create(:user)
+      proposal = FactoryBot.create(:proposal, :created_at => Time.current, :user => user, event: event)
 
       sign_in_with(user)
       visit event_proposal_path(event, proposal)
       click_link 'edit'
 
-      fill_in 'Description', :with => 'Changed description'
+      fill_in 'Description', :with => 'Changed proposal description'
 
-      expect(page).to have_content "Changed description"
+      click_button 'Save'
+
+      expect(page).to have_content "Changed proposal description"
     end
 
     scenario "I can't edit my proposal while it's over 30 minutes of publication" do
-      user = FactoryGirl.create(:user)
-      proposal = FactoryGirl.create(:proposal, :created_at => 1.hour.ago, :user => user)
+      user = FactoryBot.create(:user)
+      proposal = FactoryBot.create(:proposal, :created_at => 1.hour.ago, :user => user)
 
       sign_in_with(user)
       visit event_proposal_path(event, proposal)

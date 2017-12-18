@@ -1,4 +1,4 @@
-class AddMissingDeviseField < ActiveRecord::Migration
+class AddMissingDeviseField < ActiveRecord::Migration[5.1]
   User = Class.new(ActiveRecord::Base)
 
   def change

@@ -1,4 +1,4 @@
-class AddOauthFieldsToAuthentications < ActiveRecord::Migration
+class AddOauthFieldsToAuthentications < ActiveRecord::Migration[5.1]
   def self.up
     add_column :authentications, :provider, :string
     add_column :authentications, :uid, :string

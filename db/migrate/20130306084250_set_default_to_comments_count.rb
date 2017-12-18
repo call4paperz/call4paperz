@@ -1,4 +1,4 @@
-class SetDefaultToCommentsCount < ActiveRecord::Migration
+class SetDefaultToCommentsCount < ActiveRecord::Migration[5.1]
   def up
     change_column_default :proposals, :comments_count, 0
   end

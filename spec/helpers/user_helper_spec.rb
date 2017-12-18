@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe UserHelper, :type => :helper do
+RSpec.describe UserHelper, type: :helper do
   context '#user_picture' do
     subject { helper.user_picture(user, {}) }
 
@@ -11,19 +11,19 @@ describe UserHelper, :type => :helper do
     end
 
     context 'user without picture' do
-      let(:user) { FactoryGirl.build(:user, photo: nil) }
+      let(:user) { FactoryBot.build(:user, photo: nil) }
 
       it { is_expected.to match('no_avatar.png') }
     end
 
     context 'user with picture' do
-      let(:user) { FactoryGirl.build(:user) }
+      let(:user) { FactoryBot.build(:user) }
 
       before do
-        allow(user).to receive(:picture).and_return(OpenStruct.new(thumb: '/path/123.png'))
+        allow(user).to receive(:picture).and_return('logo_c4p.png')
       end
 
-      it { is_expected.to match('123.png') }
+      it { is_expected.to match('logo_c4p.png') }
     end
 
     context 'with options' do

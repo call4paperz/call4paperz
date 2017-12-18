@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature "Vote", %q{
   In order to express my opinion
@@ -6,7 +6,7 @@ feature "Vote", %q{
   I want to vote positively or negatively on a proposal
 } do
 
-  let(:proposal) { FactoryGirl.create(:proposal) }
+  let(:proposal) { FactoryBot.create(:proposal) }
   let(:event) { proposal.event }
 
 

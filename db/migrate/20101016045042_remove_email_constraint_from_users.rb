@@ -1,4 +1,4 @@
-class RemoveEmailConstraintFromUsers < ActiveRecord::Migration
+class RemoveEmailConstraintFromUsers < ActiveRecord::Migration[5.1]
   def self.up
     remove_index :users, :name => 'index_users_on_email'
   end

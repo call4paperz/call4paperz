@@ -1,4 +1,4 @@
-class AddCachedSlugToEvents < ActiveRecord::Migration
+class AddCachedSlugToEvents < ActiveRecord::Migration[5.1]
   def self.up
     add_column :events, :cached_slug, :string
   end

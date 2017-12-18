@@ -1,4 +1,4 @@
-class AddEventIdToProposals < ActiveRecord::Migration
+class AddEventIdToProposals < ActiveRecord::Migration[5.1]
   def self.up
     add_column :proposals, :event_id, :integer
   end

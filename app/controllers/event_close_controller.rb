@@ -1,6 +1,6 @@
 class EventCloseController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :event
+  before_action :authenticate_user!
+  before_action :event
 
   def edit
     if event.closed?

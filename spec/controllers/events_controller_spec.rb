@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe EventsController, :type => :controller do
   context 'Signed in but without email' do

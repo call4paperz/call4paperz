@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   attr_accessor :email_confirmation
 
   has_many :authentications, :dependent => :destroy

@@ -1,18 +1,18 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ProfilesController, :type => :controller do
   include HelperMethods::Controllers
 
   describe 'PUT update' do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryBot.create(:user) }
     let(:params) { { user: { email: 'mynew@email.com' } } }
 
-    subject { put :update, params }
+    subject { put :update, params: params }
 
     before { sign_in(user) }
 
     it 'updates user email' do
-      expect_any_instance_of(User).to receive(:update_attributes).with(params[:user]).and_return(true)
+      expect_any_instance_of(User).to receive(:update).with(ActionController::Parameters.new(params[:user]).permit!).and_return(true)
       subject
     end
 
@@ -48,7 +48,7 @@ describe ProfilesController, :type => :controller do
   end
 
   describe 'GET resend_confirmation_email' do
-    let!(:user) { FactoryGirl.create(:user) }
+    let!(:user) { FactoryBot.create(:user) }
 
     subject { get :resend_confirmation_email }
 

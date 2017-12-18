@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe MergeUser, :type => :model do
   def build_associations(user, how_many)
@@ -8,21 +8,21 @@ describe MergeUser, :type => :model do
       user.authentications << auth
     end
 
-    events = how_many.times.map { FactoryGirl.create :event, user: user }
-    proposals = events.map { |event| FactoryGirl.create :proposal, user: user, event: event }
-    proposals.map { |proposal| FactoryGirl.create :comment, user: user, proposal: proposal }
-    proposals.map { |proposal| FactoryGirl.create :vote, user: user, proposal: proposal }
+    events = how_many.times.map { FactoryBot.create :event, user: user }
+    proposals = events.map { |event| FactoryBot.create :proposal, user: user, event: event }
+    proposals.map { |proposal| FactoryBot.create :comment, user: user, proposal: proposal }
+    proposals.map { |proposal| FactoryBot.create :vote, user: user, proposal: proposal }
     user
   end
 
   subject(:merger) { MergeUser.new(joao_popular.email) }
 
   let!(:joao_popular) {
-    user = FactoryGirl.build(:user, name: 'Joao Popular')
+    user = FactoryBot.build(:user, name: 'Joao Popular')
     build_associations(user, 3)
   }
-  let!(:menino_lambao) { build_associations(FactoryGirl.build(:user, email: joao_popular.email), 2) }
-  let!(:newbie) { build_associations(FactoryGirl.build(:user, email: joao_popular.email), 1) }
+  let!(:menino_lambao) { build_associations(FactoryBot.build(:user, email: joao_popular.email), 2) }
+  let!(:newbie) { build_associations(FactoryBot.build(:user, email: joao_popular.email), 1) }
 
   context 'moving all associations to the user with more previous associations' do
     it 'move the authentications' do

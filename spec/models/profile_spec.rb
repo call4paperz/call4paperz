@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Profile, :type => :model do
   it 'delegate equality notions to user' do

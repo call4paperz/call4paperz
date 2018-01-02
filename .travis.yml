@@ -12,6 +12,7 @@ script:
   - mv config/database.yml{.travis,}
   - RAILS_ENV=test bundle exec rails --trace db:migrate spec
 before_script:
+  - gem update --system
   - psql -c 'create database call4paperz_test' -U postgres
   - "ruby -run -e httpd spec/fixtures/ -p 3101 &"
 addons:

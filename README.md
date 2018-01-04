@@ -11,6 +11,7 @@ commented by the users.
 [![Test Coverage](https://codeclimate.com/github/call4paperz/call4paperz/badges/coverage.svg)](https://codeclimate.com/github/call4paperz/call4paperz/coverage)
 [![security](https://hakiri.io/github/call4paperz/call4paperz/master.svg)](https://hakiri.io/github/call4paperz/call4paperz/master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/call4paperz/call4paperz.svg)](https://gemnasium.com/github.com/call4paperz/call4paperz)
+[![Help Contribute to Open Source](https://www.codetriage.com/call4paperz/call4paperz/badges/users.svg)](https://www.codetriage.com/call4paperz/call4paperz)
 
 ## Environment Configuration
 

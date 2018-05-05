@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.2'
+ruby '2.5.1'
 
 gem 'rails', '~> 5.1.0'
 
@@ -59,7 +59,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'timecop'
-  gem 'simplecov'
+  gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'timecop'
 end

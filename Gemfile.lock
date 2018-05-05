@@ -396,7 +396,6 @@ DEPENDENCIES
   rake
   recaptcha
   redcarpet
-  responders
   rspec-rails
   rspec_junit_formatter
   sass-rails

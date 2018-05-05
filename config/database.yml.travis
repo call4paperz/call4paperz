@@ -1,6 +1,0 @@
-test:
-  adapter: postgresql
-  database: call4paperz_test
-  username: postgres
-  password:
-  min_messages: WARNING

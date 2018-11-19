@@ -106,7 +106,7 @@ That's it! Just go to <http://localhost:3000>.
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
 branch), with tests if possible. If you have any doubts, just bug
-[lucianosousa](https://github.com/lucianosousa) or [tauil](https://github.com/tauil).
+[gustavokloh](https://github.com/gustavokloh).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
@@ -114,8 +114,7 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [lucianosousa](https://github.com/lucianosousa) and [tauil](https://github.com/tauil).
-Before was bravely maintained by [ricardovaleriano](https://github.com/ricardovaleriano) and [vinibaggio](https://github.com/vinibaggio).
+Maintenance is done by [gustavokloh](https://github.com/gustavokloh).
 
 ## Original authors
 - Anderson Leite (no longer active)

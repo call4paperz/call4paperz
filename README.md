@@ -10,7 +10,6 @@ commented by the users.
 [![Code Climate](https://codeclimate.com/github/call4paperz/call4paperz/badges/gpa.svg)](https://codeclimate.com/github/call4paperz/call4paperz)
 [![Test Coverage](https://codeclimate.com/github/call4paperz/call4paperz/badges/coverage.svg)](https://codeclimate.com/github/call4paperz/call4paperz/coverage)
 [![security](https://hakiri.io/github/call4paperz/call4paperz/master.svg)](https://hakiri.io/github/call4paperz/call4paperz/master)
-[![Dependency Status](https://gemnasium.com/badges/github.com/call4paperz/call4paperz.svg)](https://gemnasium.com/github.com/call4paperz/call4paperz)
 [![Help Contribute to Open Source](https://www.codetriage.com/call4paperz/call4paperz/badges/users.svg)](https://www.codetriage.com/call4paperz/call4paperz)
 
 ## Environment Configuration
@@ -106,7 +105,7 @@ That's it! Just go to <http://localhost:3000>.
 
 To contribute to call4paperz, submit a pull request (preferably in a feature
 branch), with tests if possible. If you have any doubts, just bug
-[lucianosousa](https://github.com/lucianosousa) or [tauil](https://github.com/tauil).
+[gustavokloh](https://github.com/gustavokloh).
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
@@ -114,8 +113,7 @@ helps reviewing pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer
-Maintenance is done by [lucianosousa](https://github.com/lucianosousa) and [tauil](https://github.com/tauil).
-Before was bravely maintained by [ricardovaleriano](https://github.com/ricardovaleriano) and [vinibaggio](https://github.com/vinibaggio).
+Maintenance is done by [gustavokloh](https://github.com/gustavokloh).
 
 ## Original authors
 - Anderson Leite (no longer active)

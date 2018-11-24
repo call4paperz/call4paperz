@@ -71,7 +71,7 @@
 
   $(document).ready(function() {
     setTimeout(swapImage, timeout)
-    new C4P.Twitter().loadLast("<%= last_tweet_path %>")
+    new C4P.Twitter().loadLast("<%= last_tweet_path(format: :json) %>")
   })
 </script>
 <% end %>

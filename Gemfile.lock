@@ -104,7 +104,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.23)
+    ffi (1.10.0)
     fog-aws (1.4.1)
       fog-core (~> 1.38)
       fog-json (~> 1.0)

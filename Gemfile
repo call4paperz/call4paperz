@@ -26,7 +26,7 @@ gem 'recaptcha', '~> 4.6.2', require: 'recaptcha/rails'
 gem 'redcarpet', '~> 3.4.0'
 gem 'sass-rails', '~> 5.0.7'
 gem 'twitter', '~> 6.2.0'
-gem 'uglifier', '~> 3.2.0'
+gem 'uglifier', '~> 4.1.20'
 gem 'unicorn', '~> 5.3.1'
 gem 'validates_timeliness', '~> 4.0.2'
 

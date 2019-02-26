@@ -222,7 +222,7 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.2)
     rack (2.0.6)
-    rack-cache (1.7.1)
+    rack-cache (1.9.0)
       rack (>= 0.4)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -389,7 +389,7 @@ DEPENDENCIES
   omniauth-twitter (~> 1.4.0)
   pg (~> 0.21.0)
   pry-byebug
-  rack-cache (~> 1.7.1)
+  rack-cache (~> 1.9.0)
   rails (~> 5.1.0)
   rails-controller-testing
   rails_12factor (~> 0.0.3)

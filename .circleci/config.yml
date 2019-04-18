@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-       - image: circleci/ruby:2.5.1-node-browsers
+       - image: circleci/ruby:2.6.2-node-browsers
          environment:
            RAILS_ENV: test
            PG_HOST: 127.0.0.1

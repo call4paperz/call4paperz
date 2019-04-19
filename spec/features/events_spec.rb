@@ -39,7 +39,6 @@ feature "Events", %q{
       fill_in 'event_occurs_at',       with: 1.day.from_now.strftime('%Y-%m-%d')
       fill_in 'event_tag_list',        with: 'ruby-lang'
 
-      # save_and_open_page
       find(:css, 'input[type*="image"]').click
       
       expect(page).to have_content "GURU-SP"

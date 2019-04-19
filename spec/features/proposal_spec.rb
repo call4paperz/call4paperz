@@ -88,7 +88,7 @@ feature "Proposal", %q{
 
       fill_in 'Description', :with => 'Changed proposal description'
 
-      click_button 'Save'
+      find(:css, 'input[type*="image"]').click
 
       expect(page).to have_content "Changed proposal description"
     end

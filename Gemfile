@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'pry-byebug'
+  gem 'awesome_print'
 end
 
 group :test do
@@ -56,7 +57,7 @@ group :test do
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails", "~> 4.10.0"
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'

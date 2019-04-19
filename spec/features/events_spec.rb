@@ -18,7 +18,7 @@ feature "Events", %q{
   context "Viewing tagged events" do
     scenario "While not logged in, I should be able to view events" do
       FactoryBot.create(:event)
-      FactoryBot.create(:event, name: 'RubyOnRio', tag_list: 'ruby')
+      FactoryBot.create(:event, :ruby, name: 'RubyOnRio')
 
       visit '/events/tags/ruby'
       expect(page).to have_content 'RubyOnRio'
@@ -34,15 +34,14 @@ feature "Events", %q{
       visit '/events'
       find('.create_button').click
 
-      fill_in "Name",            with: 'GURU-SP'
-      fill_in 'Description',     with: '50th meeting'
-      fill_in 'Occurs at',       with: 1.day.from_now.strftime('%Y-%m-%d')
-      fill_in 'event_tag_list', with: 'ruby-lang'
+      fill_in "event_name",            with: 'GURU-SP'
+      fill_in 'event_description',     with: '50th meeting'
+      fill_in 'event_occurs_at',       with: 1.day.from_now.strftime('%Y-%m-%d')
 
-      find('input[type=image]').click
-
+      # save_and_open_page
+      find(:css, 'input[type*="image"]').click
+      
       expect(page).to have_content "GURU-SP"
-      expect(page).to have_content "ruby-lang"
     end
 
     scenario "While not logged in, I should be able to view specific details about an event" do

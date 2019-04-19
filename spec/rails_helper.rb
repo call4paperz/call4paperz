@@ -5,7 +5,7 @@ SimpleCov.start 'rails' do
 end
 
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.dirname(__FILE__) + "/../config/environment"
 require 'rspec/rails'
 require 'database_cleaner'
 

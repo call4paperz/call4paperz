@@ -37,7 +37,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    tag_list = event_params[:tag_list]
+    tag_list = event_params[:tag_list].split(", ")
     @event = current_user.events.build(event_params.merge!(tag_list: nil))
     @event.tag_list.add(tag_list)
 

@@ -37,7 +37,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    tag_list = event_params[:tag_list]
+    @event = current_user.events.build(event_params.merge!(tag_list: nil))
+    @event.tag_list.add(tag_list)
 
     respond_to do |format|
       if verify_recaptcha(:model => @event, :message => 'Please type the captcha correctly') && @event.save

@@ -37,6 +37,7 @@ feature "Events", %q{
       fill_in "event_name",            with: 'GURU-SP'
       fill_in 'event_description',     with: '50th meeting'
       fill_in 'event_occurs_at',       with: 1.day.from_now.strftime('%Y-%m-%d')
+      fill_in 'event_tag_list',        with: 'ruby-lang'
 
       # save_and_open_page
       find(:css, 'input[type*="image"]').click

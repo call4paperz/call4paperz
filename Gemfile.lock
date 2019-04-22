@@ -174,7 +174,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_magick (4.8.0)
+    mini_magick (4.9.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -384,7 +384,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3.1)
   letter_opener_web
   listen
-  mini_magick (~> 4.8.0)
+  mini_magick (~> 4.9.3)
   newrelic_rpm (~> 6.2.0)
   omniauth (~> 1.9.0)
   omniauth-facebook (~> 4.0.0)

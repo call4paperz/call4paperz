@@ -29,6 +29,7 @@ gem 'twitter', '~> 6.2.0'
 gem 'uglifier', '~> 4.1.20'
 gem 'unicorn', '~> 5.5.0'
 gem 'validates_timeliness', '~> 4.0.2'
+gem 'bootsnap', require: false
 
 group :production do
   gem 'airbrake', '~> 9.0.2'

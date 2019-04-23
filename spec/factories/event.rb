@@ -6,7 +6,10 @@ FactoryBot.define do
     occurs_at   { 1.month.from_now }
 
     trait :ruby do
-      after(:create) { |event| event.tag_list.add("ruby"); event.save }
+      after(:create) do |event| 
+        event.tag_list.add("ruby")
+        event.save
+      end
     end
   end
 end

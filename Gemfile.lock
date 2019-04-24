@@ -47,9 +47,9 @@ GEM
       activerecord (>= 4.2.8)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    airbrake (9.0.2)
+    airbrake (9.1.0)
       airbrake-ruby (~> 4.2)
-    airbrake-ruby (4.2.3)
+    airbrake-ruby (4.2.5)
       rbtree3 (~> 0.5)
     arel (8.0.0)
     bcrypt (3.1.12)
@@ -367,7 +367,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.9)
   acts-as-taggable-on (~> 5.0.0)
-  airbrake (~> 9.0.2)
+  airbrake (~> 9.1.0)
   bullet
   capybara
   carrierwave (~> 1.2.1)

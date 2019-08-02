@@ -6,7 +6,7 @@ gem 'rails', '~> 5.1.6'
 
 gem 'active_model_serializers', '~> 0.10.9'
 gem 'acts-as-taggable-on', '~> 5.0.0'
-gem 'carrierwave', '~> 1.2.1'
+gem 'carrierwave', '~> 1.3.1'
 gem 'dalli', '~> 2.7.6'
 gem 'devise', '~> 4.6.2'
 gem 'fog-aws', '~> 3.3.0'

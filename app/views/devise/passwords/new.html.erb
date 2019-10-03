@@ -2,7 +2,7 @@
   <%= image_tag 'forgot.png', :title => 'Forgot my password!' %>
 
   <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-    <%= devise_error_messages! %>
+    <%= render partial: 'devise/shared/error_messages', resource: resource %>
 
     <div class="field"><%= f.label :email %>
       <br />

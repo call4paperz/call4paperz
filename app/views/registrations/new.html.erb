@@ -3,7 +3,7 @@
     <%= image_tag 'registration.png', :title => 'Registration' %>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= render partial: 'devise/shared/error_messages', resource: resource %>
       <%= flash[:alert] %>
 
       <div class="field"><%= f.label :name %><br />

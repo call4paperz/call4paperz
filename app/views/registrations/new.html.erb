@@ -3,7 +3,7 @@
     <%= image_tag 'registration.png', :title => 'Registration' %>
 
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+      <%= render partial: 'devise/shared/error_messages', resource: resource %>
       <%= flash[:alert] %>
 
       <div class="field"><%= f.label :name %><br />
@@ -32,14 +32,16 @@
 </div>
 
 <%= content_for :js do %>
-  $(document).ready(function() {
-    var validator = $("#user_new").validate({
-      rules: {
-        'user[email]': "required",
-        'user[name]': "required",
-        'user[password]': { required: true, minlength: 6 },
-        'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
-      }
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var validator = $("#user_new").validate({
+        rules: {
+          'user[email]': "required",
+          'user[name]': "required",
+          'user[password]': { required: true, minlength: 6 },
+          'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
+        }
+      });
     });
-  });
+  </script>
 <% end -%>

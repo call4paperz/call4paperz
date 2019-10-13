@@ -32,14 +32,16 @@
 </div>
 
 <%= content_for :js do %>
-  $(document).ready(function() {
-    var validator = $("#user_new").validate({
-      rules: {
-        'user[email]': "required",
-        'user[name]': "required",
-        'user[password]': { required: true, minlength: 6 },
-        'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
-      }
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var validator = $("#user_new").validate({
+        rules: {
+          'user[email]': "required",
+          'user[name]': "required",
+          'user[password]': { required: true, minlength: 6 },
+          'user[password_confirmation]': { required: true, minlength: 6, equalTo: '#user_password' }
+        }
+      });
     });
-  });
+  </script>
 <% end -%>

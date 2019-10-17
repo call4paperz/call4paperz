@@ -131,6 +131,16 @@ In this page you need to configure two fields:
 
 Configuring the fields on the same page will find the application ID as the `FACEBOOK_ACCESS` variable and the application secret key as the` FACEBOOK_KEY` variable.
 
+## Accessing Github Variables
+
+Access https://github.com/settings/apps
+
+Click on the `New Github App` button.
+
+Fill out the form with app name, description, website URL. In `User authorization callback URL and Webhook URL` fill in with` http: // localhost: 3000 / auth / github / callback`.
+
+Save and after saving you will have the keys at the beginning of the page.
+
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature

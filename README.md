@@ -113,6 +113,24 @@ On the new page, click the `+` button and fill in the fields to generate a new s
 
 When you click save it will generate your keys.
 
+## Accessing Facebook Variables
+
+Access the https://developers.facebook.com/apps/
+
+Click on the `Add new app` button.
+
+Fill in the name of the app and your contact email. Then click Create Application ID.
+
+On your app page, click on my left side under `Settings -> Basic`.
+
+In this page you need to configure two fields:
+
+- Application domain with `localhost`
+- In the site session the site URL field with `http: // localhost: 3000`, where 3000 is the port used to start the Rails application on your computer.
+- Feel free to fill in the other fields, but these two are the main ones.
+
+Configuring the fields on the same page will find the application ID as the `FACEBOOK_ACCESS` variable and the application secret key as the` FACEBOOK_KEY` variable.
+
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature

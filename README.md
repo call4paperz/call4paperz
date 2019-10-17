@@ -153,6 +153,26 @@ Fill in all fields like app name, description, website URL. In `Callback URLs` f
 
 Save and after saving go to the `Keys and tokens` tab to access the keys.
 
+## Accessing Google Variables
+
+Access the https://code.google.com/apis/console/
+
+Clique on the `Criar projeto` button.
+
+Fill in a name and save.
+
+When you save, click on my hanburger and choose `API and Services -> Credentials'.
+
+In the credentials screen, click the `Create Credentials -> OAuth Client ID` button.
+
+Click the `Set up consent screen` button to create the app.
+
+Fill out the form and after saving you will be redirected to choose the type of app. Choose the first one that is a web application.
+
+Enter the name and the `authorized redirect URIs` fill in with `http://localhost:3000/auth/google_oauth2/callback`.
+
+Once completed, click create and you will be redirected to the page with the keys.
+
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature

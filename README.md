@@ -103,6 +103,16 @@ $ docker-compose up
 
 That's it! Just go to <http://localhost:3000>.
 
+## Accessing Recaptcha Variables
+
+Access the https://www.google.com/recaptcha/intro/v3.html.
+
+Click on the `Admin Console` button.
+
+On the new page, click the `+` button and fill in the fields to generate a new site, choose v2 for the captcha type and in domains add `127.0.0.1 and localhost`.
+
+When you click save it will generate your keys.
+
 ## Contributions
 
 To contribute to call4paperz, submit a pull request (preferably in a feature

@@ -161,7 +161,7 @@ Click on the `Create project` button.
 
 Fill in a name and save.
 
-When you save, click on my hanburger and choose `API and Services -> Credentials'.
+When you save, click on my hanburger and choose `API and Services -> Credentials`.
 
 In the credentials screen, click the `Create Credentials -> OAuth Client ID` button.
 

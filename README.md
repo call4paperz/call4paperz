@@ -157,7 +157,7 @@ Save and after saving go to the `Keys and tokens` tab to access the keys.
 
 Access the https://code.google.com/apis/console/
 
-Clique on the `Criar projeto` button.
+Click on the `Create project` button.
 
 Fill in a name and save.
 

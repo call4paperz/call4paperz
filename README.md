@@ -26,8 +26,10 @@ You must set the following environment variables for the system to fully work:
     GITHUB_SECRET
     SECRET_KEY
     DEVISE_PEPPER
-    RECAPTCHA_PRIVATE_KEY
-    RECAPTCHA_PUBLIC_KEY
+    RECAPTCHA_SITE_KEY
+    RECAPTCHA_SECRET_KEY
+    GOOGLE_CLIENT_ID
+    GOOGLE_SECRET
 
 ## Bootstrapping (and using Foreman to run all the things)
 
@@ -100,6 +102,76 @@ $ docker-compose up
 ```
 
 That's it! Just go to <http://localhost:3000>.
+
+## Accessing Recaptcha Variables
+
+Access the https://www.google.com/recaptcha/intro/v3.html.
+
+Click on the `Admin Console` button.
+
+On the new page, click the `+` button and fill in the fields to generate a new site, choose v2 for the captcha type and in domains add `127.0.0.1 and localhost`.
+
+When you click save it will generate your keys.
+
+## Accessing Facebook Variables
+
+Access the https://developers.facebook.com/apps/
+
+Click on the `Add new app` button.
+
+Fill in the name of the app and your contact email. Then click Create Application ID.
+
+On your app page, click on my left side under `Settings -> Basic`.
+
+In this page you need to configure two fields:
+
+- Application domain with `localhost`
+- In the site session the site URL field with `http: // localhost: 3000`, where 3000 is the port used to start the Rails application on your computer.
+- Feel free to fill in the other fields, but these two are the main ones.
+
+Configuring the fields on the same page will find the application ID as the `FACEBOOK_ACCESS` variable and the application secret key as the` FACEBOOK_KEY` variable.
+
+## Accessing Github Variables
+
+Access the https://github.com/settings/apps
+
+Click on the `New Github App` button.
+
+Fill out the form with app name, description, website URL. In `User authorization callback URL and Webhook URL` fill in with` http://localhost:3000/auth/github/callback`.
+
+Save and after saving you will have the keys at the beginning of the page.
+
+## Accessing Twitter Variables
+
+Access the https://developer.twitter.com/en/apps
+
+Click on the `Create an app` button.
+
+Follow the step-by-step twitter requesting the information you request if you have no apps created. If you have already been verified by Twitter the page will generate a new app.
+
+Fill in all fields like app name, description, website URL. In `Callback URLs` fill in with` http://localhost:3000/auth/twitter/callback`. In `Allow this application to be used to sign in with Twitter` enable` Enable Sign in with Twitter`.
+
+Save and after saving go to the `Keys and tokens` tab to access the keys.
+
+## Accessing Google Variables
+
+Access the https://code.google.com/apis/console/
+
+Click on the `Create project` button.
+
+Fill in a name and save.
+
+When you save, click on my hanburger and choose `API and Services -> Credentials`.
+
+In the credentials screen, click the `Create Credentials -> OAuth Client ID` button.
+
+Click the `Set up consent screen` button to create the app.
+
+Fill out the form and after saving you will be redirected to choose the type of app. Choose the first one that is a web application.
+
+Enter the name and the `authorized redirect URIs` fill in with `http://localhost:3000/auth/google_oauth2/callback`.
+
+Once completed, click create and you will be redirected to the page with the keys.
 
 ## Contributions
 

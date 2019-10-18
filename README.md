@@ -137,7 +137,7 @@ Access the https://github.com/settings/apps
 
 Click on the `New Github App` button.
 
-Fill out the form with app name, description, website URL. In `User authorization callback URL and Webhook URL` fill in with` http: // localhost: 3000 / auth / github / callback`.
+Fill out the form with app name, description, website URL. In `User authorization callback URL and Webhook URL` fill in with` http://localhost:3000/auth/github/callback`.
 
 Save and after saving you will have the keys at the beginning of the page.
 
@@ -149,7 +149,7 @@ Click on the `Create an app` button.
 
 Follow the step-by-step twitter requesting the information you request if you have no apps created. If you have already been verified by Twitter the page will generate a new app.
 
-Fill in all fields like app name, description, website URL. In `Callback URLs` fill in with` http: // localhost: 3000 / auth / twitter / callback`. In `Allow this application to be used to sign in with Twitter` enable` Enable Sign in with Twitter`.
+Fill in all fields like app name, description, website URL. In `Callback URLs` fill in with` http://localhost:3000/auth/twitter/callback`. In `Allow this application to be used to sign in with Twitter` enable` Enable Sign in with Twitter`.
 
 Save and after saving go to the `Keys and tokens` tab to access the keys.
 

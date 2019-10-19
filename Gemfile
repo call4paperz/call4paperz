@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'pry-byebug'
+  gem 'rubocop', require: false
 end
 
 group :test do

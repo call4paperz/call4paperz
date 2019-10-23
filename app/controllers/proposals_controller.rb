@@ -97,7 +97,7 @@ class ProposalsController < ApplicationController
 
   def verify_grace_period
     return if proposal.has_grace_period_left?
-    
+
     redirect_to [event, proposal], :notice => "You cannot edit a proposal after 30 minutes of creation."
   end
 

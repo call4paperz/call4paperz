@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
 
 protected
   def store_location
-    store_location_for(:user, request.url) if (request.get? && request.format.html? && !request.xhr? && !devise_controller?)
+    return unless (request.get? && request.format.html? && !request.xhr? && !devise_controller?)
+    
+    store_location_for(:user, request.url)
   end
 
 private

@@ -32,7 +32,6 @@ gem 'validates_timeliness', '~> 4.0.2'
 group :production do
   gem 'airbrake', '~> 9.1.0'
   gem 'newrelic_rpm', '~> 6.7.0'
-  gem 'rails_12factor', '~> 0.0.3'
 end
 
 group :development do

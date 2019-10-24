@@ -57,28 +57,19 @@ Then start the server with the following command:
 $ foreman start -f Procfile.development
 ```
 
-## When using docker
+## Running with Docker
 
-At the time of writing it, it was tested with versions:
+We strongly encourage Docker usage. With Docker, we can standardize the development environment, quickly rebuilding it whenever necessary without installing anything on the host machine.
 
-For Docker Engine: 1.12.5
+A straight forward  `Dockerfile` based on an official Ruby base image is provided. Also, the Docker Compose configurations provided, help considerably running the Docker commands.
 
-For Docker Compose: 1.6.2
-
-### For development environment
-
-When in development environment, it can be useful to have some extra configs,
-like volumes to keep the application directory synced and avoid losing database files.
-
-In docker-compose.override.yml.sample exists some of those extra configs, so you
-can run the command below to make use of it:
+You can have full control of the Docker Compose configs in your development environment, we provide a sample file, and just the environment variables are required.
 
 `$ cp docker-compose.override.yml.sample docker-compose.override.yml`
 
 ### Setup
 
-After you're done with specific environment's steps,
-to setup the application, you need to run:
+After setting up the Docker Compose configuration, to set up the application, you need to run:
 
 ```
 $ docker-compose run --rm web bin/setup
@@ -86,8 +77,7 @@ $ docker-compose run --rm web bin/setup
 
 ### Running the application
 
-Now that all setup steps are done, you only need to run the command below
-to get the application running:
+Now that all setup steps are done, you only need to run the command below to get the application running:
 
 ```
 $ docker-compose up

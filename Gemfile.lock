@@ -73,8 +73,6 @@ GEM
       mime-types (>= 1.16)
     case_transform (0.2)
       activesupport
-    codeclimate-test-reporter (1.0.9)
-      simplecov (<= 0.13)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
@@ -369,7 +367,6 @@ DEPENDENCIES
   bullet
   capybara
   carrierwave (~> 1.2.1)
-  codeclimate-test-reporter
   culerity
   dalli (~> 2.7.10)
   database_cleaner

@@ -49,14 +49,6 @@ Repeat until all the stuff is in place.
 Edit the file `.env` generated in the project's root dir and add your keys for
 twitter and facebook applications.
 
-### PostgreSQL
-
-The setup will create a `config/database.yml`, the user configuration will point
-to your current s.o. user.
-
-Edit this file if you need, or if the setup process fail trying to use the
-credentials auto generated.
-
 ### let's go!
 
 Then start the server with the following command:

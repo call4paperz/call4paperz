@@ -9,4 +9,3 @@ services:
       context: .
     depends_on:
       - db
-

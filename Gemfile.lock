@@ -86,7 +86,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.3)
-    docile (1.1.5)
+    docile (1.3.2)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
@@ -299,8 +299,8 @@ GEM
     shoulda-matchers (4.0.1)
       activesupport (>= 4.2.0)
     simple_oauth (0.3.1)
-    simplecov (0.13.0)
-      docile (~> 1.1.0)
+    simplecov (0.17.1)
+      docile (~> 1.1)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
@@ -393,7 +393,7 @@ DEPENDENCIES
   rspec_junit_formatter
   sass-rails (~> 5.0.7)
   shoulda-matchers
-  simplecov
+  simplecov (~> 0.17.1)
   spring
   spring-commands-rspec
   timecop

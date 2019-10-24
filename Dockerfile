@@ -9,11 +9,6 @@ WORKDIR $APP_PATH
 
 COPY Gemfile* $APP_PATH/
 
-ENV \
-  BUNDLE_GEMFILE=$APP_PATH/Gemfile \
-  BUNDLE_JOBS=2 \
-  BUNDLE_PATH=/var/www/app/.bundle
-
 RUN bundle install
 
 COPY . $APP_PATH/

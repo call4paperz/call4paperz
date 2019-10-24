@@ -21,7 +21,6 @@ gem 'omniauth-oauth2', '~> 1.6.0'
 gem 'omniauth-twitter', '~> 1.4.0'
 gem 'pg', '~> 0.21.0'
 gem 'rack-cache', '~> 1.9.0'
-gem 'rake', '~> 12.3.3'
 gem 'recaptcha', '~> 4.6.2', require: 'recaptcha/rails'
 gem 'redcarpet', '~> 3.4.0'
 gem 'sass-rails', '~> 5.0.7'
@@ -32,13 +31,12 @@ gem 'validates_timeliness', '~> 4.0.2'
 
 group :production do
   gem 'airbrake', '~> 9.1.0'
-  gem 'newrelic_rpm', '~> 6.2.0'
-  gem 'rails_12factor', '~> 0.0.3'
+  gem 'newrelic_rpm', '~> 6.7.0'
 end
 
 group :development do
   gem 'bullet'
-  gem "letter_opener_web"
+  gem 'letter_opener_web'
   gem 'listen'
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -52,7 +50,6 @@ group :development, :test do
 end
 
 group :test do
-  gem "codeclimate-test-reporter", require: nil
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
@@ -60,6 +57,6 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
-  gem 'simplecov'
+  gem 'simplecov', '~> 0.17.1'
   gem 'timecop'
 end

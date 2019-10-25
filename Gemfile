@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.5'
 
-gem 'rails', '~> 5.1.6'
+gem 'rails', '5.1.7'
 
 gem 'active_model_serializers', '~> 0.10.9'
 gem 'acts-as-taggable-on', '~> 5.0.0'

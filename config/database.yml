@@ -1,14 +1,11 @@
 development:
   adapter: postgresql
-  database: <%= ENV.fetch('DB_NAME', 'DBNAME') %>
-  username: <%= ENV.fetch('DB_USER', 'USER') %>
-  password:
+  database: <%= ENV.fetch('DB_NAME', 'call4paperz_development') %>
+  username: <%= ENV.fetch('DB_USER', 'postgres') %>
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
-  min_messages: WARNING
+
 test:
   adapter: postgresql
   database: call4paperz_test
   username: <%= ENV.fetch('DB_USER', 'USER') %>
-  password:
   host: <%= ENV.fetch('DB_HOST', 'localhost') %>
-  min_messages: WARNING

@@ -1,18 +1,28 @@
-version: '2.0'
+version: '3'
 
 volumes:
-  bundle_ruby242_slim:
+  dbdata:
     driver: local
 
 services:
   db:
     volumes:
-      - ./db_files:/var/lib/postgresql/data
+      - dbdata:/var/lib/postgresql/data:rw
     ports:
-      - "5432:5432"
+      - 5432:5432
+
   web:
     volumes:
       - .:/var/www/app
-      - bundle_ruby242_slim:/var/www/app/.bundle:rw
+    ports:
+      - 3000:3000
+    command:
+      - bin/rails
+      - server
+      - --port
+      - '3000'
+      - --binding
+      - 0.0.0.0
     environment:
+      DB_HOST: db
       DB_USER: postgres

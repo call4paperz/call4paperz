@@ -290,7 +290,7 @@ GEM
     rspec-support (3.8.0)
     rspec_junit_formatter (0.4.1)
       rspec-core (>= 2, < 4, != 2.12.0)
-    rubocop (0.75.1)
+    rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -406,7 +406,7 @@ DEPENDENCIES
   redcarpet (~> 3.4.0)
   rspec-rails
   rspec_junit_formatter
-  rubocop
+  rubocop (= 0.74)
   sass-rails (~> 5.0.7)
   shoulda-matchers
   simplecov (~> 0.17.1)

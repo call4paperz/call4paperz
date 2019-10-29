@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe TwitterController, :type => :controller do
+RSpec.describe TwitterController, :type => :controller do
   let(:last_tweet) {
     TwitterClient::Tweet.new OpenStruct.new(
       created_at: Time.new(2013, 8, 29),
@@ -15,7 +15,7 @@ describe TwitterController, :type => :controller do
   end
 
   describe "last tweets" do
-    it "should get last tweet from call4paperz timeline" do
+    xit "should get last tweet from call4paperz timeline" do
       get :last, format: :json
       expect(response).to be_success
       expect(response.body).to eq TweetSerializer.new(last_tweet).to_json

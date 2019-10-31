@@ -43,8 +43,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts-as-taggable-on (5.0.0)
-      activerecord (>= 4.2.8)
+    acts-as-taggable-on (6.0.0)
+      activerecord (~> 5.0)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     airbrake (9.5.0)
@@ -173,7 +173,7 @@ GEM
     mini_magick (4.9.4)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.12.2)
+    minitest (5.13.0)
     multi_json (1.14.1)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
@@ -355,7 +355,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.9)
-  acts-as-taggable-on (~> 5.0.0)
+  acts-as-taggable-on (~> 6.0.0)
   airbrake (~> 9.5.0)
   bullet
   capybara

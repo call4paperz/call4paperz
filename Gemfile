@@ -52,8 +52,8 @@ end
 group :test do
   gem 'capybara'
   gem 'culerity'
-  gem 'faker'
   gem 'database_cleaner'
+  gem 'faker'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'

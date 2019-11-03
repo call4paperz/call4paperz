@@ -58,6 +58,6 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.17.1'
-  gem 'timecop'
   gem 'faker'
+  gem 'timecop'
 end

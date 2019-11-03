@@ -51,8 +51,8 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'faker'
   gem 'culerity'
+  gem 'faker'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'

@@ -102,6 +102,8 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
+    faker (2.7.0)
+      i18n (>= 1.6, < 1.8)
     faraday (0.17.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
@@ -366,6 +368,7 @@ DEPENDENCIES
   devise (~> 4.7.1)
   dotenv-rails
   factory_bot_rails
+  faker
   fog-aws (~> 3.3.0)
   foreman
   friendly_id (~> 5.2.5)

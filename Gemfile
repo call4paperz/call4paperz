@@ -50,7 +50,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'faker'
   gem 'capybara'
   gem 'culerity'
   gem 'database_cleaner'
@@ -60,4 +59,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.17.1'
   gem 'timecop'
+  gem 'faker'
 end

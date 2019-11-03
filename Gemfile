@@ -51,6 +51,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'faker'
   gem 'culerity'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
@@ -58,6 +59,5 @@ group :test do
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
   gem 'simplecov', '~> 0.17.1'
-  gem 'faker'
   gem 'timecop'
 end

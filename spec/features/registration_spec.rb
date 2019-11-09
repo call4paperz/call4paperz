@@ -7,6 +7,24 @@ feature "Registration", %q{
 } do
 
   context "Register through sign up form" do
+
+    it 'While registering, with correct data, all was persisted' do 
+      visit '/users/sign_up'
+
+      user_name = Faker::Name.name
+      user_email = Faker::Internet.email
+
+      fill_in 'user_name', with: user_name
+      fill_in "user_email", with: user_email
+      fill_in "user_password", with: '123123'
+      fill_in "user_password_confirmation", with: '123123'
+      find("input[type=image]").click
+
+      user = User.where(email: user_email).first
+
+      expect(user.name).to eq(user_name)
+    end 
+
     scenario "While registering, I can't register without an email" do
       visit '/users/sign_up'
 
@@ -39,6 +57,7 @@ feature "Registration", %q{
     scenario "While registering, I'm able to register with valid data" do
       visit '/users/sign_up'
 
+      fill_in 'user_name', with: 'Test User'
       fill_in "user_email", with: 'email@example.com'
       fill_in "user_password", with: '123123'
       fill_in "user_password_confirmation", with: '123123'
@@ -47,6 +66,7 @@ feature "Registration", %q{
       expect(page).to have_content 'A message with a confirmation link has been sent to your email address.'
 
       user = User.where(email: 'email@example.com').first
+
       user.confirm
       sign_in_with user, '123123'
       expect(page).to have_content 'Logout'

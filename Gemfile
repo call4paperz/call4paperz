@@ -27,7 +27,7 @@ gem 'sass-rails', '~> 5.0.7'
 gem 'twitter', '~> 6.2.0'
 gem 'uglifier', '~> 4.2.0'
 gem 'unicorn', '~> 5.5.1'
-gem 'validates_timeliness', '~> 4.0.2'
+gem 'validates_timeliness', '~> 4.1.1'
 
 group :production do
   gem 'airbrake', '~> 9.5.0'

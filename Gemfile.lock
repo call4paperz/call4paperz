@@ -318,7 +318,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     timecop (0.9.1)
-    timeliness (0.3.8)
+    timeliness (0.4.3)
     twitter (6.2.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -341,8 +341,8 @@ GEM
       kgio (~> 2.6)
       raindrops (~> 0.7)
     uniform_notifier (1.11.0)
-    validates_timeliness (4.0.2)
-      timeliness (~> 0.3.7)
+    validates_timeliness (4.1.1)
+      timeliness (>= 0.3.10, < 1)
     warden (1.2.8)
       rack (>= 2.0.6)
     websocket-driver (0.6.5)
@@ -400,7 +400,7 @@ DEPENDENCIES
   twitter (~> 6.2.0)
   uglifier (~> 4.2.0)
   unicorn (~> 5.5.1)
-  validates_timeliness (~> 4.0.2)
+  validates_timeliness (~> 4.1.1)
 
 RUBY VERSION
    ruby 2.6.5p114

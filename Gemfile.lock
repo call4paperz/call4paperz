@@ -47,9 +47,9 @@ GEM
       activerecord (>= 5.0, < 6.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    airbrake (9.5.0)
-      airbrake-ruby (~> 4.8)
-    airbrake-ruby (4.8.0)
+    airbrake (10.0.1)
+      airbrake-ruby (~> 4.13)
+    airbrake-ruby (4.13.3)
       rbtree3 (~> 0.5)
     arel (8.0.0)
     bcrypt (3.1.13)
@@ -265,7 +265,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rbtree3 (0.5.0)
+    rbtree3 (0.6.0)
     recaptcha (5.4.0)
       json
     redcarpet (3.4.0)
@@ -366,7 +366,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.9)
   acts-as-taggable-on (~> 6.5.0)
-  airbrake (~> 9.5.0)
+  airbrake (~> 10.0.1)
   bullet
   capybara
   carrierwave (~> 2.1.0)

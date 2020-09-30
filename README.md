@@ -2,8 +2,8 @@
 
 # call4paperz.com
 
-call4paperz.com is a website for talk proposals, either to your own conference
-or lightning talks. Users can post talk proposals and they can be voted and
+call4paperz.com is a website for talk proposals, you can create , your own conference
+or lightning talks. User can post talk proposals and they can be voted and
 commented by the users.
 
 [![CircleCI](https://circleci.com/gh/call4paperz/call4paperz.svg?style=svg)](https://circleci.com/gh/call4paperz/call4paperz)

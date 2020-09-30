@@ -1,6 +1,6 @@
 
 
-# call4paperz.com
+# call4paperz.com - an azing project
 
 call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and

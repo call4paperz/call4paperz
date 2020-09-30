@@ -14,7 +14,7 @@ commented by the users.
 
 ## Environment Configuration
 
-You must set the following environment variables for the system to fully work:
+You must set the following environment variables for the system to fully work :
 
     S3_ACCESS_KEY
     S3_SECRET_KEY

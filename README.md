@@ -77,7 +77,7 @@ $ docker-compose run --rm web bin/setup
 
 ### Running the application
 
-Now that all setup steps are done, you only need to run the command below to get the application running:
+Now that all setup steps are done, you only need to run the command below to get the app running:
 
 ```
 $ docker-compose up

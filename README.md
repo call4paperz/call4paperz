@@ -4,7 +4,7 @@
 
 call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and
-commented by the users.
+commented by the users
 
 [![CircleCI](https://circleci.com/gh/call4paperz/call4paperz.svg?style=svg)](https://circleci.com/gh/call4paperz/call4paperz)
 [![Code Climate](https://codeclimate.com/github/call4paperz/call4paperz/badges/gpa.svg)](https://codeclimate.com/github/call4paperz/call4paperz)

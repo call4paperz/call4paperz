@@ -1,6 +1,6 @@
 
 
-# call4paperz.com
+#  call4paperz.com
 
 call4paperz.com is a website for talk proposals, either to your own conference
 or lightning talks. Users can post talk proposals and they can be voted and
@@ -47,7 +47,7 @@ Repeat until all the stuff is in place.
 ### Environment variables
 
 Edit the file `.env` generated in the project's root dir and add your keys for
-twitter and facebook applications.
+Twitter and Facebook applications.
 
 ### let's go!
 
@@ -91,7 +91,7 @@ Access the https://www.google.com/recaptcha/intro/v3.html.
 
 Click on the `Admin Console` button.
 
-On the new page, click the `+` button and fill in the fields to generate a new site, choose v2 for the captcha type and in domains add `127.0.0.1 and localhost`.
+On the new page, click the `+` button and fill in the fields to generate a new site, choose v2 for the captcha type, and in domains add `127.0.0.1 and localhost`.
 
 When you click save it will generate your keys.
 
@@ -163,7 +163,7 @@ branch), with tests if possible. If you have any doubts, just bug
 
 Also, please make feature branches. For instance, if you add a new
 feature, create a feature branch called "my-awesome-feature". That
-helps reviewing pull requests, specially if you have unrelated
+helps to review pull requests, specially if you have unrelated
 commits.
 
 ## Maintainer

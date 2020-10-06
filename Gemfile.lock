@@ -80,7 +80,7 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     culerity (0.2.15)
-    dalli (2.7.10)
+    dalli (2.7.11)
     database_cleaner (1.8.3)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -375,7 +375,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 2.1.0)
   culerity
-  dalli (~> 2.7.10)
+  dalli (~> 2.7.11)
   database_cleaner
   devise (~> 4.7.3)
   dotenv-rails

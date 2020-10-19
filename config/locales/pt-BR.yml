@@ -1,0 +1,61 @@
+pt-BR:
+  activerecord:
+    attributes:
+      event:
+        tags: Lista de tags separada por ","
+  events:
+    show:
+      crop: Cortar imagem
+      edit: Editar event
+      closed_false: Fechado para novas propostas de palestras
+      closed_true: Aberto para novas propostas de palestras
+      closed: Este evento não está aceitando mais propostas de palestras.
+    share: "%{event_name} está com a chamada para palestras aberto! Confira."
+
+  event_close:
+    warning_closing:
+      title: A chamade para inscrição de palestras do evento %{event_name} estão fechando
+      closing: Você tem certeza que quer fechar o evento para novas propostas de palestras?en.yml
+      close: Sim, feche para novas propostas
+    warning_reopen:
+      title: Abrir chamada para palestras para o evento %{event_name}
+      reopening: Você tem certeza de que quer abrir o evento para novas propostas de palestra?
+      reopen: Sim, abrir para novas propostas de palestra
+
+  flash:
+    notice:
+      closed: Este evento está fechado para novas propostas de palestras.
+      reopened: Este evento está aberto para novas propostas de palestra.
+      profile_updated: Perfil atualizado com sucesso.
+      profile_email_confirmation_sent: 'Outro email com um link de confirmação foi enviado. Por favor confira seu e-mail.'
+
+  proposal_html:
+    one: "<span>1</span> proposta de palestra"
+    other: "<span>%{count}</span> propostas de palestras"
+
+  vote_html:
+    one: "<span>1</span> voto"
+    other: "<span>%{count}</span> votos"
+
+  comment_html:
+    one: "<span>1</span> comentário"
+    other: "<span>%{count}</span> comentários"
+
+  profile:
+    completion: 'Por favor, complete o seu perfil.'
+    unconfirmed_email: 'Seu e-mail ainda não foi confirmado. Por favor confira seu email para confirmá-lo ou'
+    resend_confirmation_email: 'reenviar email de confirmação.'
+
+  proposals:
+    comments:
+      please_sign_in: "Se você deseja fazer um comentário para esta proposta de palestra, por favor cadastre-se."
+    likes:
+      fail: "Eu acho que você já curtiu essa proposta de palestra, não?"
+      success: 'Você curtiu esta proposta de palestra'
+    dislikes:
+      fail: "Eu acho que você já descurtiu essa proposta de palestra, não?"
+      success: 'Você descurtiu esta proposta de palestra.'
+
+  auth:
+    cant_create_twitter: "Infelizmente voê não pode criar uma conta associada com login do twitter. Utilize qualquer outro método e associe a sua conta do twitter com o seu perfil posteriormente."
+

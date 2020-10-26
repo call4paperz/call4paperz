@@ -58,6 +58,6 @@ group :test do
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers'
-  gem 'simplecov', '~> 0.18.5'
+  gem 'simplecov', '~> 0.19.1'
   gem 'timecop'
 end

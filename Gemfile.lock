@@ -313,10 +313,12 @@ GEM
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
     simple_oauth (0.3.1)
-    simplecov (0.18.5)
+    simplecov (0.20.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
-    simplecov-html (0.12.2)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.2)
     spring (2.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
@@ -406,7 +408,7 @@ DEPENDENCIES
   rspec_junit_formatter
   sass-rails (~> 5.0.7)
   shoulda-matchers
-  simplecov (~> 0.18.5)
+  simplecov (~> 0.20.0)
   spring
   spring-commands-rspec
   timecop

@@ -4,7 +4,7 @@ ruby '2.6.5'
 
 gem 'rails', '5.1.7'
 
-gem 'active_model_serializers', '~> 0.10.9'
+gem 'active_model_serializers', '~> 0.10.11'
 gem 'acts-as-taggable-on', '~> 6.5.0'
 gem 'carrierwave', '~> 2.1.0'
 gem 'dalli', '~> 2.7.10'

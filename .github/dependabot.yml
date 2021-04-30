@@ -1,0 +1,24 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
+    - 1.11.2
+  - dependency-name: fog-aws
+    versions:
+    - 3.8.0
+    - 3.9.0
+  - dependency-name: rails
+    versions:
+    - 5.2.4.4
+    - 5.2.4.5
+  - dependency-name: faker
+    versions:
+    - 2.15.1
+    - 2.16.0

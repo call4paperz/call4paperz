@@ -30,7 +30,7 @@ gem 'unicorn', '~> 5.5.3'
 gem 'validates_timeliness', '~> 4.1.1'
 
 group :production do
-  gem 'airbrake', '~> 10.0.1'
+  gem 'airbrake', '~> 11.0.1'
   gem 'newrelic_rpm', '~> 6.9.0'
 end
 

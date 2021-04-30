@@ -273,7 +273,7 @@ GEM
     rbtree3 (0.6.0)
     recaptcha (5.4.1)
       json
-    redcarpet (3.5.0)
+    redcarpet (3.5.1)
     regexp_parser (1.7.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -401,7 +401,7 @@ DEPENDENCIES
   rails (= 5.1.7)
   rails-controller-testing
   recaptcha (~> 5.4.1)
-  redcarpet (~> 3.5.0)
+  redcarpet (~> 3.5.1)
   rspec-rails
   rspec_junit_formatter
   sass-rails (~> 5.0.7)

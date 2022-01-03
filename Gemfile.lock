@@ -80,7 +80,7 @@ GEM
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     culerity (0.2.15)
-    dalli (2.7.10)
+    dalli (3.2.0)
     database_cleaner (1.8.3)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -183,7 +183,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -375,7 +377,7 @@ DEPENDENCIES
   capybara
   carrierwave (~> 2.1.0)
   culerity
-  dalli (~> 2.7.10)
+  dalli (~> 3.2.0)
   database_cleaner
   devise (~> 4.7.3)
   dotenv-rails

@@ -183,7 +183,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -331,7 +333,7 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     timecop (0.9.1)
-    timeliness (0.4.3)
+    timeliness (0.4.4)
     twitter (7.0.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -354,7 +356,7 @@ GEM
       kgio (~> 2.6)
       raindrops (~> 0.7)
     uniform_notifier (1.13.0)
-    validates_timeliness (4.1.1)
+    validates_timeliness (5.0.1)
       timeliness (>= 0.3.10, < 1)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -413,7 +415,7 @@ DEPENDENCIES
   twitter (~> 7.0.0)
   uglifier (~> 4.2.0)
   unicorn (~> 5.5.3)
-  validates_timeliness (~> 4.1.1)
+  validates_timeliness (~> 5.0.1)
 
 RUBY VERSION
    ruby 2.6.5p114
